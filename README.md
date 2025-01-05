@@ -4,7 +4,7 @@ Welcome to my projects repository! This repository showcases several of my proje
 
 ## 🚀 Live Demos
 
-- [Projects Portfolio](https://pages-ntz5hxgjw-marsharine-simpsons-projects.vercel.app/)
+- [Projects Portfolio](https://pages-git-projects-portfolio-marsharine-simpsons-projects.vercel.app/#)
 - [Palindrome Checker](https://pages-git-palindromechecker-marsharine-simpsons-projects.vercel.app/)
 - [Ida Lovelace Tribute Page](https://pages-git-lovelacetributewe-ab1fa1-marsharine-simpsons-projects.vercel.app/)
 - [Product Landing Page](https://pages-git-productlanding-page-marsharine-simpsons-projects.vercel.app/)
