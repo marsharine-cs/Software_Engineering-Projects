@@ -29,8 +29,7 @@ To run this project locally, you will need:
 **Clone the Repository**  
 `git clone https://github.com/your-username/interactive-balance-sheet.git`
 
-1.   
-2. **Open the HTML File** Navigate to the project folder and open the `index.html` file in your preferred web browser to view the balance sheet.  
+1.   **Open the HTML File** Navigate to the project folder and open the `index.html` file in your preferred web browser to view the balance sheet.  
 3. **Interacting with the Balance Sheet**  
    * Click on the **year buttons** (2019, 2020, or 2021\) to switch between the financial data for those years.  
    * Hover over the total rows to see a visual highlight for better data readability.
