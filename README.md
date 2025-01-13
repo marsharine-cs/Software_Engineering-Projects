@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project serves as a foundation for further enhancements, allowing users to interact with collectibles data in a user-friendly interface. Demo: https://pages-54gqrhah8-marsharine-simpsons-projects.vercel.app/
+This project serves as a foundation for further enhancements, allowing users to interact with product in a user-friendly interface. Demo: https://pages-54gqrhah8-marsharine-simpsons-projects.vercel.app/
 
 ## Features
 
