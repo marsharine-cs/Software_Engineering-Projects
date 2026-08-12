@@ -32,3 +32,16 @@ Typical project structure:
 ├── styles.css
 ├── script.js
 └── README.md
+
+## 🔧 Running a Project Locally
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/marsharine-cs/Software_Engineering-Projects.git
+
+cd Software_Engineering-Projects
+
+cd Software_Engineering-Projects
+
+cd Software_Engineering-Projects
