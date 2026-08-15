@@ -1,73 +1,244 @@
-Palindrome Checker
+# Palindrome Checker
 
-A simple and interactive Palindrome Checker built with HTML, CSS, and JavaScript. This tool lets users check if a word or sentence is a palindrome—ignoring punctuation, spacing, and case. It’s a beginner-friendly project that showcases basic web development skills, input validation, and dynamic result display.
+A responsive JavaScript web application that determines whether a word, phrase, or sentence reads the same forward and backward.
 
-🚀 Demo
+The application normalizes user input by ignoring **spaces, punctuation, special characters, and capitalization**, then compares the cleaned text with its reversed version.
 
-Check out the Live Demo of the Palindrome Checker. https://pages-git-palindromechecker-marsharine-simpsons-projects.vercel.app/
+This project demonstrates practical use of **JavaScript string processing, DOM manipulation, event handling, input validation, responsive interface design, and accessible user feedback**.
 
-📜 Features
+---
 
-    Interactive Palindrome Check: Enter any word or sentence to see if it reads the same backward and forward.
-    Clear Input Button: Easily reset the input field and results with a "Clear" button.
-    Case and Punctuation Agnostic: Ignores spaces, punctuation, and letter case, making it versatile for complex palindrome phrases.
-    Responsive Design: Simple, clean, and responsive layout for easy use on any device.
+## ✨ Features
 
-🖥️ Technologies Used
+* Check words, phrases, or sentences for palindrome patterns
+* Ignore spaces, punctuation, special characters, and capitalization
+* Clear and reset the application
+* Character counter with a 250-character input limit
+* Clickable example phrases
+* Distinct visual feedback for:
 
-    HTML: Markup structure
-    CSS: Styling and layout
-    JavaScript: Palindrome logic and DOM manipulation
+  * Palindrome results
+  * Non-palindrome results
+  * Empty or invalid input
+* Press **Enter** to check an entry
+* Use **Shift + Enter** to insert a new line
+* Responsive layout for desktop, tablet, and mobile devices
+* Screen-reader-friendly result announcements
+* Reduced-motion support for users who prefer less animation
 
-📂 Project Structure
+---
 
-bash
+## 🧪 Try These Examples
 
-├── index.html      # HTML structure for the app
-├── styles.css      # Styling and design of the app
-├── script.js       # JavaScript functionality
-└── README.md       # Documentation for the project
+### Palindromes
 
-📖 How to Use
+* `racecar`
+* `Never odd or even`
+* `A man, a plan, a canal: Panama!`
 
-    Enter Text: Type a word or sentence into the input field.
-    Check Palindrome: Click the "Check" button to see if it’s a palindrome.
-    Clear: Use the "Clear" button to reset the input and try a new word.
+### Not a Palindrome
 
-🔧 Installation
+* `Hello world`
 
-To use this project locally:
+The checker normalizes each entry before evaluating it.
 
-    Clone the repository:
+---
 
-    bash
+## 🧠 How the JavaScript Works
 
-git clone https://github.com/marsharine/palindrome-checker.git
+The application follows three main steps:
 
-Navigate to the project folder:
+### 1. Normalize
 
-bash
+The entered text is converted to lowercase and filtered so only letters and numbers remain.
 
-    cd palindrome-checker
+For example:
 
-    Open index.html in your preferred browser.
+```text
+A man, a plan, a canal: Panama!
+```
 
-🌟 Features to Explore
+becomes:
 
-This project can be expanded with more features, such as:
+```text
+amanaplanacanalpanama
+```
 
-    Adding more visual feedback (e.g., color changes for palindrome results).
-    Advanced palindrome recognition using a recursive function or regex.
-    Animations on button clicks and result displays.
+### 2. Reverse
 
-📸 Screenshots
+JavaScript splits the normalized text into characters, reverses the array, and joins the characters back together.
 
-🤝 Contributing
+### 3. Compare
 
-Feel free to fork this repository and submit pull requests for new features, improvements, or bug fixes!
-📜 License
+The normalized text is compared with its reversed version.
 
-This project is licensed under the MIT License.
-📬 Contact
+If both strings match, the input is identified as a palindrome.
 
-Created by Marsharine Simpson — feel free to reach out if you have any questions or suggestions!
+---
+
+## 🛠️ Technologies & Development Tools
+
+* **HTML5** — semantic application structure
+* **CSS3** — responsive layout, visual states, and interface design
+* **JavaScript** — application logic, DOM manipulation, validation, and event handling
+* **Visual Studio Code** — code editing and development
+* **Replit** — browser-based coding and development
+* **Git** — version control
+* **GitHub** — source-code management and project organization
+
+---
+
+## 💻 JavaScript Concepts Demonstrated
+
+This project includes practical examples of:
+
+* Functions
+* Constants and variables
+* DOM element selection
+* Event listeners
+* Form submission handling
+* String normalization
+* Regular expressions
+* Unicode-aware text filtering
+* Arrays
+* `.split()`
+* `.reverse()`
+* `.join()`
+* Conditional logic
+* Template literals
+* Dataset attributes
+* CSS class manipulation
+* Keyboard events
+* Character counting
+* Input validation
+
+---
+
+## ♿ Accessibility & Usability
+
+The application includes several accessibility-conscious features:
+
+* Semantic HTML structure
+* Proper form labels
+* Keyboard-accessible controls
+* Visible focus states
+* `aria-live` result announcements
+* Clear success, warning, and non-palindrome feedback
+* Mobile-friendly button sizing
+* Reduced-motion support
+* Descriptive helper text
+
+---
+
+## 📱 Responsive Design
+
+The interface adapts for:
+
+* Desktop computers
+* Tablets
+* Mobile phones
+
+The project uses responsive layouts, flexible typography, stacked mobile controls, and adaptable content cards so the application remains usable across screen sizes.
+
+---
+
+## 📂 Project Structure
+
+```text
+├── index.html
+├── styles.css
+├── script.js
+├── README.md
+└── LICENSE
+```
+
+### File Overview
+
+* `index.html` — application structure and content
+* `styles.css` — responsive layout and visual design
+* `script.js` — palindrome logic and interactive functionality
+* `README.md` — project documentation
+* `LICENSE` — MIT License
+
+---
+
+## 🔧 Running the Project Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/marsharine-cs/Software_Engineering-Projects.git
+```
+
+### 2. Enter the repository
+
+```bash
+cd Software_Engineering-Projects
+```
+
+### 3. Switch to the Palindrome Checker branch
+
+```bash
+git checkout Palindrome_Checker
+```
+
+### 4. Open the application
+
+Open `index.html` in your preferred browser.
+
+You can also open the project directory in Visual Studio Code and use a local development server.
+
+---
+
+## 🎯 Skills Demonstrated
+
+This project demonstrates experience with:
+
+* JavaScript programming
+* Front-end web development
+* DOM manipulation
+* String processing
+* Input validation
+* Event-driven programming
+* Responsive web design
+* User interface development
+* Accessibility-conscious development
+* Git and GitHub workflows
+* Technical documentation
+
+---
+
+## 🌱 Project Development
+
+The Palindrome Checker began as a smaller JavaScript exercise and has since been redesigned into a more complete responsive mini-application.
+
+The updated version expands the original logic with stronger input handling, interactive examples, keyboard controls, accessible result feedback, character counting, responsive styling, and improved technical documentation.
+
+---
+
+## 🔗 Main Repository
+
+This project is part of my larger **Software Engineering Projects** collection:
+
+[View the Software Engineering Projects Repository](https://github.com/marsharine-cs/Software_Engineering-Projects)
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+See the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📬 Connect
+
+**Marsharine A. Simpson**
+
+* [GitHub](https://github.com/marsharine-cs)
+* [LinkedIn](https://www.linkedin.com/in/marsharine-a-simpson)
+
+---
+
+Thank you for exploring the Palindrome Checker project.
