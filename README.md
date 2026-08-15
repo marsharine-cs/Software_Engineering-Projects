@@ -1,72 +1,148 @@
 # Software Engineering Projects
 
-A collection of front-end and JavaScript projects demonstrating responsive UI development, interactive web applications, technical documentation, and software engineering fundamentals.
+A collection of front-end development and JavaScript projects demonstrating responsive user interface design, interactive web applications, technical documentation, problem-solving, and software engineering fundamentals.
 
-Each project is organized in its own branch and includes a live demo where available.
+This repository serves as a central showcase for projects I have developed while strengthening my skills in **HTML, CSS, JavaScript, Git, GitHub, responsive design, and web application development**.
 
-## 🚀 Live Demos
+Each project is maintained in its own branch so that the source files and development history can be explored independently.
 
-- [Projects Portfolio](https://pages-git-projects-portfolio-marsharine-simpsons-projects.vercel.app/#)
-- [Palindrome Checker](https://pages-git-palindromechecker-marsharine-simpsons-projects.vercel.app/)
-- [Ada Lovelace Tribute Page](https://pages-git-lovelacetributewe-ab1fa1-marsharine-simpsons-projects.vercel.app/)
-- [Product Landing Page](https://pages-git-productlanding-page-marsharine-simpsons-projects.vercel.app/)
-- [Balance Sheet](https://pages-lb5dld5r9-marsharine-simpsons-projects.vercel.app/)
-- [Customer Satisfaction Survey](https://pages-7lqxyy92h-marsharine-simpsons-projects.vercel.app/)
-- [Interactive Nutritional Label](https://lovelace-git-nutrition-label-marsharine-simpsons-projects.vercel.app/)
-- [Interactive Cafe Menu](https://pages-dtev7mv1r-marsharine-simpsons-projects.vercel.app/)
-- [Technical Documentation](https://pages-git-technical-documen-c729ab-marsharine-simpsons-projects.vercel.app/)
-- [JavaScript Quiz](https://pages-pm7zy9x5i-marsharine-simpsons-projects.vercel.app/)
+---
 
-## 🖥️ Technologies Used
+## 🚀 Projects
 
-- **HTML** — semantic structure and page content
-- **CSS** — layout, styling, and responsive design
-- **JavaScript** — application logic, interaction, and DOM manipulation
+| Project                              | Source Code                                                                                                         |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| Projects Portfolio                   | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Projects-Portfolio)               |
+| Palindrome Checker                   | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Palindrome_Checker)               |
+| Ada Lovelace Tribute Page            | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Lovelace_Tribute_Web_Project)     |
+| Product Landing Page                 | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Product_Landing-_Page)            |
+| Balance Sheet Project                | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Balance_Sheet_Project)            |
+| JavaScript Quiz                      | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Quiz)                             |
+| Technical Documentation Webpages     | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Technical-Documentation-Webpages) |
+| AI Developer Technical Documentation | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/AI_Dev-Technical_Doc_Web_Project) |
+| Interactive Nutrition Label          | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Nutrition-Label)                  |
+| Interactive Cafe Menu                | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Interactive-Cafe-Menu)            |
+| Cafe Menu                            | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Cafe-Menu)                        |
+| Customer Survey                      | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Customer-Survey)                  |
+| Customer Satisfaction Form           | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/customer-satisfaction-form)       |
+| Gift App Project                     | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Gift-App-Project)                 |
+| Resume Web Project                   | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Resume)                           |
 
-## 📂 Project Structure
+---
 
-Each project is stored in its own branch. A typical project includes:
+## 🖥️ Technologies & Development Tools
+
+- **HTML5** — semantic page structure and accessible content
+- **CSS3** — styling, responsive layouts, and visual presentation
+- **JavaScript** — application logic, user interaction, and DOM manipulation
+- **Visual Studio Code** — code editing and project development
+- **Replit** — browser-based coding and development
+- **Git** — version control and development history
+- **GitHub** — source-code management and project organization
+- **Vercel** — deployment experience for web-based projects
+---
+
+## 📂 Repository Organization
+
+The `main` branch serves as the central landing page for the repository.
+
+Individual projects are stored in separate branches. Depending on the project, files may include:
 
 ```text
 ├── index.html
 ├── styles.css
+├── style.css
 ├── script.js
 └── README.md
+```
 
-## 🎯 What This Repository Demonstrates
+Because the projects were created at different stages of development, individual branches may contain slightly different file structures.
 
-* Front-end development fundamentals
-* JavaScript problem-solving
-* User interface design
-* Technical documentation
-* Project organization with Git and GitHub
-* Deployment of working web applications
-
-## 🤝 Contributing
-
-Suggestions, improvements, and pull requests are welcome.
-
-## 📜 License
-
-This repository is licensed under the MIT License.
-
-## 📬 Contact
-
-Connect with me on [LinkedIn](https://www.linkedin.com/in/marsharine-a-simpson).
-
-Created by **Marsharine A. Simpson**
+---
 
 ## 🔧 Running a Project Locally
 
-1. Clone the repository:
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/marsharine-cs/Software_Engineering-Projects.git
+```
 
+### 2. Enter the repository
+
+```bash
 cd Software_Engineering-Projects
+```
 
-git checkout <branch-name>
+### 3. View the available branches
 
+```bash
+git branch -a
+```
 
+### 4. Switch to the project you want to explore
 
+For example:
 
+```bash
+git checkout Palindrome_Checker
+```
+
+Replace `Palindrome_Checker` with the branch name of the project you want to view.
+
+### 5. Run the project
+
+For projects built with HTML, CSS, and JavaScript, open `index.html` in your preferred web browser.
+
+---
+
+## 🎯 What This Repository Demonstrates
+
+This collection reflects practical experience with:
+
+* Front-end web development
+* Responsive user interface design
+* JavaScript programming and problem-solving
+* DOM manipulation and interactive functionality
+* Semantic HTML structure
+* CSS layouts and visual styling
+* Forms and user-input interfaces
+* Technical documentation
+* Git branching and version control
+* GitHub repository management
+* Web application deployment
+* Organizing and maintaining multiple development projects
+
+---
+
+## 🌱 Continued Development
+
+These projects represent different stages of my development journey. I continue to refine my skills, improve documentation, modernize earlier projects, and build new applications as my technical experience expands.
+
+---
+
+## 🤝 Contributing
+
+Suggestions, improvements, and constructive feedback are welcome.
+
+If you would like to propose a change, feel free to open an issue or submit a pull request.
+
+---
+
+## 📜 License
+
+This repository is licensed under the **MIT License**.
+
+See the [LICENSE](LICENSE) file for additional information.
+
+---
+
+## 📬 Contact
+
+**Marsharine A. Simpson**
+
+Connect with me on [LinkedIn](https://www.linkedin.com/in/marsharine-a-simpson).
+
+---
+
+Thank you for taking the time to explore my software engineering projects.
