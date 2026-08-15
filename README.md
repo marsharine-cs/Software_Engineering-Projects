@@ -1,58 +1,83 @@
 # Projects Portfolio
 
-A responsive front-end portfolio website created to showcase selected web development projects and demonstrate practical experience with **HTML, CSS, JavaScript, responsive design, user interface development, and Git/GitHub**.
+A responsive front-end portfolio website showcasing selected web development projects and demonstrating practical experience with **HTML, CSS, responsive design, user interface development, Git, and GitHub**.
 
-This project serves as a visual presentation of my growing software development portfolio and highlights several projects completed while developing my front-end and software engineering skills.
+This portfolio serves as a visual introduction to my growing collection of software engineering and web development work.
 
 ---
 
 ## 👩🏽‍💻 About the Project
 
-The Projects Portfolio brings several of my web development projects together in one interactive website.
+The **Projects Portfolio** brings several of my web development projects together in one organized website.
 
-Visitors can browse selected projects, view project screenshots, and explore examples of my work in front-end development and JavaScript.
+Visitors can browse selected projects, view project screenshots, and follow direct links to the source code for each project.
 
-The portfolio was designed and developed as part of my continued growth in software engineering, web development, and user interface design.
+The portfolio was developed as part of my continued growth in software engineering, front-end development, information technology, and user interface design.
 
 ---
 
-## 🚀 Projects Featured
+## 🚀 Featured Projects
 
-The portfolio currently showcases:
+### Palindrome Checker
 
-* **Palindrome Checker** — JavaScript-based application for determining whether entered text is a palindrome
-* **Balance Sheet** — structured financial layout demonstrating HTML and CSS formatting
-* **Ada Lovelace Tribute Page** — informational tribute webpage highlighting semantic page structure and visual design
-* **Product Landing Page** — responsive promotional webpage demonstrating layout and interface design
-* **Resume Web Project** — web-based presentation of professional information
+A JavaScript application that evaluates entered text to determine whether it is a palindrome.
 
-Additional projects are maintained throughout the main Software Engineering Projects repository.
+[View Project Source Code](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Palindrome_Checker)
+
+### Balance Sheet
+
+A structured financial layout project demonstrating semantic HTML, CSS styling, and organized presentation.
+
+[View Project Source Code](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Balance_Sheet_Project)
+
+### Ada Lovelace Tribute
+
+An informational tribute page demonstrating semantic web structure, visual hierarchy, and responsive design.
+
+[View Project Source Code](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Lovelace_Tribute_Web_Project)
+
+### Product Landing Page
+
+A responsive landing page project focused on page layout, visual presentation, and user interface design.
+
+[View Project Source Code](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Product_Landing-_Page)
+
+### Resume Web Project
+
+A web-based resume project demonstrating organized professional content, HTML structure, and CSS styling.
+
+[View Project Source Code](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Resume)
 
 ---
 
 ## 🛠️ Technologies & Development Tools
 
+This portfolio website was built and maintained using:
+
 * **HTML5** — semantic page structure and content organization
 * **CSS3** — styling, responsive layouts, and visual presentation
-* **JavaScript** — interactivity and client-side functionality
 * **Visual Studio Code** — code editing and project development
 * **Replit** — browser-based coding and development
 * **Git** — version control
 * **GitHub** — source-code management and project organization
-* **Vercel** — experience deploying web applications
+* **Vercel** — web deployment experience
+
+Several of the projects featured within the portfolio also demonstrate **JavaScript programming and interactive web development**.
 
 ---
 
-## ✨ Features
+## ✨ Portfolio Features
 
-* Responsive portfolio layout
-* Navigation between page sections
-* Project showcase cards
+* Responsive navigation
+* Professional introduction section
+* Selected project showcase
 * Project screenshots
-* Interactive project links
-* Professional profile introduction
-* Responsive styling for different screen sizes
-* JavaScript-enhanced user experience
+* Direct links to project source code
+* Responsive project-card layout
+* About and education sections
+* GitHub and LinkedIn integration
+* Mobile-friendly design
+* Accessible navigation and link behavior
 
 ---
 
@@ -61,17 +86,15 @@ Additional projects are maintained throughout the main Software Engineering Proj
 ```text
 ├── index.html
 ├── styles.css
-├── script.js
 ├── README.md
 └── LICENSE
 ```
 
 ### File Overview
 
-* `index.html` — contains the structure and content of the portfolio
-* `styles.css` — controls the layout, typography, responsive design, and visual styling
-* `script.js` — provides JavaScript functionality and interactivity
-* `README.md` — documents the project
+* `index.html` — contains the structure and content of the portfolio website
+* `styles.css` — controls layout, typography, responsive behavior, and visual styling
+* `README.md` — provides project documentation
 * `LICENSE` — contains the MIT License
 
 ---
@@ -106,26 +129,54 @@ You can also open the project directory in Visual Studio Code and use a local de
 
 ## 🎯 Skills Demonstrated
 
-This project demonstrates experience with:
+This portfolio project demonstrates experience with:
 
 * Front-end web development
-* HTML page structure
+* Semantic HTML
 * CSS styling and layout
 * Responsive web design
-* JavaScript fundamentals
 * User interface development
+* Accessibility-conscious web structure
 * Project organization
 * Git branching and version control
 * GitHub repository management
 * Web deployment workflows
 
+The projects showcased within the portfolio additionally demonstrate skills such as:
+
+* JavaScript fundamentals
+* User-input processing
+* Interactive web applications
+* Technical documentation
+* Structured data presentation
+* Web-based professional content
+
+---
+
+## 👩🏽‍💼 Professional Focus
+
+My professional background brings together **information technology, technical support, education, web development, cybersecurity foundations, and problem-solving**.
+
+I am particularly interested in the intersection of technology and education and in using technical knowledge to create practical solutions and help others better understand technology.
+
+---
+
+## 🎓 Education
+
+**Bachelor of Science in Information Technology & Security**
+University of Phoenix
+
+**Associate of Arts in Elementary Education and Teaching**
+
 ---
 
 ## 🌱 Continued Development
 
-This portfolio represents an earlier stage of my development journey and is being maintained as part of my broader software engineering portfolio.
+This portfolio represents projects created at different stages of my development journey.
 
-As my skills and project collection continue to grow, I plan to refine the presentation, improve accessibility and responsiveness, and incorporate additional projects and technologies.
+I continue to strengthen my technical skills, improve earlier projects, expand my software development knowledge, and build new applications as my experience grows.
+
+Earlier projects are maintained not only as examples of completed work, but also as documentation of continued technical growth.
 
 ---
 
@@ -145,7 +196,7 @@ See the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 📬 Contact
+## 📬 Connect
 
 **Marsharine A. Simpson**
 
