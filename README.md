@@ -25,35 +25,13 @@ Each project is organized in its own branch and includes a live demo where avail
 
 ## 📂 Project Structure
 
-Typical project structure:
+Each project is stored in its own branch. A typical project includes:
 
 ```text
 ├── index.html
 ├── styles.css
 ├── script.js
 └── README.md
-
-## 🔧 Running a Project Locally
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/marsharine-cs/Software_Engineering-Projects.git
-```
-
-2. Enter the repository:
-
-```bash
-cd Software_Engineering-Projects
-```
-
-3. Switch to the branch for the project you want to explore:
-
-```bash
-git checkout <branch-name>
-```
-
-4. Open `index.html` in your preferred browser.
 
 ## 🎯 What This Repository Demonstrates
 
@@ -77,4 +55,27 @@ This repository is licensed under the MIT License.
 Connect with me on [LinkedIn](https://www.linkedin.com/in/marsharine-a-simpson).
 
 Created by **Marsharine A. Simpson**
+
+## 🔧 Running a Project Locally
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/marsharine-cs/Software_Engineering-Projects.git
+
+cd Software_Engineering-Projects
+
+git checkout <branch-name>
+
+
+In GitHub’s editor, each command should appear inside its own gray code box when you click **Preview**.
+
+So your next move is just:
+
+1. Find **Running a Project Locally**
+2. Replace that section with the text above
+3. Click **Preview**
+4. Tell me what it looks like before you commit
+
+We’ll keep doing this one small section at a time so it doesn’t get confusing.
 
