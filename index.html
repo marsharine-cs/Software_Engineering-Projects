@@ -1,32 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <title>Palindrome Checker</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="A responsive JavaScript palindrome checker by Marsharine A. Simpson. Enter a word, phrase, or sentence to determine whether it reads the same forward and backward."
+    >
+
+    <title>Palindrome Checker | Marsharine A. Simpson</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <main class="container">
-        <img class="image" src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/Palindrome_image-6my1rNP6TUEHCrtI9DPRb3ESTwulNF.webp" alt="image" />
-        <h1 class="title">Is it a Palindrome?</h1>
-        <div class="palindrome-div">
-            <label for="text-input">
-                Enter your word here to check if it's a palindrome:
-            </label>
-            <input class="palindrome-input" id="text-input" placeholder="Type here..." type="text" />
-            <button class="palindrome-btn" id="check-btn">Check</button>
-            <div class="results_display_div" id="result"></div>
-            <button class="clear-btn" id="clear-btn">Clear</button>
-        </div>
-        <div class="palindrome-defineInput-div">
-            <p class="palindrome-defineInput">
-                <span role="img" aria-label="drum-roll"></span>
-                A <dfn>palindrome</dfn> is a word or sentence that’s spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
+
+    <main class="page-shell">
+
+        <!-- Intro -->
+        <section class="hero" aria-labelledby="page-title">
+
+            <p class="eyebrow">JAVASCRIPT PROJECT</p>
+
+            <h1 id="page-title">Palindrome Checker</h1>
+
+            <p class="hero-tagline">
+                Some words and phrases have a little symmetry hidden inside.
             </p>
-        </div>
+
+            <p class="hero-description">
+                Enter a word, phrase, or sentence and discover whether it reads
+                the same forward and backward.
+            </p>
+
+        </section>
+
+
+        <!-- Application -->
+        <section class="checker-card" aria-labelledby="checker-heading">
+
+            <div class="checker-heading">
+
+                <span class="number-badge" aria-hidden="true">01</span>
+
+                <div>
+                    <p class="section-label">TRY IT YOURSELF</p>
+                    <h2 id="checker-heading">Enter text to check</h2>
+                </div>
+
+            </div>
+
+
+            <form id="palindrome-form" novalidate>
+
+                <label for="text-input" class="input-label">
+                    Word, phrase, or sentence
+                </label>
+
+                <textarea
+                    id="text-input"
+                    name="text-input"
+                    rows="4"
+                    maxlength="250"
+                    placeholder="A man, a plan, a canal: Panama!"
+                    aria-describedby="input-help character-count"
+                ></textarea>
+
+                <div class="input-meta">
+
+                    <p id="input-help">
+                        Spaces, punctuation, and capitalization are ignored.
+                    </p>
+
+                    <p id="character-count" aria-live="polite">
+                        0 / 250
+                    </p>
+
+                </div>
+
+
+                <div class="button-group">
+
+                    <button
+                        type="submit"
+                        id="check-btn"
+                        class="primary-button"
+                    >
+                        Check Palindrome
+                    </button>
+
+                    <button
+                        type="button"
+                        id="clear-btn"
+                        class="secondary-button"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- Result -->
+            <div
+                id="result"
+                class="result-panel"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+            >
+
+                <div class="result-icon" aria-hidden="true">
+                    ✦
+                </div>
+
+                <div>
+                    <p class="result-label">RESULT</p>
+
+                    <p id="result-text">
+                        Your result will appear here.
+                    </p>
+
+                    <p id="result-detail" class="result-detail">
+                        Try one of the examples below or enter your own text.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Examples -->
+            <div class="examples">
+
+                <p class="examples-title">Try an example</p>
+
+                <div
+                    class="example-buttons"
+                    aria-label="Palindrome and non-palindrome examples"
+                >
+
+                    <button
+                        type="button"
+                        class="example-button"
+                        data-example="racecar"
+                    >
+                        racecar
+                    </button>
+
+                    <button
+                        type="button"
+                        class="example-button"
+                        data-example="Never odd or even"
+                    >
+                        Never odd or even
+                    </button>
+
+                    <button
+                        type="button"
+                        class="example-button"
+                        data-example="A man, a plan, a canal: Panama!"
+                    >
+                        A man, a plan…
+                    </button>
+
+                    <button
+                        type="button"
+                        class="example-button"
+                        data-example="Hello world"
+                    >
+                        Hello world
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Explanation -->
+        <section class="how-it-works" aria-labelledby="how-heading">
+
+            <div class="section-intro">
+
+                <p class="eyebrow">BEHIND THE CODE</p>
+
+                <h2 id="how-heading">How it works</h2>
+
+                <p>
+                    The checker normalizes the text before comparing it with
+                    its reversed form.
+                </p>
+
+            </div>
+
+
+            <div class="steps-grid">
+
+                <article class="step-card">
+
+                    <span class="step-number">01</span>
+
+                    <h3>Normalize</h3>
+
+                    <p>
+                        JavaScript converts the text to lowercase and removes
+                        spaces, punctuation, and special characters.
+                    </p>
+
+                </article>
+
+
+                <article class="step-card">
+
+                    <span class="step-number">02</span>
+
+                    <h3>Reverse</h3>
+
+                    <p>
+                        The cleaned text is split into characters, reversed,
+                        and joined back together.
+                    </p>
+
+                </article>
+
+
+                <article class="step-card">
+
+                    <span class="step-number">03</span>
+
+                    <h3>Compare</h3>
+
+                    <p>
+                        The original normalized text is compared with the
+                        reversed version to determine the result.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Project Notes -->
+        <section class="project-notes" aria-labelledby="project-heading">
+
+            <div>
+
+                <p class="eyebrow">PROJECT HIGHLIGHTS</p>
+
+                <h2 id="project-heading">
+                    Small application. Practical JavaScript.
+                </h2>
+
+            </div>
+
+            <ul class="skill-list">
+                <li>DOM manipulation</li>
+                <li>String processing</li>
+                <li>Input validation</li>
+                <li>Event handling</li>
+                <li>Responsive design</li>
+                <li>Accessible feedback</li>
+            </ul>
+
+        </section>
+
     </main>
-    <script src="scripts.js"></script>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div>
+
+                <p class="footer-name">
+                    Marsharine A. Simpson
+                </p>
+
+                <p>
+                    Built with HTML • CSS • JavaScript
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a
+                    href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Palindrome_Checker"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View Source
+                </a>
+
+                <a
+                    href="https://github.com/marsharine-cs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/marsharine-a-simpson"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
 </body>
 </html>
