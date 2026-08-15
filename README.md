@@ -68,14 +68,5 @@ cd Software_Engineering-Projects
 git checkout <branch-name>
 
 
-In GitHub’s editor, each command should appear inside its own gray code box when you click **Preview**.
 
-So your next move is just:
-
-1. Find **Running a Project Locally**
-2. Replace that section with the text above
-3. Click **Preview**
-4. Tell me what it looks like before you commit
-
-We’ll keep doing this one small section at a time so it doesn’t get confusing.
 
