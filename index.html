@@ -1,60 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript Concepts Quiz</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="An interactive JavaScript knowledge quiz by Marsharine A. Simpson featuring instant scoring, answer explanations, progress tracking, and responsive design."
+    >
+
+    <title>JavaScript Knowledge Quiz | Marsharine A. Simpson</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <h1>JavaScript Concepts Quiz 1</h1>
-  <form id="quizForm">
-    <!-- Question 1 -->
-    <div class="question">
-      <label>1. What keyword is used to declare a constant in JavaScript?</label><br>
-      <input type="radio" name="q1" value="var"> var<br>
-      <input type="radio" name="q1" value="let"> let<br>
-      <input type="radio" name="q1" value="const"> const<br>
-    </div>
 
-    <!-- Question 2 -->
-    <div class="question">
-      <label>2. Which of the following is a JavaScript data type?</label><br>
-      <input type="radio" name="q2" value="Array"> Array<br>
-      <input type="radio" name="q2" value="Number"> Number<br>
-      <input type="radio" name="q2" value="String"> String<br>
-      <input type="radio" name="q2" value="All of the above"> All of the above<br>
-    </div>
+    <main class="page-shell">
 
-    <!-- Question 3 -->
-    <div class="question">
-      <label>3. How do you write an `if` statement in JavaScript?</label><br>
-      <input type="radio" name="q3" value="if (x == 5) {}"> if (x == 5) {}<br>
-      <input type="radio" name="q3" value="if x == 5 then {}"> if x == 5 then {}<br>
-      <input type="radio" name="q3" value="if x = 5 {}"> if x = 5 {}<br>
-    </div>
+        <!-- Hero -->
+        <section class="hero" aria-labelledby="page-title">
 
-    <!-- Question 4 -->
-    <div class="question">
-      <label>4. How do you call a function named `myFunction`?</label><br>
-      <input type="radio" name="q4" value="call myFunction()"> call myFunction()<br>
-      <input type="radio" name="q4" value="myFunction()"> myFunction()<br>
-      <input type="radio" name="q4" value="run myFunction()"> run myFunction()<br>
-    </div>
+            <p class="eyebrow">EDUCATIONAL TECHNOLOGY PROJECT</p>
 
-    <!-- Question 5 -->
-    <div class="question">
-      <label>5. Which method can be used to manipulate the HTML DOM?</label><br>
-      <input type="radio" name="q5" value="document.getElementById()"> document.getElementById()<br>
-      <input type="radio" name="q5" value="console.log()"> console.log()<br>
-      <input type="radio" name="q5" value="alert()"> alert()<br>
-    </div>
+            <h1 id="page-title">
+                JavaScript
+                <span>Knowledge Quiz</span>
+            </h1>
 
-    <button type="button" onclick="checkAnswers()">Submit</button>
-  </form>
+            <p class="hero-description">
+                Test your understanding of core JavaScript concepts through
+                ten interactive questions with explanations and instant results.
+            </p>
 
-  <p id="result"></p>
+            <div class="hero-tags" aria-label="Project technologies">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+            </div>
 
-  <script src="script.js"></script>
+        </section>
+
+
+        <!-- Quiz Application -->
+        <section
+            class="quiz-card"
+            id="quiz-app"
+            aria-labelledby="quiz-heading"
+        >
+
+            <!-- Quiz Header -->
+            <div class="quiz-header">
+
+                <div>
+                    <p class="section-label">KNOWLEDGE CHECK</p>
+
+                    <h2 id="quiz-heading">
+                        JavaScript Fundamentals
+                    </h2>
+                </div>
+
+                <div
+                    class="question-counter"
+                    aria-live="polite"
+                >
+                    <span id="current-question">1</span>
+                    <span aria-hidden="true"> / </span>
+                    <span id="total-questions">10</span>
+                </div>
+
+            </div>
+
+
+            <!-- Progress -->
+            <div class="progress-section">
+
+                <div class="progress-meta">
+                    <span>Progress</span>
+
+                    <span id="progress-percent">
+                        10%
+                    </span>
+                </div>
+
+                <div
+                    class="progress-track"
+                    role="progressbar"
+                    aria-label="Quiz progress"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="10"
+                    id="progress-bar"
+                >
+                    <div
+                        class="progress-fill"
+                        id="progress-fill"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <!-- Dynamic Question -->
+            <div
+                id="question-container"
+                class="question-container"
+            >
+
+                <p class="question-category" id="question-category">
+                    JavaScript Basics
+                </p>
+
+                <h3 id="question-text">
+                    Loading question...
+                </h3>
+
+                <div
+                    id="answer-options"
+                    class="answer-options"
+                    role="radiogroup"
+                    aria-labelledby="question-text"
+                >
+                    <!-- JavaScript inserts answers here -->
+                </div>
+
+            </div>
+
+
+            <!-- Feedback -->
+            <div
+                id="answer-feedback"
+                class="answer-feedback"
+                aria-live="polite"
+                hidden
+            >
+
+                <div
+                    class="feedback-icon"
+                    id="feedback-icon"
+                    aria-hidden="true"
+                >
+                    ✓
+                </div>
+
+                <div>
+                    <p
+                        class="feedback-title"
+                        id="feedback-title"
+                    >
+                        Correct!
+                    </p>
+
+                    <p
+                        class="feedback-explanation"
+                        id="feedback-explanation"
+                    ></p>
+                </div>
+
+            </div>
+
+
+            <!-- Navigation -->
+            <div class="quiz-controls">
+
+                <button
+                    type="button"
+                    id="previous-btn"
+                    class="secondary-button"
+                    disabled
+                >
+                    ← Previous
+                </button>
+
+                <button
+                    type="button"
+                    id="next-btn"
+                    class="primary-button"
+                    disabled
+                >
+                    Next Question →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Results -->
+        <section
+            id="results-section"
+            class="results-card"
+            aria-labelledby="results-heading"
+            hidden
+        >
+
+            <p class="eyebrow">QUIZ COMPLETE</p>
+
+            <div
+                class="score-circle"
+                aria-hidden="true"
+            >
+                <span id="score-percent">0%</span>
+            </div>
+
+            <h2 id="results-heading">
+                Your Results
+            </h2>
+
+            <p
+                id="score-message"
+                class="score-message"
+                aria-live="polite"
+            ></p>
+
+            <div class="score-details">
+
+                <div>
+                    <span
+                        id="correct-count"
+                        class="score-number"
+                    >
+                        0
+                    </span>
+
+                    <span>
+                        Correct
+                    </span>
+                </div>
+
+                <div>
+                    <span
+                        id="incorrect-count"
+                        class="score-number"
+                    >
+                        0
+                    </span>
+
+                    <span>
+                        Incorrect
+                    </span>
+                </div>
+
+                <div>
+                    <span
+                        id="final-total"
+                        class="score-number"
+                    >
+                        10
+                    </span>
+
+                    <span>
+                        Questions
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="results-actions">
+
+                <button
+                    type="button"
+                    id="review-btn"
+                    class="secondary-button"
+                >
+                    Review Answers
+                </button>
+
+                <button
+                    type="button"
+                    id="restart-btn"
+                    class="primary-button"
+                >
+                    Retake Quiz
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Answer Review -->
+        <section
+            id="review-section"
+            class="review-section"
+            aria-labelledby="review-heading"
+            hidden
+        >
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    ANSWER REVIEW
+                </p>
+
+                <h2 id="review-heading">
+                    Learn from every question
+                </h2>
+
+                <p>
+                    Review your selections, the correct answers,
+                    and the explanation for each JavaScript concept.
+                </p>
+
+            </div>
+
+            <div
+                id="review-list"
+                class="review-list"
+            >
+                <!-- JavaScript inserts review cards here -->
+            </div>
+
+            <button
+                type="button"
+                id="review-restart-btn"
+                class="primary-button centered-button"
+            >
+                Retake Quiz
+            </button>
+
+        </section>
+
+
+        <!-- Project Information -->
+        <section
+            class="project-info"
+            aria-labelledby="project-info-heading"
+        >
+
+            <div class="project-info-copy">
+
+                <p class="eyebrow">
+                    BEHIND THE PROJECT
+                </p>
+
+                <h2 id="project-info-heading">
+                    Learning through interaction
+                </h2>
+
+                <p>
+                    This project combines JavaScript application logic
+                    with instructional design principles to create an
+                    interactive learning experience.
+                </p>
+
+                <p>
+                    Each question includes explanatory feedback so the
+                    application functions as both an assessment and a
+                    learning tool.
+                </p>
+
+            </div>
+
+
+            <div class="skills-panel">
+
+                <p class="skills-heading">
+                    Skills Demonstrated
+                </p>
+
+                <ul>
+                    <li>DOM manipulation</li>
+                    <li>Arrays and objects</li>
+                    <li>Event handling</li>
+                    <li>State management</li>
+                    <li>Conditional logic</li>
+                    <li>Dynamic rendering</li>
+                    <li>Responsive design</li>
+                    <li>Accessible interfaces</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div>
+                <p class="footer-name">
+                    Marsharine A. Simpson
+                </p>
+
+                <p>
+                    S.T.E.M. Educator &amp; Technology Professional
+                </p>
+            </div>
+
+            <div class="footer-links">
+
+                <a
+                    href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Quiz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View Source
+                </a>
+
+                <a
+                    href="https://github.com/marsharine-cs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/marsharine-a-simpson"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <noscript>
+        This quiz requires JavaScript to run.
+    </noscript>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
