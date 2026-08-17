@@ -8,27 +8,27 @@ This project combines **JavaScript application development with instructional de
 
 ## 🚀 Live Demo
 
-A public live deployment will be added after final testing.
+**[Launch the JavaScript Knowledge Quiz](https://javascript-knowledge-quiz.vercel.app/)**
 
 ---
 
 ## ✨ Features
 
-- 10 JavaScript fundamentals questions
-- One-question-at-a-time interactive interface
-- Question category labels
-- Quiz progress indicator
-- Immediate correct and incorrect feedback
-- Explanation provided after every response
-- Previous and Next question navigation
-- Final percentage score
-- Correct and incorrect answer totals
-- Performance-based result messages
-- Complete answer review
-- Retake Quiz functionality
-- Responsive desktop, tablet, and mobile layout
-- Keyboard navigation support
-- Accessibility-conscious interface
+* 10 JavaScript fundamentals questions
+* One-question-at-a-time interactive interface
+* Question category labels
+* Quiz progress indicator
+* Immediate correct and incorrect feedback
+* Explanation provided after every response
+* Previous and Next question navigation
+* Final percentage score
+* Correct and incorrect answer totals
+* Performance-based result messages
+* Complete answer review
+* Retake Quiz functionality
+* Responsive desktop, tablet, and mobile layout
+* Keyboard navigation support
+* Accessibility-conscious interface
 
 ---
 
@@ -36,16 +36,16 @@ A public live deployment will be added after final testing.
 
 The quiz currently evaluates knowledge of:
 
-- Variables
-- `let` and `const`
-- Comparison operators
-- Arrays
-- Functions
-- DOM selection
-- Event handling
-- JavaScript data types
-- Template literals
-- Conditional logic
+* Variables
+* `let` and `const`
+* Comparison operators
+* Arrays
+* Functions
+* DOM selection
+* Event handling
+* JavaScript data types
+* Template literals
+* Conditional logic
 
 ---
 
@@ -55,27 +55,27 @@ This project is designed as more than a simple scoring quiz.
 
 Each question provides explanatory feedback immediately after an answer is selected. This allows the application to function as both:
 
-- an assessment tool
-- a learning and reinforcement tool
+* an assessment tool
+* a learning and reinforcement tool
 
 Users can also review every question after completing the quiz, including:
 
-- their selected answer
-- the correct answer
-- an explanation of the JavaScript concept
+* their selected answer
+* the correct answer
+* an explanation of the JavaScript concept
 
 ---
 
 ## 🛠️ Technologies & Development Tools
 
-- **HTML5** — semantic application structure
-- **CSS3** — responsive layout, visual states, and interface design
-- **JavaScript** — quiz logic, dynamic rendering, scoring, state management, and event handling
-- **Visual Studio Code** — code editing and development
-- **Replit** — browser-based development experience
-- **Git** — version control
-- **GitHub** — source-code management and project organization
-- **Vercel** — web application deployment
+* **HTML5** — semantic application structure
+* **CSS3** — responsive layout, visual states, and interface design
+* **JavaScript** — quiz logic, dynamic rendering, scoring, state management, and event handling
+* **Visual Studio Code** — code editing and development
+* **Replit** — browser-based development experience
+* **Git** — version control
+* **GitHub** — source-code management and project organization
+* **Vercel** — web application deployment
 
 ---
 
@@ -83,22 +83,22 @@ Users can also review every question after completing the quiz, including:
 
 This project includes practical examples of:
 
-- Arrays and objects
-- Functions
-- Constants and variables
-- DOM element selection
-- Dynamic DOM creation
-- Event listeners
-- Conditional logic
-- Array iteration
-- Application state
-- Template literals
-- Score calculations
-- Dynamic content rendering
-- CSS class manipulation
-- Accessibility attributes
-- Keyboard events
-- Restart/reset functionality
+* Arrays and objects
+* Functions
+* Constants and variables
+* DOM element selection
+* Dynamic DOM creation
+* Event listeners
+* Conditional logic
+* Array iteration
+* Application state
+* Template literals
+* Score calculations
+* Dynamic content rendering
+* CSS class manipulation
+* Accessibility attributes
+* Keyboard events
+* Restart/reset functionality
 
 ---
 
@@ -128,18 +128,18 @@ The interface updates automatically as the user progresses through the quiz.
 
 After an answer is selected:
 
-- the answer is stored
-- the correct answer is identified
-- visual feedback is displayed
-- an explanation of the concept appears
-- the question becomes locked
+* the answer is stored
+* the correct answer is identified
+* visual feedback is displayed
+* an explanation of the concept appears
+* the question becomes locked
 
 ### 4. Progress Tracking
 
 The application calculates quiz progress based on the current question and updates both:
 
-- the progress percentage
-- the visual progress bar
+* the progress percentage
+* the visual progress bar
 
 ### 5. Scoring
 
@@ -159,16 +159,16 @@ The Retake Quiz feature resets the application state and allows the user to begi
 
 The project includes accessibility-conscious features such as:
 
-- Semantic HTML
-- Keyboard-accessible controls
-- Visible focus states
-- ARIA labels
-- `aria-live` feedback
-- Progress-bar accessibility attributes
-- Responsive button sizing
-- Reduced-motion support
-- Clear correct and incorrect visual states
-- Descriptive instructional feedback
+* Semantic HTML
+* Keyboard-accessible controls
+* Visible focus states
+* ARIA labels
+* `aria-live` feedback
+* Progress-bar accessibility attributes
+* Responsive button sizing
+* Reduced-motion support
+* Clear correct and incorrect visual states
+* Descriptive instructional feedback
 
 ---
 
@@ -176,9 +176,9 @@ The project includes accessibility-conscious features such as:
 
 The interface is designed to adapt across:
 
-- Desktop computers
-- Tablets
-- Mobile phones
+* Desktop computers
+* Tablets
+* Mobile phones
 
 CSS media queries adjust navigation controls, result panels, typography, cards, skills content, and layout behavior for smaller screens.
 
@@ -196,11 +196,11 @@ CSS media queries adjust navigation controls, result panels, typography, cards, 
 
 ### File Overview
 
-- `index.html` — application structure and quiz interface
-- `styles.css` — responsive layout and visual design
-- `script.js` — question data, application logic, scoring, navigation, and answer review
-- `README.md` — project documentation
-- `LICENSE` — MIT License
+* `index.html` — application structure and quiz interface
+* `styles.css` — responsive layout and visual design
+* `script.js` — question data, application logic, scoring, navigation, and answer review
+* `README.md` — project documentation
+* `LICENSE` — MIT License
 
 ---
 
@@ -236,18 +236,19 @@ You can also open the project in Visual Studio Code and use a local development 
 
 This project demonstrates experience with:
 
-- JavaScript programming
-- Front-end web development
-- Educational technology
-- Instructional interface design
-- DOM manipulation
-- Event-driven programming
-- Dynamic rendering
-- Application state management
-- Responsive web design
-- Accessibility-conscious development
-- Git and GitHub workflows
-- Technical documentation
+* JavaScript programming
+* Front-end web development
+* Educational technology
+* Instructional interface design
+* DOM manipulation
+* Event-driven programming
+* Dynamic rendering
+* Application state management
+* Responsive web design
+* Accessibility-conscious development
+* Git and GitHub workflows
+* Technical documentation
+* Web application deployment
 
 ---
 
@@ -279,8 +280,8 @@ See the [LICENSE](LICENSE) file for details.
 
 **Marsharine A. Simpson**
 
-- [GitHub](https://github.com/marsharine-cs)
-- [LinkedIn](https://www.linkedin.com/in/marsharine-a-simpson)
+* [GitHub](https://github.com/marsharine-cs)
+* [LinkedIn](https://www.linkedin.com/in/marsharine-a-simpson)
 
 ---
 
