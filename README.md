@@ -8,6 +8,14 @@ This project demonstrates practical use of **JavaScript string processing, DOM m
 
 ---
 
+## 🌐 Live Demo
+
+Try the completed application here:
+
+**[Launch the Palindrome Checker](https://palindrome-checker-8xvfm2c62-marsharine-simpsons-projects.vercel.app/)**
+
+---
+
 ## ✨ Features
 
 * Check words, phrases, or sentences for palindrome patterns
@@ -85,6 +93,7 @@ If both strings match, the input is identified as a palindrome.
 * **Replit** — browser-based coding and development
 * **Git** — version control
 * **GitHub** — source-code management and project organization
+* **Vercel** — application deployment and hosting
 
 ---
 
@@ -205,6 +214,7 @@ This project demonstrates experience with:
 * Accessibility-conscious development
 * Git and GitHub workflows
 * Technical documentation
+* Web application deployment
 
 ---
 
