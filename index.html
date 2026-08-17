@@ -2,68 +2,735 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="An interactive educational tribute exploring Ada Lovelace, Charles Babbage's Analytical Engine, and the ideas that helped shape the history of computing."
+    >
+
+    <title>Ada Lovelace | The Poetry of Computation</title>
+
     <link rel="stylesheet" href="styles.css">
-    <title>Ada Lovelace Tribute</title>
+
+    <script src="script.js" defer></script>
 </head>
+
 <body>
-    <nav class="navbar">
-        <div id="quote-container">
-            <p id="quote">Loading quotes...</p>
-        </div>
-        <h1>Tribute To Ada Lovelace</h1>
-    </nav>
 
-    <div class="container">
-        <div class="article">
-            <h2>The Legacy of Ada Lovelace: Pioneering the World of Computing</h2>
-            <div class="image-gallery">
-                <img src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/lovelace%20images/Ada_Lovelace2-aaC1SH1me9jAEryhFYvCTzyw8mwRyX.jpg" alt="Portrait of Ada Lovelace" class="gallery-image">
-                <img src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/lovelace%20images/Ada_Lovelace10-uT4dnKIR2kdkMFWfmzBgTxdaG8RKbH.jpg" alt="Ada Lovelace in a formal dress" class="gallery-image">
-                <img src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/lovelace%20images/Ada_Lovelace3-uzyiJwysOUdGz08CLCOb4RamFfVgpL.jpg" alt="Ada Lovelace at work" class="gallery-image">
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+
+    <!-- HEADER -->
+    <header class="site-header">
+
+        <div class="nav-container">
+
+            <a
+                class="brand"
+                href="#top"
+                aria-label="Ada Lovelace tribute home"
+            >
+                ADA<span>/1843</span>
+            </a>
+
+            <button
+                class="menu-button"
+                id="menu-button"
+                type="button"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+                aria-label="Open navigation menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav
+                id="main-navigation"
+                class="main-navigation"
+                aria-label="Primary navigation"
+            >
+                <a href="#story">Story</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#notes">The Notes</a>
+                <a href="#legacy">Legacy</a>
+                <a href="#sources">Sources</a>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main id="main-content">
+
+        <!-- HERO -->
+        <section
+            class="hero"
+            id="top"
+            aria-labelledby="hero-heading"
+        >
+
+            <div class="hero-copy">
+
+                <p class="eyebrow">
+                    MATHEMATICS · IMAGINATION · COMPUTATION
+                </p>
+
+                <h1 id="hero-heading">
+                    Ada Lovelace
+                    <span>The Poetry of Computation</span>
+                </h1>
+
+                <p class="hero-introduction">
+                    In the 1840s, before an electronic computer existed,
+                    Ada Lovelace was thinking about what a programmable
+                    machine might someday be capable of doing.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a
+                        href="#timeline"
+                        class="primary-link"
+                    >
+                        Explore Her Story
+                    </a>
+
+                    <a
+                        href="#notes"
+                        class="secondary-link"
+                    >
+                        Discover the Notes
+                    </a>
+
+                </div>
+
             </div>
-            <p>Ada Lovelace made significant strides in mathematics and computing during a time when such pursuits were largely male-dominated. Born in 1815 to the renowned poet Lord Byron and mathematician Annabella Milbanke, Ada's early exposure to intellectual rigor shaped her exceptional analytical abilities.</p>
-            <p>From a young age, Lovelace demonstrated an aptitude for mathematics and an insatiable curiosity about the emerging technologies of her era. This interest led her to meet Charles Babbage, the inventor of the Analytical Engine. Their collaboration marked a pivotal moment in the history of computing.</p>
-        </div>
 
-        <div class="article">
-            <h2>Ada's Ideas of Future Machines</h2>
-            <div class="image-gallery">
-                <img src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/lovelace%20images/Ada_Lovelace4-z1CiIR3LplfMaNv54liFa2prIiePzs.jpg" alt="Ada Lovelace's contributions" class="gallery-image">
-                <img src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/lovelace%20images/Ada_Lovelace1-mKnDbkmpwmrdfoDvP5WDrPiVwwFCY2.jpg" alt="Another representation of Ada Lovelace" class="gallery-image">
+
+            <div class="hero-visual">
+
+                <div class="portrait-frame">
+
+                    <img
+                        src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/lovelace%20images/Ada_Lovelace2-aaC1SH1me9jAEryhFYvCTzyw8mwRyX.jpg"
+                        alt="Historical portrait representing Ada Lovelace"
+                    >
+
+                    <div class="portrait-label">
+                        <span>1815 — 1852</span>
+                        <strong>Augusta Ada King, Countess of Lovelace</strong>
+                    </div>
+
+                </div>
+
             </div>
-            <p>Ada Lovelace envisioned a future where machines could do far more than just calculations—machines that could create music, art, and more. Her ideas laid the groundwork for what we now call artificial intelligence.</p>
-            <p>In her notes on the Analytical Engine, Ada wrote about how machines could go beyond math, helping humans think more creatively and perform tasks once thought to be impossible.</p>
-        </div>
 
-        <div class="article">
-            <h2>The Impact of Ada Lovelace on the Modern Tech Industry</h2>
-            <div class="image-gallery">
-                <img src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/lovelace%20images/Ada_Lovelace8-2x4IOydQpib55pKcTVY1iGASo2Ikyf.jpg" alt="Ada Lovelace illustration" class="gallery-image">
-                <img src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/lovelace%20images/Ada_Lovelace7-GHUi7BNkrqc16odGHCfoUhXLNrUZ9G.jpg" alt="Artwork inspired by Ada Lovelace" class="gallery-image">
+        </section>
+
+
+        <!-- INTRODUCTION -->
+        <section
+            class="story-section"
+            id="story"
+            aria-labelledby="story-heading"
+        >
+
+            <div class="section-number" aria-hidden="true">
+                01
             </div>
-            <p>Ada Lovelace's contributions have shaped the modern tech landscape. Her foresight into the potential of computers extends to today's discussions about the integration of technology in various fields, including art and science.</p>
-            <p>Her belief in the importance of creativity in computing encourages current and future generations to push the boundaries of technology.</p>
-        </div>
 
-        <div class="article">
-            <h2>Futuristic Ideas of Ada Lovelace</h2>
-            <div class="image-gallery">
-                <img src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/lovelace%20images/Ada_Lovelace5-4AiaqQFU3A7NhlkfqOWAEjrOVOUxQ0.jpg" alt="Historic representation of Ada Lovelace" class="gallery-image" />
-                <img src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/lovelace%20images/Ada_Lovelace9-zHVaHWs3Cw1TNt0v7aVgjuqZFqMDxL.jpg" alt="Another artwork inspired by Ada Lovelace" class="gallery-image" />
+            <div class="story-heading">
+
+                <p class="eyebrow">
+                    THE STORY
+                </p>
+
+                <h2 id="story-heading">
+                    She saw more than
+                    <span>a calculating machine.</span>
+                </h2>
+
             </div>
-            <p>Ada's insights into computing continue to inspire innovation today. She recognized that technology could enhance human creativity, an idea that resonates with today's advances in artificial intelligence and machine learning.</p>
-            <p>Her legacy is a testament to the power of imagination and its role in shaping the future of technology.</p>
-        </div>
-    </div>
 
-    <footer class="footer">
-        <h2>© 2024, Marsharine Simpson</h2>
-        <p>Contact: <a href="mailto:marsharineasimpson@gmail.com">marsharineasimpson@gmail.com</a></p>
-        <p>Social Media: <a href="https://www.linkedin.com/in/marsharine-a-simpson" target="_blank">LinkedIn</a></p>
-        <p>Portfolio: <a href="https://github.com/marsharine" target="_blank">GitHub</a></p>
-        <p>Acknowledgment: <a href="https://www.youtube.com/watch?v=I8anbtav59s" target="_blank">Video Resource</a></p>
+
+            <div class="story-copy">
+
+                <p class="lead">
+                    Ada Lovelace was an English mathematician and writer
+                    whose collaboration with Charles Babbage placed her
+                    at one of the earliest intersections of mathematics,
+                    machines, and programmable thought.
+                </p>
+
+                <p>
+                    Babbage designed the Analytical Engine as a mechanical
+                    general-purpose calculating machine. Lovelace studied
+                    the design closely and recognized that its possibilities
+                    could extend beyond ordinary numerical calculation.
+                </p>
+
+                <p>
+                    Her published notes explored how a machine following
+                    symbolic instructions could potentially manipulate
+                    information in broader ways—an idea that feels remarkably
+                    familiar in the age of modern computing.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- KEY IDEAS -->
+        <section
+            class="ideas-section"
+            aria-label="Key Ada Lovelace concepts"
+        >
+
+            <article class="idea-card">
+                <span>01</span>
+
+                <h3>Mathematics</h3>
+
+                <p>
+                    Lovelace developed the mathematical knowledge needed
+                    to engage deeply with Babbage's ambitious machine.
+                </p>
+            </article>
+
+
+            <article class="idea-card featured">
+                <span>02</span>
+
+                <h3>Algorithms</h3>
+
+                <p>
+                    Her notes described a detailed sequence of operations
+                    for calculating Bernoulli numbers with the Analytical
+                    Engine.
+                </p>
+            </article>
+
+
+            <article class="idea-card">
+                <span>03</span>
+
+                <h3>Imagination</h3>
+
+                <p>
+                    She considered how machines might work with symbols
+                    and structures beyond numbers used only as quantities.
+                </p>
+            </article>
+
+        </section>
+
+
+        <!-- TIMELINE -->
+        <section
+            class="timeline-section"
+            id="timeline"
+            aria-labelledby="timeline-heading"
+        >
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    INTERACTIVE TIMELINE
+                </p>
+
+                <h2 id="timeline-heading">
+                    Four moments.
+                    <span>One remarkable trajectory.</span>
+                </h2>
+
+                <p>
+                    Select a year to explore a milestone in Lovelace's
+                    life and work.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-interface">
+
+                <div
+                    class="timeline-buttons"
+                    role="tablist"
+                    aria-label="Ada Lovelace timeline"
+                >
+
+                    <button
+                        class="timeline-button active"
+                        type="button"
+                        role="tab"
+                        aria-selected="true"
+                        data-year="1815"
+                    >
+                        <span>1815</span>
+                        Born
+                    </button>
+
+                    <button
+                        class="timeline-button"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        data-year="1833"
+                    >
+                        <span>1833</span>
+                        Babbage
+                    </button>
+
+                    <button
+                        class="timeline-button"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        data-year="1843"
+                    >
+                        <span>1843</span>
+                        The Notes
+                    </button>
+
+                    <button
+                        class="timeline-button"
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        data-year="1852"
+                    >
+                        <span>1852</span>
+                        Legacy
+                    </button>
+
+                </div>
+
+
+                <article
+                    class="timeline-display"
+                    id="timeline-display"
+                    aria-live="polite"
+                >
+
+                    <p
+                        class="timeline-year"
+                        id="timeline-year"
+                    >
+                        1815
+                    </p>
+
+                    <h3 id="timeline-title">
+                        Augusta Ada Byron is born
+                    </h3>
+
+                    <p id="timeline-description">
+                        Ada was born in London in 1815. Her education
+                        would later include mathematics, science, and
+                        logic—subjects that helped prepare her for her
+                        work with Charles Babbage.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- NOTES EXPLORER -->
+        <section
+            class="notes-section"
+            id="notes"
+            aria-labelledby="notes-heading"
+        >
+
+            <div class="notes-introduction">
+
+                <p class="eyebrow">
+                    THE ANALYTICAL ENGINE NOTES
+                </p>
+
+                <h2 id="notes-heading">
+                    Translation became
+                    <span>something much larger.</span>
+                </h2>
+
+                <p>
+                    In 1843, Lovelace published her English translation
+                    of Luigi Menabrea's description of Babbage's
+                    Analytical Engine and added extensive notes of her own.
+                </p>
+
+            </div>
+
+
+            <div class="notes-interface">
+
+                <div
+                    class="note-selector"
+                    role="tablist"
+                    aria-label="Explore concepts from Lovelace's notes"
+                >
+
+                    <button
+                        type="button"
+                        class="note-button active"
+                        data-note="engine"
+                        aria-selected="true"
+                        role="tab"
+                    >
+                        The Engine
+                    </button>
+
+                    <button
+                        type="button"
+                        class="note-button"
+                        data-note="symbols"
+                        aria-selected="false"
+                        role="tab"
+                    >
+                        Beyond Numbers
+                    </button>
+
+                    <button
+                        type="button"
+                        class="note-button"
+                        data-note="algorithm"
+                        aria-selected="false"
+                        role="tab"
+                    >
+                        Note G
+                    </button>
+
+                </div>
+
+
+                <article
+                    class="note-display"
+                    id="note-display"
+                    aria-live="polite"
+                >
+
+                    <p class="note-label" id="note-label">
+                        CONCEPT 01
+                    </p>
+
+                    <h3 id="note-title">
+                        A programmable mechanical engine
+                    </h3>
+
+                    <p id="note-description">
+                        Lovelace examined how the Analytical Engine could
+                        follow sequences of operations encoded through
+                        mechanical instructions, helping explain the
+                        machine as more than a conventional calculator.
+                    </p>
+
+                    <div class="note-keyword">
+                        <span>KEY IDEA</span>
+                        <strong id="note-keyword">
+                            Programmability
+                        </strong>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- VISUAL BREAK -->
+        <section
+            class="visual-break"
+            aria-label="Ada Lovelace image gallery"
+        >
+
+            <figure>
+                <img
+                    src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/lovelace%20images/Ada_Lovelace4-z1CiIR3LplfMaNv54liFa2prIiePzs.jpg"
+                    alt="Historical artistic representation associated with Ada Lovelace"
+                    loading="lazy"
+                >
+            </figure>
+
+            <div class="visual-break-copy">
+
+                <p class="eyebrow">
+                    A NEW WAY OF THINKING
+                </p>
+
+                <blockquote>
+                    “The Analytical Engine weaves algebraical patterns
+                    just as the Jacquard-loom weaves flowers and leaves.”
+                </blockquote>
+
+                <p>
+                    — Ada Lovelace, 1843
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- LEGACY -->
+        <section
+            class="legacy-section"
+            id="legacy"
+            aria-labelledby="legacy-heading"
+        >
+
+            <div class="section-number" aria-hidden="true">
+                04
+            </div>
+
+
+            <div>
+
+                <p class="eyebrow">
+                    LEGACY
+                </p>
+
+                <h2 id="legacy-heading">
+                    A bridge between
+                    <span>logic and imagination.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="legacy-grid">
+
+                <article>
+                    <strong>1843</strong>
+
+                    <h3>Published Notes</h3>
+
+                    <p>
+                        Lovelace's extensive notes helped explain both
+                        the operation and broader possibilities of the
+                        Analytical Engine.
+                    </p>
+                </article>
+
+
+                <article>
+                    <strong>Note G</strong>
+
+                    <h3>Algorithmic Thinking</h3>
+
+                    <p>
+                        Her Bernoulli-number procedure became one of the
+                        most discussed early examples of an algorithm
+                        intended for execution by a machine.
+                    </p>
+                </article>
+
+
+                <article>
+                    <strong>Today</strong>
+
+                    <h3>Computing Legacy</h3>
+
+                    <p>
+                        Her work remains part of the history of computing,
+                        programming, mathematics, and the relationship
+                        between human creativity and machines.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- DEVELOPMENT -->
+        <section
+            class="development-section"
+            aria-labelledby="development-heading"
+        >
+
+            <div>
+
+                <p class="eyebrow">
+                    BEHIND THE PROJECT
+                </p>
+
+                <h2 id="development-heading">
+                    Digital history,
+                    <span>built interactively.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="technology-list">
+
+                <article>
+                    <strong>HTML5</strong>
+
+                    <p>
+                        Semantic storytelling structure, accessible
+                        navigation, and interactive content regions.
+                    </p>
+                </article>
+
+                <article>
+                    <strong>CSS3</strong>
+
+                    <p>
+                        Editorial layouts, responsive grids, typography,
+                        visual hierarchy, and mobile design.
+                    </p>
+                </article>
+
+                <article>
+                    <strong>JavaScript</strong>
+
+                    <p>
+                        Interactive timeline data, note exploration,
+                        mobile navigation, and dynamic content updates.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOURCES -->
+        <section
+            class="sources-section"
+            id="sources"
+            aria-labelledby="sources-heading"
+        >
+
+            <div>
+
+                <p class="eyebrow">
+                    LEARN MORE
+                </p>
+
+                <h2 id="sources-heading">
+                    Historical resources
+                </h2>
+
+                <p>
+                    This educational portfolio project draws on
+                    established computing-history resources.
+                </p>
+
+            </div>
+
+
+            <div class="source-links">
+
+                <a
+                    href="https://www.sciencemuseum.org.uk/objects-and-stories/women-computing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>Science Museum</span>
+                    Women in Computing
+                    <strong aria-hidden="true">↗</strong>
+                </a>
+
+                <a
+                    href="https://www.computerhistory.org/babbage/adalovelace/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>Computer History Museum</span>
+                    Ada Lovelace &amp; the Babbage Engine
+                    <strong aria-hidden="true">↗</strong>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CLOSING -->
+        <section class="closing-section">
+
+            <p class="eyebrow">
+                EDUCATIONAL TECHNOLOGY PROJECT
+            </p>
+
+            <h2>
+                Understanding the past
+                <span>through interactive design.</span>
+            </h2>
+
+            <a
+                class="primary-link"
+                href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Lovelace_Tribute_Web_Project"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                View Source on GitHub
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div>
+                <p class="footer-name">
+                    Marsharine A. Simpson
+                </p>
+
+                <p>
+                    S.T.E.M. Educator &amp; Technology Professional
+                </p>
+            </div>
+
+
+            <div class="footer-links">
+
+                <a
+                    href="https://github.com/marsharine-cs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/marsharine-a-simpson"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+
+                <a href="#top">
+                    Back to Top
+                </a>
+
+            </div>
+
+        </div>
+
     </footer>
-    <script src="script.js"></script>
+
 </body>
 </html>
