@@ -2,123 +2,504 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Balance Sheet</title>
+
+    <meta
+        name="description"
+        content="An interactive balance sheet and financial position dashboard by Marsharine A. Simpson featuring editable financial data, automatic calculations, year comparisons, and responsive design."
+    >
+
+    <title>Interactive Balance Sheet | Marsharine A. Simpson</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <main>
-        <section>
-            <h1>
-                <span class="flex">
-                    <span>ABC Company</span>
-                    <span>Balance Sheet</span>
-                </span>
+
+    <main class="page-shell">
+
+        <!-- Hero -->
+        <section class="hero" aria-labelledby="page-title">
+
+            <p class="eyebrow">JAVASCRIPT FINANCIAL DASHBOARD</p>
+
+            <h1 id="page-title">
+                Interactive
+                <span>Balance Sheet</span>
             </h1>
-            <div id="years" aria-hidden="true">
-                <span class="year">2019</span>
-                <span class="year">2020</span>
-                <span class="year">2021</span>
-            </div>
-            <div class="table-wrap">
-                <table>
-                    <caption>Assets</caption>
-                    <thead>
-                        <tr>
-                            <td></td>
-                            <th>2019</th>
-                            <th>2020</th>
-                            <th>2021</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="data">
-                            <th>Cash <span class="description">Cash on hand.</span></th>
-                            <td><input type="number" id="cash2019" value="25" placeholder="0" onchange="updateTotals()"></td>
-                            <td><input type="number" id="cash2020" value="30" placeholder="0" onchange="updateTotals()"></td>
-                            <td><input type="number" id="cash2021" value="28" placeholder="0" onchange="updateTotals()"></td>
-                        </tr>
-                        <tr class="data">
-                            <th>Checking <span class="description">Primary account.</span></th>
-                            <td><input type="number" id="checking2019" value="54" placeholder="0" onchange="updateTotals()"></td>
-                            <td><input type="number" id="checking2020" value="56" placeholder="0" onchange="updateTotals()"></td>
-                            <td><input type="number" id="checking2021" value="53" placeholder="0" onchange="updateTotals()"></td>
-                        </tr>
-                        <tr class="data">
-                            <th>Savings <span class="description">Emergency funds.</span></th>
-                            <td><input type="number" id="savings2019" value="500" placeholder="0" onchange="updateTotals()"></td>
-                            <td><input type="number" id="savings2020" value="650" placeholder="0" onchange="updateTotals()"></td>
-                            <td><input type="number" id="savings2021" value="728" placeholder="0" onchange="updateTotals()"></td>
-                        </tr>
-                        <tr class="total">
-                            <th>Total Assets</th>
-                            <td id="totalAssets2019">$0</td>
-                            <td id="totalAssets2020">$0</td>
-                            <td id="totalAssets2021">$0</td>
-                        </tr>
-                    </tbody>
-                </table>
 
-                <table>
-                    <caption>Liabilities</caption>
-                    <thead>
-                        <tr>
-                            <td></td>
-                            <th>2019</th>
-                            <th>2020</th>
-                            <th>2021</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="data">
-                            <th>Loans <span class="description">Outstanding loan balance.</span></th>
-                            <td><input type="number" id="loans2019" value="500" placeholder="0" onchange="updateTotals()"></td>
-                            <td><input type="number" id="loans2020" value="250" placeholder="0" onchange="updateTotals()"></td>
-                            <td><input type="number" id="loans2021" value="0" placeholder="0" onchange="updateTotals()"></td>
-                        </tr>
-                        <tr class="data">
-                            <th>Expenses <span class="description">Anticipated expenses.</span></th>
-                            <td><input type="number" id="expenses2019" value="200" placeholder="0" onchange="updateTotals()"></td>
-                            <td><input type="number" id="expenses2020" value="300" placeholder="0" onchange="updateTotals()"></td>
-                            <td><input type="number" id="expenses2021" value="400" placeholder="0" onchange="updateTotals()"></td>
-                        </tr>
-                        <tr class="data">
-                            <th>Credit <span class="description">Credit card balance.</span></th>
-                            <td><input type="number" id="credit2019" value="50" placeholder="0" onchange="updateTotals()"></td>
-                            <td><input type="number" id="credit2020" value="50" placeholder="0" onchange="updateTotals()"></td>
-                            <td><input type="number" id="credit2021" value="75" placeholder="0" onchange="updateTotals()"></td>
-                        </tr>
-                        <tr class="total">
-                            <th>Total Liabilities</th>
-                            <td id="totalLiabilities2019">$0</td>
-                            <td id="totalLiabilities2020">$0</td>
-                            <td id="totalLiabilities2021">$0</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <p class="hero-description">
+                Explore how assets, liabilities, and net worth change across
+                multiple reporting periods. Edit the sample values and watch
+                the financial position update instantly.
+            </p>
 
-                <table>
-                    <caption>Net Worth</caption>
-                    <thead>
-                        <tr>
-                            <td></td>
-                            <th>2019</th>
-                            <th>2020</th>
-                            <th>2021</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="total">
-                            <th>Net Worth</th>
-                            <td id="netWorth2019">$0</td>
-                            <td id="netWorth2020">$0</td>
-                            <td id="netWorth2021">$0</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="hero-tags" aria-label="Project technologies">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
             </div>
+
         </section>
+
+
+        <!-- Dashboard -->
+        <section
+            class="dashboard-card"
+            aria-labelledby="dashboard-heading"
+        >
+
+            <div class="dashboard-header">
+
+                <div>
+                    <p class="section-label">FINANCIAL POSITION</p>
+                    <h2 id="dashboard-heading">ABC Company</h2>
+                    <p class="dashboard-note">
+                        Sample financial data for demonstration purposes.
+                    </p>
+                </div>
+
+                <div class="dashboard-actions">
+                    <button
+                        type="button"
+                        id="reset-btn"
+                        class="secondary-button"
+                    >
+                        Reset Sample Data
+                    </button>
+
+                    <button
+                        type="button"
+                        id="print-btn"
+                        class="primary-button"
+                    >
+                        Print Report
+                    </button>
+                </div>
+
+            </div>
+
+
+            <!-- Year Selector -->
+            <div class="year-selector">
+
+                <p class="selector-label">Reporting Year</p>
+
+                <div
+                    class="year-buttons"
+                    role="group"
+                    aria-label="Select reporting year"
+                >
+
+                    <button
+                        type="button"
+                        class="year-button"
+                        data-year="2024"
+                    >
+                        2024
+                    </button>
+
+                    <button
+                        type="button"
+                        class="year-button"
+                        data-year="2025"
+                    >
+                        2025
+                    </button>
+
+                    <button
+                        type="button"
+                        class="year-button active"
+                        data-year="2026"
+                        aria-pressed="true"
+                    >
+                        2026
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Summary -->
+            <section
+                class="summary-grid"
+                aria-label="Financial summary"
+            >
+
+                <article class="summary-card">
+                    <p>Total Assets</p>
+                    <strong id="summary-assets">$0.00</strong>
+                    <span>Resources owned</span>
+                </article>
+
+                <article class="summary-card">
+                    <p>Total Liabilities</p>
+                    <strong id="summary-liabilities">$0.00</strong>
+                    <span>Amounts owed</span>
+                </article>
+
+                <article class="summary-card highlight-card">
+                    <p>Net Worth</p>
+                    <strong id="summary-net-worth">$0.00</strong>
+                    <span id="net-worth-status">Financial position</span>
+                </article>
+
+                <article class="summary-card">
+                    <p>Debt-to-Assets</p>
+                    <strong id="summary-ratio">0%</strong>
+                    <span>Liabilities ÷ assets</span>
+                </article>
+
+            </section>
+
+
+            <!-- Editable Balance Sheet -->
+            <div class="financial-grid">
+
+                <!-- Assets -->
+                <section
+                    class="financial-panel"
+                    aria-labelledby="assets-heading"
+                >
+
+                    <div class="panel-heading">
+                        <div>
+                            <p class="panel-label">RESOURCES</p>
+                            <h3 id="assets-heading">Assets</h3>
+                        </div>
+
+                        <span
+                            class="panel-total"
+                            id="assets-total"
+                        >
+                            $0.00
+                        </span>
+                    </div>
+
+
+                    <div class="field-list">
+
+                        <label class="financial-field">
+                            <span>
+                                <strong>Cash &amp; Cash Equivalents</strong>
+                                <small>Available cash on hand</small>
+                            </span>
+
+                            <span class="currency-input">
+                                <span>$</span>
+                                <input
+                                    type="number"
+                                    id="cash"
+                                    min="0"
+                                    step="0.01"
+                                    inputmode="decimal"
+                                >
+                            </span>
+                        </label>
+
+
+                        <label class="financial-field">
+                            <span>
+                                <strong>Accounts Receivable</strong>
+                                <small>Amounts owed to the company</small>
+                            </span>
+
+                            <span class="currency-input">
+                                <span>$</span>
+                                <input
+                                    type="number"
+                                    id="receivables"
+                                    min="0"
+                                    step="0.01"
+                                    inputmode="decimal"
+                                >
+                            </span>
+                        </label>
+
+
+                        <label class="financial-field">
+                            <span>
+                                <strong>Savings &amp; Investments</strong>
+                                <small>Longer-term financial assets</small>
+                            </span>
+
+                            <span class="currency-input">
+                                <span>$</span>
+                                <input
+                                    type="number"
+                                    id="investments"
+                                    min="0"
+                                    step="0.01"
+                                    inputmode="decimal"
+                                >
+                            </span>
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Liabilities -->
+                <section
+                    class="financial-panel"
+                    aria-labelledby="liabilities-heading"
+                >
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <p class="panel-label">OBLIGATIONS</p>
+                            <h3 id="liabilities-heading">Liabilities</h3>
+                        </div>
+
+                        <span
+                            class="panel-total"
+                            id="liabilities-total"
+                        >
+                            $0.00
+                        </span>
+
+                    </div>
+
+
+                    <div class="field-list">
+
+                        <label class="financial-field">
+                            <span>
+                                <strong>Loans Payable</strong>
+                                <small>Outstanding loan balances</small>
+                            </span>
+
+                            <span class="currency-input">
+                                <span>$</span>
+                                <input
+                                    type="number"
+                                    id="loans"
+                                    min="0"
+                                    step="0.01"
+                                    inputmode="decimal"
+                                >
+                            </span>
+                        </label>
+
+
+                        <label class="financial-field">
+                            <span>
+                                <strong>Credit Card Balance</strong>
+                                <small>Outstanding revolving debt</small>
+                            </span>
+
+                            <span class="currency-input">
+                                <span>$</span>
+                                <input
+                                    type="number"
+                                    id="credit"
+                                    min="0"
+                                    step="0.01"
+                                    inputmode="decimal"
+                                >
+                            </span>
+                        </label>
+
+
+                        <label class="financial-field">
+                            <span>
+                                <strong>Other Liabilities</strong>
+                                <small>Additional amounts owed</small>
+                            </span>
+
+                            <span class="currency-input">
+                                <span>$</span>
+                                <input
+                                    type="number"
+                                    id="other-liabilities"
+                                    min="0"
+                                    step="0.01"
+                                    inputmode="decimal"
+                                >
+                            </span>
+                        </label>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- Equation -->
+            <section
+                class="equation-panel"
+                aria-labelledby="equation-heading"
+            >
+
+                <div>
+                    <p class="section-label">BALANCE SHEET EQUATION</p>
+                    <h3 id="equation-heading">
+                        Assets − Liabilities = Net Worth
+                    </h3>
+                </div>
+
+                <div
+                    class="equation-values"
+                    aria-live="polite"
+                >
+                    <span id="equation-assets">$0.00</span>
+                    <span aria-hidden="true">−</span>
+                    <span id="equation-liabilities">$0.00</span>
+                    <span aria-hidden="true">=</span>
+                    <strong id="equation-net-worth">$0.00</strong>
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- How It Works -->
+        <section
+            class="how-it-works"
+            aria-labelledby="how-heading"
+        >
+
+            <div class="section-heading">
+                <p class="eyebrow">BEHIND THE CODE</p>
+
+                <h2 id="how-heading">
+                    Calculations that update in real time
+                </h2>
+
+                <p>
+                    JavaScript stores sample data for each year, responds to
+                    user input, and recalculates the financial summary whenever
+                    a value changes.
+                </p>
+            </div>
+
+
+            <div class="steps-grid">
+
+                <article class="step-card">
+                    <span>01</span>
+                    <h3>Select a year</h3>
+                    <p>
+                        Choose a reporting period to load its financial data
+                        into the editable dashboard.
+                    </p>
+                </article>
+
+                <article class="step-card">
+                    <span>02</span>
+                    <h3>Edit the values</h3>
+                    <p>
+                        Change any asset or liability amount and JavaScript
+                        stores the updated value for that year.
+                    </p>
+                </article>
+
+                <article class="step-card">
+                    <span>03</span>
+                    <h3>Calculate instantly</h3>
+                    <p>
+                        Totals, net worth, and the debt-to-assets ratio update
+                        automatically without reloading the page.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Project Highlights -->
+        <section
+            class="project-info"
+            aria-labelledby="project-heading"
+        >
+
+            <div>
+                <p class="eyebrow">PROJECT HIGHLIGHTS</p>
+
+                <h2 id="project-heading">
+                    Financial data meets interactive UI
+                </h2>
+
+                <p>
+                    This project demonstrates JavaScript calculations,
+                    application state, dynamic interface updates, data
+                    formatting, responsive design, and accessible form controls.
+                </p>
+            </div>
+
+
+            <ul class="skills-list">
+                <li>DOM manipulation</li>
+                <li>Financial calculations</li>
+                <li>Application state</li>
+                <li>Event handling</li>
+                <li>Number formatting</li>
+                <li>Responsive design</li>
+                <li>Form controls</li>
+                <li>Print-friendly layout</li>
+            </ul>
+
+        </section>
+
     </main>
-    <script src="scripts.js"></script>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div>
+                <p class="footer-name">Marsharine A. Simpson</p>
+                <p>S.T.E.M. Educator &amp; Technology Professional</p>
+            </div>
+
+            <div class="footer-links">
+
+                <a
+                    href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Balance_Sheet_Project"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View Source
+                </a>
+
+                <a
+                    href="https://github.com/marsharine-cs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/marsharine-a-simpson"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <noscript>
+        This interactive balance sheet requires JavaScript to calculate and
+        update financial values.
+    </noscript>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
