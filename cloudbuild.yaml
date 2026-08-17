@@ -1,5 +1,0 @@
-steps:
-- name: 'gcr.io/cloudbuild/docker'
-  args: ['build', '-t', 'Tribute_Page.pkg.dev/your-project-id/your-image-name:latest', '.']
-- name: 'gcr.io/cloudbuild/docker'
-  args: ['push', 'Tribute_Page.pkg.dev/your-project-id/Ada_Lovelace.jpg:latest']
