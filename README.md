@@ -10,7 +10,7 @@ This project demonstrates **JavaScript calculations, application state managemen
 
 ## 🚀 Live Demo
 
-A public live deployment will be added after final testing.
+**[Launch the Interactive Balance Sheet](https://interactive-balance-sheet.vercel.app/)**
 
 ---
 
