@@ -30,7 +30,6 @@
     --max-width: 1220px;
 }
 
-
 /* RESET */
 
 *,
@@ -81,7 +80,6 @@ svg {
     max-width: 100%;
 }
 
-
 /* ANNOUNCEMENT */
 
 .announcement {
@@ -109,7 +107,6 @@ svg {
 
     color: var(--accent);
 }
-
 
 /* HEADER */
 
@@ -232,7 +229,6 @@ svg {
         opacity 0.2s ease;
 }
 
-
 /* TYPOGRAPHY */
 
 .eyebrow {
@@ -277,7 +273,6 @@ svg {
 .closing-section h2 span {
     color: var(--accent-dark);
 }
-
 
 /* PRODUCT HERO */
 
@@ -373,7 +368,6 @@ svg {
     font-size: 2rem;
 }
 
-
 /* FINISH SELECTOR */
 
 .finish-selector {
@@ -437,7 +431,6 @@ svg {
 .finish-button.active {
     border-color: var(--ink);
 }
-
 
 /* PURCHASE */
 
@@ -524,7 +517,6 @@ svg {
     font-size: 0.83rem;
     font-weight: 800;
 }
-
 
 /* PRODUCT VISUAL */
 
@@ -790,7 +782,6 @@ svg {
     color: var(--white);
 }
 
-
 /* FEATURES */
 
 .features-section,
@@ -854,7 +845,6 @@ svg {
 
     font-size: 0.9rem;
 }
-
 
 /* DESIGN STORY */
 
@@ -950,7 +940,6 @@ svg {
     font-size: 0.86rem;
 }
 
-
 /* SPECIFICATIONS */
 
 .specification-list {
@@ -981,7 +970,6 @@ svg {
 
     font-size: 0.94rem;
 }
-
 
 /* DEVELOPMENT */
 
@@ -1027,7 +1015,6 @@ svg {
 
     font-size: 0.9rem;
 }
-
 
 /* FAQ */
 
@@ -1097,7 +1084,6 @@ svg {
     display: block;
 }
 
-
 /* CLOSING CTA */
 
 .closing-section {
@@ -1120,7 +1106,6 @@ svg {
 
     color: var(--muted);
 }
-
 
 /* FOOTER */
 
@@ -1163,7 +1148,6 @@ svg {
     color: #d3d0ca;
 }
 
-
 /* ACCESSIBILITY */
 
 button:focus-visible,
@@ -1171,7 +1155,6 @@ a:focus-visible {
     outline: 3px solid rgba(201, 139, 82, 0.5);
     outline-offset: 4px;
 }
-
 
 /* TABLET */
 
@@ -1199,7 +1182,6 @@ a:focus-visible {
     }
 
 }
-
 
 /* MOBILE NAV */
 
@@ -1244,7 +1226,6 @@ a:focus-visible {
     }
 
 }
-
 
 /* SMALL MOBILE */
 
@@ -1355,7 +1336,6 @@ a:focus-visible {
     }
 
 }
-
 
 /* REDUCED MOTION */
 
