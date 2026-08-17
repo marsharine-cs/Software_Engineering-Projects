@@ -1,396 +1,368 @@
-"use strict";
+# Luma One — Interactive Product Landing Page
 
-/* =========================================================
-   LUMA ONE — INTERACTIVE PRODUCT LANDING PAGE
-   Marsharine A. Simpson
-   ========================================================= */
+A responsive fictional e-commerce product experience built with HTML, CSS, and vanilla JavaScript.
 
+Luma One presents a fictional smart task light through an interactive storefront interface featuring product customization, quantity controls, demo cart behavior, responsive navigation, product specifications, and expandable FAQ content.
 
-/* -------------------------
-   APPLICATION STATE
-------------------------- */
+This project demonstrates how a traditional static product landing page can be developed into a more complete **interactive front-end shopping experience without using a JavaScript framework**.
 
-const state = {
-    finish: "Sand",
-    theme: "sand",
-    quantity: 1,
-    cartCount: 0
-};
+---
 
+## 🚀 Live Demo
 
-/* -------------------------
-   DOM ELEMENTS
-------------------------- */
+**[Launch Luma One](https://luma-one-product-landing.vercel.app/)**
 
-const menuButton =
-    document.getElementById("menu-button");
+---
 
-const navigation =
-    document.getElementById("main-navigation");
+## ✨ Features
 
-const navigationLinks =
-    document.querySelectorAll("#main-navigation a");
+* Responsive product landing page
+* Fictional e-commerce product concept
+* Interactive Sand, Graphite, and Sage finishes
+* Dynamic product visual updates
+* Quantity increase and decrease controls
+* Quantity limit handling
+* JavaScript-powered demo cart
+* Dynamic cart item counter
+* Product-selection feedback
+* Responsive mobile navigation
+* Escape-key navigation support
+* Expandable FAQ accordion
+* Automatic closing of other FAQ items
+* Product feature section
+* Concept specifications
+* Technology and development section
+* Fully CSS-created product illustration
+* No external product-image dependency
+* Accessible interactive controls
+* Reduced-motion support
+* Desktop, tablet, and mobile layouts
 
-const finishButtons =
-    document.querySelectorAll(".finish-button");
+---
 
-const selectedFinish =
-    document.getElementById("selected-finish");
+## 💡 Project Concept
 
-const productVisual =
-    document.getElementById("product-visual");
+**Luma One** is a fictional adaptive task light created specifically for this portfolio project.
 
-const decreaseQuantityButton =
-    document.getElementById("decrease-quantity");
+The project does not represent or sell a real product.
 
-const increaseQuantityButton =
-    document.getElementById("increase-quantity");
+Instead, the fictional product allows the interface to demonstrate an e-commerce experience without relying on third-party brands, copyrighted merchandise, external product APIs, or real payment processing.
 
-const quantityDisplay =
-    document.getElementById("quantity");
+No financial or personal information is collected.
 
-const addToCartButton =
-    document.getElementById("add-to-cart");
+---
 
-const cartButton =
-    document.getElementById("cart-button");
+## 🛍️ Product Interaction
 
-const cartCountDisplay =
-    document.getElementById("cart-count");
+### Finish Selection
 
-const cartMessage =
-    document.getElementById("cart-message");
+Users can choose between three product finishes:
 
-const faqQuestions =
-    document.querySelectorAll(".faq-question");
+* Sand
+* Graphite
+* Sage
 
+Selecting a finish updates:
 
-/* -------------------------
-   MOBILE NAVIGATION
-------------------------- */
+* the selected-finish label
+* the active selector state
+* accessibility attributes
+* the product visualization
+* user feedback
 
-function openNavigation() {
-    navigation.classList.add("open");
+The product variation occurs without reloading the page.
 
-    menuButton.setAttribute(
-        "aria-expanded",
-        "true"
-    );
+---
 
-    menuButton.setAttribute(
-        "aria-label",
-        "Close navigation menu"
-    );
-}
+### Quantity Controls
 
+Users can increase or decrease the desired quantity before adding the product to the demo cart.
 
-function closeNavigation() {
-    navigation.classList.remove("open");
+The interface:
 
-    menuButton.setAttribute(
-        "aria-expanded",
-        "false"
-    );
+* prevents quantities below 1
+* limits the demonstration quantity to 10
+* disables the decrease button when appropriate
+* provides user feedback when the maximum is reached
 
-    menuButton.setAttribute(
-        "aria-label",
-        "Open navigation menu"
-    );
-}
+---
 
+### Demo Cart
 
-function toggleNavigation() {
-    const isOpen =
-        navigation.classList.contains("open");
+The **Add to Demo Cart** button demonstrates client-side shopping-cart state.
 
-    if (isOpen) {
-        closeNavigation();
-    } else {
-        openNavigation();
-    }
-}
+When activated, JavaScript:
 
+1. reads the selected quantity
+2. reads the selected finish
+3. adds the quantity to the cart state
+4. updates the cart counter
+5. displays confirmation feedback
+6. resets the product quantity to 1
 
-menuButton.addEventListener(
-    "click",
-    toggleNavigation
-);
+The cart is for demonstration purposes only.
 
+No checkout, payment processing, account creation, or order submission occurs.
 
-navigationLinks.forEach(function (link) {
-    link.addEventListener(
-        "click",
-        closeNavigation
-    );
-});
+---
 
+## 📱 Responsive Navigation
 
-document.addEventListener(
-    "keydown",
-    function (event) {
-        if (
-            event.key === "Escape" &&
-            navigation.classList.contains("open")
-        ) {
-            closeNavigation();
-            menuButton.focus();
-        }
-    }
-);
+The desktop navigation changes into a compact mobile menu on smaller screens.
 
+JavaScript controls:
 
-/* -------------------------
-   PRODUCT FINISH
-------------------------- */
+* menu opening
+* menu closing
+* `aria-expanded` state
+* accessible menu labels
+* automatic closing after navigation
+* Escape-key closing
+* responsive cleanup when returning to desktop width
 
-function selectFinish(button) {
-    const finish =
-        button.dataset.finish;
+---
 
-    const theme =
-        button.dataset.theme;
+## ❓ FAQ Accordion
 
-    state.finish = finish;
-    state.theme = theme;
+The FAQ section uses JavaScript to create an accordion-style interface.
 
-    selectedFinish.textContent =
-        finish;
+When a question is selected:
 
-    productVisual.dataset.theme =
-        theme;
+* the corresponding answer opens
+* its accessibility state changes
+* any previously opened FAQ closes
+* the visual plus icon changes state
 
-
-    finishButtons.forEach(
-        function (finishButton) {
-            const isSelected =
-                finishButton === button;
+This keeps the interface compact while still providing detailed project information.
 
-            finishButton.classList.toggle(
-                "active",
-                isSelected
-            );
+---
 
-            finishButton.setAttribute(
-                "aria-pressed",
-                String(isSelected)
-            );
-        }
-    );
+## 🎨 CSS Product Illustration
 
+One of the distinctive elements of this project is the product visualization.
 
-    cartMessage.textContent =
-        `${finish} finish selected.`;
-}
+Rather than depending on an externally hosted product photograph, the Luma One task light is constructed directly in the interface using HTML elements and CSS.
 
+The illustration includes:
 
-finishButtons.forEach(function (button) {
-    button.addEventListener(
-        "click",
-        function () {
-            selectFinish(button);
-        }
-    );
-});
+* lamp head
+* illuminated light strip
+* adjustable arms
+* mechanical joints
+* base
+* touch-control detail
+* light glow
+* themed product background
 
+The surrounding visual presentation changes when the user selects Sand, Graphite, or Sage.
 
-/* -------------------------
-   QUANTITY
-------------------------- */
+---
 
-function updateQuantityDisplay() {
-    quantityDisplay.textContent =
-        state.quantity;
+## 🛠️ Technologies & Development Tools
 
-    decreaseQuantityButton.disabled =
-        state.quantity <= 1;
+* **HTML5** — semantic product-page structure and accessible controls
+* **CSS3** — responsive layouts, product illustration, visual states, media queries, and transitions
+* **JavaScript** — product state, quantity logic, demo cart, finish selection, navigation, and FAQ interactions
+* **Visual Studio Code** — code editing and project development
+* **Replit** — browser-based development experience
+* **Git** — version control
+* **GitHub** — source-code management and project organization
+* **Vercel** — web application deployment
 
-    decreaseQuantityButton.setAttribute(
-        "aria-disabled",
-        String(state.quantity <= 1)
-    );
-}
+---
 
+## 💻 JavaScript Concepts Demonstrated
 
-function increaseQuantity() {
-    if (state.quantity < 10) {
-        state.quantity += 1;
-        updateQuantityDisplay();
-    } else {
-        cartMessage.textContent =
-            "Maximum demo quantity is 10.";
-    }
-}
+This project includes practical examples of:
 
+* Application state
+* Objects
+* Constants and variables
+* Functions
+* DOM selection
+* Event listeners
+* Data attributes
+* Conditional logic
+* Template literals
+* Array iteration
+* CSS class manipulation
+* Dynamic text updates
+* ARIA attribute updates
+* Keyboard events
+* Window resize events
+* Responsive interface behavior
+* Quantity validation
+* Cart-state management
+* Accordion interaction
 
-function decreaseQuantity() {
-    if (state.quantity > 1) {
-        state.quantity -= 1;
-        updateQuantityDisplay();
-    }
-}
+---
 
+## 🎨 CSS Concepts Demonstrated
 
-increaseQuantityButton.addEventListener(
-    "click",
-    increaseQuantity
-);
+The project also demonstrates:
 
+* CSS custom properties
+* CSS Grid
+* Flexbox
+* Responsive media queries
+* CSS-generated illustration
+* Radial gradients
+* Linear gradients
+* Border-radius composition
+* Transforms
+* Shadows
+* Sticky navigation
+* Backdrop filtering
+* Interactive states
+* Focus-visible styling
+* Reduced-motion preferences
+* Responsive typography with `clamp()`
 
-decreaseQuantityButton.addEventListener(
-    "click",
-    decreaseQuantity
-);
+---
 
+## ♿ Accessibility & Usability
 
-/* -------------------------
-   DEMO CART
-------------------------- */
+Accessibility-conscious features include:
 
-function updateCartDisplay() {
-    cartCountDisplay.textContent =
-        state.cartCount;
+* Semantic HTML
+* Descriptive button labels
+* Keyboard-accessible controls
+* Visible focus states
+* `aria-expanded` navigation states
+* `aria-expanded` FAQ states
+* `aria-pressed` finish selection states
+* `aria-live` product and cart feedback
+* Escape-key navigation support
+* Descriptive navigation labels
+* Responsive touch targets
+* Reduced-motion support
 
-    cartButton.setAttribute(
-        "aria-label",
-        `Demo cart with ${state.cartCount} ${
-            state.cartCount === 1
-                ? "item"
-                : "items"
-        }`
-    );
-}
+---
 
+## 📱 Responsive Design
 
-function addToDemoCart() {
-    state.cartCount +=
-        state.quantity;
+The application adapts across:
 
-    updateCartDisplay();
+* Desktop computers
+* Tablets
+* Mobile phones
 
+Responsive behavior includes:
 
-    const itemWord =
-        state.quantity === 1
-            ? "light"
-            : "lights";
+* stacked product layout
+* two-column and single-column feature grids
+* mobile navigation
+* full-width purchase controls
+* resized product illustration
+* stacked specification rows
+* stacked development content
+* mobile footer layout
 
+---
 
-    cartMessage.textContent =
-        `${state.quantity} Luma One ${itemWord} in ${state.finish} added to the demo cart.`;
+## 📂 Project Structure
 
+```text
+├── index.html
+├── styles.css
+├── script.js
+├── README.md
+└── LICENSE
+```
 
-    state.quantity = 1;
+### File Overview
 
-    updateQuantityDisplay();
-}
+* `index.html` — semantic product-page structure and interactive interface
+* `styles.css` — responsive styling, product visualization, layout, and interface states
+* `script.js` — product customization, quantity controls, cart state, navigation, and FAQ functionality
+* `README.md` — project documentation
+* `LICENSE` — MIT License
 
+---
 
-addToCartButton.addEventListener(
-    "click",
-    addToDemoCart
-);
+## 🔧 Running the Project Locally
 
+### 1. Clone the repository
 
-cartButton.addEventListener(
-    "click",
-    function () {
-        if (state.cartCount === 0) {
-            cartMessage.textContent =
-                "Your demo cart is currently empty.";
-        } else {
-            cartMessage.textContent =
-                `Your demo cart contains ${state.cartCount} ${
-                    state.cartCount === 1
-                        ? "item"
-                        : "items"
-                }. No checkout is processed in this portfolio project.`;
-        }
+```bash
+git clone https://github.com/marsharine-cs/Software_Engineering-Projects.git
+```
 
+### 2. Enter the repository
 
-        cartMessage.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
-    }
-);
+```bash
+cd Software_Engineering-Projects
+```
 
+### 3. Switch to the Product Landing Page branch
 
-/* -------------------------
-   FAQ ACCORDION
-------------------------- */
+```bash
+git checkout Product_Landing-_Page
+```
 
-function closeFaqItem(question) {
-    const faqItem =
-        question.closest(".faq-item");
+### 4. Open the application
 
-    faqItem.classList.remove("open");
+Open `index.html` in your preferred web browser.
 
-    question.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-}
+You can also open the project in Visual Studio Code and use a local development server.
 
+---
 
-function openFaqItem(question) {
-    const faqItem =
-        question.closest(".faq-item");
+## 🎯 Skills Demonstrated
 
-    faqItem.classList.add("open");
+This project demonstrates experience with:
 
-    question.setAttribute(
-        "aria-expanded",
-        "true"
-    );
-}
+* Front-end web development
+* JavaScript programming
+* E-commerce interface design
+* Product-page development
+* Responsive web design
+* CSS illustration
+* DOM manipulation
+* Event-driven programming
+* Application state management
+* Accessible interface development
+* Mobile navigation
+* Interactive UI development
+* Git and GitHub workflows
+* Technical documentation
+* Web deployment
 
+---
 
-faqQuestions.forEach(function (question) {
+## 🌱 Project Development
 
-    question.addEventListener(
-        "click",
-        function () {
+This project originally began as a basic branded product landing page.
 
-            const isOpen =
-                question.getAttribute(
-                    "aria-expanded"
-                ) === "true";
+It was redesigned into **Luma One**, a completely fictional and self-contained product experience.
 
+The rebuilt version removes its dependence on third-party merchandise and external product images while adding product customization, JavaScript application state, quantity controls, a demo cart, responsive mobile navigation, FAQ interactions, accessibility improvements, original CSS product artwork, professional documentation, and a live Vercel deployment.
 
-            faqQuestions.forEach(
-                function (otherQuestion) {
-                    closeFaqItem(
-                        otherQuestion
-                    );
-                }
-            );
+---
 
+## 🔗 Main Repository
 
-            if (!isOpen) {
-                openFaqItem(question);
-            }
-        }
-    );
+This project is part of my larger **Software Engineering Projects** collection:
 
-});
+[View the Software Engineering Projects Repository](https://github.com/marsharine-cs/Software_Engineering-Projects)
 
+---
 
-/* -------------------------
-   RESPONSIVE CLEANUP
-------------------------- */
+## 📜 License
 
-window.addEventListener(
-    "resize",
-    function () {
-        if (window.innerWidth > 760) {
-            closeNavigation();
-        }
-    }
-);
+This project is licensed under the **MIT License**.
 
+See the [LICENSE](LICENSE) file for details.
 
-/* -------------------------
-   INITIALIZE
-------------------------- */
+---
 
-updateQuantityDisplay();
-updateCartDisplay();
+## 📬 Connect
+
+**Marsharine A. Simpson**
+
+* [GitHub](https://github.com/marsharine-cs)
+* [LinkedIn](https://www.linkedin.com/in/marsharine-a-simpson)
+
+---
+
+Thank you for exploring the Luma One Interactive Product Landing Page.
