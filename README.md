@@ -10,7 +10,7 @@ Rather than presenting a simple static tribute page, this version was redesigned
 
 ## 🚀 Live Demo
 
-A public live deployment will be added after final testing.
+The project is deployed with Vercel. The public production link will be added after verification.
 
 ---
 
