@@ -2,48 +2,24 @@
 
 /* =========================================================
    MARSHARINE A. SIMPSON
-   PROFESSIONAL TECHNOLOGY PORTFOLIO
+   PROFESSIONAL TECHNOLOGY PORTFOLIO — V2
    ========================================================= */
-
-
-/* =========================================================
-   DOM ELEMENTS
-   ========================================================= */
-
-const menuButton =
-    document.getElementById("menu-button");
-
-const navigation =
-    document.getElementById("main-navigation");
-
-const navigationLinks =
-    Array.from(
-        document.querySelectorAll(
-            "#main-navigation a"
-        )
-    );
-
-const filterButtons =
-    Array.from(
-        document.querySelectorAll(
-            ".filter-button"
-        )
-    );
-
-const projectCards =
-    Array.from(
-        document.querySelectorAll(
-            ".project-card"
-        )
-    );
 
 
 /* =========================================================
    MOBILE NAVIGATION
    ========================================================= */
 
+const menuButton = document.getElementById("menu-button");
+const navigation = document.getElementById("main-navigation");
+const navigationLinks = document.querySelectorAll(
+    "#main-navigation a"
+);
+
+
 function openNavigation() {
     navigation.classList.add("open");
+    menuButton.classList.add("active");
 
     menuButton.setAttribute(
         "aria-expanded",
@@ -54,11 +30,14 @@ function openNavigation() {
         "aria-label",
         "Close navigation menu"
     );
+
+    document.body.classList.add("menu-open");
 }
 
 
 function closeNavigation() {
     navigation.classList.remove("open");
+    menuButton.classList.remove("active");
 
     menuButton.setAttribute(
         "aria-expanded",
@@ -69,6 +48,8 @@ function closeNavigation() {
         "aria-label",
         "Open navigation menu"
     );
+
+    document.body.classList.remove("menu-open");
 }
 
 
@@ -84,247 +65,169 @@ function toggleNavigation() {
 }
 
 
-menuButton.addEventListener(
-    "click",
-    toggleNavigation
-);
+if (menuButton && navigation) {
+
+    menuButton.addEventListener(
+        "click",
+        toggleNavigation
+    );
 
 
-navigationLinks.forEach(
-    function (link) {
+    navigationLinks.forEach(function (link) {
 
         link.addEventListener(
             "click",
             closeNavigation
         );
 
-    }
-);
+    });
 
 
-/* Close mobile navigation with Escape */
+    document.addEventListener(
+        "keydown",
+        function (event) {
 
-document.addEventListener(
-    "keydown",
-    function (event) {
+            if (
+                event.key === "Escape" &&
+                navigation.classList.contains("open")
+            ) {
+                closeNavigation();
+                menuButton.focus();
+            }
 
-        if (
-            event.key === "Escape" &&
-            navigation.classList.contains("open")
-        ) {
-            closeNavigation();
-            menuButton.focus();
         }
-
-    }
-);
+    );
 
 
-/* Reset mobile navigation when returning to desktop */
+    window.addEventListener(
+        "resize",
+        function () {
 
-window.addEventListener(
-    "resize",
-    function () {
+            if (window.innerWidth > 830) {
+                closeNavigation();
+            }
 
-        if (
-            window.innerWidth > 780 &&
-            navigation.classList.contains("open")
-        ) {
-            closeNavigation();
         }
+    );
 
-    }
-);
+}
 
 
 /* =========================================================
-   PROJECT FILTERING
+   Q&A ACCORDION
    ========================================================= */
 
-function projectMatchesFilter(
-    projectCard,
-    filter
-) {
-    if (filter === "all") {
-        return true;
-    }
-
-    const categories =
-        projectCard.dataset.category
-            .split(" ")
-            .map(function (category) {
-                return category.trim();
-            });
-
-    return categories.includes(filter);
-}
+const questionItems =
+    document.querySelectorAll(".question-item");
 
 
-function updateProjects(filter) {
+questionItems.forEach(
+    function (item, index) {
 
-    projectCards.forEach(
-        function (projectCard) {
+        const button =
+            item.querySelector(".question-button");
 
-            const matches =
-                projectMatchesFilter(
-                    projectCard,
-                    filter
-                );
+        const answer =
+            item.querySelector(".question-answer");
 
-            projectCard.classList.toggle(
-                "is-hidden",
-                !matches
-            );
 
-            projectCard.setAttribute(
-                "aria-hidden",
-                String(!matches)
-            );
-
+        if (!button || !answer) {
+            return;
         }
-    );
-
-}
 
 
-function selectFilter(button) {
+        /* Add accessible relationships dynamically */
 
-    const selectedFilter =
-        button.dataset.filter;
+        const buttonId =
+            `question-button-${index + 1}`;
+
+        const answerId =
+            `question-answer-${index + 1}`;
 
 
-    filterButtons.forEach(
-        function (filterButton) {
+        button.id = buttonId;
 
-            const isSelected =
-                filterButton === button;
+        button.setAttribute(
+            "aria-controls",
+            answerId
+        );
 
-            filterButton.classList.toggle(
-                "active",
-                isSelected
+
+        answer.id = answerId;
+
+        answer.setAttribute(
+            "role",
+            "region"
+        );
+
+        answer.setAttribute(
+            "aria-labelledby",
+            buttonId
+        );
+
+
+        function closeQuestion() {
+            item.classList.remove("open");
+
+            button.setAttribute(
+                "aria-expanded",
+                "false"
             );
-
-            filterButton.setAttribute(
-                "aria-pressed",
-                String(isSelected)
-            );
-
         }
-    );
 
 
-    updateProjects(
-        selectedFilter
-    );
+        function openQuestion() {
 
-}
+            /*
+             * Keep the accordion clean by closing
+             * other open answers first.
+             */
+
+            questionItems.forEach(
+                function (otherItem) {
+
+                    if (otherItem === item) {
+                        return;
+                    }
+
+                    const otherButton =
+                        otherItem.querySelector(
+                            ".question-button"
+                        );
+
+                    otherItem.classList.remove("open");
+
+                    if (otherButton) {
+                        otherButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+                    }
+
+                }
+            );
 
 
-filterButtons.forEach(
-    function (button) {
+            item.classList.add("open");
+
+            button.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+        }
+
 
         button.addEventListener(
             "click",
             function () {
-                selectFilter(button);
-            }
-        );
 
-    }
-);
+                const isOpen =
+                    item.classList.contains("open");
 
-
-/* =========================================================
-   KEYBOARD SUPPORT FOR FILTERS
-   ========================================================= */
-
-function moveFilterFocus(
-    currentIndex,
-    direction
-) {
-    let newIndex =
-        currentIndex + direction;
-
-
-    if (newIndex < 0) {
-        newIndex =
-            filterButtons.length - 1;
-    }
-
-
-    if (
-        newIndex >=
-        filterButtons.length
-    ) {
-        newIndex = 0;
-    }
-
-
-    const nextButton =
-        filterButtons[newIndex];
-
-    nextButton.focus();
-    selectFilter(nextButton);
-}
-
-
-filterButtons.forEach(
-    function (button, index) {
-
-        button.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (
-                    event.key === "ArrowRight" ||
-                    event.key === "ArrowDown"
-                ) {
-                    event.preventDefault();
-
-                    moveFilterFocus(
-                        index,
-                        1
-                    );
-                }
-
-
-                if (
-                    event.key === "ArrowLeft" ||
-                    event.key === "ArrowUp"
-                ) {
-                    event.preventDefault();
-
-                    moveFilterFocus(
-                        index,
-                        -1
-                    );
-                }
-
-
-                if (event.key === "Home") {
-                    event.preventDefault();
-
-                    filterButtons[0].focus();
-
-                    selectFilter(
-                        filterButtons[0]
-                    );
-                }
-
-
-                if (event.key === "End") {
-                    event.preventDefault();
-
-                    const lastButton =
-                        filterButtons[
-                            filterButtons.length - 1
-                        ];
-
-                    lastButton.focus();
-
-                    selectFilter(
-                        lastButton
-                    );
+                if (isOpen) {
+                    closeQuestion();
+                } else {
+                    openQuestion();
                 }
 
             }
@@ -338,22 +241,28 @@ filterButtons.forEach(
    ACTIVE NAVIGATION SECTION
    ========================================================= */
 
-const portfolioSections =
-    navigationLinks
-        .map(function (link) {
+const sectionNavigationLinks =
+    Array.from(navigationLinks).filter(
+        function (link) {
 
-            const target =
+            const href =
                 link.getAttribute("href");
 
-            if (
-                !target ||
-                !target.startsWith("#")
-            ) {
-                return null;
-            }
+            return (
+                href &&
+                href.startsWith("#")
+            );
+
+        }
+    );
+
+
+const navigationSections =
+    sectionNavigationLinks
+        .map(function (link) {
 
             return document.querySelector(
-                target
+                link.getAttribute("href")
             );
 
         })
@@ -362,56 +271,68 @@ const portfolioSections =
 
 function updateActiveNavigation() {
 
+    if (navigationSections.length === 0) {
+        return;
+    }
+
+
     const scrollPosition =
         window.scrollY + 180;
 
     let activeSection = null;
 
 
-    portfolioSections.forEach(
+    navigationSections.forEach(
         function (section) {
 
             if (
                 section.offsetTop <=
                 scrollPosition
             ) {
-                activeSection =
-                    section;
+                activeSection = section;
             }
 
         }
     );
 
 
-    navigationLinks.forEach(
+    sectionNavigationLinks.forEach(
         function (link) {
 
-            const target =
-                link.getAttribute("href");
-
-            const isCurrent =
-                activeSection &&
-                target ===
-                    `#${activeSection.id}`;
-
-
-            if (isCurrent) {
-
-                link.setAttribute(
-                    "aria-current",
-                    "page"
-                );
-
-            } else {
-
-                link.removeAttribute(
-                    "aria-current"
-                );
-
-            }
+            link.removeAttribute(
+                "aria-current"
+            );
 
         }
     );
+
+
+    if (!activeSection) {
+        return;
+    }
+
+
+    const activeLink =
+        sectionNavigationLinks.find(
+            function (link) {
+
+                return (
+                    link.getAttribute("href") ===
+                    `#${activeSection.id}`
+                );
+
+            }
+        );
+
+
+    if (activeLink) {
+
+        activeLink.setAttribute(
+            "aria-current",
+            "page"
+        );
+
+    }
 
 }
 
@@ -425,8 +346,76 @@ window.addEventListener(
 );
 
 
+window.addEventListener(
+    "load",
+    updateActiveNavigation
+);
+
+
 /* =========================================================
-   EXTERNAL LINK SAFETY
+   SMOOTH INTERNAL NAVIGATION
+   ========================================================= */
+
+const internalLinks =
+    document.querySelectorAll(
+        'a[href^="#"]'
+    );
+
+
+internalLinks.forEach(
+    function (link) {
+
+        link.addEventListener(
+            "click",
+            function (event) {
+
+                const targetId =
+                    link.getAttribute("href");
+
+
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+                    return;
+                }
+
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+
+                if (!target) {
+                    return;
+                }
+
+
+                event.preventDefault();
+
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+
+                history.replaceState(
+                    null,
+                    "",
+                    targetId
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   EXTERNAL LINK SECURITY
    ========================================================= */
 
 const externalLinks =
@@ -463,40 +452,39 @@ externalLinks.forEach(
 
 
 /* =========================================================
-   INITIALIZATION
+   INITIAL STATE
    ========================================================= */
 
 function initializePortfolio() {
 
-    /* Start with all projects visible */
+    /*
+     * Ensure every Q&A begins closed.
+     */
 
-    updateProjects("all");
+    questionItems.forEach(
+        function (item) {
+
+            const button =
+                item.querySelector(
+                    ".question-button"
+                );
 
 
-    /* Ensure filter button states are correct */
+            item.classList.remove("open");
 
-    filterButtons.forEach(
-        function (button) {
 
-            const isAllFilter =
-                button.dataset.filter ===
-                "all";
+            if (button) {
 
-            button.classList.toggle(
-                "active",
-                isAllFilter
-            );
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
-            button.setAttribute(
-                "aria-pressed",
-                String(isAllFilter)
-            );
+            }
 
         }
     );
 
-
-    /* Establish initial navigation state */
 
     updateActiveNavigation();
 
