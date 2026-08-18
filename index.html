@@ -2,391 +2,1415 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="Marsharine A. Simpson's software engineering and front-end development project portfolio."
+        content="Professional technology portfolio for Marsharine A. Simpson, S.T.E.M. Educator and Technology Professional, featuring front-end development, JavaScript, educational technology, IT, cybersecurity, and software engineering projects."
     >
 
-    <title>Marsharine A. Simpson | Projects Portfolio</title>
+    <title>
+        Marsharine A. Simpson | S.T.E.M. Educator & Technology Professional
+    </title>
 
     <link rel="stylesheet" href="styles.css">
+
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <header class="navbar">
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
 
-        <div class="navbar-profile">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="nav-shell">
 
             <a
-                href="https://github.com/marsharine-cs"
-                id="profile-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit Marsharine A. Simpson's GitHub profile"
+                class="brand"
+                href="#top"
+                aria-label="Marsharine A. Simpson portfolio home"
             >
-                <img
-                    src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/Profile_Image-NEZUXfZDKEH3HWGRsEXkAPAugB6rrS.jpg"
-                    alt="Marsharine A. Simpson"
-                    class="profile-img"
-                >
+                <span class="brand-mark">MAS</span>
+
+                <span class="brand-name">
+                    Marsharine
+                    <strong>Simpson</strong>
+                </span>
             </a>
 
-            <h1>Marsharine A. Simpson</h1>
 
-        </div>
+            <button
+                class="menu-button"
+                id="menu-button"
+                type="button"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+                aria-label="Open navigation menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-        <nav class="navbar-menu" aria-label="Main navigation">
-            <a href="#welcome-section">Home</a>
-            <a href="#projects-section">Projects</a>
-            <a href="#about-section">About</a>
+
+            <nav
+                class="main-navigation"
+                id="main-navigation"
+                aria-label="Primary navigation"
+            >
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#credentials">Credentials</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
 
             <a
+                class="header-github"
                 href="https://github.com/marsharine-cs"
                 target="_blank"
                 rel="noopener noreferrer"
             >
                 GitHub
+                <span aria-hidden="true">↗</span>
             </a>
 
-            <a
-                href="https://www.linkedin.com/in/marsharine-a-simpson"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                LinkedIn
-            </a>
-        </nav>
+        </div>
 
     </header>
 
 
-    <!-- Welcome -->
-    <main>
+    <main id="main-content">
 
-        <section id="welcome-section">
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
 
-            <div class="welcome-content">
+        <section
+            class="hero"
+            id="top"
+            aria-labelledby="hero-heading"
+        >
 
-                <p class="eyebrow">WELCOME TO MY PROJECT PORTFOLIO</p>
+            <div class="hero-copy">
 
-                <h2 class="highlight">
-                    S.T.E.M. Educator &amp; Technology Professional
-                </h2>
-
-                <p class="hero-subtitle">
-                    Software Engineering | Web Development | IT &amp; Cybersecurity
-                </p>
-
-                <p class="hero-description">
-                    Explore selected projects demonstrating my work with
-                    HTML, CSS, JavaScript, responsive design, problem-solving,
-                    and front-end development.
-                </p>
-
-                <div class="cta-buttons">
-                    <a href="#projects-section" class="cta-btn">
-                        Explore Projects
-                    </a>
-
-                    <a
-                        href="https://github.com/marsharine-cs/Software_Engineering-Projects"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="cta-btn secondary-btn"
-                    >
-                        View Repository
-                    </a>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- Projects -->
-        <section id="projects-section">
-
-            <div class="section-heading">
-                <p class="eyebrow">SELECTED WORK</p>
-                <h2 class="highlight">Portfolio of Projects</h2>
-
-                <p>
-                    These projects represent hands-on practice in front-end
-                    development, interface design, JavaScript, and web
-                    application development.
-                </p>
-            </div>
-
-
-            <div class="projects-grid">
-
-                <!-- Palindrome Checker -->
-                <article class="projects-content">
-
-                    <h3>Palindrome Checker</h3>
-
-                    <a
-                        href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Palindrome_Checker"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img
-                            src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/Screen_Shot-VtZGa6ZxqLv7nAwjfnnuQZOCrF9F01.PNG"
-                            alt="Screenshot of the Palindrome Checker project"
-                            class="project-image"
-                        >
-                    </a>
-
-                    <p>
-                        A JavaScript application that evaluates entered text
-                        to determine whether it is a palindrome.
-                    </p>
-
-                    <a
-                        href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Palindrome_Checker"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="cta-btn"
-                    >
-                        View Project Code
-                    </a>
-
-                </article>
-
-
-                <!-- Balance Sheet -->
-                <article class="projects-content">
-
-                    <h3>Balance Sheet</h3>
-
-                    <a
-                        href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Balance_Sheet_Project"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img
-                            src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/Balance_Sheet_image-BMToEiad9lZmTRhupuCnFhUVMZOiDH.PNG"
-                            alt="Screenshot of the Balance Sheet project"
-                            class="project-image"
-                        >
-                    </a>
-
-                    <p>
-                        A structured financial layout project demonstrating
-                        semantic HTML, CSS styling, and organized presentation.
-                    </p>
-
-                    <a
-                        href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Balance_Sheet_Project"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="cta-btn"
-                    >
-                        View Project Code
-                    </a>
-
-                </article>
-
-
-                <!-- Ada Lovelace Tribute -->
-                <article class="projects-content">
-
-                    <h3>Ada Lovelace Tribute</h3>
-
-                    <a
-                        href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Lovelace_Tribute_Web_Project"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img
-                            src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/Screen_Shot_Lovelace-Zya3gBKGlEZcZzSztQli1qEjMYA1wx.PNG"
-                            alt="Screenshot of the Ada Lovelace Tribute project"
-                            class="project-image"
-                        >
-                    </a>
-
-                    <p>
-                        An informational tribute page demonstrating semantic
-                        web structure, visual hierarchy, and responsive design.
-                    </p>
-
-                    <a
-                        href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Lovelace_Tribute_Web_Project"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="cta-btn"
-                    >
-                        View Project Code
-                    </a>
-
-                </article>
-
-
-                <!-- Product Landing Page -->
-                <article class="projects-content">
-
-                    <h3>Product Landing Page</h3>
-
-                    <a
-                        href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Product_Landing-_Page"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img
-                            src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/product_landing_page-jTZtAhLoEkM0WYj7sHNJyHre7QqPc9.png"
-                            alt="Screenshot of the Product Landing Page project"
-                            class="project-image"
-                        >
-                    </a>
-
-                    <p>
-                        A responsive landing page project focused on page
-                        layout, visual presentation, and user interface design.
-                    </p>
-
-                    <a
-                        href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Product_Landing-_Page"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="cta-btn"
-                    >
-                        View Project Code
-                    </a>
-
-                </article>
-
-
-                <!-- Resume -->
-                <article class="projects-content">
-
-                    <h3>Resume Web Project</h3>
-
-                    <a
-                        href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Resume"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img
-                            src="https://7rgik9rvuzdcm0fg.public.blob.vercel-storage.com/Resume_Image-KFkFaFtkWugEyjdRIZmWcAfCqVsH8K.PNG"
-                            alt="Screenshot of the Resume Web Project"
-                            class="project-image"
-                        >
-                    </a>
-
-                    <p>
-                        A web-based resume project demonstrating organized
-                        professional content, HTML structure, and CSS styling.
-                    </p>
-
-                    <a
-                        href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Resume"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="cta-btn"
-                    >
-                        View Project Code
-                    </a>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- About -->
-        <section id="about-section">
-
-            <div class="about-content">
-
-                <p class="eyebrow">ABOUT ME</p>
-
-                <h2 class="highlight">
-                    Technology, Education &amp; Continuous Learning
-                </h2>
-
-                <p>
-                    My professional background brings together information
-                    technology, technical support, education, web development,
-                    and problem-solving. I enjoy translating technical concepts
-                    into practical solutions and helping others understand how
-                    technology works.
-                </p>
-
-                <p>
-                    This portfolio includes projects developed while expanding
-                    my software engineering and front-end development skills.
-                    They demonstrate my continued growth with HTML, CSS,
-                    JavaScript, Git, GitHub, responsive design, and web
-                    application development.
+                <p class="eyebrow">
+                    S.T.E.M. EDUCATION · TECHNOLOGY · DEVELOPMENT
                 </p>
 
 
-                <div class="skills-list">
-
-                    <h3>Core Areas</h3>
-
-                    <ul>
-                        <li>Front-End Web Development</li>
-                        <li>HTML5 &amp; CSS3</li>
-                        <li>JavaScript Fundamentals</li>
-                        <li>Responsive Web Design</li>
-                        <li>Git &amp; GitHub</li>
-                        <li>Information Technology</li>
-                        <li>Cybersecurity Foundations</li>
-                        <li>S.T.E.M. Education</li>
-                    </ul>
-
-                </div>
+                <h1 id="hero-heading">
+                    Marsharine
+                    <span>A. Simpson</span>
+                </h1>
 
 
-                <div class="education">
-
-                    <h3>Education</h3>
-
-                    <p>
-                        <strong>
-                            Bachelor of Science in Information Technology
-                            &amp; Security
-                        </strong><br>
-                        University of Phoenix
-                    </p>
-
-                    <p>
-                        <strong>
-                            Associate of Arts in Elementary Education
-                            and Teaching
-                        </strong>
-                    </p>
-
-                </div>
+                <p class="hero-role">
+                    S.T.E.M. Educator
+                    <span aria-hidden="true">+</span>
+                    Technology Professional
+                </p>
 
 
-                <div class="cta-buttons">
+                <p class="hero-introduction">
+                    I bring together education, technology, technical
+                    problem-solving, and front-end development to build
+                    practical digital experiences that are clear,
+                    accessible, and useful.
+                </p>
+
+
+                <div class="hero-actions">
 
                     <a
-                        href="https://github.com/marsharine-cs"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="cta-btn"
+                        class="primary-button"
+                        href="#work"
                     >
-                        GitHub Profile
+                        Explore My Work
                     </a>
 
                     <a
+                        class="secondary-button"
                         href="https://www.linkedin.com/in/marsharine-a-simpson"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="cta-btn secondary-btn"
                     >
-                        LinkedIn
+                        View LinkedIn
+                        <span aria-hidden="true">↗</span>
                     </a>
 
                 </div>
+
+
+                <div
+                    class="hero-disciplines"
+                    aria-label="Professional focus areas"
+                >
+                    <span>Software Engineering Projects</span>
+                    <span>Web Development</span>
+                    <span>Educational Technology</span>
+                    <span>IT &amp; Cybersecurity</span>
+                </div>
+
+            </div>
+
+
+            <!-- Hero visual -->
+            <div
+                class="hero-visual"
+                aria-label="Technology portfolio overview"
+            >
+
+                <div class="visual-topline">
+                    <span>PORTFOLIO / 2026</span>
+                    <span>BUILD · TEST · DEPLOY</span>
+                </div>
+
+
+                <div class="visual-center">
+
+                    <p class="visual-label">
+                        CURRENT FOCUS
+                    </p>
+
+                    <strong>
+                        Technology
+                        <span>with purpose.</span>
+                    </strong>
+
+                </div>
+
+
+                <div class="code-window" aria-hidden="true">
+
+                    <div class="code-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="code-lines">
+                        <p>
+                            <span class="code-keyword">const</span>
+                            portfolio =
+                            <span class="code-string">"building"</span>;
+                        </p>
+
+                        <p>
+                            skills.push(
+                            <span class="code-string">"JavaScript"</span>
+                            );
+                        </p>
+
+                        <p>
+                            projects.forEach(
+                            <span class="code-keyword">deploy</span>
+                            );
+                        </p>
+
+                        <p class="code-success">
+                            ✓ production ready
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="visual-footer">
+
+                    <div>
+                        <strong>04</strong>
+                        <span>Live projects</span>
+                    </div>
+
+                    <div>
+                        <strong>05</strong>
+                        <span>Rebuilt projects</span>
+                    </div>
+
+                    <div>
+                        <strong>∞</strong>
+                        <span>Always learning</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             VALUE STRIP
+        ====================================================== -->
+
+        <section
+            class="value-strip"
+            aria-label="Professional strengths"
+        >
+
+            <article>
+                <span>01</span>
+
+                <div>
+                    <strong>Build</strong>
+                    <p>
+                        Responsive interfaces and interactive
+                        JavaScript experiences.
+                    </p>
+                </div>
+            </article>
+
+
+            <article>
+                <span>02</span>
+
+                <div>
+                    <strong>Teach</strong>
+                    <p>
+                        Explain technical concepts through structured,
+                        learner-centered experiences.
+                    </p>
+                </div>
+            </article>
+
+
+            <article>
+                <span>03</span>
+
+                <div>
+                    <strong>Troubleshoot</strong>
+                    <p>
+                        Approach technology problems systematically
+                        and move from issue to working solution.
+                    </p>
+                </div>
+            </article>
+
+        </section>
+
+
+        <!-- =====================================================
+             FEATURED WORK
+        ====================================================== -->
+
+        <section
+            class="work-section"
+            id="work"
+            aria-labelledby="work-heading"
+        >
+
+            <div class="section-intro">
+
+                <div>
+                    <p class="eyebrow">
+                        SELECTED WORK
+                    </p>
+
+                    <h2 id="work-heading">
+                        Projects built to
+                        <span>solve, teach, and interact.</span>
+                    </h2>
+                </div>
+
+
+                <p>
+                    A selection of front-end, JavaScript, educational
+                    technology, and interface projects rebuilt,
+                    documented, tested, and prepared for production.
+                </p>
+
+            </div>
+
+
+            <!-- Project Filters -->
+
+            <div
+                class="project-filters"
+                role="group"
+                aria-label="Filter portfolio projects"
+            >
+
+                <button
+                    class="filter-button active"
+                    type="button"
+                    data-filter="all"
+                    aria-pressed="true"
+                >
+                    All
+                </button>
+
+                <button
+                    class="filter-button"
+                    type="button"
+                    data-filter="javascript"
+                    aria-pressed="false"
+                >
+                    JavaScript
+                </button>
+
+                <button
+                    class="filter-button"
+                    type="button"
+                    data-filter="education"
+                    aria-pressed="false"
+                >
+                    EdTech
+                </button>
+
+                <button
+                    class="filter-button"
+                    type="button"
+                    data-filter="frontend"
+                    aria-pressed="false"
+                >
+                    Front-End
+                </button>
+
+            </div>
+
+
+            <!-- PROJECT GRID -->
+
+            <div class="projects-grid">
+
+
+                <!-- LUMA ONE -->
+
+                <article
+                    class="project-card project-card-large"
+                    data-category="frontend javascript"
+                >
+
+                    <div class="project-preview luma-preview">
+
+                        <div class="preview-label">
+                            FRONT-END / E-COMMERCE
+                        </div>
+
+                        <div class="mini-lamp" aria-hidden="true">
+                            <div class="mini-lamp-head"></div>
+                            <div class="mini-lamp-arm arm-one"></div>
+                            <div class="mini-lamp-joint"></div>
+                            <div class="mini-lamp-arm arm-two"></div>
+                            <div class="mini-lamp-base"></div>
+                        </div>
+
+                        <div class="preview-copy">
+                            <span>LUMA ONE</span>
+                            <strong>
+                                Product design,
+                                made interactive.
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-meta">
+                            <span>Featured Project</span>
+                            <span>2026</span>
+                        </div>
+
+                        <h3>
+                            Luma One
+                        </h3>
+
+                        <p class="project-subtitle">
+                            Interactive Product Landing Page
+                        </p>
+
+                        <p>
+                            A fictional e-commerce experience featuring
+                            product finish selection, quantity controls,
+                            client-side cart state, responsive navigation,
+                            FAQ interactions, and an original CSS product
+                            illustration.
+                        </p>
+
+
+                        <ul class="project-tech">
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>JavaScript</li>
+                            <li>Responsive UI</li>
+                        </ul>
+
+
+                        <div class="project-links">
+
+                            <a
+                                href="https://luma-one-product-landing.vercel.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Live Demo
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                            <a
+                                href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Product_Landing-_Page"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Source
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BALANCE SHEET -->
+
+                <article
+                    class="project-card"
+                    data-category="javascript frontend"
+                >
+
+                    <div class="project-preview balance-preview">
+
+                        <div class="preview-label">
+                            JAVASCRIPT / DASHBOARD
+                        </div>
+
+
+                        <div class="balance-mini">
+
+                            <div>
+                                <span>Assets</span>
+                                <strong>$91.2K</strong>
+                            </div>
+
+                            <div>
+                                <span>Liabilities</span>
+                                <strong>$18.9K</strong>
+                            </div>
+
+                            <div class="balance-highlight">
+                                <span>Net Worth</span>
+                                <strong>$72.3K</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="mini-chart" aria-hidden="true">
+                            <span style="height: 36%"></span>
+                            <span style="height: 54%"></span>
+                            <span style="height: 72%"></span>
+                            <span style="height: 88%"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-meta">
+                            <span>Interactive Dashboard</span>
+                            <span>2026</span>
+                        </div>
+
+                        <h3>
+                            Interactive Balance Sheet
+                        </h3>
+
+                        <p>
+                            A financial-position dashboard with editable
+                            assets and liabilities, year-based state,
+                            automatic net-worth calculations,
+                            debt-to-assets reporting, reset controls,
+                            and print support.
+                        </p>
+
+
+                        <ul class="project-tech">
+                            <li>JavaScript</li>
+                            <li>DOM</li>
+                            <li>State</li>
+                            <li>Financial Logic</li>
+                        </ul>
+
+
+                        <div class="project-links">
+
+                            <a
+                                href="https://interactive-balance-sheet.vercel.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Live Demo
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                            <a
+                                href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Balance_Sheet_Project"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Source
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- KNOWLEDGE QUIZ -->
+
+                <article
+                    class="project-card"
+                    data-category="javascript education"
+                >
+
+                    <div class="project-preview quiz-preview">
+
+                        <div class="preview-label">
+                            EDTECH / JAVASCRIPT
+                        </div>
+
+
+                        <div class="quiz-window">
+
+                            <span class="quiz-category">
+                                JAVASCRIPT FUNDAMENTALS
+                            </span>
+
+                            <strong>
+                                Which keyword creates a block-scoped
+                                variable?
+                            </strong>
+
+                            <div class="quiz-options">
+                                <span>var</span>
+                                <span class="selected">let</span>
+                                <span>function</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-meta">
+                            <span>Educational Technology</span>
+                            <span>2026</span>
+                        </div>
+
+                        <h3>
+                            JavaScript Knowledge Quiz
+                        </h3>
+
+                        <p>
+                            A ten-question instructional assessment
+                            application with progress tracking, immediate
+                            feedback, explanations, scoring, answer review,
+                            keyboard navigation, and retake functionality.
+                        </p>
+
+
+                        <ul class="project-tech">
+                            <li>JavaScript</li>
+                            <li>EdTech</li>
+                            <li>Accessibility</li>
+                            <li>Dynamic UI</li>
+                        </ul>
+
+
+                        <div class="project-links">
+
+                            <a
+                                href="https://javascript-knowledge-quiz.vercel.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Live Demo
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                            <a
+                                href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Quiz"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Source
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PALINDROME -->
+
+                <article
+                    class="project-card"
+                    data-category="javascript frontend"
+                >
+
+                    <div class="project-preview palindrome-preview">
+
+                        <div class="preview-label">
+                            JAVASCRIPT / LOGIC
+                        </div>
+
+
+                        <div class="palindrome-demo">
+
+                            <p>
+                                Try a palindrome
+                            </p>
+
+                            <div class="palindrome-input">
+                                Never odd or even
+                            </div>
+
+                            <div class="palindrome-result">
+                                ✓ It's a palindrome
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-meta">
+                            <span>JavaScript Logic</span>
+                            <span>2026</span>
+                        </div>
+
+                        <h3>
+                            Palindrome Checker
+                        </h3>
+
+                        <p>
+                            A polished text-processing application that
+                            evaluates phrases while ignoring case,
+                            punctuation, and spacing, with examples,
+                            validation, keyboard support, and accessible
+                            result states.
+                        </p>
+
+
+                        <ul class="project-tech">
+                            <li>JavaScript</li>
+                            <li>Regex</li>
+                            <li>Unicode</li>
+                            <li>Accessibility</li>
+                        </ul>
+
+
+                        <div class="project-links">
+
+                            <a
+                                href="https://palindrome-checker-8xvfm2c62-marsharine-simpsons-projects.vercel.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Live Demo
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                            <a
+                                href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Palindrome_Checker"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Source
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ADA LOVELACE -->
+
+                <article
+                    class="project-card upcoming-card"
+                    data-category="javascript education frontend"
+                >
+
+                    <div class="project-preview ada-preview">
+
+                        <div class="preview-label">
+                            DIGITAL HISTORY / EDTECH
+                        </div>
+
+
+                        <div class="ada-monogram">
+                            <span>ADA</span>
+                            <strong>1843</strong>
+                        </div>
+
+
+                        <p class="ada-preview-copy">
+                            The Poetry
+                            <span>of Computation</span>
+                        </p>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-meta">
+                            <span>Deployment Pending</span>
+                            <span>2026</span>
+                        </div>
+
+                        <h3>
+                            Ada Lovelace
+                        </h3>
+
+                        <p class="project-subtitle">
+                            The Poetry of Computation
+                        </p>
+
+                        <p>
+                            An interactive digital-history experience
+                            featuring an accessible timeline, Analytical
+                            Engine notes explorer, keyboard navigation,
+                            responsive editorial design, and historical
+                            learning resources.
+                        </p>
+
+
+                        <ul class="project-tech">
+                            <li>JavaScript</li>
+                            <li>EdTech</li>
+                            <li>Digital History</li>
+                            <li>Accessibility</li>
+                        </ul>
+
+
+                        <div class="project-links">
+
+                            <span class="pending-link">
+                                Live Demo Pending
+                            </span>
+
+                            <a
+                                href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Lovelace_Tribute_Web_Project"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Source
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- AI PROJECT -->
+
+                <article
+                    class="project-card upcoming-card ai-card"
+                    data-category="education frontend"
+                >
+
+                    <div class="project-preview ai-preview">
+
+                        <div class="preview-label">
+                            AI / TECHNICAL EDUCATION
+                        </div>
+
+
+                        <div class="ai-orbit" aria-hidden="true">
+
+                            <span class="orbit orbit-one"></span>
+                            <span class="orbit orbit-two"></span>
+
+                            <strong>AI</strong>
+
+                        </div>
+
+
+                        <p class="ai-preview-copy">
+                            Development
+                            <span>Technical Documentation</span>
+                        </p>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-meta">
+                            <span>Next Project</span>
+                            <span>2026</span>
+                        </div>
+
+                        <h3>
+                            AI Development
+                        </h3>
+
+                        <p class="project-subtitle">
+                            Technical Documentation Experience
+                        </p>
+
+                        <p>
+                            A technical learning resource focused on
+                            presenting artificial intelligence development
+                            concepts through structured documentation,
+                            responsive navigation, and accessible
+                            educational content.
+                        </p>
+
+
+                        <ul class="project-tech">
+                            <li>AI Concepts</li>
+                            <li>Documentation</li>
+                            <li>EdTech</li>
+                            <li>Front-End</li>
+                        </ul>
+
+
+                        <div class="project-links">
+
+                            <span class="pending-link">
+                                Rebuild Scheduled
+                            </span>
+
+                            <a
+                                href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/AI_Dev-Technical_Doc_Web_Project"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Current Source
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ABOUT / PROFESSIONAL INTERSECTION
+        ====================================================== -->
+
+        <section
+            class="about-section"
+            id="about"
+            aria-labelledby="about-heading"
+        >
+
+            <div class="about-heading">
+
+                <p class="eyebrow">
+                    THE INTERSECTION
+                </p>
+
+                <h2 id="about-heading">
+                    Technology experience
+                    <span>meets education.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="about-content">
+
+                <p class="about-lead">
+                    My background sits at the intersection of technology,
+                    education, technical support, and digital
+                    problem-solving.
+                </p>
+
+                <p>
+                    That combination shapes how I approach technology:
+                    understand the problem, make the solution usable,
+                    communicate it clearly, test the result, and keep
+                    improving it.
+                </p>
+
+                <p>
+                    Whether I am developing an interactive application,
+                    explaining a technical concept, troubleshooting a
+                    system, or creating a learning experience, I care
+                    about clarity, accessibility, and practical outcomes.
+                </p>
+
+
+                <div class="about-callout">
+
+                    <span>
+                        CURRENT DIRECTION
+                    </span>
+
+                    <strong>
+                        Building at the intersection of
+                        front-end development, educational technology,
+                        software projects, IT, and cybersecurity.
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SKILLS
+        ====================================================== -->
+
+        <section
+            class="skills-section"
+            id="skills"
+            aria-labelledby="skills-heading"
+        >
+
+            <div class="section-intro">
+
+                <div>
+                    <p class="eyebrow">
+                        TECHNOLOGY STACK
+                    </p>
+
+                    <h2 id="skills-heading">
+                        Tools I use to
+                        <span>build and solve.</span>
+                    </h2>
+                </div>
+
+                <p>
+                    A growing toolkit spanning web development,
+                    programming, analytics, technical support,
+                    cybersecurity, and educational technology.
+                </p>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+                <article class="skill-group">
+
+                    <span class="skill-number">01</span>
+
+                    <h3>
+                        Front-End Development
+                    </h3>
+
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Responsive Design</li>
+                        <li>Accessibility</li>
+                        <li>DOM Manipulation</li>
+                    </ul>
+
+                </article>
+
+
+                <article class="skill-group">
+
+                    <span class="skill-number">02</span>
+
+                    <h3>
+                        Programming &amp; Development
+                    </h3>
+
+                    <ul>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>VS Code</li>
+                        <li>Vercel</li>
+                    </ul>
+
+                </article>
+
+
+                <article class="skill-group">
+
+                    <span class="skill-number">03</span>
+
+                    <h3>
+                        Data &amp; Technology
+                    </h3>
+
+                    <ul>
+                        <li>Excel</li>
+                        <li>Power BI</li>
+                        <li>Tableau</li>
+                        <li>Data Analytics</li>
+                        <li>IT Support</li>
+                        <li>Cybersecurity Foundations</li>
+                    </ul>
+
+                </article>
+
+
+                <article class="skill-group">
+
+                    <span class="skill-number">04</span>
+
+                    <h3>
+                        Education &amp; EdTech
+                    </h3>
+
+                    <ul>
+                        <li>S.T.E.M. Education</li>
+                        <li>Computer Science</li>
+                        <li>Instructional Design</li>
+                        <li>Assessment Development</li>
+                        <li>Digital Learning</li>
+                        <li>Technical Communication</li>
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CREDENTIALS
+        ====================================================== -->
+
+        <section
+            class="credentials-section"
+            id="credentials"
+            aria-labelledby="credentials-heading"
+        >
+
+            <div class="credentials-heading">
+
+                <p class="eyebrow">
+                    EDUCATION &amp; CREDENTIALS
+                </p>
+
+                <h2 id="credentials-heading">
+                    Technical knowledge
+                    <span>with an educator's foundation.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="credential-list">
+
+
+                <article class="credential-item">
+
+                    <div class="credential-type">
+                        EDUCATION
+                    </div>
+
+                    <div>
+                        <h3>
+                            Bachelor of Science
+                        </h3>
+
+                        <p>
+                            Information Technology &amp; Security
+                        </p>
+
+                        <span>
+                            University of Phoenix
+                        </span>
+                    </div>
+
+                </article>
+
+
+                <article class="credential-item">
+
+                    <div class="credential-type">
+                        EDUCATION
+                    </div>
+
+                    <div>
+                        <h3>
+                            Associate of Arts
+                        </h3>
+
+                        <p>
+                            Elementary Education and Teaching
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="credential-item">
+
+                    <div class="credential-type">
+                        CREDENTIAL
+                    </div>
+
+                    <div>
+                        <h3>
+                            Computer Science Technology
+                        </h3>
+
+                        <p>
+                            New Jersey CTE Certificate of Eligibility
+                        </p>
+
+                        <span>
+                            Grades 9–12
+                        </span>
+                    </div>
+
+                </article>
+
+
+                <article class="credential-item">
+
+                    <div class="credential-type">
+                        EDUCATION
+                    </div>
+
+                    <div>
+                        <h3>
+                            Computer Science
+                        </h3>
+
+                        <p>
+                            Florida Department of Education
+                        </p>
+
+                        <span>
+                            K–12 Statement of Eligibility
+                        </span>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROFESSIONAL CAPABILITIES
+        ====================================================== -->
+
+        <section
+            class="experience-section"
+            aria-labelledby="experience-heading"
+        >
+
+            <div class="section-intro">
+
+                <div>
+                    <p class="eyebrow">
+                        PROFESSIONAL CAPABILITIES
+                    </p>
+
+                    <h2 id="experience-heading">
+                        More than
+                        <span>one lane.</span>
+                    </h2>
+                </div>
+
+                <p>
+                    My experience spans teaching, technical support,
+                    technology operations, software projects, and
+                    data-oriented problem-solving.
+                </p>
+
+            </div>
+
+
+            <div class="capability-grid">
+
+                <article>
+
+                    <span>01</span>
+
+                    <h3>
+                        S.T.E.M. &amp; Computer Science Education
+                    </h3>
+
+                    <p>
+                        Curriculum-aligned instruction, learner support,
+                        assessment, technical explanation, and digital
+                        learning experiences.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span>02</span>
+
+                    <h3>
+                        Front-End &amp; Web Development
+                    </h3>
+
+                    <p>
+                        Responsive interfaces, JavaScript interactions,
+                        accessibility, GitHub workflows, documentation,
+                        testing, and deployment.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span>03</span>
+
+                    <h3>
+                        Technical Support &amp; IT
+                    </h3>
+
+                    <p>
+                        Troubleshooting, customer-facing technical
+                        communication, SaaS environments, systems
+                        support, and issue resolution.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span>04</span>
+
+                    <h3>
+                        Data &amp; Analytical Thinking
+                    </h3>
+
+                    <p>
+                        Data interpretation, spreadsheet analysis,
+                        visualization tools, structured problem-solving,
+                        and technology-driven decision support.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section
+            class="contact-section"
+            id="contact"
+            aria-labelledby="contact-heading"
+        >
+
+            <div class="contact-copy">
+
+                <p class="eyebrow">
+                    LET'S CONNECT
+                </p>
+
+                <h2 id="contact-heading">
+                    Interested in what
+                    <span>I can build next?</span>
+                </h2>
+
+                <p>
+                    I am interested in opportunities where technology,
+                    education, development, problem-solving, and
+                    continuous learning create meaningful value.
+                </p>
+
+            </div>
+
+
+            <div class="contact-actions">
+
+                <a
+                    class="contact-link primary-contact"
+                    href="https://www.linkedin.com/in/marsharine-a-simpson"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>
+                        Connect on
+                        <strong>LinkedIn</strong>
+                    </span>
+
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+
+                <a
+                    class="contact-link"
+                    href="https://github.com/marsharine-cs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>
+                        Explore my
+                        <strong>GitHub</strong>
+                    </span>
+
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+
+                <a
+                    class="contact-link"
+                    href="https://github.com/marsharine-cs/Software_Engineering-Projects"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>
+                        View the
+                        <strong>Project Repository</strong>
+                    </span>
+
+                    <span aria-hidden="true">↗</span>
+                </a>
 
             </div>
 
@@ -395,19 +1419,57 @@
     </main>
 
 
-    <!-- Footer -->
-    <footer>
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
-        <div class="footer-content">
+    <footer class="site-footer">
 
-            <p>
-                &copy; 2026 Marsharine A. Simpson.
-                Software Engineering Projects Portfolio.
-            </p>
+        <div class="footer-shell">
 
-            <a href="#welcome-section" class="cta-btn">
-                Back to Top
-            </a>
+            <div>
+
+                <p class="footer-name">
+                    Marsharine A. Simpson
+                </p>
+
+                <p>
+                    S.T.E.M. Educator &amp; Technology Professional
+                </p>
+
+            </div>
+
+
+            <div class="footer-center">
+                <span>
+                    Designed &amp; developed as a living portfolio.
+                </span>
+            </div>
+
+
+            <div class="footer-links">
+
+                <a
+                    href="https://github.com/marsharine-cs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/marsharine-a-simpson"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+
+                <a href="#top">
+                    Back to Top
+                </a>
+
+            </div>
 
         </div>
 
