@@ -1,1003 +1,2810 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Development Guide</title>
-    <link rel="stylesheet" href="style.css">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AI Development Field Guide — an interactive technical documentation experience covering artificial intelligence fundamentals, machine learning workflows, generative AI, prompt engineering, RAG, evaluation, and responsible AI."
+    >
+
+    <meta
+        name="author"
+        content="Marsharine A. Simpson"
+    >
+
+    <title>
+        AI Development Field Guide | Interactive Technical Documentation
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
+
+    <script
+        src="script.js"
+        defer
+    ></script>
 </head>
+
+
 <body>
-    <header class="title-bar">
-        <h1>AI Development Guide</h1>
+
+    <!-- =====================================================
+         ACCESSIBILITY
+    ====================================================== -->
+
+    <a
+        class="skip-link"
+        href="#main-content"
+    >
+        Skip to main content
+    </a>
+
+
+    <!-- =====================================================
+         TOP HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <a
+            class="brand"
+            href="#overview"
+            aria-label="AI Development Field Guide home"
+        >
+
+            <span
+                class="brand-mark"
+                aria-hidden="true"
+            >
+                AI
+            </span>
+
+            <span class="brand-copy">
+
+                <strong>
+                    AI Development
+                </strong>
+
+                <small>
+                    Field Guide
+                </small>
+
+            </span>
+
+        </a>
+
+
+        <div class="header-tools">
+
+            <button
+                class="mobile-menu-button"
+                id="mobile-menu-button"
+                type="button"
+                aria-expanded="false"
+                aria-controls="docs-sidebar"
+                aria-label="Open documentation navigation"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <button
+                class="theme-toggle"
+                id="theme-toggle"
+                type="button"
+                aria-label="Switch to dark theme"
+            >
+
+                <span
+                    class="theme-icon"
+                    aria-hidden="true"
+                >
+                    ◐
+                </span>
+
+                <span class="theme-label">
+                    Theme
+                </span>
+
+            </button>
+
+
+            <a
+                class="github-button"
+                href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/AI_Dev-Technical_Doc_Web_Project"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                View Source
+                <span aria-hidden="true">↗</span>
+            </a>
+
+        </div>
+
     </header>
-    
-    <nav class="side-menu">
-        <ul>
-            <li><a href="#getting-started">Getting Started</a></li>
-            <li><a href="#ml-basics">ML Basics</a></li>
-            <li><a href="#python-libraries">Libraries</a></li>
-            <li><a href="#data-preprocessing">Data Preprocessing</a></li>
-            <li><a href="#supervised-learning">Supervised Learning</a></li>   
-            <li><a href="#unsupervised-learning">Unsupervised Learning</a></li>
-            <li><a href="#deep-learning">Deep Learning</a></li>
-            <li><a href="#cnns">CNNs</a></li>
-            <li><a href="#nlp">NLP</a></li>
-            <li><a href="#model-evaluation">Model Evaluation</a></li>
-            <li><a href="#saving-loading-models">Saving and Loading Models</a></li> 
-            <li><a href="#ai-application">AI Applications</a></li> 
-            <li><a href="#troubleshooting">Troubleshooting</a></li>
-            <li><a href="#best-practices">Best Practices</a></li>
-            <li><a href="#future-trends">Future Trends</a></li>
-            <li><a href="#resources">Resources</a></li>
-        </ul>
-    </nav>
 
 
+    <!-- =====================================================
+         READING PROGRESS
+    ====================================================== -->
 
-    <!-- Main Content -->
-    <main id="content">
-        <section id="getting-started">
-            <h2>Getting Started with Python for AI</h2>
-            <p>Python is a popular programming language for AI development due to its simplicity and robust libraries. Getting started involves installing Python, setting up a suitable development environment, and installing essential libraries. Follow these steps to get your environment ready:</p>
-        
-            <h3>Step 1: Install Python</h3>
-            <p>Install Python through your system's package manager or download it from the official Python website:</p>
-            <pre><code>$ sudo apt-get install python3</code></pre>
-            <p><em>Note: The above commands are for Unix-based systems. For Windows, you might use <code>conda create --name ai_project python=3.8</code> in the Anaconda Prompt.</em></p>
-        
-            <h3>Step 2: Set Up a Virtual Environment</h3>
-            <p>Using a virtual environment helps manage dependencies for different projects. We'll use <code>conda</code>:</p>
-            <pre><code>$ conda create --name ai_project python=3.8
-        $ conda activate ai_project</code></pre>
-            <p><em>Note: The above commands are for Unix-based systems. For Windows, you might use <code>conda create --name ai_project python=3.8</code> in the Anaconda Prompt.</em></p>
-        
-            <h3>Step 3: Install Key Libraries</h3>
-            <p>Install essential libraries for AI development:</p>
-            <ul>
-                <li><strong>NumPy:</strong> For numerical computations.</li>
-                <li><strong>Pandas:</strong> For data manipulation and analysis.</li>
-                <li><strong>Scikit-Learn:</strong> For machine learning tools.</li>
-                <li><strong>TensorFlow:</strong> For deep learning.</li>
-                <li><strong>Keras:</strong> High-level API for building neural networks.</li>
-            </ul>
-            <pre><code>$ pip install numpy pandas scikit-learn tensorflow keras</code></pre>
-        
-            <h3>Step 4: Verify Installation</h3>
-            <p>Verify your installations:</p>
-            <pre><code>
-        import numpy as np
-        import pandas as pd
-        import tensorflow as tf
-        import sklearn
-        
-        print("NumPy version:", np.__version__)
-        print("Pandas version:", pd.__version__)
-        print("TensorFlow version:", tf.__version__)
-        print("Scikit-learn version:", sklearn.__version__)
-        </code></pre>
-        
-            <p>Once you see the version numbers printed, you're ready to start building AI applications with Python! Next, consider exploring the <a href="#ml-basics">Machine Learning Basics</a>.</p>
-        </section>
-
-        <section id="ml-basics">
-            <h2>Machine Learning Basics</h2>
-            <p>Machine Learning (ML) is a subset of artificial intelligence (AI) that focuses on developing algorithms that allow computers to learn from and make predictions or decisions based on data. This section covers the basic concepts of machine learning, the distinction between supervised and unsupervised learning, and common algorithms used in the field.</p>
-            
-            <h3>What is Machine Learning?</h3>
-            <p>Machine Learning is a method of data analysis that automates analytical model building. It is based on the idea that systems can learn from data, identify patterns, and make decisions with minimal human intervention. ML has various applications, including speech recognition, image analysis, and recommendation systems.</p>
-            
-            <h3>Types of Machine Learning</h3>
-            <p>There are three main types of machine learning:</p>
-            
-            <ul>
-                <li><strong>Supervised Learning:</strong> In supervised learning, the model is trained on labeled data. This means that the input data is paired with the correct output. The model learns to map inputs to outputs and can make predictions on new, unseen data.</li>
-                <li><strong>Unsupervised Learning:</strong> Unsupervised learning involves training a model on unlabeled data. The model tries to learn the underlying structure of the data without explicit guidance. It’s often used for clustering and association tasks.</li>
-                <li><strong>Reinforcement Learning:</strong> In reinforcement learning, an agent learns to make decisions by taking actions in an environment to maximize some notion of cumulative reward. It is often applied in robotics, game playing, and navigation tasks.</li>
-            </ul>
-        
-            <h3>Key Differences Between Supervised and Unsupervised Learning</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Aspect</th>
-                        <th>Supervised Learning</th>
-                        <th>Unsupervised Learning</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Data</td>
-                        <td>Labeled data (input-output pairs)</td>
-                        <td>Unlabeled data (only input)</td>
-                    </tr>
-                    <tr>
-                        <td>Goal</td>
-                        <td>Predict outcomes for new data</td>
-                        <td>Discover patterns or groupings</td>
-                    </tr>
-                    <tr>
-                        <td>Common Algorithms</td>
-                        <td>Linear Regression, Decision Trees, Support Vector Machines</td>
-                        <td>K-Means Clustering, Hierarchical Clustering, Principal Component Analysis (PCA)</td>
-                    </tr>
-                    <tr>
-                        <td>Use Cases</td>
-                        <td>Classification, Regression</td>
-                        <td>Clustering, Anomaly Detection</td>
-                    </tr>
-                </tbody>
-            </table>
-        
-            <h3>Common Machine Learning Algorithms</h3>
-            <p>Here are some commonly used machine learning algorithms:</p>
-            
-            <ul>
-                <li><strong>Linear Regression:</strong> Used for predicting a continuous output variable based on one or more input features.</li>
-                <li><strong>Logistic Regression:</strong> A classification algorithm used to predict binary outcomes based on input features.</li>
-                <li><strong>Decision Trees:</strong> A model that makes decisions based on asking a series of questions about the input data.</li>
-                <li><strong>Support Vector Machines (SVM):</strong> A powerful classification technique that finds the optimal hyperplane to separate classes in the feature space.</li>
-                <li><strong>K-Means Clustering:</strong> An unsupervised algorithm that partitions data into K clusters based on feature similarity.</li>
-                <li><strong>Random Forest:</strong> An ensemble learning method that combines multiple decision trees to improve accuracy and control overfitting.</li>
-                <li><strong>Neural Networks:</strong> A set of algorithms modeled after the human brain, used for complex tasks such as image and speech recognition.</li>
-            </ul>
-        
-            <h3>Conclusion</h3>
-            <p>Understanding the basics of machine learning is essential for building effective AI applications. By grasping the differences between supervised and unsupervised learning, as well as familiarizing yourself with common algorithms, you can start to explore the vast possibilities of AI and data-driven decision-making.</p>
-        </section>
-
-        <section id="python-libraries">
-            <h2>Key Python Libraries for AI</h2>
-            <p>Python has become one of the most popular programming languages for AI development due to its simplicity and the powerful libraries it offers. In this section, we will explore essential libraries that every AI developer should be familiar with, including NumPy, Pandas, Scikit-learn, TensorFlow, and Keras.</p>
-            
-            <h3>1. NumPy</h3>
-            <p>NumPy (Numerical Python) is a fundamental package for scientific computing in Python. It provides support for large multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays. NumPy is widely used in data analysis, machine learning, and deep learning.</p>
-            <p><strong>Example Usage:</strong></p>
-            <pre><code>import numpy as np
-        
-        # Create a 2D array
-        data = np.array([[1, 2, 3], [4, 5, 6]])
-        print(data)
-            </code></pre>
-            
-            <h3>2. Pandas</h3>
-            <p>Pandas is a powerful data manipulation and analysis library for Python. It provides data structures like Series and DataFrames, making it easy to work with structured data. Pandas is commonly used for data cleaning, transformation, and analysis, especially when working with tabular data.</p>
-            <p><strong>Example Usage:</strong></p>
-            <pre><code>import pandas as pd
-        
-        # Create a DataFrame
-        data = {'Name': ['Alice', 'Bob', 'Charlie'],
-                'Age': [25, 30, 35]}
-        df = pd.DataFrame(data)
-        print(df)
-            </code></pre>
-            
-            <h3>3. Scikit-learn</h3>
-            <p>Scikit-learn is a popular machine learning library for Python that provides simple and efficient tools for data mining and data analysis. It offers various algorithms for classification, regression, clustering, and dimensionality reduction, along with utilities for model selection and evaluation.</p>
-            <p><strong>Example Usage:</strong></p>
-            <pre><code>from sklearn.model_selection import train_test_split
-        from sklearn.linear_model import LinearRegression
-        
-        # Split data into training and testing sets
-        X = [[1], [2], [3], [4]]
-        y = [1, 2, 3, 4]
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-        
-        # Train a linear regression model
-        model = LinearRegression()
-        model.fit(X_train, y_train)
-            </code></pre>
-            
-            <h3>4. TensorFlow</h3>
-            <p>TensorFlow is an open-source machine learning framework developed by Google. It is widely used for building and training deep learning models. TensorFlow provides a flexible platform for deploying machine learning models on various devices, from servers to mobile devices.</p>
-            <p><strong>Example Usage:</strong></p>
-            <pre><code>import tensorflow as tf
-        
-        # Define a simple sequential model
-        model = tf.keras.Sequential([
-            tf.keras.layers.Dense(10, activation='relu', input_shape=(None, 5)),
-            tf.keras.layers.Dense(1)
-        ])
-            </code></pre>
-            
-            <h3>5. Keras</h3>
-            <p>Keras is a high-level neural networks API that runs on top of TensorFlow. It allows for easy and fast prototyping of deep learning models, with a focus on user-friendliness and modularity. Keras provides a simple interface to create complex models using just a few lines of code.</p>
-            <p><strong>Example Usage:</strong></p>
-            <pre><code>from tensorflow.keras import layers
-        
-        # Add layers to the model
-        model.add(layers.Dense(64, activation='relu'))
-        model.add(layers.Dense(10, activation='softmax'))
-            </code></pre>
-            
-            <h3>Conclusion</h3>
-            <p>These libraries are crucial for anyone looking to dive into AI development with Python. They provide powerful tools for data manipulation, model building, and training, making it easier to develop sophisticated AI applications. Familiarizing yourself with these libraries will enhance your ability to work on a wide range of AI projects.</p>
-        </section>
-
-        <section id="data-preprocessing">
-            <h2>Data Preprocessing</h2>
-            <p>Data preprocessing is a crucial step in the machine learning pipeline. It involves loading, cleaning, and transforming data to ensure it is suitable for training machine learning models. This section covers essential techniques for data preprocessing, including handling missing values, encoding categorical variables, normalizing numerical features, and splitting data into training and testing sets.</p>
-            
-            <h3>1. Loading Data</h3>
-            <p>Before any analysis can take place, you need to load your data into a format that can be easily manipulated. Python's Pandas library is commonly used for this purpose.</p>
-            <pre><code>import pandas as pd
-        
-        # Load data from a CSV file
-        data = pd.read_csv('data.csv')
-        print(data.head())
-            </code></pre>
-            
-            <h3>2. Handling Missing Values</h3>
-            <p>Missing data can significantly affect the performance of machine learning models. It is essential to identify and handle missing values appropriately. Common strategies include:</p>
-            <ul>
-                <li>Removing rows with missing values</li>
-                <li>Replacing missing values with a mean, median, or mode</li>
-                <li>Using interpolation methods</li>
-            </ul>
-            <p><strong>Example Usage:</strong></p>
-            <pre><code># Remove rows with missing values
-        cleaned_data = data.dropna()
-        
-        # Fill missing values with the mean of the column
-        data['ColumnName'].fillna(data['ColumnName'].mean(), inplace=True)
-            </code></pre>
-            <p><strong>Common Pitfalls:</strong> 
-            Avoid removing too many rows, as this can lead to loss of valuable data. Instead, consider filling missing values where applicable.
-            </p>
-        
-            <h3>3. Encoding Categorical Variables</h3>
-            <p>Machine learning algorithms require numerical input, so it is necessary to convert categorical variables into numerical formats. Common techniques include:</p>
-            <ul>
-                <li><strong>Label Encoding:</strong> Assigning a unique integer to each category.</li>
-                <li><strong>One-Hot Encoding:</strong> Creating binary columns for each category.</li>
-            </ul>
-            <p><strong>Example Usage:</strong></p>
-            <pre><code>from sklearn.preprocessing import LabelEncoder, OneHotEncoder
-        
-        # Label Encoding
-        label_encoder = LabelEncoder()
-        data['Category'] = label_encoder.fit_transform(data['Category'])
-        
-        # One-Hot Encoding
-        data = pd.get_dummies(data, columns=['Category'], drop_first=True)
-            </code></pre>
-        
-            <h3>4. Normalizing Numerical Features</h3>
-            <p>Normalization is essential to ensure that numerical features have a consistent scale, which can improve model performance. Common techniques include Min-Max scaling and Standardization (Z-score scaling).</p>
-            <p><strong>Example Usage:</strong></p>
-            <pre><code>from sklearn.preprocessing import MinMaxScaler, StandardScaler
-        
-        # Min-Max Scaling
-        min_max_scaler = MinMaxScaler()
-        data['NormalizedColumn'] = min_max_scaler.fit_transform(data[['ColumnName']])
-        
-        # Standardization
-        standard_scaler = StandardScaler()
-        data['StandardizedColumn'] = standard_scaler.fit_transform(data[['ColumnName']])
-            </code></pre>
-        
-            <h3>5. Splitting Data into Training and Testing Sets</h3>
-            <p>To evaluate the performance of a machine learning model, the data must be split into training and testing sets. This is usually done with an 80/20 or 70/30 split.</p>
-            <p><strong>Example Usage:</strong></p>
-            <pre><code>from sklearn.model_selection import train_test_split
-        
-        # Split data into features and target variable
-        X = data.drop('Target', axis=1)
-        y = data['Target']
-        
-        # Split the dataset into training and testing sets
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-            </code></pre>
-        
-           
-        
-            <h3>Conclusion</h3>
-            <p>Data preprocessing is a vital step in the machine learning process that can significantly impact model accuracy and performance. By carefully loading, cleaning, and preparing data, you can create robust datasets that lead to more effective machine learning models. Mastering these preprocessing techniques will enhance your ability to work with real-world data effectively.</p>
-            
-            <h3>Further Reading</h3>
-            <p>For a deeper understanding of data preprocessing techniques, consider exploring the following resources:</p>
-            <ul>
-                <li><a href="https://scikit-learn.org/stable/modules/preprocessing.html">Scikit-learn Preprocessing Documentation</a></li>
-                <li><a href="https://pandas.pydata.org/docs/user_guide/missing_data.html">Pandas Documentation on Missing Data</a></li>
-                <li><a href="https://towardsdatascience.com/a-guide-to-data-preprocessing-in-machine-learning-68c3d9ed71a1">A Comprehensive Guide to Data Preprocessing</a></li>
-            </ul>
-            
-            <h3>Interactive Practice</h3>
-            <p>To practice these techniques, you can explore our interactive Jupyter Notebook where you can run the code snippets and manipulate data in real time:</p>
-            <a href="https://myinteractivepractice.com/data-preprocessing-notebook">Try the Interactive Notebook</a>
-        </section>
-
-        <section id="supervised-learning">
-            <h2>Supervised Learning</h2>
-            <p>Supervised learning is a fundamental machine learning approach where a model is trained on labeled data. This means that for each training example, the input data is paired with the correct output. The goal is for the model to learn to map inputs to the correct outputs, allowing it to make predictions on new, unseen data.</p>
-        
-            <h3>Key Concepts</h3>
-            <ul>
-                <li><strong>Training Data:</strong> The dataset used to train the model, consisting of input-output pairs.</li>
-                <li><strong>Labels:</strong> The correct outputs associated with the training data that the model tries to predict.</li>
-                <li><strong>Model:</strong> A mathematical representation of the relationship between input data and outputs.</li>
-                <li><strong>Loss Function:</strong> A method of evaluating how well the model is performing by measuring the difference between predicted and actual values.</li>
-            </ul>
-        
-            <h3>Common Algorithms</h3>
-            <p>Several algorithms are commonly used in supervised learning, including:</p>
-            <ul>
-                <li><strong>Linear Regression:</strong> Used for predicting continuous values by fitting a linear relationship between input features and output.</li>
-                <li><strong>Logistic Regression:</strong> A classification algorithm used for binary outcomes that models the probability of a class label.</li>
-                <li><strong>Decision Trees:</strong> A model that splits the data into subsets based on the value of input features to make predictions.</li>
-                <li><strong>Support Vector Machines (SVM):</strong> A classification technique that finds the optimal hyperplane separating different classes.</li>
-                <li><strong>Neural Networks:</strong> Composed of interconnected nodes (neurons) that can capture complex patterns in the data.</li>
-            </ul>
-        
-            <h3>Applications of Supervised Learning</h3>
-            <p>Supervised learning is widely used in various applications, including:</p>
-            <ul>
-                <li><strong>Image Classification:</strong> Identifying objects within images, such as in facial recognition systems.</li>
-                <li><strong>Spam Detection:</strong> Classifying emails as spam or not based on labeled training data.</li>
-                <li><strong>Sentiment Analysis:</strong> Determining the sentiment (positive, negative, neutral) expressed in a piece of text.</li>
-                <li><strong>Medical Diagnosis:</strong> Assisting doctors by predicting diseases based on patient data.</li>
-            </ul>
-        
-            <h3>Conclusion</h3>
-            <p>Supervised learning is a powerful technique that can solve many practical problems. By leveraging labeled data, it enables the development of predictive models that help us make informed decisions across various domains.</p>
-        </section>
-
-        <section id="unsupervised-learning">
-            <h2>Unsupervised Learning</h2>
-            <p>Unsupervised learning is a type of machine learning that deals with unlabeled data. Unlike supervised learning, where models are trained on labeled datasets, unsupervised learning algorithms try to identify patterns and structures in the data without any explicit labels. This makes unsupervised learning particularly useful for exploratory data analysis and understanding the underlying structure of data.</p>
-            
-            <h3>1. Clustering</h3>
-            <p>Clustering is a common technique in unsupervised learning that involves grouping similar data points together. The goal is to identify natural clusters in the data.</p>
-            
-            <h4>K-Means Clustering</h4>
-            <p>K-means is one of the simplest and most popular clustering algorithms. It partitions the data into K clusters, where each data point belongs to the cluster with the nearest mean.</p>
-            <p><strong>Example Usage:</strong></p>
-            <pre><code>from sklearn.cluster import KMeans
-        import matplotlib.pyplot as plt
-        
-        # Sample data
-        data = [[1, 2], [1, 4], [1, 0],
-                [4, 2], [4, 4], [4, 0]]
-        
-        # Create a KMeans instance with 2 clusters
-        kmeans = KMeans(n_clusters=2, random_state=0)
-        kmeans.fit(data)
-        
-        # Predict the cluster labels
-        labels = kmeans.labels_
-        print("Cluster Labels:", labels)
-        
-        # Visualize the clusters
-        plt.scatter([point[0] for point in data], [point[1] for point in data], c=labels)
-        plt.title('K-Means Clustering')
-        plt.xlabel('Feature 1')
-        plt.ylabel('Feature 2')
-        plt.show()
-            </code></pre>
-        
-            <h4>Hierarchical Clustering</h4>
-            <p>Hierarchical clustering builds a hierarchy of clusters either through a divisive method (top-down) or an agglomerative method (bottom-up). It’s often visualized using a dendrogram.</p>
-            <p><strong>Example Usage:</strong></p>
-            <pre><code>from sklearn.cluster import AgglomerativeClustering
-        from scipy.cluster.hierarchy import dendrogram
-        import scipy.cluster.hierarchy as sch
-        
-        # Sample data
-        data = [[1, 2], [1, 4], [1, 0],
-                [4, 2], [4, 4], [4, 0]]
-        
-        # Create a hierarchical clustering instance
-        hierarchical = AgglomerativeClustering(n_clusters=2)
-        labels_hierarchical = hierarchical.fit_predict(data)
-        
-        # Create a dendrogram
-        linkage_matrix = sch.linkage(data, method='ward')
-        plt.figure(figsize=(10, 5))
-        dendrogram(linkage_matrix)
-        plt.title('Hierarchical Clustering Dendrogram')
-        plt.xlabel('Data Points')
-        plt.ylabel('Distance')
-        plt.show()
-            </code></pre>
-        
-            <h3>2. Dimensionality Reduction</h3>
-            <p>Dimensionality reduction techniques reduce the number of features in a dataset while retaining as much information as possible. This is especially useful for visualizing high-dimensional data.</p>
-            
-            <h4>Principal Component Analysis (PCA)</h4>
-            <p>PCA is a widely used technique that transforms data into a lower-dimensional space by identifying the directions (principal components) that maximize variance.</p>
-            <p><strong>Example Usage:</strong></p>
-            <pre><code>from sklearn.decomposition import PCA
-        
-        # Sample data
-        data = [[1, 2, 3], [4, 5, 6], [7, 8, 9],
-                [1, 4, 7], [2, 5, 8], [3, 6, 9]]
-        
-        # Create a PCA instance to reduce to 2 dimensions
-        pca = PCA(n_components=2)
-        reduced_data = pca.fit_transform(data)
-        
-        print("Reduced Data:\n", reduced_data)
-        
-        # Visualize the PCA results
-        plt.scatter(reduced_data[:, 0], reduced_data[:, 1])
-        plt.title('PCA Result')
-        plt.xlabel('Principal Component 1')
-        plt.ylabel('Principal Component 2')
-        plt.show()
-            </code></pre>
-        
-            <h3>Conclusion</h3>
-            <p>Unsupervised learning provides powerful tools for discovering patterns and relationships in data without labeled responses. Techniques like clustering and dimensionality reduction are essential for exploratory data analysis, feature engineering, and preprocessing steps in machine learning workflows. Mastering these techniques will enable you to unlock valuable insights from your datasets.</p>
-        </section>
-
-        <section id="deep-learning">
-            <h2>Deep Learning</h2>
-            <p>Deep learning is a subset of machine learning that utilizes neural networks with multiple layers, known as deep neural networks. It excels in handling large datasets and is particularly effective for complex problems such as image and speech recognition, natural language processing, and more. The architecture of deep learning models allows them to automatically learn hierarchical features from raw data, making them powerful tools in the AI toolkit.</p>
-            
-            <h3>1. Fundamentals of Neural Networks</h3>
-            <p>A neural network consists of interconnected nodes (neurons) organized into layers. The main types of layers include:</p>
-            <ul>
-                <li><strong>Input Layer:</strong> Accepts input features.</li>
-                <li><strong>Hidden Layers:</strong> Process the inputs using weights, biases, and activation functions.</li>
-                <li><strong>Output Layer:</strong> Produces the final output, such as classification labels or predicted values.</li>
-            </ul>
-            <p>Activation functions like ReLU (Rectified Linear Unit), sigmoid, and softmax help introduce non-linearity into the model, allowing it to learn complex patterns.</p>
-            
-            <h3>2. Popular Deep Learning Frameworks</h3>
-            <p>Several frameworks simplify building and training deep learning models:</p>
-            <ul>
-                <li><strong>TensorFlow:</strong> An open-source library for numerical computation that makes machine learning easier.</li>
-                <li><strong>Keras:</strong> A high-level neural networks API that runs on top of TensorFlow, making it more user-friendly.</li>
-                <li><strong>PyTorch:</strong> A flexible deep learning framework that emphasizes ease of use and speed, particularly favored for research purposes.</li>
-            </ul>
-            
-            <h3>3. Example: Building a Simple Neural Network with Keras</h3>
-            <p>Here’s a basic example of creating a neural network using Keras to classify handwritten digits from the MNIST dataset:</p>
-            <pre><code>import tensorflow as tf
-        from tensorflow.keras import layers, models
-        from tensorflow.keras.datasets import mnist
-        
-        # Load the dataset
-        (x_train, y_train), (x_test, y_test) = mnist.load_data()
-        x_train, x_test = x_train / 255.0, x_test / 255.0  # Normalize the images
-        
-        # Build the model
-        model = models.Sequential()
-        model.add(layers.Flatten(input_shape=(28, 28)))  # Flatten the 28x28 images
-        model.add(layers.Dense(128, activation='relu'))   # Hidden layer with ReLU activation
-        model.add(layers.Dense(10, activation='softmax'))  # Output layer for 10 classes
-        
-        # Compile the model
-        model.compile(optimizer='adam',
-                      loss='sparse_categorical_crossentropy',
-                      metrics=['accuracy'])
-        
-        # Train the model
-        model.fit(x_train, y_train, epochs=5)
-        
-        # Evaluate the model
-        test_loss, test_acc = model.evaluate(x_test, y_test)
-        print('Test accuracy:', test_acc)
-            </code></pre>
-            <p>This example demonstrates a simple feedforward neural network with one hidden layer. The model is trained to classify images of handwritten digits, achieving high accuracy on the test set.</p>
-            
-            <h3>4. Applications of Deep Learning</h3>
-            <p>Deep learning has revolutionized various fields. Some key applications include:</p>
-            <ul>
-                <li><strong>Computer Vision:</strong> Image classification, object detection, and image generation.</li>
-                <li><strong>Natural Language Processing:</strong> Machine translation, sentiment analysis, and text generation.</li>
-                <li><strong>Speech Recognition:</strong> Converting spoken language into text.</li>
-                <li><strong>Healthcare:</strong> Predicting diseases from medical images and patient data.</li>
-                <li><strong>Autonomous Vehicles:</strong> Enabling cars to recognize and respond to their surroundings.</li>
-            </ul>
-            
-            <h3>Conclusion</h3>
-            <p>Deep learning is a powerful approach that has significantly advanced the capabilities of AI. By leveraging neural networks with multiple layers, deep learning can tackle complex problems and is widely used across industries. As you delve deeper into this field, understanding neural network architecture and tuning hyperparameters will be essential for developing effective models.</p>
-        
-            <h3>Visual Representation of Neural Networks</h3>
-            <p>The following diagram illustrates the architecture of a typical neural network:</p>
-            <img src="neural_network_diagram.png" alt="Neural Network Architecture" style="max-width: 600px; height: auto;"/>
-        
-            <h3>Further Reading</h3>
-            <p>For those looking to expand their knowledge, consider exploring the following resources:</p>
-            <ul>
-                <li><a href="https://www.deeplearning.ai/">Deep Learning Specialization by Andrew Ng</a></li>
-                <li><a href="https://pytorch.org/tutorials/">PyTorch Tutorials</a></li>
-                <li><a href="https://www.tensorflow.org/tutorials">TensorFlow Tutorials</a></li>
-            </ul>
-        
-            <h3>Interactive Learning</h3>
-            <p>To practice building and training deep learning models, check out our interactive Jupyter Notebook where you can run code snippets and explore concepts in real time:</p>
-            <a href="https://myinteractivelearning.com/deep-learning-notebook">Try the Interactive Notebook</a>
-        </section>
-
-        <section id="cnns">
-            <h2>Convolutional Neural Networks (CNNs)</h2>
-            <p>Convolutional Neural Networks (CNNs) are a type of deep learning model primarily used for processing structured grid data, such as images. They are particularly effective for tasks involving image recognition, object detection, and image classification. CNNs leverage convolutional layers to automatically extract features from the data, making them well-suited for visual tasks where spatial hierarchies are important.</p>
-            
-            <h3>1. Key Components of CNNs</h3>
-            <p>CNNs consist of several essential layers that work together to process and analyze data:</p>
-            <ul>
-                <li><strong>Convolutional Layers:</strong> These layers apply a series of filters (kernels) to the input data to extract features. Each filter scans the input image and computes the dot product, creating feature maps that highlight specific patterns (e.g., edges, textures).</li>
-                <li><strong>Activation Functions:</strong> After convolution, an activation function (like ReLU) is applied to introduce non-linearity into the model, allowing it to learn complex representations.</li>
-                <li><strong>Pooling Layers:</strong> These layers downsample the feature maps, reducing their spatial dimensions while retaining important information. Common pooling methods include max pooling and average pooling, which help decrease computation and mitigate overfitting.</li>
-                <li><strong>Fully Connected Layers:</strong> At the end of the network, fully connected layers (dense layers) connect all neurons from the previous layer to produce the final output, such as class scores for classification tasks.</li>
-            </ul>
-        
-            <h3>2. How CNNs Work</h3>
-            <p>The architecture of a CNN typically follows a pattern of convolutional layers followed by pooling layers, and then a set of fully connected layers. The process involves:</p>
-            <ol>
-                <li>**Input Image:** The raw image is input into the CNN.</li>
-                <li>**Feature Extraction:** Convolutional and pooling layers extract relevant features from the image.</li>
-                <li>**Flattening:** The pooled feature maps are flattened into a one-dimensional vector to prepare for the fully connected layers.</li>
-                <li>**Classification:** Fully connected layers compute the output probabilities for each class, usually using a softmax activation function.</li>
-            </ol>
-        
-            <h3>3. Example: Building a Simple CNN with Keras</h3>
-            <p>Here’s a basic example of creating a CNN using Keras to classify images from the CIFAR-10 dataset:</p>
-            <pre><code>import tensorflow as tf
-        from tensorflow.keras import layers, models
-        from tensorflow.keras.datasets import cifar10
-        
-        # Load the dataset
-        (x_train, y_train), (x_test, y_test) = cifar10.load_data()
-        x_train, x_test = x_train / 255.0, x_test / 255.0  # Normalize the images
-        
-        # Build the model
-        model = models.Sequential()
-        model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)))  # Convolutional layer
-        model.add(layers.MaxPooling2D((2, 2)))  # Pooling layer
-        model.add(layers.Conv2D(64, (3, 3), activation='relu'))  # Second convolutional layer
-        model.add(layers.MaxPooling2D((2, 2)))  # Second pooling layer
-        model.add(layers.Conv2D(64, (3, 3), activation='relu'))  # Third convolutional layer
-        model.add(layers.Flatten())  # Flatten the feature maps
-        model.add(layers.Dense(64, activation='relu'))  # Fully connected layer
-        model.add(layers.Dense(10, activation='softmax'))  # Output layer for 10 classes
-        
-        # Compile the model
-        model.compile(optimizer='adam',
-                      loss='sparse_categorical_crossentropy',
-                      metrics=['accuracy'])
-        
-        # Train the model
-        model.fit(x_train, y_train, epochs=10, validation_data=(x_test, y_test))
-        
-        # Evaluate the model
-        test_loss, test_acc = model.evaluate(x_test, y_test)
-        print('Test accuracy:', test_acc)
-            </code></pre>
-            <p>This example demonstrates a simple CNN architecture. The model is trained to classify images into 10 categories from the CIFAR-10 dataset, achieving a good level of accuracy. You can experiment with different architectures, activation functions, and hyperparameters to improve performance.</p>
-        
-            <h3>4. Applications of CNNs</h3>
-            <p>CNNs are widely used in various applications, including:</p>
-            <ul>
-                <li><strong>Image Classification:</strong> Automatically categorizing images into predefined classes.</li>
-                <li><strong>Object Detection:</strong> Identifying and localizing objects within images or video streams.</li>
-                <li><strong>Image Segmentation:</strong> Dividing an image into segments to analyze specific areas, often used in medical imaging.</li>
-                <li><strong>Facial Recognition:</strong> Identifying and verifying individuals from images or videos.</li>
-                <li><strong>Style Transfer:</strong> Transforming an image to adopt the visual style of another image.</li>
-            </ul>
-        
-            <h3>5. Challenges in CNNs</h3>
-            <p>While CNNs are powerful, they come with their own set of challenges:</p>
-            <ul>
-                <li><strong>Overfitting:</strong> Due to their high capacity, CNNs can easily overfit to the training data. Techniques like dropout, data augmentation, and regularization can help mitigate this.</li>
-                <li><strong>Computational Resources:</strong> Training deep CNNs requires substantial computational power, often necessitating GPUs.</li>
-                <li><strong>Data Requirements:</strong> CNNs typically require large amounts of labeled data to perform well. Transfer learning can be employed to leverage pre-trained models with fewer data.</li>
-            </ul>
-        
-            <h3>Conclusion</h3>
-            <p>Convolutional Neural Networks are a foundational technology in deep learning, particularly for image-related tasks. By understanding the components and architecture of CNNs, as well as their applications and challenges, you can effectively leverage this powerful tool in your own projects. Continuous experimentation and adaptation are key to mastering CNNs and optimizing their performance for specific tasks.</p>
-        </section>
-
-        <section id="nlp">
-            <h2>Natural Language Processing (NLP)</h2>
-            <p>Natural Language Processing (NLP) is a field of Artificial Intelligence (AI) that focuses on the interaction between computers and humans through natural language. NLP enables computers to understand, interpret, and generate human language in a valuable and meaningful way. This interdisciplinary domain combines linguistics, computer science, and machine learning to facilitate communication between humans and machines.</p>
-            
-            <h3>1. Key Components of NLP</h3>
-            <p>NLP involves several key components that contribute to its functionality:</p>
-            <ul>
-                <li><strong>Tokenization:</strong> The process of breaking down text into individual words, phrases, or sentences, making it easier for computers to analyze the structure and meaning of the language. For instance, the sentence "NLP is fascinating!" would be tokenized into ["NLP", "is", "fascinating", "!"].</li>
-                <li><strong>Part-of-Speech Tagging:</strong> Assigning grammatical categories (nouns, verbs, adjectives, etc.) to each word in a sentence, helping to understand the syntactic structure. For example, in the phrase "The cat sleeps," "The" is tagged as a determiner, "cat" as a noun, and "sleeps" as a verb.</li>
-                <li><strong>Named Entity Recognition (NER):</strong> Identifying and classifying key entities (people, organizations, locations, etc.) within the text. For example, in "Apple Inc. is based in Cupertino," "Apple Inc." would be recognized as an organization, and "Cupertino" as a location.</li>
-                <li><strong>Sentiment Analysis:</strong> Determining the emotional tone behind a series of words, allowing for understanding the attitudes, opinions, and emotions expressed in text. For instance, a review stating "This product is amazing!" would be classified as positive sentiment.</li>
-                <li><strong>Parsing:</strong> Analyzing the grammatical structure of a sentence, providing insights into the relationships between words and their meanings. For example, parsing "The cat chased the mouse" reveals that "the cat" is the subject and "the mouse" is the object of the action.</li>
-            </ul>
-        
-            <h3>2. Techniques in NLP</h3>
-            <p>Several techniques are employed in NLP to enhance understanding and processing of natural language:</p>
-            <ul>
-                <li><strong>Rule-Based Approaches:</strong> Using predefined linguistic rules and heuristics to analyze and understand language. For example, a rule might specify that sentences starting with "How" are questions.</li>
-                <li><strong>Statistical Methods:</strong> Leveraging statistical models to predict and analyze language patterns based on large datasets. These methods can determine the likelihood of a word sequence based on frequency counts.</li>
-                <li><strong>Machine Learning:</strong> Training algorithms on annotated datasets to learn how to classify or generate language. Popular algorithms include Support Vector Machines (SVM), Decision Trees, and Neural Networks.</li>
-                <li><strong>Deep Learning:</strong> Utilizing neural networks, particularly recurrent neural networks (RNNs) and transformers, to understand context and semantics in language. This has led to breakthroughs in language modeling and understanding, such as OpenAI's GPT models.</li>
-            </ul>
-        
-            <h3>3. Applications of NLP</h3>
-            <p>NLP has a wide array of practical applications across various industries:</p>
-            <ul>
-                <li><strong>Sentiment Analysis:</strong> Companies use sentiment analysis to gauge public opinion on products, services, and brands by analyzing social media posts, reviews, and feedback. For example, a brand can assess customer sentiment towards a new product launch.</li>
-                <li><strong>Machine Translation:</strong> Services like Google Translate employ NLP to automatically translate text from one language to another, improving cross-language communication and breaking down language barriers.</li>
-                <li><strong>Chatbots and Virtual Assistants:</strong> NLP powers chatbots and virtual assistants (like Siri and Alexa) to engage in human-like conversations, providing customer support and personal assistance tailored to users' needs.</li>
-                <li><strong>Text Summarization:</strong> Automatically generating concise summaries of long articles or documents, making information easier to digest for users, such as summarizing news articles for quick consumption.</li>
-                <li><strong>Speech Recognition:</strong> Converting spoken language into text, enabling voice-controlled applications and services, which enhances accessibility and user interaction.</li>
-            </ul>
-        
-            <h3>4. Challenges in NLP</h3>
-            <p>Despite its advancements, NLP faces several challenges:</p>
-            <ul>
-                <li><strong>Ambiguity:</strong> Natural language is often ambiguous, and the same word or phrase can have multiple meanings based on context. For instance, "bank" can refer to a financial institution or the side of a river.</li>
-                <li><strong>Variability:</strong> Different ways of expressing the same idea can confuse NLP systems (e.g., slang, idioms, and dialects). For example, "I'm feeling blue" versus "I'm sad."</li>
-                <li><strong>Data Limitations:</strong> High-quality, annotated datasets are crucial for training NLP models, but acquiring such data can be challenging and time-consuming. Without sufficient data, models may not generalize well.</li>
-                <li><strong>Understanding Context:</strong> Capturing the context and nuances of language, especially in longer texts or dialogues, is complex and requires sophisticated models. For example, understanding sarcasm or cultural references is particularly challenging for machines.</li>
-            </ul>
-        
-            <h3>5. Conclusion</h3>
-            <p>Natural Language Processing is a rapidly evolving field that bridges the gap between human language and computer understanding. By employing various techniques and approaches, NLP enables meaningful interactions between humans and machines. As research and technology continue to advance, the applications of NLP are expanding, offering significant potential for enhancing communication, automating tasks, and improving user experiences across various domains. The future of NLP promises further advancements, making it an exciting area for both research and application.</p>
-        </section>
-
-        <section id="model-evaluation">
-            <h2>Model Evaluation & Optimization</h2>
-            <p>Model evaluation is crucial for understanding how well a machine learning model performs on unseen data. By evaluating a model, developers can assess its effectiveness and reliability, ensuring it meets the required standards before deployment. Common metrics for evaluating model performance include accuracy, precision, recall, and F1-score, each providing insights into different aspects of the model's predictions.</p>
-            
-            <h3>1. Evaluation Metrics</h3>
-            <p>Several metrics are used to evaluate the performance of classification and regression models:</p>
-            <ul>
-                <li><strong>Accuracy:</strong> The proportion of correct predictions made by the model out of all predictions. It is defined as:</li>
-                <pre><code>Accuracy = (True Positives + True Negatives) / Total Samples</code></pre>
-                <p>For example, if a model makes 80 correct predictions out of 100, the accuracy is 0.8 or 80%.</p>
-                
-                <li><strong>Precision:</strong> The ratio of true positive predictions to the total predicted positives, indicating how many selected items are relevant:</li>
-                <pre><code>Precision = True Positives / (True Positives + False Positives)</code></pre>
-                <p>If a model predicts 50 positive cases but only 30 are actual positives, the precision is 0.6 or 60%.</p>
-                
-                <li><strong>Recall (Sensitivity):</strong> The ratio of true positive predictions to the total actual positives, measuring how many relevant items are selected:</li>
-                <pre><code>Recall = True Positives / (True Positives + False Negatives)</code></pre>
-                <p>If there are 40 actual positive cases and the model identifies 30 correctly, the recall is 0.75 or 75%.</p>
-                
-                <li><strong>F1-Score:</strong> The harmonic mean of precision and recall, providing a balance between the two. It is especially useful for imbalanced datasets:</li>
-                <pre><code>F1 = 2 * (Precision * Recall) / (Precision + Recall)</code></pre>
-                <p>Using the previous precision (60%) and recall (75%), the F1-Score would be approximately 0.67 or 67%.</p>
-                
-                <li><strong>ROC-AUC:</strong> The area under the Receiver Operating Characteristic curve, measuring the model's ability to distinguish between classes across various threshold values. A higher AUC indicates better performance.</li>
-            </ul>
-        
-            <h3>2. Cross-Validation</h3>
-            <p>Cross-validation is a technique used to assess how the results of a statistical analysis will generalize to an independent dataset. The most common method is k-fold cross-validation, which involves dividing the dataset into k subsets (or folds) and training the model k times, each time using a different fold for validation and the remaining folds for training. This helps mitigate overfitting and provides a more reliable estimate of model performance. For instance, if k=5, the dataset is split into 5 parts, and the model is trained 5 times, each time using 4 parts for training and 1 part for validation.</p>
-        
-            <h3>3. Hyperparameter Tuning</h3>
-            <p>Hyperparameter tuning involves adjusting the hyperparameters of the model (the parameters set before the learning process begins) to optimize its performance. Common strategies include:</p>
-            <ul>
-                <li><strong>Grid Search:</strong> A brute-force approach that exhaustively searches through a specified subset of hyperparameter combinations to find the best performance.</li>
-                <li><strong>Random Search:</strong> Similar to grid search but randomly samples from the hyperparameter space, often yielding good results with less computational effort.</li>
-                <li><strong>Bayesian Optimization:</strong> A probabilistic model-based approach to optimize hyperparameters by building a surrogate model and using it to make decisions about where to explore next, often leading to improved performance with fewer evaluations.</li>
-            </ul>
-        
-            <h3>4. Best Practices for Model Evaluation</h3>
-            <p>To ensure reliable model evaluation and optimization, consider the following best practices:</p>
-            <ul>
-                <li><strong>Use a Separate Validation Set:</strong> Always keep a portion of the data separate for validation purposes to avoid bias in model evaluation. This ensures that the model's performance is not overly optimistic.</li>
-                <li><strong>Monitor for Overfitting:</strong> Use validation metrics to monitor for signs of overfitting, where the model performs well on training data but poorly on unseen data. Techniques like early stopping can help mitigate this.</li>
-                <li><strong>Analyze Errors:</strong> Examine misclassified instances to understand the model's weaknesses and areas for improvement, which can inform further model adjustments.</li>
-                <li><strong>Iterate and Experiment:</strong> Machine learning is an iterative process; continuously experiment with different models, parameters, and preprocessing techniques to achieve the best results. This may involve trying different algorithms, adjusting hyperparameters, or modifying input features.</li>
-            </ul>
-        
-            <h3>5. Conclusion</h3>
-            <p>Model evaluation and optimization are essential steps in the machine learning workflow. By employing appropriate metrics, cross-validation techniques, and hyperparameter tuning strategies, data scientists can significantly enhance model performance and ensure robust predictions on unseen data. Understanding these concepts is crucial for developing reliable and effective machine learning solutions that can adapt to real-world challenges.</p>
-        </section>
-
-        <section id="saving-loading-models">
-            <h2>Saving and Loading Models</h2>
-            <p>Saving and loading models is essential for deploying machine learning applications. Once a model is trained and achieves satisfactory performance, it can be saved for future use, making it easier to deploy, share, or further refine. Popular libraries, such as TensorFlow and PyTorch, provide built-in functions to serialize (save) and deserialize (load) models, ensuring that the model's architecture, weights, and training configuration are preserved.</p>
-        
-            <h3>1. Importance of Saving Models</h3>
-            <p>Model persistence is crucial for several reasons:</p>
-            <ul>
-                <li><strong>Efficiency:</strong> Saving a model allows users to skip the training process when reusing the model, which can be computationally expensive.</li>
-                <li><strong>Deployment:</strong> Once a model is trained, it can be easily deployed in production environments for real-time predictions.</li>
-                <li><strong>Collaboration:</strong> Sharing models with colleagues or deploying them on different machines requires an efficient way to store and retrieve the model.</li>
-                <li><strong>Experimentation:</strong> Saved models can be used as a baseline for further experimentation and fine-tuning.</li>
-            </ul>
-        
-            <h3>2. Saving and Loading Models in TensorFlow</h3>
-            <p>In TensorFlow, you can easily save and load models using the following methods:</p>
-            <pre><code>
-        # Example in Python (using TensorFlow)
-        import tensorflow as tf
-        
-        # Assume 'model' is your trained model
-        model.save('my_model.h5')  # Save model
-        
-        # Later, load the model
-        loaded_model = tf.keras.models.load_model('my_model.h5')  # Load model
-            </code></pre>
-            <p>The model is saved in the HDF5 format, which allows for efficient storage of large datasets. When loading the model, all layers, weights, and training configuration are restored automatically.</p>
-        
-            <h3>3. Saving and Loading Models in PyTorch</h3>
-            <p>In PyTorch, model saving and loading involves the use of the <code>torch.save</code> and <code>torch.load</code> functions:</p>
-            <pre><code>
-        # Example in Python (using PyTorch)
-        import torch
-        
-        # Assume 'model' is your trained model
-        torch.save(model.state_dict(), 'my_model.pth')  # Save model weights
-        
-        # To load the model, you need to instantiate the model first
-        loaded_model = MyModelClass()  # Create an instance of the model class
-        loaded_model.load_state_dict(torch.load('my_model.pth'))  # Load weights
-        loaded_model.eval()  # Set the model to evaluation mode
-            </code></pre>
-            <p>In this example, the model's weights are saved separately from its architecture, requiring the user to recreate the model structure before loading the weights.</p>
-        
-            <h3>4. Best Practices for Saving Models</h3>
-            <p>To ensure efficient model saving and loading, consider the following best practices:</p>
-            <ul>
-                <li><strong>Version Control:</strong> Use version numbers in filenames (e.g., <code>my_model_v1.h5</code>) to keep track of different model iterations.</li>
-                <li><strong>Metadata Storage:</strong> Save additional metadata such as training configurations, preprocessing steps, and performance metrics (e.g., training time, learning rates) to facilitate future use.</li>
-                <li><strong>Error Handling:</strong> Implement checks to ensure model files exist and handle potential version mismatches when loading models.</li>
-                <li><strong>Model Checkpointing:</strong> Implement model checkpointing during training to save the model at regular intervals or when performance improves, preventing loss of progress.</li>
-            </ul>
-        
-            <h3>5. Conclusion</h3>
-            <p>Saving and loading models is a fundamental aspect of the machine learning workflow, enabling efficient deployment and collaboration. By leveraging the capabilities provided by libraries like TensorFlow and PyTorch, practitioners can ensure their models are easily retrievable and ready for use, whether in production or for further experimentation. Additionally, using tools like <code>joblib</code> for scikit-learn models or ONNX for cross-framework compatibility can further enhance the model management process.</p>
-        </section>
-
-        <section id="ai-application">
-            <h2>AI Applications</h2>
-            <p>AI applications are diverse and encompass a wide range of industries, including healthcare, finance, autonomous vehicles, retail, and more. Each application leverages AI techniques to solve specific problems, enhance efficiency, and improve decision-making processes.</p>
-        
-            <h3>1. Healthcare</h3>
-            <p>In the healthcare sector, AI is transforming patient care through:</p>
-            <ul>
-                <li><strong>Medical Imaging:</strong> AI algorithms analyze medical images (like X-rays, MRIs, and CT scans) to detect anomalies such as tumors and fractures with high accuracy.</li>
-                <li><strong>Predictive Analytics:</strong> AI models predict disease outbreaks and patient outcomes based on historical data, enabling preventive measures and personalized treatment plans.</li>
-                <li><strong>Virtual Health Assistants:</strong> Chatbots and AI-driven platforms assist patients in scheduling appointments, managing prescriptions, and providing health information.</li>
-                <li><strong>Drug Discovery:</strong> AI accelerates the drug discovery process by predicting how different compounds will behave in the human body.</li>
-            </ul>
-        
-            <h3>2. Finance</h3>
-            <p>AI plays a significant role in the finance industry by enhancing:</p>
-            <ul>
-                <li><strong>Fraud Detection:</strong> Machine learning models analyze transaction patterns to identify unusual activities and detect potential fraud in real-time.</li>
-                <li><strong>Algorithmic Trading:</strong> AI algorithms execute trades at high speed and volume, optimizing investment strategies based on market trends and historical data.</li>
-                <li><strong>Personalized Banking:</strong> AI chatbots offer tailored financial advice and customer support, improving user experience and engagement.</li>
-                <li><strong>Risk Management:</strong> AI systems assess credit risk and market risk, providing better insights for financial institutions.</li>
-            </ul>
-        
-            <h3>3. Autonomous Vehicles</h3>
-            <p>AI is a driving force behind the development of autonomous vehicles, which utilize:</p>
-            <ul>
-                <li><strong>Computer Vision:</strong> AI systems process data from cameras and sensors to understand the vehicle's environment, identifying obstacles, traffic signals, and pedestrians.</li>
-                <li><strong>Decision Making:</strong> Reinforcement learning algorithms enable vehicles to make real-time decisions based on changing traffic conditions and road environments.</li>
-                <li><strong>Navigation and Routing:</strong> AI-powered systems optimize routes and improve navigation accuracy, enhancing safety and efficiency.</li>
-                <li><strong>Vehicle-to-Everything (V2X) Communication:</strong> AI facilitates communication between vehicles and infrastructure to improve traffic flow and safety.</li>
-            </ul>
-        
-            <h3>4. Retail</h3>
-            <p>In retail, AI enhances the shopping experience through:</p>
-            <ul>
-                <li><strong>Recommendation Systems:</strong> AI algorithms analyze customer preferences and behavior to provide personalized product recommendations, boosting sales and customer satisfaction.</li>
-                <li><strong>Inventory Management:</strong> AI optimizes inventory levels by predicting demand and automating restocking processes, reducing costs and waste.</li>
-                <li><strong>Chatbots:</strong> Virtual assistants help customers with inquiries and support, improving service and response times.</li>
-                <li><strong>Price Optimization:</strong> AI analyzes market trends to dynamically adjust prices, maximizing profits while remaining competitive.</li>
-            </ul>
-        
-            <h3>5. Future Trends</h3>
-            <p>The future of AI applications is promising, with trends such as:</p>
-            <ul>
-                <li><strong>Explainable AI:</strong> There is a growing demand for AI models that provide transparency in their decision-making processes, improving trust and accountability.</li>
-                <li><strong>AI in Cybersecurity:</strong> AI is increasingly used to enhance cybersecurity measures by predicting threats and detecting vulnerabilities in real time.</li>
-                <li><strong>Edge AI:</strong> The integration of AI on edge devices will enable faster processing and real-time data analysis, reducing latency and bandwidth usage.</li>
-                <li><strong>AI in Sustainability:</strong> AI applications are being developed to optimize resource usage and reduce waste, contributing to environmental sustainability.</li>
-            </ul>
-        
-            <h3>6. Conclusion</h3>
-            <p>AI applications are revolutionizing various industries, providing innovative solutions that enhance efficiency, accuracy, and decision-making. As technology continues to evolve, the potential for AI to solve complex problems and drive progress across sectors will only expand, paving the way for a smarter and more connected future.</p>
-        </section>
-
-    <!-- Troubleshooting Common Issues -->
-<section id="troubleshooting">
-    <h2>Troubleshooting Common Issues</h2>
-    <p>When developing AI applications with Python, you may encounter several common issues. Here are some troubleshooting tips to help you resolve them effectively:</p>
-    <ul>
-        <li><strong>Import Errors:</strong> 
-            <p>Import errors occur when Python cannot find the specified library. To resolve this:</p>
-            <ul>
-                <li>Ensure that the required libraries are installed. Use <code>pip install library_name</code> to install missing libraries.</li>
-                <li>Check your virtual environment or Python path to confirm the correct library version is being referenced.</li>
-            </ul>
-            <p><em>Example:</em> If you see an error like <code>No module named 'numpy'</code>, run <code>pip install numpy</code>.</p>
-        </li>
-        
-        <li><strong>Version Compatibility:</strong> 
-            <p>Version compatibility issues arise when your Python version is not compatible with the libraries you are using. To fix this:</p>
-            <ul>
-                <li>Verify that your Python version is compatible with the libraries by checking the library documentation for supported versions.</li>
-                <li>Consider using a version management tool like <code>pyenv</code> to manage multiple Python versions.</li>
-            </ul>
-            <p><em>Example:</em> If a library requires Python 3.8 or higher and you're using 3.7, you'll need to update your Python version.</p>
-        </li>
-        
-        <li><strong>Data Type Errors:</strong> 
-            <p>Data type errors occur when input data types do not match expected types. To troubleshoot:</p>
-            <ul>
-                <li>Ensure that the data types of your inputs match the expected types for your algorithms.</li>
-                <li>Use <code>pandas</code> to check the data types of your DataFrame with <code>df.dtypes</code>.</li>
-                <li>Convert data types as needed using <code>df.astype()</code> or similar methods.</li>
-            </ul>
-            <p><em>Example:</em> If a model expects a numerical input but receives a string, you may see a <code>ValueError</code>.</p>
-        </li>
-        
-        <li><strong>Memory Issues:</strong> 
-            <p>Memory issues can arise when working with large datasets. Here are some tips:</p>
-            <ul>
-                <li>Consider using data generators or libraries like <code>Dask</code> to handle large datasets without loading them entirely into memory.</li>
-                <li>Process the data in chunks using <code>pd.read_csv(chunk_size=)</code> when dealing with CSV files.</li>
-                <li>Monitor memory usage using tools like <code>memory_profiler</code> to identify memory-intensive operations.</li>
-            </ul>
-            <p><em>Example:</em> Instead of loading a 1GB CSV file at once, read it in smaller chunks to avoid memory errors.</p>
-        </li>
-        
-        <li><strong>Overfitting:</strong> 
-            <p>Overfitting occurs when your model performs well on training data but poorly on validation data. To mitigate this:</p>
-            <ul>
-                <li>Consider techniques like regularization (adding a penalty to complex models) or dropout layers in neural networks to prevent overfitting.</li>
-                <li>Increase the size of your training dataset or use data augmentation techniques to enhance the variety of training samples.</li>
-                <li>Simplify the model by reducing the number of layers or parameters if necessary.</li>
-            </ul>
-            <p><em>Example:</em> If your model has a high accuracy on training data but low accuracy on validation data, it may be overfitting.</p>
-        </li>
-
-        <li><strong>Gradient Vanishing/Exploding:</strong> 
-            <p>In deep learning, gradients can vanish (become too small) or explode (become too large) during training. To address this:</p>
-            <ul>
-                <li>Use appropriate activation functions like ReLU (Rectified Linear Unit) to mitigate vanishing gradients.</li>
-                <li>Implement techniques such as gradient clipping to prevent exploding gradients, which keeps the gradients within a specific range.</li>
-                <li>Consider using batch normalization to stabilize the training process by normalizing the input of each layer.</li>
-            </ul>
-            <p><em>Example:</em> If your model's weights are not updating effectively during training, you may need to check for vanishing or exploding gradients.</p>
-        </li>
-        
-        <li><strong>Deployment Issues:</strong> 
-            <p>Deploying AI models can sometimes lead to issues. Here are common troubleshooting steps:</p>
-            <ul>
-                <li>Ensure that the environment where the model is deployed matches the training environment (Python version, library versions, etc.).</li>
-                <li>Test the model with sample inputs after deployment to verify its functionality.</li>
-                <li>Log errors and performance metrics during runtime to identify and resolve issues effectively.</li>
-            </ul>
-            <p><em>Example:</em> If your model works locally but fails in production, check for discrepancies in the environment settings.</p>
-        </li>
-    </ul>
-</section>
-
-<!-- Best Practices in AI Development -->
-<section id="best-practices">
-    <h2>Best Practices in AI Development</h2>
-    <p>Following best practices can significantly improve the quality, efficiency, and maintainability of your AI projects. Here are some recommendations:</p>
-    <ul>
-        <li><strong>Version Control:</strong>
-            <p>Utilize Git for version control to track changes, manage code history, and collaborate effectively with team members. Key practices include:</p>
-            <ul>
-                <li>Create clear commit messages that describe the changes made, making it easier to understand the project's history.</li>
-                <li>Use branching strategies (e.g., Git Flow) to manage feature development and releases. Branching allows multiple developers to work on features simultaneously without disrupting the main codebase.</li>
-                <li>Regularly merge branches to avoid conflicts and ensure code consistency. Merge often to catch issues early and maintain a smoother workflow.</li>
-            </ul>
-        </li>
-
-        <li><strong>Code Documentation:</strong>
-            <p>Write clear and comprehensive documentation along with comments in your code to explain your thought process and functionality. Best practices include:</p>
-            <ul>
-                <li>Use docstrings to describe functions, classes, and modules, including parameters and return types. This helps others (and yourself) understand how to use your code.</li>
-                <li>Maintain a README file to provide an overview of the project, installation instructions, and usage examples. A good README is essential for user engagement.</li>
-                <li>Consider using tools like Sphinx to generate documentation from your code automatically, ensuring that documentation stays up-to-date with code changes.</li>
-            </ul>
-        </li>
-
-        <li><strong>Unit Testing:</strong>
-            <p>Implement unit tests to ensure that your code behaves as expected. Utilize testing frameworks like <code>pytest</code> or <code>unittest</code> for effective testing practices:</p>
-            <ul>
-                <li>Write tests for critical functionalities and edge cases. Testing edge cases helps prevent unexpected failures in your application.</li>
-                <li>Use test-driven development (TDD) to write tests before implementing features. TDD promotes better design and leads to more reliable code.</li>
-                <li>Regularly run tests to catch bugs early in the development process, making it easier to fix issues before they escalate.</li>
-            </ul>
-        </li>
-
-        <li><strong>Data Management:</strong>
-            <p>Keep your data organized and versioned to maintain consistency across your projects. Consider the following:</p>
-            <ul>
-                <li>Use tools like DVC (Data Version Control) or Git LFS to manage datasets and track changes. These tools help maintain data integrity and history.</li>
-                <li>Document the data sources, preprocessing steps, and transformations applied to maintain reproducibility. Clear documentation helps others understand your workflow.</li>
-                <li>Establish a data pipeline for efficient data ingestion and processing, ensuring that your data flows smoothly from source to model.</li>
-            </ul>
-        </li>
-
-        <li><strong>Model Evaluation:</strong>
-            <p>Always evaluate your models using appropriate metrics and techniques to ensure their effectiveness:</p>
-            <ul>
-                <li>Choose metrics based on the specific problem domain (e.g., accuracy, precision, recall, F1-score, ROC-AUC). Selecting the right metric is crucial for evaluating model performance accurately.</li>
-                <li>Implement cross-validation techniques to assess model performance on unseen data and avoid overfitting. Cross-validation helps ensure that your model generalizes well to new data.</li>
-                <li>Utilize visualization tools (e.g., confusion matrices, ROC curves) to better understand model performance, making it easier to communicate results to stakeholders.</li>
-            </ul>
-        </li>
-
-        <li><strong>Deployment Practices:</strong>
-            <p>When deploying models, follow these practices to ensure consistency and reliability:</p>
-            <ul>
-                <li>Use containerization technologies like Docker to encapsulate your application and its dependencies. Containerization simplifies deployment and ensures that your application runs consistently across environments.</li>
-                <li>Implement Continuous Integration/Continuous Deployment (CI/CD) pipelines to automate testing and deployment processes, leading to faster and more reliable releases.</li>
-                <li>Monitor deployed models for performance and drift over time, updating them as needed. Regular monitoring helps maintain model accuracy and reliability in production.</li>
-            </ul>
-        </li>
-
-        <li><strong>Collaboration and Communication:</strong>
-            <p>Effective communication and collaboration are crucial in AI development:</p>
-            <ul>
-                <li>Use project management tools (e.g., Jira, Trello) to organize tasks and track progress, ensuring that everyone is aligned on project goals.</li>
-                <li>Encourage regular code reviews to improve code quality and knowledge sharing, allowing team members to learn from each other and catch issues early.</li>
-                <li>Foster a culture of open communication within the team to discuss challenges and share insights, leading to a more collaborative and innovative work environment.</li>
-            </ul>
-        </li>
-    </ul>
-</section>
-
-<!-- Future Trends in AI -->
-<section id="future-trends">
-    <h2>Future Trends in AI</h2>
-    <p>AI is a rapidly evolving field with significant advancements on the horizon. Here are some upcoming trends and technologies that are shaping the future of AI:</p>
-    <ul>
-        <li><strong>Explainable AI (XAI):</strong>
-            <p>As AI systems become increasingly complex, there is a growing need for transparency in how decisions are made. Explainable AI aims to make the outputs of AI systems understandable to humans by providing insights into the decision-making processes. This is crucial in sectors like healthcare, finance, and autonomous driving, where understanding the rationale behind AI decisions can enhance trust and accountability. For example, an AI system used in medical diagnosis should clearly explain why it suggests a particular treatment plan.</p>
-        </li>
-        
-        <li><strong>AI in Edge Computing:</strong>
-            <p>Running AI algorithms on local devices (edge devices) can significantly reduce latency and bandwidth use. This trend is particularly important for applications in the Internet of Things (IoT), where real-time data processing is essential. By performing computations closer to the data source, edge AI can provide faster responses, enhance privacy by minimizing data transmission, and lower costs associated with cloud computing. For instance, smart cameras can analyze video feeds locally to detect anomalies without needing to send all data to the cloud.</p>
-        </li>
-        
-        <li><strong>Federated Learning:</strong>
-            <p>This decentralized approach to machine learning allows models to be trained across multiple devices while keeping data localized. By enabling devices to collaboratively learn from shared insights without transferring sensitive data, federated learning enhances privacy and security. This is especially beneficial in healthcare and finance, where data confidentiality is paramount. For example, hospitals can improve their diagnostic models without sharing patient data with each other.</p>
-        </li>
-        
-        <li><strong>AI Ethics:</strong>
-            <p>As AI becomes more integrated into society, the ethical implications of its deployment are gaining attention. Issues like bias in AI algorithms, data privacy, and the potential for job displacement are becoming critical discussions. Establishing frameworks for responsible AI development is essential to ensure that AI technologies are used ethically and fairly, promoting trust and societal benefit. For instance, implementing bias detection measures in hiring algorithms can help create more equitable job opportunities.</p>
-        </li>
-        
-        <li><strong>Generative AI:</strong>
-            <p>AI models capable of generating new content, such as images, text, and music, are on the rise. Generative AI is leading to innovations in creative fields, enabling artists and creators to collaborate with AI in new ways. This technology is revolutionizing industries like gaming, advertising, and content creation by providing novel ideas and enhancing creative workflows. For example, AI-generated art can inspire human artists or even serve as a base for further creative development.</p>
-        </li>
-
-        <li><strong>Human-AI Collaboration:</strong>
-            <p>The future of AI will increasingly focus on collaboration between humans and AI systems. This trend emphasizes augmenting human capabilities rather than replacing them. Tools that enhance human decision-making, creativity, and efficiency will emerge, fostering a symbiotic relationship between people and machines in various domains, including healthcare, education, and business. For instance, AI can assist doctors by providing data-driven insights, allowing them to make more informed decisions.</p>
-        </li>
-
-        <li><strong>AI Democratization:</strong>
-            <p>As AI tools and technologies become more accessible, a wider range of individuals and organizations can leverage AI capabilities. Platforms that enable no-code or low-code AI development are empowering non-experts to build and deploy AI applications, leading to greater innovation and diversity in AI solutions across industries. For example, small businesses can create customer service chatbots without needing extensive programming knowledge.</p>
-        </li>
-    </ul>
-</section>
-
-<section id="resources">
-    <h2>Resources for Further Learning</h2>
-    <ul>
-        <li><a href="https://www.coursera.org/" target="_blank" rel="noopener noreferrer">Coursera - Online Courses</a></li>
-        <li><a href="https://www.kaggle.com/" target="_blank" rel="noopener noreferrer">Kaggle - Datasets and Competitions</a></li>
-        <li><a href="https://scikit-learn.org/stable/documentation.html" target="_blank" rel="noopener noreferrer">Scikit-learn Documentation</a></li>
-        <li><a href="https://www.tensorflow.org/" target="_blank" rel="noopener noreferrer">TensorFlow Official Site</a></li>
-        <li><a href="https://www.deeplearning.ai/" target="_blank" rel="noopener noreferrer">DeepLearning.AI - Resources and Courses</a></li>
-    </ul>
-</section>
-
-</main>
-
-<script src="script.js"></script>
-
-<footer>
-    <div class="container">
-        <p>&copy; 2024 AI with Python. All rights reserved.</p>
-        <p>
-            Developer: Marsharine Simpson | 
-            <a href="https://linkedin.com/in/marsharine-a-simpson" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
-            <a href="https://github.com/marsharine" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </p>
+    <div
+        class="reading-progress"
+        aria-hidden="true"
+    >
+        <div
+            class="reading-progress-bar"
+            id="reading-progress-bar"
+        ></div>
     </div>
-</footer>
+
+
+    <!-- =====================================================
+         DOCUMENTATION LAYOUT
+    ====================================================== -->
+
+    <div class="documentation-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside
+            class="docs-sidebar"
+            id="docs-sidebar"
+            aria-label="Documentation navigation"
+        >
+
+            <div class="sidebar-inner">
+
+                <!-- SEARCH -->
+
+                <div class="documentation-search">
+
+                    <label
+                        class="search-label"
+                        for="documentation-search"
+                    >
+                        Search the guide
+                    </label>
+
+
+                    <div class="search-box">
+
+                        <span
+                            class="search-icon"
+                            aria-hidden="true"
+                        >
+                            ⌕
+                        </span>
+
+                        <input
+                            id="documentation-search"
+                            type="search"
+                            placeholder="Search AI concepts..."
+                            autocomplete="off"
+                        >
+
+                        <kbd>/</kbd>
+
+                    </div>
+
+
+                    <div
+                        class="search-results"
+                        id="search-results"
+                        aria-live="polite"
+                    ></div>
+
+                </div>
+
+
+                <!-- NAVIGATION -->
+
+                <nav
+                    class="docs-navigation"
+                    aria-label="Field guide sections"
+                >
+
+                    <p class="navigation-label">
+                        Getting Started
+                    </p>
+
+                    <a
+                        class="docs-nav-link active"
+                        href="#overview"
+                    >
+                        <span>01</span>
+                        Overview
+                    </a>
+
+                    <a
+                        class="docs-nav-link"
+                        href="#learning-path"
+                    >
+                        <span>02</span>
+                        Learning Path
+                    </a>
+
+
+                    <p class="navigation-label">
+                        Foundations
+                    </p>
+
+                    <a
+                        class="docs-nav-link"
+                        href="#ai-fundamentals"
+                    >
+                        <span>03</span>
+                        AI Fundamentals
+                    </a>
+
+                    <a
+                        class="docs-nav-link"
+                        href="#development-workflow"
+                    >
+                        <span>04</span>
+                        Development Workflow
+                    </a>
+
+                    <a
+                        class="docs-nav-link"
+                        href="#machine-learning"
+                    >
+                        <span>05</span>
+                        Machine Learning
+                    </a>
+
+
+                    <p class="navigation-label">
+                        Modern AI
+                    </p>
+
+                    <a
+                        class="docs-nav-link"
+                        href="#generative-ai"
+                    >
+                        <span>06</span>
+                        Generative AI
+                    </a>
+
+                    <a
+                        class="docs-nav-link"
+                        href="#prompt-engineering"
+                    >
+                        <span>07</span>
+                        Prompt Engineering
+                    </a>
+
+                    <a
+                        class="docs-nav-link"
+                        href="#rag"
+                    >
+                        <span>08</span>
+                        RAG
+                    </a>
+
+
+                    <p class="navigation-label">
+                        Quality & Practice
+                    </p>
+
+                    <a
+                        class="docs-nav-link"
+                        href="#evaluation"
+                    >
+                        <span>09</span>
+                        Model Evaluation
+                    </a>
+
+                    <a
+                        class="docs-nav-link"
+                        href="#responsible-ai"
+                    >
+                        <span>10</span>
+                        Responsible AI
+                    </a>
+
+                    <a
+                        class="docs-nav-link"
+                        href="#glossary"
+                    >
+                        <span>11</span>
+                        Glossary
+                    </a>
+
+                </nav>
+
+
+                <!-- SIDEBAR NOTE -->
+
+                <div class="sidebar-note">
+
+                    <span class="sidebar-note-icon">
+                        ✦
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Built for learning
+                        </strong>
+
+                        <p>
+                            Follow the guide in order or jump directly
+                            to the concept you need.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main
+            class="docs-main"
+            id="main-content"
+        >
+
+
+            <!-- =============================================
+                 OVERVIEW / HERO
+            ============================================== -->
+
+            <section
+                class="documentation-section hero-section"
+                id="overview"
+                data-search-title="Overview"
+                data-search-keywords="AI artificial intelligence development guide fundamentals learning"
+            >
+
+                <div class="hero-grid">
+
+                    <div class="hero-copy">
+
+                        <p class="eyebrow">
+                            INTERACTIVE TECHNICAL DOCUMENTATION
+                        </p>
+
+                        <h1>
+                            AI Development
+                            <span>Field Guide</span>
+                        </h1>
+
+                        <p class="hero-subtitle">
+                            From Fundamentals to Generative AI
+                        </p>
+
+                        <p class="hero-description">
+                            A structured introduction to how modern AI
+                            systems are understood, designed, evaluated,
+                            and improved — built as an interactive
+                            learning experience for developers,
+                            technologists, and curious problem-solvers.
+                        </p>
+
+
+                        <div class="hero-actions">
+
+                            <a
+                                class="primary-button"
+                                href="#learning-path"
+                            >
+                                Start Learning
+                                <span aria-hidden="true">→</span>
+                            </a>
+
+                            <a
+                                class="secondary-button"
+                                href="#glossary"
+                            >
+                                Browse Glossary
+                            </a>
+
+                        </div>
+
+
+                        <ul class="hero-topics">
+
+                            <li>AI Fundamentals</li>
+                            <li>Machine Learning</li>
+                            <li>Generative AI</li>
+                            <li>RAG</li>
+                            <li>Evaluation</li>
+                            <li>Responsible AI</li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <!-- HERO VISUAL -->
+
+                    <div
+                        class="hero-visual"
+                        aria-label="Illustration of an AI development workflow"
+                    >
+
+                        <div class="workflow-window">
+
+                            <div class="workflow-window-header">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                                <strong>
+                                    ai_workflow.py
+                                </strong>
+
+                            </div>
+
+
+                            <div class="workflow-code">
+
+                                <div>
+                                    <span class="code-keyword">
+                                        define
+                                    </span>
+
+                                    <span>
+                                        problem
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <span class="code-keyword">
+                                        collect
+                                    </span>
+
+                                    <span>
+                                        data
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <span class="code-keyword">
+                                        build
+                                    </span>
+
+                                    <span>
+                                        model
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <span class="code-keyword">
+                                        evaluate
+                                    </span>
+
+                                    <span>
+                                        results
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <span class="code-keyword">
+                                        improve
+                                    </span>
+
+                                    <span>
+                                        system
+                                    </span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="workflow-status">
+
+                                <span class="status-dot"></span>
+
+                                Human-led workflow
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK STATS -->
+
+                <div class="overview-grid">
+
+                    <article>
+
+                        <span class="overview-number">
+                            11
+                        </span>
+
+                        <h2>
+                            Core Sections
+                        </h2>
+
+                        <p>
+                            From foundational concepts through modern
+                            generative AI workflows.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span class="overview-number">
+                            01
+                        </span>
+
+                        <h2>
+                            Guided Path
+                        </h2>
+
+                        <p>
+                            A recommended sequence for moving from
+                            concepts to practical application.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span class="overview-number">
+                            ∞
+                        </span>
+
+                        <h2>
+                            Iteration
+                        </h2>
+
+                        <p>
+                            AI development depends on repeated testing,
+                            evaluation, and improvement.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 LEARNING PATH
+            ============================================== -->
+
+            <section
+                class="documentation-section"
+                id="learning-path"
+                data-search-title="Learning Path"
+                data-search-keywords="guided path learning roadmap AI machine learning generative evaluation"
+            >
+
+                <div class="section-heading">
+
+                    <p class="section-number">
+                        02
+                    </p>
+
+                    <div>
+
+                        <p class="eyebrow">
+                            GUIDED LEARNING
+                        </p>
+
+                        <h2>
+                            Follow the development path.
+                        </h2>
+
+                        <p>
+                            AI can feel enormous when every concept is
+                            presented at once. This guide organizes the
+                            subject into a practical sequence.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="learning-path">
+
+                    <article
+                        class="learning-step"
+                        data-path-step="1"
+                    >
+
+                        <span class="step-number">
+                            01
+                        </span>
+
+                        <div>
+
+                            <p class="step-label">
+                                FOUNDATION
+                            </p>
+
+                            <h3>
+                                Understand the problem
+                            </h3>
+
+                            <p>
+                                Define the outcome before selecting
+                                algorithms, models, or tools.
+                            </p>
+
+                            <a href="#ai-fundamentals">
+                                Explore fundamentals →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="learning-step"
+                        data-path-step="2"
+                    >
+
+                        <span class="step-number">
+                            02
+                        </span>
+
+                        <div>
+
+                            <p class="step-label">
+                                DATA
+                            </p>
+
+                            <h3>
+                                Understand the information
+                            </h3>
+
+                            <p>
+                                Identify what data exists, what it
+                                represents, and what limitations it carries.
+                            </p>
+
+                            <a href="#development-workflow">
+                                View the workflow →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="learning-step"
+                        data-path-step="3"
+                    >
+
+                        <span class="step-number">
+                            03
+                        </span>
+
+                        <div>
+
+                            <p class="step-label">
+                                MODELING
+                            </p>
+
+                            <h3>
+                                Learn from patterns
+                            </h3>
+
+                            <p>
+                                Use machine-learning concepts to understand
+                                how systems can identify useful patterns.
+                            </p>
+
+                            <a href="#machine-learning">
+                                Explore machine learning →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="learning-step"
+                        data-path-step="4"
+                    >
+
+                        <span class="step-number">
+                            04
+                        </span>
+
+                        <div>
+
+                            <p class="step-label">
+                                GENERATION
+                            </p>
+
+                            <h3>
+                                Work with generative systems
+                            </h3>
+
+                            <p>
+                                Understand how modern systems produce
+                                text, images, code, and other outputs.
+                            </p>
+
+                            <a href="#generative-ai">
+                                Explore generative AI →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="learning-step"
+                        data-path-step="5"
+                    >
+
+                        <span class="step-number">
+                            05
+                        </span>
+
+                        <div>
+
+                            <p class="step-label">
+                                QUALITY
+                            </p>
+
+                            <h3>
+                                Evaluate the result
+                            </h3>
+
+                            <p>
+                                Measure whether the system solves the
+                                intended problem reliably and usefully.
+                            </p>
+
+                            <a href="#evaluation">
+                                Explore evaluation →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="learning-step"
+                        data-path-step="6"
+                    >
+
+                        <span class="step-number">
+                            06
+                        </span>
+
+                        <div>
+
+                            <p class="step-label">
+                                RESPONSIBILITY
+                            </p>
+
+                            <h3>
+                                Consider the impact
+                            </h3>
+
+                            <p>
+                                Examine privacy, bias, transparency,
+                                security, oversight, and human consequences.
+                            </p>
+
+                            <a href="#responsible-ai">
+                                Explore responsible AI →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 AI FUNDAMENTALS
+            ============================================== -->
+
+            <section
+                class="documentation-section"
+                id="ai-fundamentals"
+                data-search-title="AI Fundamentals"
+                data-search-keywords="artificial intelligence machine learning deep learning neural network generative AI definitions"
+            >
+
+                <div class="section-heading">
+
+                    <p class="section-number">
+                        03
+                    </p>
+
+                    <div>
+
+                        <p class="eyebrow">
+                            FOUNDATIONS
+                        </p>
+
+                        <h2>
+                            Start with the vocabulary.
+                        </h2>
+
+                        <p>
+                            These terms are related, but they do not mean
+                            the same thing. Understanding the hierarchy
+                            makes the rest of AI development easier to
+                            reason about.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="concept-grid">
+
+
+                    <!-- AI -->
+
+                    <article class="concept-card">
+
+                        <button
+                            class="concept-toggle"
+                            type="button"
+                            aria-expanded="true"
+                        >
+
+                            <span class="concept-index">
+                                01
+                            </span>
+
+                            <span>
+                                Artificial Intelligence
+                            </span>
+
+                            <span
+                                class="concept-plus"
+                                aria-hidden="true"
+                            >
+                                +
+                            </span>
+
+                        </button>
+
+
+                        <div class="concept-content">
+
+                            <p>
+                                Artificial intelligence is the broad field
+                                concerned with creating computational systems
+                                that perform tasks associated with human-like
+                                reasoning, perception, learning, language, or
+                                decision-making.
+                            </p>
+
+                            <div class="concept-note">
+
+                                <strong>
+                                    Think of it as:
+                                </strong>
+
+                                <span>
+                                    The broadest umbrella.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ML -->
+
+                    <article class="concept-card">
+
+                        <button
+                            class="concept-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+
+                            <span class="concept-index">
+                                02
+                            </span>
+
+                            <span>
+                                Machine Learning
+                            </span>
+
+                            <span
+                                class="concept-plus"
+                                aria-hidden="true"
+                            >
+                                +
+                            </span>
+
+                        </button>
+
+
+                        <div class="concept-content">
+
+                            <p>
+                                Machine learning is an approach in which
+                                systems improve task performance by finding
+                                useful patterns in data rather than relying
+                                only on manually written rules.
+                            </p>
+
+                            <div class="concept-note">
+
+                                <strong>
+                                    Think of it as:
+                                </strong>
+
+                                <span>
+                                    Learning useful patterns from examples.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- DEEP LEARNING -->
+
+                    <article class="concept-card">
+
+                        <button
+                            class="concept-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+
+                            <span class="concept-index">
+                                03
+                            </span>
+
+                            <span>
+                                Deep Learning
+                            </span>
+
+                            <span
+                                class="concept-plus"
+                                aria-hidden="true"
+                            >
+                                +
+                            </span>
+
+                        </button>
+
+
+                        <div class="concept-content">
+
+                            <p>
+                                Deep learning uses multi-layered neural
+                                networks to learn increasingly complex
+                                representations from data.
+                            </p>
+
+                            <div class="concept-note">
+
+                                <strong>
+                                    Think of it as:
+                                </strong>
+
+                                <span>
+                                    A powerful family of machine-learning
+                                    techniques.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- GENERATIVE AI -->
+
+                    <article class="concept-card">
+
+                        <button
+                            class="concept-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+
+                            <span class="concept-index">
+                                04
+                            </span>
+
+                            <span>
+                                Generative AI
+                            </span>
+
+                            <span
+                                class="concept-plus"
+                                aria-hidden="true"
+                            >
+                                +
+                            </span>
+
+                        </button>
+
+
+                        <div class="concept-content">
+
+                            <p>
+                                Generative AI refers to systems designed
+                                to produce new outputs such as text,
+                                images, audio, code, or structured content
+                                based on learned patterns.
+                            </p>
+
+                            <div class="concept-note">
+
+                                <strong>
+                                    Think of it as:
+                                </strong>
+
+                                <span>
+                                    Models that generate new content.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- HIERARCHY -->
+
+                <div class="hierarchy-visual">
+
+                    <div class="hierarchy-level level-ai">
+
+                        <strong>
+                            Artificial Intelligence
+                        </strong>
+
+                        <div class="hierarchy-level level-ml">
+
+                            <strong>
+                                Machine Learning
+                            </strong>
+
+                            <div class="hierarchy-level level-dl">
+
+                                <strong>
+                                    Deep Learning
+                                </strong>
+
+                                <div class="hierarchy-level level-genai">
+
+                                    <strong>
+                                        Generative AI
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 DEVELOPMENT WORKFLOW
+            ============================================== -->
+
+            <section
+                class="documentation-section"
+                id="development-workflow"
+                data-search-title="AI Development Workflow"
+                data-search-keywords="AI workflow problem data preprocessing training validation testing deployment monitoring"
+            >
+
+                <div class="section-heading">
+
+                    <p class="section-number">
+                        04
+                    </p>
+
+                    <div>
+
+                        <p class="eyebrow">
+                            DEVELOPMENT WORKFLOW
+                        </p>
+
+                        <h2>
+                            Good AI starts before the model.
+                        </h2>
+
+                        <p>
+                            The quality of an AI system depends on more
+                            than choosing an algorithm. Strong development
+                            begins with the problem and continues through
+                            evaluation and monitoring.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="workflow-timeline">
+
+                    <article>
+
+                        <span>01</span>
+
+                        <h3>
+                            Define
+                        </h3>
+
+                        <p>
+                            Clarify the problem, expected outcome,
+                            constraints, users, and success criteria.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>02</span>
+
+                        <h3>
+                            Gather
+                        </h3>
+
+                        <p>
+                            Identify useful data and understand its
+                            origin, quality, limitations, and permissions.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>03</span>
+
+                        <h3>
+                            Prepare
+                        </h3>
+
+                        <p>
+                            Clean, transform, structure, and inspect data
+                            before modeling.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>04</span>
+
+                        <h3>
+                            Build
+                        </h3>
+
+                        <p>
+                            Select an appropriate approach and create the
+                            initial model or system.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>05</span>
+
+                        <h3>
+                            Evaluate
+                        </h3>
+
+                        <p>
+                            Measure performance against meaningful
+                            criteria rather than relying on impressions.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>06</span>
+
+                        <h3>
+                            Improve
+                        </h3>
+
+                        <p>
+                            Diagnose weaknesses, adjust the system,
+                            retest, and continue iterating.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>07</span>
+
+                        <h3>
+                            Monitor
+                        </h3>
+
+                        <p>
+                            Observe real-world performance, failures,
+                            changing data, and unintended outcomes.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+                <!-- CODE EXAMPLE -->
+
+                <div class="code-example">
+
+                    <div class="code-example-heading">
+
+                        <div>
+
+                            <p class="code-label">
+                                CONCEPTUAL PYTHON
+                            </p>
+
+                            <h3>
+                                A simple preprocessing mindset
+                            </h3>
+
+                        </div>
+
+
+                        <button
+                            class="copy-button"
+                            type="button"
+                            data-copy-target="preprocessing-code"
+                        >
+                            Copy
+                        </button>
+
+                    </div>
+
+
+                    <pre
+                        id="preprocessing-code"
+                    ><code>def prepare_records(records):
+    cleaned = []
+
+    for record in records:
+        if record is None:
+            continue
+
+        value = str(record).strip().lower()
+
+        if value:
+            cleaned.append(value)
+
+    return cleaned</code></pre>
+
+                </div>
+
+
+                <div class="callout callout-important">
+
+                    <span class="callout-icon">
+                        !
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Development principle
+                        </strong>
+
+                        <p>
+                            A sophisticated model cannot automatically
+                            repair a poorly defined problem or unreliable
+                            data pipeline.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 MACHINE LEARNING
+            ============================================== -->
+
+            <section
+                class="documentation-section"
+                id="machine-learning"
+                data-search-title="Machine Learning"
+                data-search-keywords="supervised unsupervised reinforcement classification regression clustering training validation testing"
+            >
+
+                <div class="section-heading">
+
+                    <p class="section-number">
+                        05
+                    </p>
+
+                    <div>
+
+                        <p class="eyebrow">
+                            MACHINE LEARNING
+                        </p>
+
+                        <h2>
+                            Learn from patterns in data.
+                        </h2>
+
+                        <p>
+                            Machine-learning approaches differ according
+                            to the type of information available and the
+                            task the system must perform.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="comparison-grid">
+
+
+                    <article>
+
+                        <span class="comparison-icon">
+                            A
+                        </span>
+
+                        <p class="comparison-label">
+                            LABELED EXAMPLES
+                        </p>
+
+                        <h3>
+                            Supervised Learning
+                        </h3>
+
+                        <p>
+                            The system learns relationships between
+                            examples and known target outcomes.
+                        </p>
+
+                        <ul>
+                            <li>Classification</li>
+                            <li>Regression</li>
+                            <li>Prediction</li>
+                        </ul>
+
+                    </article>
+
+
+                    <article>
+
+                        <span class="comparison-icon">
+                            B
+                        </span>
+
+                        <p class="comparison-label">
+                            UNLABELED PATTERNS
+                        </p>
+
+                        <h3>
+                            Unsupervised Learning
+                        </h3>
+
+                        <p>
+                            The system explores structure or relationships
+                            without predefined target labels.
+                        </p>
+
+                        <ul>
+                            <li>Clustering</li>
+                            <li>Pattern discovery</li>
+                            <li>Dimensionality reduction</li>
+                        </ul>
+
+                    </article>
+
+
+                    <article>
+
+                        <span class="comparison-icon">
+                            C
+                        </span>
+
+                        <p class="comparison-label">
+                            FEEDBACK
+                        </p>
+
+                        <h3>
+                            Reinforcement Learning
+                        </h3>
+
+                        <p>
+                            An agent learns behavior through interactions
+                            and feedback associated with its actions.
+                        </p>
+
+                        <ul>
+                            <li>Actions</li>
+                            <li>Rewards</li>
+                            <li>Policies</li>
+                        </ul>
+
+                    </article>
+
+                </div>
+
+
+                <!-- DATA SPLIT -->
+
+                <div class="data-split-card">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            MODEL DEVELOPMENT
+                        </p>
+
+                        <h3>
+                            Training is only part of the process.
+                        </h3>
+
+                        <p>
+                            Separating data into distinct roles helps
+                            developers measure whether a model can perform
+                            well beyond the examples it learned from.
+                        </p>
+
+                    </div>
+
+
+                    <div class="data-split-visual">
+
+                        <div class="split-training">
+
+                            <strong>
+                                Training
+                            </strong>
+
+                            <span>
+                                Learn
+                            </span>
+
+                        </div>
+
+
+                        <div class="split-validation">
+
+                            <strong>
+                                Validation
+                            </strong>
+
+                            <span>
+                                Tune
+                            </span>
+
+                        </div>
+
+
+                        <div class="split-testing">
+
+                            <strong>
+                                Testing
+                            </strong>
+
+                            <span>
+                                Verify
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 GENERATIVE AI
+            ============================================== -->
+
+            <section
+                class="documentation-section"
+                id="generative-ai"
+                data-search-title="Generative AI"
+                data-search-keywords="generative AI model language model text image code generation tokens context"
+            >
+
+                <div class="section-heading">
+
+                    <p class="section-number">
+                        06
+                    </p>
+
+                    <div>
+
+                        <p class="eyebrow">
+                            MODERN AI
+                        </p>
+
+                        <h2>
+                            Systems that generate.
+                        </h2>
+
+                        <p>
+                            Generative systems create new outputs by
+                            modeling patterns learned from large
+                            collections of examples.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="generation-flow">
+
+                    <div class="generation-stage">
+
+                        <span>
+                            01
+                        </span>
+
+                        <strong>
+                            Input
+                        </strong>
+
+                        <p>
+                            Prompt, image, audio, structured data,
+                            or other context.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="generation-arrow"
+                        aria-hidden="true"
+                    >
+                        →
+                    </div>
+
+
+                    <div class="generation-stage highlighted">
+
+                        <span>
+                            02
+                        </span>
+
+                        <strong>
+                            Model
+                        </strong>
+
+                        <p>
+                            Processes context and predicts useful
+                            output patterns.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="generation-arrow"
+                        aria-hidden="true"
+                    >
+                        →
+                    </div>
+
+
+                    <div class="generation-stage">
+
+                        <span>
+                            03
+                        </span>
+
+                        <strong>
+                            Output
+                        </strong>
+
+                        <p>
+                            Text, code, image, audio, or another
+                            generated artifact.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="two-column-content">
+
+                    <article>
+
+                        <p class="eyebrow">
+                            STRENGTHS
+                        </p>
+
+                        <h3>
+                            Useful for exploration.
+                        </h3>
+
+                        <ul class="check-list">
+
+                            <li>
+                                Drafting and ideation
+                            </li>
+
+                            <li>
+                                Information synthesis
+                            </li>
+
+                            <li>
+                                Code assistance
+                            </li>
+
+                            <li>
+                                Structured transformation
+                            </li>
+
+                            <li>
+                                Natural-language interaction
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <article>
+
+                        <p class="eyebrow">
+                            LIMITATIONS
+                        </p>
+
+                        <h3>
+                            Output still requires judgment.
+                        </h3>
+
+                        <ul class="warning-list">
+
+                            <li>
+                                Generated information may be inaccurate
+                            </li>
+
+                            <li>
+                                Context can be misunderstood
+                            </li>
+
+                            <li>
+                                Bias may be reflected in results
+                            </li>
+
+                            <li>
+                                Sensitive information requires care
+                            </li>
+
+                            <li>
+                                Important decisions need verification
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 PROMPT ENGINEERING
+            ============================================== -->
+
+            <section
+                class="documentation-section"
+                id="prompt-engineering"
+                data-search-title="Prompt Engineering"
+                data-search-keywords="prompt engineering instructions context constraints examples output format AI"
+            >
+
+                <div class="section-heading">
+
+                    <p class="section-number">
+                        07
+                    </p>
+
+                    <div>
+
+                        <p class="eyebrow">
+                            PROMPT ENGINEERING
+                        </p>
+
+                        <h2>
+                            Better context creates better direction.
+                        </h2>
+
+                        <p>
+                            A useful prompt gives the system enough
+                            information to understand the task, constraints,
+                            audience, and expected output.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="prompt-formula">
+
+                    <article>
+
+                        <span>
+                            01
+                        </span>
+
+                        <strong>
+                            Task
+                        </strong>
+
+                        <p>
+                            What should the system do?
+                        </p>
+
+                    </article>
+
+
+                    <div aria-hidden="true">
+                        +
+                    </div>
+
+
+                    <article>
+
+                        <span>
+                            02
+                        </span>
+
+                        <strong>
+                            Context
+                        </strong>
+
+                        <p>
+                            What should it know?
+                        </p>
+
+                    </article>
+
+
+                    <div aria-hidden="true">
+                        +
+                    </div>
+
+
+                    <article>
+
+                        <span>
+                            03
+                        </span>
+
+                        <strong>
+                            Constraints
+                        </strong>
+
+                        <p>
+                            What boundaries matter?
+                        </p>
+
+                    </article>
+
+
+                    <div aria-hidden="true">
+                        +
+                    </div>
+
+
+                    <article>
+
+                        <span>
+                            04
+                        </span>
+
+                        <strong>
+                            Format
+                        </strong>
+
+                        <p>
+                            What should the result look like?
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+                <div class="prompt-example">
+
+                    <div class="prompt-example-column weak-prompt">
+
+                        <p class="prompt-type">
+                            WEAK
+                        </p>
+
+                        <blockquote>
+                            Explain cybersecurity.
+                        </blockquote>
+
+                    </div>
+
+
+                    <div
+                        class="prompt-improvement-arrow"
+                        aria-hidden="true"
+                    >
+                        →
+                    </div>
+
+
+                    <div class="prompt-example-column strong-prompt">
+
+                        <p class="prompt-type">
+                            STRONGER
+                        </p>
+
+                        <blockquote>
+                            Explain phishing to high-school students
+                            using plain language, one realistic example,
+                            three warning signs, and a short prevention
+                            checklist.
+                        </blockquote>
+
+                    </div>
+
+                </div>
+
+
+                <div class="code-example">
+
+                    <div class="code-example-heading">
+
+                        <div>
+
+                            <p class="code-label">
+                                PROMPT TEMPLATE
+                            </p>
+
+                            <h3>
+                                Reusable structure
+                            </h3>
+
+                        </div>
+
+
+                        <button
+                            class="copy-button"
+                            type="button"
+                            data-copy-target="prompt-template"
+                        >
+                            Copy
+                        </button>
+
+                    </div>
+
+
+                    <pre id="prompt-template"><code>Task:
+[Describe the goal]
+
+Context:
+[Provide relevant background]
+
+Constraints:
+[List boundaries, requirements, or exclusions]
+
+Audience:
+[Describe who will use the result]
+
+Output:
+[Specify format, tone, length, or structure]</code></pre>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 RAG
+            ============================================== -->
+
+            <section
+                class="documentation-section"
+                id="rag"
+                data-search-title="Retrieval-Augmented Generation"
+                data-search-keywords="RAG retrieval augmented generation documents search context knowledge base grounding"
+            >
+
+                <div class="section-heading">
+
+                    <p class="section-number">
+                        08
+                    </p>
+
+                    <div>
+
+                        <p class="eyebrow">
+                            RETRIEVAL-AUGMENTED GENERATION
+                        </p>
+
+                        <h2>
+                            Give the model relevant information first.
+                        </h2>
+
+                        <p>
+                            Retrieval-Augmented Generation, commonly called
+                            RAG, combines information retrieval with
+                            generation so a system can use relevant
+                            external material when constructing an answer.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rag-diagram">
+
+                    <article>
+
+                        <span>1</span>
+
+                        <strong>
+                            User Question
+                        </strong>
+
+                    </article>
+
+
+                    <div
+                        class="rag-arrow"
+                        aria-hidden="true"
+                    >
+                        →
+                    </div>
+
+
+                    <article>
+
+                        <span>2</span>
+
+                        <strong>
+                            Retrieve
+                        </strong>
+
+                        <small>
+                            Find relevant material
+                        </small>
+
+                    </article>
+
+
+                    <div
+                        class="rag-arrow"
+                        aria-hidden="true"
+                    >
+                        →
+                    </div>
+
+
+                    <article>
+
+                        <span>3</span>
+
+                        <strong>
+                            Add Context
+                        </strong>
+
+                        <small>
+                            Provide useful evidence
+                        </small>
+
+                    </article>
+
+
+                    <div
+                        class="rag-arrow"
+                        aria-hidden="true"
+                    >
+                        →
+                    </div>
+
+
+                    <article>
+
+                        <span>4</span>
+
+                        <strong>
+                            Generate
+                        </strong>
+
+                        <small>
+                            Produce the response
+                        </small>
+
+                    </article>
+
+                </div>
+
+
+                <div class="callout">
+
+                    <span class="callout-icon">
+                        i
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Why RAG matters
+                        </strong>
+
+                        <p>
+                            Retrieval can help a generative system work
+                            with information that is more specific to the
+                            user's documents, organization, or task.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 EVALUATION
+            ============================================== -->
+
+            <section
+                class="documentation-section"
+                id="evaluation"
+                data-search-title="Model Evaluation"
+                data-search-keywords="evaluation accuracy precision recall quality testing AI model metrics human review"
+            >
+
+                <div class="section-heading">
+
+                    <p class="section-number">
+                        09
+                    </p>
+
+                    <div>
+
+                        <p class="eyebrow">
+                            MODEL EVALUATION
+                        </p>
+
+                        <h2>
+                            Measure what actually matters.
+                        </h2>
+
+                        <p>
+                            Evaluation asks whether the system produces
+                            useful results for the problem it was designed
+                            to solve.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="evaluation-grid">
+
+                    <article>
+
+                        <span class="evaluation-icon">
+                            ◎
+                        </span>
+
+                        <h3>
+                            Correctness
+                        </h3>
+
+                        <p>
+                            Is the output factually or functionally
+                            correct for the task?
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span class="evaluation-icon">
+                            ◫
+                        </span>
+
+                        <h3>
+                            Relevance
+                        </h3>
+
+                        <p>
+                            Does the output address the actual request
+                            rather than something adjacent?
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span class="evaluation-icon">
+                            ◇
+                        </span>
+
+                        <h3>
+                            Reliability
+                        </h3>
+
+                        <p>
+                            Does performance remain useful across
+                            different examples and conditions?
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span class="evaluation-icon">
+                            ♙
+                        </span>
+
+                        <h3>
+                            Human Judgment
+                        </h3>
+
+                        <p>
+                            Does the result satisfy the needs of the
+                            people who will actually use it?
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+                <div class="evaluation-cycle">
+
+                    <div>
+                        Build
+                    </div>
+
+                    <span aria-hidden="true">
+                        →
+                    </span>
+
+                    <div>
+                        Test
+                    </div>
+
+                    <span aria-hidden="true">
+                        →
+                    </span>
+
+                    <div>
+                        Measure
+                    </div>
+
+                    <span aria-hidden="true">
+                        →
+                    </span>
+
+                    <div>
+                        Diagnose
+                    </div>
+
+                    <span aria-hidden="true">
+                        →
+                    </span>
+
+                    <div>
+                        Improve
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 RESPONSIBLE AI
+            ============================================== -->
+
+            <section
+                class="documentation-section"
+                id="responsible-ai"
+                data-search-title="Responsible AI"
+                data-search-keywords="responsible AI ethics privacy bias security transparency oversight safety fairness"
+            >
+
+                <div class="section-heading">
+
+                    <p class="section-number">
+                        10
+                    </p>
+
+                    <div>
+
+                        <p class="eyebrow">
+                            RESPONSIBLE AI
+                        </p>
+
+                        <h2>
+                            Capability is not the only question.
+                        </h2>
+
+                        <p>
+                            Responsible development also considers
+                            whether a system should be used, who may be
+                            affected, and what safeguards are appropriate.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="responsibility-grid">
+
+                    <article>
+
+                        <span>
+                            01
+                        </span>
+
+                        <h3>
+                            Privacy
+                        </h3>
+
+                        <p>
+                            Protect sensitive information and understand
+                            what data is being collected, stored, or shared.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>
+                            02
+                        </span>
+
+                        <h3>
+                            Fairness
+                        </h3>
+
+                        <p>
+                            Examine whether system performance differs
+                            unfairly across people, populations, or contexts.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>
+                            03
+                        </span>
+
+                        <h3>
+                            Transparency
+                        </h3>
+
+                        <p>
+                            Make important limitations and system behavior
+                            understandable where appropriate.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>
+                            04
+                        </span>
+
+                        <h3>
+                            Security
+                        </h3>
+
+                        <p>
+                            Consider misuse, unauthorized access,
+                            manipulation, and other technical risks.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>
+                            05
+                        </span>
+
+                        <h3>
+                            Human Oversight
+                        </h3>
+
+                        <p>
+                            Keep people appropriately involved when
+                            consequences are significant or judgment is
+                            required.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>
+                            06
+                        </span>
+
+                        <h3>
+                            Accountability
+                        </h3>
+
+                        <p>
+                            Define who is responsible for system design,
+                            deployment, monitoring, and correction.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+                <blockquote class="responsibility-quote">
+
+                    <p>
+                        Responsible AI asks not only
+                        <strong>“Can we build it?”</strong>
+                        but also
+                        <strong>“How should it be used?”</strong>
+                    </p>
+
+                </blockquote>
+
+            </section>
+
+
+            <!-- =============================================
+                 GLOSSARY
+            ============================================== -->
+
+            <section
+                class="documentation-section glossary-section"
+                id="glossary"
+                data-search-title="AI Glossary"
+                data-search-keywords="AI glossary terminology definitions algorithm model dataset inference token prompt embedding RAG"
+            >
+
+                <div class="section-heading">
+
+                    <p class="section-number">
+                        11
+                    </p>
+
+                    <div>
+
+                        <p class="eyebrow">
+                            QUICK REFERENCE
+                        </p>
+
+                        <h2>
+                            AI terminology, simplified.
+                        </h2>
+
+                        <p>
+                            Search or browse key terms used throughout
+                            the field guide.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="glossary-toolbar">
+
+                    <label
+                        for="glossary-search"
+                        class="visually-hidden"
+                    >
+                        Search glossary terms
+                    </label>
+
+                    <input
+                        id="glossary-search"
+                        type="search"
+                        placeholder="Filter glossary..."
+                        autocomplete="off"
+                    >
+
+                    <span
+                        id="glossary-count"
+                        aria-live="polite"
+                    >
+                        12 terms
+                    </span>
+
+                </div>
+
+
+                <dl
+                    class="glossary-grid"
+                    id="glossary-grid"
+                >
+
+
+                    <div class="glossary-item">
+
+                        <dt>
+                            Algorithm
+                        </dt>
+
+                        <dd>
+                            A defined procedure or set of computational
+                            steps used to solve a problem.
+                        </dd>
+
+                    </div>
+
+
+                    <div class="glossary-item">
+
+                        <dt>
+                            Dataset
+                        </dt>
+
+                        <dd>
+                            A structured collection of examples or
+                            information used for analysis or model
+                            development.
+                        </dd>
+
+                    </div>
+
+
+                    <div class="glossary-item">
+
+                        <dt>
+                            Embedding
+                        </dt>
+
+                        <dd>
+                            A numerical representation designed to capture
+                            meaningful relationships between items.
+                        </dd>
+
+                    </div>
+
+
+                    <div class="glossary-item">
+
+                        <dt>
+                            Generative AI
+                        </dt>
+
+                        <dd>
+                            AI systems designed to produce new content
+                            such as text, images, audio, or code.
+                        </dd>
+
+                    </div>
+
+
+                    <div class="glossary-item">
+
+                        <dt>
+                            Inference
+                        </dt>
+
+                        <dd>
+                            The process of using a trained model to
+                            produce a prediction or output.
+                        </dd>
+
+                    </div>
+
+
+                    <div class="glossary-item">
+
+                        <dt>
+                            Machine Learning
+                        </dt>
+
+                        <dd>
+                            A family of methods that learns useful
+                            patterns from data.
+                        </dd>
+
+                    </div>
+
+
+                    <div class="glossary-item">
+
+                        <dt>
+                            Model
+                        </dt>
+
+                        <dd>
+                            A computational representation learned or
+                            configured to perform a specific task.
+                        </dd>
+
+                    </div>
+
+
+                    <div class="glossary-item">
+
+                        <dt>
+                            Neural Network
+                        </dt>
+
+                        <dd>
+                            A computational architecture composed of
+                            connected processing units organized into
+                            layers.
+                        </dd>
+
+                    </div>
+
+
+                    <div class="glossary-item">
+
+                        <dt>
+                            Prompt
+                        </dt>
+
+                        <dd>
+                            Input or instructions provided to a
+                            generative AI system.
+                        </dd>
+
+                    </div>
+
+
+                    <div class="glossary-item">
+
+                        <dt>
+                            RAG
+                        </dt>
+
+                        <dd>
+                            Retrieval-Augmented Generation combines
+                            retrieved information with generative model
+                            output.
+                        </dd>
+
+                    </div>
+
+
+                    <div class="glossary-item">
+
+                        <dt>
+                            Token
+                        </dt>
+
+                        <dd>
+                            A unit of text representation processed by
+                            many language-model systems.
+                        </dd>
+
+                    </div>
+
+
+                    <div class="glossary-item">
+
+                        <dt>
+                            Training
+                        </dt>
+
+                        <dd>
+                            The process in which a model adjusts its
+                            internal parameters using examples or feedback.
+                        </dd>
+
+                    </div>
+
+                </dl>
+
+            </section>
+
+
+            <!-- =============================================
+                 END / PROJECT INFO
+            ============================================== -->
+
+            <section class="project-closing">
+
+                <div>
+
+                    <p class="eyebrow">
+                        PROJECT PURPOSE
+                    </p>
+
+                    <h2>
+                        Technical documentation
+                        designed to teach.
+                    </h2>
+
+                    <p>
+                        AI Development Field Guide combines front-end
+                        development, technical writing, information
+                        architecture, educational design, and AI concepts
+                        in one interactive web experience.
+                    </p>
+
+                </div>
+
+
+                <div class="project-technology-list">
+
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>Technical Writing</span>
+                    <span>AI / ML Concepts</span>
+                    <span>Accessibility</span>
+                    <span>Responsive Design</span>
+
+                </div>
+
+
+                <a
+                    class="primary-button"
+                    href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/AI_Dev-Technical_Doc_Web_Project"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Explore the Source
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div>
+
+            <strong>
+                AI Development Field Guide
+            </strong>
+
+            <p>
+                Interactive Technical Documentation
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <p>
+                Designed &amp; developed by
+                <strong>
+                    Marsharine A. Simpson
+                </strong>
+            </p>
+
+            <a
+                href="https://github.com/marsharine-cs"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub ↗
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+    ====================================================== -->
+
+    <button
+        class="sidebar-overlay"
+        id="sidebar-overlay"
+        type="button"
+        aria-label="Close documentation navigation"
+        tabindex="-1"
+    ></button>
+
+
+    <!-- =====================================================
+         COPY NOTIFICATION
+    ====================================================== -->
+
+    <div
+        class="copy-notification"
+        id="copy-notification"
+        role="status"
+        aria-live="polite"
+    >
+        Copied to clipboard
+    </div>
+
 </body>
 </html>
