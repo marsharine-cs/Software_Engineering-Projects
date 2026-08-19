@@ -10,7 +10,8 @@ Rather than presenting a simple static tribute page, this version was redesigned
 
 ## 🚀 Live Demo
 
-**Public deployment pending final Vercel verification.**
+
+[View Ada Lovelace — The Poetry of Computation](https://ada-lovelace-poetry-of-computation.vercel.app/)
 
 ---
 
