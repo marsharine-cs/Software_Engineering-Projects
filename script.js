@@ -1,423 +1,286 @@
 "use strict";
 
 /* =========================================================
-   AI DEVELOPMENT FIELD GUIDE
-   Interactive Technical Documentation
-   Marsharine A. Simpson
+   MARSHARINE A. SIMPSON
+   PROFESSIONAL TECHNOLOGY PORTFOLIO — V2
    ========================================================= */
 
 
 /* =========================================================
-   DOM REFERENCES
+   MOBILE NAVIGATION
    ========================================================= */
 
-const root = document.documentElement;
-
-const themeToggle =
-    document.getElementById("theme-toggle");
-
-const themeLabel =
-    document.querySelector(".theme-label");
-
-const mobileMenuButton =
-    document.getElementById("mobile-menu-button");
-
-const sidebar =
-    document.getElementById("docs-sidebar");
-
-const sidebarOverlay =
-    document.getElementById("sidebar-overlay");
-
-const readingProgressBar =
-    document.getElementById("reading-progress-bar");
-
-const documentationSearch =
-    document.getElementById("documentation-search");
-
-const searchResults =
-    document.getElementById("search-results");
-
-const glossarySearch =
-    document.getElementById("glossary-search");
-
-const glossaryCount =
-    document.getElementById("glossary-count");
-
-const copyNotification =
-    document.getElementById("copy-notification");
-
-const navigationLinks =
-    Array.from(
-        document.querySelectorAll(".docs-nav-link")
-    );
-
-const documentationSections =
-    Array.from(
-        document.querySelectorAll(
-            ".documentation-section[id]"
-        )
-    );
-
-const conceptCards =
-    Array.from(
-        document.querySelectorAll(".concept-card")
-    );
-
-const copyButtons =
-    Array.from(
-        document.querySelectorAll(".copy-button")
-    );
-
-const glossaryItems =
-    Array.from(
-        document.querySelectorAll(".glossary-item")
-    );
-
-const internalLinks =
-    Array.from(
-        document.querySelectorAll('a[href^="#"]')
-    );
-
-
-/* =========================================================
-   THEME
-   ========================================================= */
-
-const THEME_STORAGE_KEY =
-    "ai-field-guide-theme";
-
-
-function getPreferredTheme() {
-
-    const savedTheme =
-        localStorage.getItem(
-            THEME_STORAGE_KEY
-        );
-
-
-    if (
-        savedTheme === "light" ||
-        savedTheme === "dark"
-    ) {
-        return savedTheme;
-    }
-
-
-    if (
-        window.matchMedia &&
-        window.matchMedia(
-            "(prefers-color-scheme: dark)"
-        ).matches
-    ) {
-        return "dark";
-    }
-
-
-    return "light";
-}
-
-
-function applyTheme(theme) {
-
-    root.setAttribute(
-        "data-theme",
-        theme
-    );
-
-
-    if (!themeToggle) {
-        return;
-    }
-
-
-    const nextTheme =
-        theme === "dark"
-            ? "light"
-            : "dark";
-
-
-    themeToggle.setAttribute(
-        "aria-label",
-        `Switch to ${nextTheme} theme`
-    );
-
-
-    if (themeLabel) {
-
-        themeLabel.textContent =
-            theme === "dark"
-                ? "Dark"
-                : "Light";
-
-    }
-
-}
-
-
-function toggleTheme() {
-
-    const currentTheme =
-        root.getAttribute(
-            "data-theme"
-        ) || "light";
-
-
-    const nextTheme =
-        currentTheme === "dark"
-            ? "light"
-            : "dark";
-
-
-    applyTheme(nextTheme);
-
-
-    localStorage.setItem(
-        THEME_STORAGE_KEY,
-        nextTheme
-    );
-
-}
-
-
-applyTheme(
-    getPreferredTheme()
+const menuButton = document.getElementById("menu-button");
+const navigation = document.getElementById("main-navigation");
+const navigationLinks = document.querySelectorAll(
+    "#main-navigation a"
 );
 
 
-if (themeToggle) {
+function openNavigation() {
+    navigation.classList.add("open");
+    menuButton.classList.add("active");
 
-    themeToggle.addEventListener(
-        "click",
-        toggleTheme
+    menuButton.setAttribute(
+        "aria-expanded",
+        "true"
     );
 
+    menuButton.setAttribute(
+        "aria-label",
+        "Close navigation menu"
+    );
+
+    document.body.classList.add("menu-open");
 }
 
 
-/* =========================================================
-   MOBILE SIDEBAR
-   ========================================================= */
+function closeNavigation() {
+    navigation.classList.remove("open");
+    menuButton.classList.remove("active");
 
-function openSidebar() {
-
-    if (!sidebar) {
-        return;
-    }
-
-
-    sidebar.classList.add("open");
-
-    document.body.classList.add(
-        "sidebar-open"
+    menuButton.setAttribute(
+        "aria-expanded",
+        "false"
     );
 
+    menuButton.setAttribute(
+        "aria-label",
+        "Open navigation menu"
+    );
 
-    if (sidebarOverlay) {
-        sidebarOverlay.classList.add(
-            "active"
-        );
-    }
-
-
-    if (mobileMenuButton) {
-
-        mobileMenuButton.classList.add(
-            "active"
-        );
-
-        mobileMenuButton.setAttribute(
-            "aria-expanded",
-            "true"
-        );
-
-        mobileMenuButton.setAttribute(
-            "aria-label",
-            "Close documentation navigation"
-        );
-
-    }
-
+    document.body.classList.remove("menu-open");
 }
 
 
-function closeSidebar() {
-
-    if (!sidebar) {
-        return;
-    }
-
-
-    sidebar.classList.remove("open");
-
-    document.body.classList.remove(
-        "sidebar-open"
-    );
-
-
-    if (sidebarOverlay) {
-
-        sidebarOverlay.classList.remove(
-            "active"
-        );
-
-    }
-
-
-    if (mobileMenuButton) {
-
-        mobileMenuButton.classList.remove(
-            "active"
-        );
-
-        mobileMenuButton.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-        mobileMenuButton.setAttribute(
-            "aria-label",
-            "Open documentation navigation"
-        );
-
-    }
-
-}
-
-
-function toggleSidebar() {
-
-    if (!sidebar) {
-        return;
-    }
-
-
+function toggleNavigation() {
     const isOpen =
-        sidebar.classList.contains(
-            "open"
-        );
-
+        navigation.classList.contains("open");
 
     if (isOpen) {
-        closeSidebar();
+        closeNavigation();
     } else {
-        openSidebar();
+        openNavigation();
     }
-
 }
 
 
-if (mobileMenuButton) {
+if (menuButton && navigation) {
 
-    mobileMenuButton.addEventListener(
+    menuButton.addEventListener(
         "click",
-        toggleSidebar
+        toggleNavigation
+    );
+
+
+    navigationLinks.forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            closeNavigation
+        );
+
+    });
+
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                navigation.classList.contains("open")
+            ) {
+                closeNavigation();
+                menuButton.focus();
+            }
+
+        }
+    );
+
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            if (window.innerWidth > 830) {
+                closeNavigation();
+            }
+
+        }
     );
 
 }
 
 
-if (sidebarOverlay) {
+/* =========================================================
+   Q&A ACCORDION
+   ========================================================= */
 
-    sidebarOverlay.addEventListener(
-        "click",
-        closeSidebar
-    );
-
-}
+const questionItems =
+    document.querySelectorAll(".question-item");
 
 
-window.addEventListener(
-    "resize",
-    function () {
+questionItems.forEach(
+    function (item, index) {
 
-        if (window.innerWidth > 900) {
-            closeSidebar();
+        const button =
+            item.querySelector(".question-button");
+
+        const answer =
+            item.querySelector(".question-answer");
+
+
+        if (!button || !answer) {
+            return;
         }
 
+
+        const buttonId =
+            `question-button-${index + 1}`;
+
+        const answerId =
+            `question-answer-${index + 1}`;
+
+
+        button.id = buttonId;
+
+        button.setAttribute(
+            "aria-controls",
+            answerId
+        );
+
+
+        answer.id = answerId;
+
+        answer.setAttribute(
+            "role",
+            "region"
+        );
+
+        answer.setAttribute(
+            "aria-labelledby",
+            buttonId
+        );
+
+
+        function closeQuestion() {
+            item.classList.remove("open");
+
+            button.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+        }
+
+
+        function openQuestion() {
+
+            questionItems.forEach(
+                function (otherItem) {
+
+                    if (otherItem === item) {
+                        return;
+                    }
+
+                    const otherButton =
+                        otherItem.querySelector(
+                            ".question-button"
+                        );
+
+                    otherItem.classList.remove("open");
+
+                    if (otherButton) {
+                        otherButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+                    }
+
+                }
+            );
+
+
+            item.classList.add("open");
+
+            button.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+        }
+
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                const isOpen =
+                    item.classList.contains("open");
+
+                if (isOpen) {
+                    closeQuestion();
+                } else {
+                    openQuestion();
+                }
+
+            }
+        );
+
     }
 );
 
 
 /* =========================================================
-   READING PROGRESS
+   ACTIVE NAVIGATION SECTION
    ========================================================= */
 
-function updateReadingProgress() {
+const sectionNavigationLinks =
+    Array.from(navigationLinks).filter(
+        function (link) {
 
-    if (!readingProgressBar) {
-        return;
-    }
+            const href =
+                link.getAttribute("href");
 
+            return (
+                href &&
+                href.startsWith("#")
+            );
 
-    const scrollTop =
-        window.scrollY ||
-        document.documentElement.scrollTop;
-
-
-    const scrollableHeight =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
-
-
-    const progress =
-        scrollableHeight > 0
-            ? (
-                scrollTop /
-                scrollableHeight
-            ) * 100
-            : 0;
+        }
+    );
 
 
-    readingProgressBar.style.width =
-        `${Math.min(
-            Math.max(progress, 0),
-            100
-        )}%`;
+const navigationSections =
+    sectionNavigationLinks
+        .map(function (link) {
 
-}
+            return document.querySelector(
+                link.getAttribute("href")
+            );
 
+        })
+        .filter(Boolean);
 
-window.addEventListener(
-    "scroll",
-    updateReadingProgress,
-    {
-        passive: true
-    }
-);
-
-
-window.addEventListener(
-    "resize",
-    updateReadingProgress
-);
-
-
-/* =========================================================
-   ACTIVE DOCUMENTATION NAVIGATION
-   ========================================================= */
 
 function updateActiveNavigation() {
 
-    if (
-        documentationSections.length === 0
-    ) {
+    if (navigationSections.length === 0) {
         return;
     }
 
 
-    const offset =
+    const scrollPosition =
         window.scrollY + 180;
 
-
-    let activeSection =
-        documentationSections[0];
+    let activeSection = null;
 
 
-    documentationSections.forEach(
+    navigationSections.forEach(
         function (section) {
 
             if (
-                section.offsetTop <= offset
+                section.offsetTop <=
+                scrollPosition
             ) {
                 activeSection = section;
             }
@@ -426,37 +289,43 @@ function updateActiveNavigation() {
     );
 
 
-    navigationLinks.forEach(
+    sectionNavigationLinks.forEach(
         function (link) {
 
-            const isActive =
-                link.getAttribute("href") ===
-                `#${activeSection.id}`;
-
-
-            link.classList.toggle(
-                "active",
-                isActive
+            link.removeAttribute(
+                "aria-current"
             );
-
-
-            if (isActive) {
-
-                link.setAttribute(
-                    "aria-current",
-                    "location"
-                );
-
-            } else {
-
-                link.removeAttribute(
-                    "aria-current"
-                );
-
-            }
 
         }
     );
+
+
+    if (!activeSection) {
+        return;
+    }
+
+
+    const activeLink =
+        sectionNavigationLinks.find(
+            function (link) {
+
+                return (
+                    link.getAttribute("href") ===
+                    `#${activeSection.id}`
+                );
+
+            }
+        );
+
+
+    if (activeLink) {
+
+        activeLink.setAttribute(
+            "aria-current",
+            "page"
+        );
+
+    }
 
 }
 
@@ -470,9 +339,21 @@ window.addEventListener(
 );
 
 
+window.addEventListener(
+    "load",
+    updateActiveNavigation
+);
+
+
 /* =========================================================
-   INTERNAL NAVIGATION
+   SMOOTH INTERNAL NAVIGATION
    ========================================================= */
+
+const internalLinks =
+    document.querySelectorAll(
+        'a[href^="#"]'
+    );
+
 
 internalLinks.forEach(
     function (link) {
@@ -482,9 +363,7 @@ internalLinks.forEach(
             function (event) {
 
                 const targetId =
-                    link.getAttribute(
-                        "href"
-                    );
+                    link.getAttribute("href");
 
 
                 if (
@@ -521,9 +400,6 @@ internalLinks.forEach(
                     targetId
                 );
 
-
-                closeSidebar();
-
             }
         );
 
@@ -532,709 +408,7 @@ internalLinks.forEach(
 
 
 /* =========================================================
-   CONCEPT ACCORDION
-   ========================================================= */
-
-conceptCards.forEach(
-    function (card) {
-
-        const toggle =
-            card.querySelector(
-                ".concept-toggle"
-            );
-
-
-        const content =
-            card.querySelector(
-                ".concept-content"
-            );
-
-
-        if (
-            !toggle ||
-            !content
-        ) {
-            return;
-        }
-
-
-        const startsOpen =
-            toggle.getAttribute(
-                "aria-expanded"
-            ) === "true";
-
-
-        card.classList.toggle(
-            "open",
-            startsOpen
-        );
-
-
-        toggle.addEventListener(
-            "click",
-            function () {
-
-                const isOpen =
-                    card.classList.contains(
-                        "open"
-                    );
-
-
-                card.classList.toggle(
-                    "open",
-                    !isOpen
-                );
-
-
-                toggle.setAttribute(
-                    "aria-expanded",
-                    String(!isOpen)
-                );
-
-            }
-        );
-
-    }
-);
-
-
-/* =========================================================
-   COPY TO CLIPBOARD
-   ========================================================= */
-
-let copyNotificationTimer = null;
-
-
-function showCopyNotification(
-    message = "Copied to clipboard"
-) {
-
-    if (!copyNotification) {
-        return;
-    }
-
-
-    copyNotification.textContent =
-        message;
-
-
-    copyNotification.classList.add(
-        "show"
-    );
-
-
-    window.clearTimeout(
-        copyNotificationTimer
-    );
-
-
-    copyNotificationTimer =
-        window.setTimeout(
-            function () {
-
-                copyNotification.classList.remove(
-                    "show"
-                );
-
-            },
-            1800
-        );
-
-}
-
-
-async function copyText(text) {
-
-    if (
-        navigator.clipboard &&
-        window.isSecureContext
-    ) {
-
-        await navigator.clipboard.writeText(
-            text
-        );
-
-        return;
-    }
-
-
-    const temporaryTextArea =
-        document.createElement(
-            "textarea"
-        );
-
-
-    temporaryTextArea.value =
-        text;
-
-
-    temporaryTextArea.setAttribute(
-        "readonly",
-        ""
-    );
-
-
-    temporaryTextArea.style.position =
-        "fixed";
-
-    temporaryTextArea.style.opacity =
-        "0";
-
-
-    document.body.appendChild(
-        temporaryTextArea
-    );
-
-
-    temporaryTextArea.select();
-
-
-    document.execCommand(
-        "copy"
-    );
-
-
-    temporaryTextArea.remove();
-
-}
-
-
-copyButtons.forEach(
-    function (button) {
-
-        button.addEventListener(
-            "click",
-            async function () {
-
-                const targetId =
-                    button.dataset.copyTarget;
-
-
-                const target =
-                    document.getElementById(
-                        targetId
-                    );
-
-
-                if (!target) {
-                    return;
-                }
-
-
-                const text =
-                    target.textContent.trim();
-
-
-                const originalText =
-                    button.textContent;
-
-
-                try {
-
-                    await copyText(text);
-
-
-                    button.textContent =
-                        "Copied";
-
-
-                    showCopyNotification();
-
-
-                    window.setTimeout(
-                        function () {
-
-                            button.textContent =
-                                originalText;
-
-                        },
-                        1600
-                    );
-
-                } catch (error) {
-
-                    console.error(
-                        "Unable to copy text:",
-                        error
-                    );
-
-
-                    showCopyNotification(
-                        "Copy unavailable"
-                    );
-
-                }
-
-            }
-        );
-
-    }
-);
-
-
-/* =========================================================
-   DOCUMENTATION SEARCH INDEX
-   ========================================================= */
-
-const searchIndex =
-    documentationSections.map(
-        function (section) {
-
-            const title =
-                section.dataset.searchTitle ||
-                section.querySelector("h2")
-                    ?.textContent
-                    ?.trim() ||
-                section.id;
-
-
-            const keywords =
-                section.dataset.searchKeywords ||
-                "";
-
-
-            const text =
-                section.textContent
-                    .replace(/\s+/g, " ")
-                    .trim();
-
-
-            return {
-                id: section.id,
-                title,
-                keywords,
-                text
-            };
-
-        }
-    );
-
-
-function clearSearchResults() {
-
-    if (!searchResults) {
-        return;
-    }
-
-
-    searchResults.innerHTML = "";
-
-    searchResults.classList.remove(
-        "active"
-    );
-
-}
-
-
-function renderSearchResults(query) {
-
-    if (!searchResults) {
-        return;
-    }
-
-
-    const normalizedQuery =
-        query
-            .trim()
-            .toLowerCase();
-
-
-    if (
-        normalizedQuery.length < 2
-    ) {
-
-        clearSearchResults();
-
-        return;
-    }
-
-
-    const matches =
-        searchIndex
-            .filter(
-                function (item) {
-
-                    const searchable =
-                        (
-                            item.title +
-                            " " +
-                            item.keywords +
-                            " " +
-                            item.text
-                        ).toLowerCase();
-
-
-                    return searchable.includes(
-                        normalizedQuery
-                    );
-
-                }
-            )
-            .slice(0, 7);
-
-
-    searchResults.innerHTML = "";
-
-
-    if (matches.length === 0) {
-
-        const emptyMessage =
-            document.createElement(
-                "p"
-            );
-
-
-        emptyMessage.className =
-            "search-empty";
-
-
-        emptyMessage.textContent =
-            "No matching sections found.";
-
-
-        searchResults.appendChild(
-            emptyMessage
-        );
-
-        searchResults.classList.add(
-            "active"
-        );
-
-        return;
-    }
-
-
-    matches.forEach(
-        function (match) {
-
-            const link =
-                document.createElement(
-                    "a"
-                );
-
-
-            link.className =
-                "search-result-link";
-
-
-            link.href =
-                `#${match.id}`;
-
-
-            link.textContent =
-                match.title;
-
-
-            link.addEventListener(
-                "click",
-                function (event) {
-
-                    event.preventDefault();
-
-
-                    const target =
-                        document.getElementById(
-                            match.id
-                        );
-
-
-                    if (!target) {
-                        return;
-                    }
-
-
-                    target.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-
-
-                    history.replaceState(
-                        null,
-                        "",
-                        `#${match.id}`
-                    );
-
-
-                    documentationSearch.value =
-                        "";
-
-
-                    clearSearchResults();
-
-                    closeSidebar();
-
-                }
-            );
-
-
-            searchResults.appendChild(
-                link
-            );
-
-        }
-    );
-
-
-    searchResults.classList.add(
-        "active"
-    );
-
-}
-
-
-if (documentationSearch) {
-
-    documentationSearch.addEventListener(
-        "input",
-        function () {
-
-            renderSearchResults(
-                documentationSearch.value
-            );
-
-        }
-    );
-
-
-    documentationSearch.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (event.key === "Escape") {
-
-                documentationSearch.value =
-                    "";
-
-                clearSearchResults();
-
-                documentationSearch.blur();
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   "/" SEARCH SHORTCUT
-   ========================================================= */
-
-document.addEventListener(
-    "keydown",
-    function (event) {
-
-        const activeElement =
-            document.activeElement;
-
-
-        const isTyping =
-            activeElement &&
-            (
-                activeElement.tagName === "INPUT" ||
-                activeElement.tagName === "TEXTAREA" ||
-                activeElement.isContentEditable
-            );
-
-
-        if (
-            event.key === "/" &&
-            !isTyping &&
-            documentationSearch
-        ) {
-
-            event.preventDefault();
-
-
-            if (
-                window.innerWidth <= 900 &&
-                sidebar &&
-                !sidebar.classList.contains(
-                    "open"
-                )
-            ) {
-                openSidebar();
-            }
-
-
-            documentationSearch.focus();
-
-        }
-
-
-        if (event.key === "Escape") {
-
-            clearSearchResults();
-
-
-            if (
-                sidebar &&
-                sidebar.classList.contains(
-                    "open"
-                )
-            ) {
-
-                closeSidebar();
-
-
-                if (mobileMenuButton) {
-                    mobileMenuButton.focus();
-                }
-
-            }
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   CLOSE SEARCH WHEN CLICKING ELSEWHERE
-   ========================================================= */
-
-document.addEventListener(
-    "click",
-    function (event) {
-
-        if (
-            !searchResults ||
-            !documentationSearch
-        ) {
-            return;
-        }
-
-
-        const searchContainer =
-            documentationSearch.closest(
-                ".documentation-search"
-            );
-
-
-        if (
-            searchContainer &&
-            !searchContainer.contains(
-                event.target
-            )
-        ) {
-
-            clearSearchResults();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   GLOSSARY FILTER
-   ========================================================= */
-
-function filterGlossary(query) {
-
-    const normalizedQuery =
-        query
-            .trim()
-            .toLowerCase();
-
-
-    let visibleCount = 0;
-
-
-    glossaryItems.forEach(
-        function (item) {
-
-            const term =
-                item.querySelector("dt")
-                    ?.textContent
-                    ?.toLowerCase() ||
-                "";
-
-
-            const definition =
-                item.querySelector("dd")
-                    ?.textContent
-                    ?.toLowerCase() ||
-                "";
-
-
-            const matches =
-                !normalizedQuery ||
-                term.includes(
-                    normalizedQuery
-                ) ||
-                definition.includes(
-                    normalizedQuery
-                );
-
-
-            item.classList.toggle(
-                "hidden",
-                !matches
-            );
-
-
-            if (matches) {
-                visibleCount += 1;
-            }
-
-        }
-    );
-
-
-    if (glossaryCount) {
-
-        glossaryCount.textContent =
-            `${visibleCount} ${
-                visibleCount === 1
-                    ? "term"
-                    : "terms"
-            }`;
-
-    }
-
-}
-
-
-if (glossarySearch) {
-
-    glossarySearch.addEventListener(
-        "input",
-        function () {
-
-            filterGlossary(
-                glossarySearch.value
-            );
-
-        }
-    );
-
-
-    glossarySearch.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (event.key === "Escape") {
-
-                glossarySearch.value =
-                    "";
-
-                filterGlossary("");
-
-                glossarySearch.blur();
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   EXTERNAL LINK SAFETY
+   EXTERNAL LINK SECURITY
    ========================================================= */
 
 const externalLinks =
@@ -1246,27 +420,24 @@ const externalLinks =
 externalLinks.forEach(
     function (link) {
 
-        const currentRel =
+        const relValues =
             new Set(
                 (
-                    link.getAttribute(
-                        "rel"
-                    ) || ""
+                    link.getAttribute("rel") ||
+                    ""
                 )
                     .split(/\s+/)
                     .filter(Boolean)
             );
 
 
-        currentRel.add("noopener");
-        currentRel.add("noreferrer");
+        relValues.add("noopener");
+        relValues.add("noreferrer");
 
 
         link.setAttribute(
             "rel",
-            Array.from(
-                currentRel
-            ).join(" ")
+            Array.from(relValues).join(" ")
         );
 
     }
@@ -1274,31 +445,39 @@ externalLinks.forEach(
 
 
 /* =========================================================
-   INITIALIZATION
+   INITIAL STATE
    ========================================================= */
 
-function initializeFieldGuide() {
+function initializePortfolio() {
 
-    updateReadingProgress();
+    questionItems.forEach(
+        function (item) {
+
+            const button =
+                item.querySelector(
+                    ".question-button"
+                );
+
+
+            item.classList.remove("open");
+
+
+            if (button) {
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        }
+    );
+
 
     updateActiveNavigation();
-
-    filterGlossary("");
-
-
-    if (
-        documentationSearch
-    ) {
-
-        documentationSearch.value =
-            "";
-
-    }
-
-
-    clearSearchResults();
 
 }
 
 
-initializeFieldGuide();
+initializePortfolio();
