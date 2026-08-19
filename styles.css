@@ -1,6 +1,7 @@
 /* =========================================================
    MARSHARINE A. SIMPSON
    PROFESSIONAL TECHNOLOGY PORTFOLIO — FINAL V2
+   PREMIUM CAROUSEL + MOTION
    ========================================================= */
 
 
@@ -91,6 +92,7 @@ img {
 button,
 a {
     font: inherit;
+
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -138,7 +140,8 @@ ul {
 }
 
 button:focus-visible,
-a:focus-visible {
+a:focus-visible,
+.project-carousel-viewport:focus-visible {
     outline: 3px solid rgba(185, 133, 61, 0.55);
     outline-offset: 4px;
 }
@@ -162,11 +165,13 @@ a:focus-visible {
 
 .section-heading {
     display: grid;
+
     grid-template-columns:
         minmax(0, 1.15fr)
         minmax(300px, 0.85fr);
 
     align-items: end;
+
     gap: 70px;
 
     margin-bottom: 48px;
@@ -232,18 +237,27 @@ a:focus-visible {
 
 .nav-shell {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+
+    grid-template-columns:
+        auto
+        1fr
+        auto;
+
     align-items: center;
+
     gap: 28px;
 
     width: min(100% - 40px, var(--max-width));
     min-height: 80px;
+
     margin: 0 auto;
 }
 
 .brand {
     display: inline-flex;
+
     align-items: center;
+
     gap: 12px;
 
     text-decoration: none;
@@ -251,6 +265,7 @@ a:focus-visible {
 
 .brand-mark {
     display: grid;
+
     place-items: center;
 
     flex: 0 0 46px;
@@ -272,10 +287,21 @@ a:focus-visible {
     font-weight: 700;
 
     letter-spacing: 0.07em;
+
+    transition:
+        transform 0.28s ease,
+        background 0.28s ease;
+}
+
+.brand:hover .brand-mark {
+    transform: rotate(-6deg) scale(1.04);
+
+    background: var(--plum);
 }
 
 .brand-copy {
     display: flex;
+
     flex-direction: column;
 
     line-height: 1.08;
@@ -302,15 +328,24 @@ a:focus-visible {
     font-weight: 700;
 }
 
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
 .main-navigation {
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     gap: 23px;
 }
 
 .main-navigation a,
 .github-link {
+    position: relative;
+
     color: var(--ink);
 
     font-size: 0.78rem;
@@ -323,15 +358,44 @@ a:focus-visible {
         transform 0.18s ease;
 }
 
+.main-navigation a::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    bottom: -8px;
+    left: 0;
+
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: var(--plum);
+
+    transform: scaleX(0);
+
+    transform-origin: center;
+
+    transition: transform 0.22s ease;
+}
+
 .main-navigation a:hover,
 .main-navigation a[aria-current="page"],
 .github-link:hover {
     color: var(--plum);
 }
 
+.main-navigation a:hover::after,
+.main-navigation a[aria-current="page"]::after {
+    transform: scaleX(1);
+}
+
 .github-link {
     display: inline-flex;
+
     align-items: center;
+
     gap: 5px;
 
     justify-self: end;
@@ -340,6 +404,11 @@ a:focus-visible {
 .github-link:hover {
     transform: translateY(-1px);
 }
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
 
 .menu-button {
     display: none;
@@ -360,6 +429,7 @@ a:focus-visible {
 
     width: 100%;
     height: 2px;
+
     margin: 4px 0;
 
     background: var(--ink);
@@ -392,14 +462,17 @@ a:focus-visible {
 
 .hero {
     display: grid;
+
     grid-template-columns:
         minmax(0, 0.92fr)
         minmax(470px, 1.08fr);
 
     align-items: center;
+
     gap: clamp(40px, 5vw, 75px);
 
     width: min(100% - 40px, var(--max-width));
+
     margin: 0 auto;
 
     padding: 58px 0 62px;
@@ -407,11 +480,13 @@ a:focus-visible {
 
 .hero-copy {
     position: relative;
+
     z-index: 2;
 }
 
 .hero-copy h1 {
     max-width: 680px;
+
     margin: 0;
 
     color: var(--ink);
@@ -436,7 +511,9 @@ a:focus-visible {
 
 .hero-role {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 8px;
 
     margin: 22px 0 0;
@@ -453,6 +530,7 @@ a:focus-visible {
 
 .hero-statement {
     max-width: 650px;
+
     margin: 18px 0 0;
 
     color: var(--ink);
@@ -471,6 +549,7 @@ a:focus-visible {
 
 .hero-introduction {
     max-width: 625px;
+
     margin: 15px 0 0;
 
     color: var(--muted);
@@ -480,7 +559,9 @@ a:focus-visible {
 
 .hero-actions {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 11px;
 
     margin-top: 25px;
@@ -489,24 +570,29 @@ a:focus-visible {
 .primary-button,
 .secondary-button {
     display: inline-flex;
+
     justify-content: center;
     align-items: center;
+
     gap: 7px;
 
     min-height: 48px;
+
     padding: 11px 21px;
 
     border-radius: 999px;
 
     font-size: 0.82rem;
     font-weight: 800;
+
     text-decoration: none;
 
     transition:
-        transform 0.18s ease,
-        color 0.18s ease,
-        background 0.18s ease,
-        border-color 0.18s ease;
+        transform 0.22s ease,
+        color 0.22s ease,
+        background 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease;
 }
 
 .primary-button {
@@ -523,31 +609,38 @@ a:focus-visible {
 }
 
 .primary-button:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+
+    border-color: var(--ink);
 
     background: var(--ink);
-    border-color: var(--ink);
+
+    box-shadow:
+        0 12px 25px rgba(21, 23, 28, 0.16);
 }
 
 .secondary-button {
     border: 1px solid rgba(21, 23, 28, 0.18);
 
     color: var(--ink);
+
     background: rgba(255, 255, 255, 0.32);
 }
 
 .secondary-button:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 
     border-color: var(--plum);
 
     color: var(--plum);
+
+    box-shadow:
+        0 12px 25px rgba(21, 23, 28, 0.08);
 }
 
 
 /* =========================================================
-   FINAL HERO PHOTO — DESK PORTRAIT
-   NO ARCH / NO SEMICIRCLE
+   HERO PHOTO
    ========================================================= */
 
 .hero-photo {
@@ -555,6 +648,7 @@ a:focus-visible {
 
     width: 100%;
     max-width: 620px;
+
     margin-left: auto;
 }
 
@@ -577,6 +671,82 @@ a:focus-visible {
     background: var(--cream-deep);
 
     box-shadow: var(--shadow-md);
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.hero-photo:hover img {
+    transform: translateY(-4px) scale(1.008);
+
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* =========================================================
+   HERO ENTRANCE MOTION
+   ========================================================= */
+
+.motion-ready .hero-copy > *,
+.motion-ready .hero-photo {
+    opacity: 0;
+
+    transform: translateY(24px);
+}
+
+.motion-ready .hero-photo {
+    transform:
+        translateX(30px)
+        scale(0.985);
+}
+
+.motion-ready.page-ready .hero-copy > *,
+.motion-ready.page-ready .hero-photo {
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        translateY(0)
+        scale(1);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.motion-ready.page-ready
+.hero-copy > :nth-child(1) {
+    transition-delay: 0.04s;
+}
+
+.motion-ready.page-ready
+.hero-copy > :nth-child(2) {
+    transition-delay: 0.10s;
+}
+
+.motion-ready.page-ready
+.hero-copy > :nth-child(3) {
+    transition-delay: 0.16s;
+}
+
+.motion-ready.page-ready
+.hero-copy > :nth-child(4) {
+    transition-delay: 0.22s;
+}
+
+.motion-ready.page-ready
+.hero-copy > :nth-child(5) {
+    transition-delay: 0.28s;
+}
+
+.motion-ready.page-ready
+.hero-copy > :nth-child(6) {
+    transition-delay: 0.34s;
+}
+
+.motion-ready.page-ready .hero-photo {
+    transition-delay: 0.16s;
 }
 
 
@@ -586,9 +756,12 @@ a:focus-visible {
 
 .strength-strip {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
 
     width: min(100% - 40px, var(--max-width));
+
     margin: 0 auto 105px;
 
     border-top: 1px solid var(--line);
@@ -597,14 +770,29 @@ a:focus-visible {
 
 .strength-strip article {
     display: grid;
-    grid-template-columns: auto 48px 1fr;
-    gap: 14px;
+
+    grid-template-columns:
+        auto
+        48px
+        1fr;
+
     align-items: start;
 
+    gap: 14px;
+
     min-height: 148px;
+
     padding: 26px 24px;
 
     border-right: 1px solid var(--line);
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.strength-strip article:hover {
+    background: rgba(255, 255, 255, 0.28);
 }
 
 .strength-strip article:first-child {
@@ -630,6 +818,7 @@ a:focus-visible {
 
 .strength-icon {
     display: grid;
+
     place-items: center;
 
     width: 45px;
@@ -642,6 +831,21 @@ a:focus-visible {
 
     font-size: 1rem;
     font-weight: 900;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease,
+        background 0.25s ease;
+}
+
+.strength-strip article:hover
+.strength-icon {
+    transform:
+        translateY(-3px)
+        rotate(-3deg);
+
+    color: var(--white);
+    background: var(--plum);
 }
 
 .strength-strip h2 {
@@ -674,6 +878,7 @@ a:focus-visible {
 
 .work-section {
     width: min(100% - 40px, var(--max-width));
+
     margin: 0 auto;
 
     padding: 0 0 115px;
@@ -681,11 +886,12 @@ a:focus-visible {
 
 
 /* =========================================================
-   FEATURED PROJECT — LUMA ONE
+   PROJECT BASICS — BEFORE JS BUILDS CAROUSEL
    ========================================================= */
 
 .featured-project {
     display: grid;
+
     grid-template-columns:
         minmax(0, 1.17fr)
         minmax(320px, 0.83fr);
@@ -717,37 +923,45 @@ a:focus-visible {
     aspect-ratio: 16 / 8.3;
 }
 
-.featured-project-image img {
+.featured-project-image img,
+.project-image img {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
     object-position: top center;
 
-    transition: transform 0.4s ease;
+    transition:
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .featured-project:hover
-.featured-project-image img {
-    transform: scale(1.02);
+.featured-project-image img,
+.project-card:hover
+.project-image img {
+    transform: scale(1.035);
 }
 
 .project-number {
     position: absolute;
+
     top: 18px;
     left: 18px;
 
     display: grid;
+
     place-items: center;
 
     min-width: 42px;
     height: 42px;
+
     padding: 0 10px;
 
     border: 1px solid rgba(255, 255, 255, 0.38);
     border-radius: 999px;
 
     color: var(--white);
+
     background: rgba(75, 24, 54, 0.9);
 
     font-size: 0.67rem;
@@ -756,10 +970,12 @@ a:focus-visible {
     letter-spacing: 0.08em;
 
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .featured-project-content {
     display: flex;
+
     flex-direction: column;
     justify-content: center;
 
@@ -819,7 +1035,9 @@ a:focus-visible {
 
 .technology-tags {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 7px;
 
     margin-top: 21px;
@@ -832,41 +1050,71 @@ a:focus-visible {
     border-radius: 999px;
 
     color: var(--muted);
+
     background: rgba(255, 255, 255, 0.4);
 
     font-size: 0.65rem;
     font-weight: 750;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.technology-tags li:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(111, 35, 78, 0.25);
+
+    color: var(--plum);
+
+    background: var(--white);
 }
 
 .project-links {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 18px;
 
     margin-top: 23px;
 }
 
 .project-links a {
+    position: relative;
+
     color: var(--ink);
 
     font-size: 0.79rem;
     font-weight: 850;
 
     text-decoration: none;
+
+    transition:
+        color 0.18s ease,
+        transform 0.18s ease;
 }
 
 .project-links a:hover {
     color: var(--plum);
+
+    transform: translateX(2px);
 }
 
 
 /* =========================================================
-   PROJECT GRID
+   ORIGINAL PROJECT GRID FALLBACK
    ========================================================= */
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
     gap: 23px;
 }
 
@@ -881,32 +1129,21 @@ a:focus-visible {
     box-shadow: var(--shadow-sm);
 
     transition:
-        transform 0.22s ease,
-        box-shadow 0.22s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
+
+    border-color: rgba(111, 35, 78, 0.18);
 
     box-shadow: var(--shadow-md);
 }
 
 .project-image {
     aspect-ratio: 16 / 9;
-}
-
-.project-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: top center;
-
-    transition: transform 0.35s ease;
-}
-
-.project-card:hover .project-image img {
-    transform: scale(1.02);
 }
 
 .project-card-content {
@@ -921,11 +1158,15 @@ a:focus-visible {
     grid-column: 1 / -1;
 
     display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
+
+    grid-template-columns:
+        0.8fr
+        1.2fr;
 }
 
 .compact-project .project-image {
     min-height: 280px;
+
     aspect-ratio: auto;
 }
 
@@ -935,11 +1176,315 @@ a:focus-visible {
 
 .compact-project .project-card-content {
     display: flex;
+
     flex-direction: column;
     justify-content: center;
 
     padding: 36px;
 }
+
+
+/* =========================================================
+   PREMIUM PROJECT CAROUSEL
+   GENERATED BY SCRIPT.JS
+   ========================================================= */
+
+.project-carousel-shell {
+    position: relative;
+
+    margin-top: 4px;
+}
+
+.project-carousel-toolbar {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 24px;
+
+    margin-bottom: 20px;
+}
+
+.project-carousel-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.project-carousel-counter {
+    min-width: 66px;
+
+    color: var(--plum);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.08rem;
+    font-weight: 600;
+
+    letter-spacing: -0.02em;
+}
+
+.project-carousel-hint {
+    color: var(--muted);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.project-carousel-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+.project-carousel-arrow {
+    display: grid;
+
+    place-items: center;
+
+    width: 46px;
+    height: 46px;
+
+    padding: 0;
+
+    border: 1px solid var(--line);
+    border-radius: 50%;
+
+    color: var(--ink);
+
+    background: rgba(255, 255, 255, 0.5);
+
+    font-size: 1.15rem;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.project-carousel-arrow:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    border-color: var(--plum);
+
+    color: var(--white);
+
+    background: var(--plum);
+}
+
+.project-carousel-arrow:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.35;
+}
+
+.project-carousel-viewport {
+    position: relative;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    width: 100%;
+
+    padding:
+        4px
+        0
+        18px;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+
+    overscroll-behavior-x: contain;
+}
+
+.project-carousel-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+.project-carousel-track {
+    display: flex;
+
+    align-items: stretch;
+
+    gap: 24px;
+}
+
+.project-carousel-track
+.project-slide {
+    flex:
+        0
+        0
+        min(87%, 990px);
+
+    min-width: 0;
+
+    margin: 0;
+
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.project-carousel-track
+.featured-project,
+.project-carousel-track
+.project-card,
+.project-carousel-track
+.compact-project {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.12fr)
+        minmax(330px, 0.88fr);
+
+    overflow: hidden;
+
+    min-height: 460px;
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+
+    background: var(--cream-light);
+
+    box-shadow: var(--shadow-md);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.project-carousel-track
+.project-slide:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(111, 35, 78, 0.17);
+
+    box-shadow: var(--shadow-lg);
+}
+
+.project-carousel-track
+.featured-project-image,
+.project-carousel-track
+.project-image,
+.project-carousel-track
+.compact-project
+.project-image {
+    min-height: 460px;
+
+    aspect-ratio: auto;
+}
+
+.project-carousel-track
+.featured-project-image img,
+.project-carousel-track
+.project-image img,
+.project-carousel-track
+.compact-project
+.project-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: top center;
+}
+
+.project-carousel-track
+.featured-project-content,
+.project-carousel-track
+.project-card-content,
+.project-carousel-track
+.compact-project
+.project-card-content {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+
+    padding:
+        clamp(30px, 4vw, 48px);
+}
+
+.project-carousel-track
+.project-card-content h3 {
+    font-size:
+        clamp(
+            2rem,
+            3.2vw,
+            3.25rem
+        );
+}
+
+.project-carousel-track
+.featured-project-content h3 {
+    font-size:
+        clamp(
+            2.35rem,
+            3.8vw,
+            3.8rem
+        );
+}
+
+
+/* =========================================================
+   CAROUSEL DOTS
+   ========================================================= */
+
+.project-carousel-dots {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 7px;
+}
+
+.project-carousel-dot {
+    width: 9px;
+    height: 9px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 999px;
+
+    background: rgba(21, 23, 28, 0.22);
+
+    transition:
+        width 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.project-carousel-dot:hover {
+    transform: scale(1.15);
+
+    background: var(--plum-soft);
+}
+
+.project-carousel-dot.active,
+.project-carousel-dot[aria-current="true"] {
+    width: 28px;
+
+    background: var(--plum);
+}
+
+
+/* =========================================================
+   GITHUB PROJECT LINK
+   ========================================================= */
 
 .github-project-link {
     margin-top: 28px;
@@ -958,6 +1503,7 @@ a:focus-visible {
 
 .github-project-link a:hover {
     text-decoration: underline;
+
     text-underline-offset: 5px;
 }
 
@@ -968,15 +1514,24 @@ a:focus-visible {
 
 .profile-section {
     display: grid;
+
     grid-template-columns:
         minmax(0, 0.86fr)
         minmax(0, 1.14fr);
 
-    gap: clamp(55px, 8vw, 105px);
+    gap:
+        clamp(
+            55px,
+            8vw,
+            105px
+        );
 
     padding:
         105px
-        max(20px, calc((100vw - var(--max-width)) / 2));
+        max(
+            20px,
+            calc((100vw - var(--max-width)) / 2)
+        );
 
     color: var(--white);
 
@@ -1002,6 +1557,7 @@ a:focus-visible {
 
 .profile-content > p {
     max-width: 720px;
+
     margin: 0 0 17px;
 
     color: #c9ccd2;
@@ -1022,10 +1578,16 @@ a:focus-visible {
 
 .profile-content blockquote {
     margin: 32px 0 0;
+
     padding: 24px 0 0 24px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.14);
-    border-left: 3px solid var(--gold);
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.14);
+
+    border-left:
+        3px solid
+        var(--gold);
 
     color: var(--gold-soft);
 
@@ -1047,6 +1609,7 @@ a:focus-visible {
 
 .experience-section {
     width: min(100% - 40px, var(--max-width));
+
     margin: 0 auto;
 
     padding: 110px 0;
@@ -1058,17 +1621,34 @@ a:focus-visible {
 
 .experience-item {
     display: grid;
+
     grid-template-columns:
         145px
         minmax(0, 1fr)
         minmax(170px, 0.35fr);
 
-    gap: 35px;
     align-items: start;
+
+    gap: 35px;
 
     padding: 30px 0;
 
     border-bottom: 1px solid var(--line);
+
+    transition:
+        padding-left 0.25s ease,
+        background 0.25s ease;
+}
+
+.experience-item:hover {
+    padding-left: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.28),
+            transparent
+        );
 }
 
 .experience-date {
@@ -1105,6 +1685,7 @@ a:focus-visible {
 
 .experience-details > p:last-child {
     max-width: 680px;
+
     margin: 13px 0 0;
 
     color: var(--muted);
@@ -1129,7 +1710,10 @@ a:focus-visible {
 .skills-section {
     padding:
         100px
-        max(20px, calc((100vw - var(--max-width)) / 2));
+        max(
+            20px,
+            calc((100vw - var(--max-width)) / 2)
+        );
 
     background: var(--cream-deep);
 }
@@ -1140,7 +1724,9 @@ a:focus-visible {
 
 .primary-skills {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 10px;
 
     margin-top: 40px;
@@ -1152,15 +1738,28 @@ a:focus-visible {
     border-radius: 999px;
 
     color: var(--white);
+
     background: var(--ink);
 
     font-size: 0.86rem;
     font-weight: 800;
+
+    transition:
+        transform 0.22s ease,
+        background 0.22s ease;
+}
+
+.primary-skills span:hover {
+    transform: translateY(-3px);
+
+    background: var(--plum);
 }
 
 .secondary-skills {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 8px;
 
     margin-top: 17px;
@@ -1173,19 +1772,39 @@ a:focus-visible {
     border-radius: 999px;
 
     color: var(--muted);
+
     background: rgba(255, 255, 255, 0.38);
 
     font-size: 0.72rem;
     font-weight: 750;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.secondary-skills span:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--plum-soft);
+
+    color: var(--plum);
 }
 
 .currently-exploring {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 24px;
+
+    grid-template-columns:
+        auto
+        1fr;
+
     align-items: center;
 
+    gap: 24px;
+
     margin-top: 38px;
+
     padding-top: 22px;
 
     border-top: 1px solid var(--line);
@@ -1220,6 +1839,7 @@ a:focus-visible {
 
 .questions-section {
     display: grid;
+
     grid-template-columns:
         minmax(0, 0.78fr)
         minmax(0, 1.22fr);
@@ -1227,6 +1847,7 @@ a:focus-visible {
     gap: 72px;
 
     width: min(100% - 40px, var(--max-width));
+
     margin: 0 auto;
 
     padding: 110px 0;
@@ -1234,6 +1855,7 @@ a:focus-visible {
 
 .questions-introduction > p:last-child {
     max-width: 520px;
+
     margin: 19px 0 0;
 
     color: var(--muted);
@@ -1249,16 +1871,20 @@ a:focus-visible {
 
 .question-button {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
+
     gap: 24px;
 
     width: 100%;
+
     padding: 22px 0;
 
     border: 0;
 
     color: var(--ink);
+
     background: transparent;
 
     text-align: left;
@@ -1270,14 +1896,21 @@ a:focus-visible {
 
     font-size: 1.22rem;
     font-weight: 500;
+
+    transition:
+        color 0.22s ease,
+        padding-left 0.22s ease;
 }
 
 .question-button:hover {
+    padding-left: 5px;
+
     color: var(--plum);
 }
 
 .question-icon {
     display: grid;
+
     place-items: center;
 
     flex: 0 0 35px;
@@ -1299,9 +1932,9 @@ a:focus-visible {
     font-weight: 600;
 
     transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        color 0.2s ease;
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 .question-button[aria-expanded="true"]
@@ -1309,22 +1942,34 @@ a:focus-visible {
     transform: rotate(45deg);
 
     color: var(--white);
+
     background: var(--plum);
 }
 
 .question-answer {
-    display: none;
+    overflow: hidden;
 
     max-width: 760px;
-    padding: 0 52px 25px 0;
+    max-height: 0;
+
+    padding: 0 52px 0 0;
+
+    opacity: 0;
+
+    transition:
+        max-height 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.28s ease;
 }
 
-.question-item.open .question-answer {
-    display: block;
+.question-item.open
+.question-answer {
+    opacity: 1;
 }
 
 .question-answer p {
     margin: 0;
+
+    padding-bottom: 25px;
 
     color: var(--muted);
 }
@@ -1336,6 +1981,7 @@ a:focus-visible {
 
 .credentials-section {
     display: grid;
+
     grid-template-columns:
         minmax(0, 0.8fr)
         minmax(0, 1.2fr);
@@ -1344,25 +1990,45 @@ a:focus-visible {
 
     padding:
         105px
-        max(20px, calc((100vw - var(--max-width)) / 2));
+        max(
+            20px,
+            calc((100vw - var(--max-width)) / 2)
+        );
 
     background: var(--cream-deep);
 }
 
 .credential-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
     gap: 17px;
 }
 
 .credential-list article {
     min-height: 210px;
+
     padding: 24px;
 
     border: 1px solid var(--line);
     border-radius: var(--radius-md);
 
     background: rgba(255, 255, 255, 0.42);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.credential-list article:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(111, 35, 78, 0.18);
+
+    box-shadow: var(--shadow-sm);
 }
 
 .credential-label {
@@ -1417,16 +2083,21 @@ a:focus-visible {
 
 .contact-section {
     display: grid;
+
     grid-template-columns:
         minmax(0, 0.9fr)
         minmax(0, 1.1fr);
 
-    gap: 78px;
     align-items: center;
+
+    gap: 78px;
 
     padding:
         100px
-        max(20px, calc((100vw - var(--max-width)) / 2));
+        max(
+            20px,
+            calc((100vw - var(--max-width)) / 2)
+        );
 
     color: var(--white);
 
@@ -1454,24 +2125,31 @@ a:focus-visible {
 > div:first-child
 > p:last-child {
     max-width: 600px;
+
     margin: 20px 0 0;
 
     color: #d5cdd2;
 }
 
 .contact-links {
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.15);
 }
 
 .contact-links a {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
+
     gap: 22px;
 
     padding: 21px 0;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.15);
 
     color: #cdc8cc;
 
@@ -1490,6 +2168,7 @@ a:focus-visible {
 
 .contact-links a > span:first-child {
     display: flex;
+
     flex-direction: column;
 
     font-size: 0.73rem;
@@ -1518,16 +2197,20 @@ a:focus-visible {
     padding: 34px 20px;
 
     color: #b9bdc5;
+
     background: #0d0f13;
 }
 
 .footer-shell {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
+
     gap: 30px;
 
     width: min(100%, var(--max-width));
+
     margin: 0 auto;
 }
 
@@ -1545,8 +2228,11 @@ a:focus-visible {
 
 .footer-links {
     display: flex;
+
     flex-wrap: wrap;
+
     justify-content: flex-end;
+
     gap: 8px 19px;
 }
 
@@ -1557,10 +2243,52 @@ a:focus-visible {
     font-weight: 750;
 
     text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .footer-links a:hover {
+    transform: translateY(-1px);
+
     color: var(--gold-soft);
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+   ONLY ACTIVATED WHEN JAVASCRIPT IS AVAILABLE
+   ========================================================= */
+
+.motion-ready
+.reveal-target {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.75s ease,
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.motion-ready
+.reveal-target.reveal-left {
+    transform: translateX(-28px);
+}
+
+.motion-ready
+.reveal-target.reveal-right {
+    transform: translateX(28px);
+}
+
+.motion-ready
+.reveal-target.is-visible {
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        translateY(0);
 }
 
 
@@ -1586,12 +2314,27 @@ a:focus-visible {
         height: 455px;
     }
 
-    .featured-project {
-        grid-template-columns: 1fr;
+    .project-carousel-track
+    .featured-project,
+    .project-carousel-track
+    .project-card,
+    .project-carousel-track
+    .compact-project {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(300px, 0.8fr);
+
+        min-height: 420px;
     }
 
-    .featured-project-image {
-        aspect-ratio: 16 / 7.5;
+    .project-carousel-track
+    .featured-project-image,
+    .project-carousel-track
+    .project-image,
+    .project-carousel-track
+    .compact-project
+    .project-image {
+        min-height: 420px;
     }
 
     .profile-section,
@@ -1611,13 +2354,16 @@ a:focus-visible {
 
 
 /* =========================================================
-   MOBILE NAVIGATION
+   MOBILE NAVIGATION / TABLET
    ========================================================= */
 
 @media (max-width: 860px) {
 
     .nav-shell {
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns:
+            auto
+            1fr
+            auto;
     }
 
     .menu-button {
@@ -1632,17 +2378,25 @@ a:focus-visible {
 
     .main-navigation {
         position: fixed;
+
         top: 80px;
         right: 0;
         left: 0;
+
         z-index: 90;
 
         display: none;
+
         flex-direction: column;
         align-items: stretch;
+
         gap: 0;
 
-        max-height: calc(100vh - 80px);
+        max-height:
+            calc(
+                100vh - 80px
+            );
+
         overflow-y: auto;
 
         border-top: 1px solid var(--line);
@@ -1663,6 +2417,10 @@ a:focus-visible {
         border-bottom: 1px solid var(--line);
     }
 
+    .main-navigation a::after {
+        display: none;
+    }
+
     .hero {
         grid-template-columns: 1fr;
 
@@ -1671,6 +2429,7 @@ a:focus-visible {
 
     .hero-photo {
         max-width: 680px;
+
         margin: 6px auto 0;
     }
 
@@ -1707,18 +2466,58 @@ a:focus-visible {
         gap: 21px;
     }
 
-    .project-grid {
-        grid-template-columns: 1fr;
+
+    /* -----------------------------------------
+       CAROUSEL
+       ----------------------------------------- */
+
+    .project-carousel-track
+    .project-slide {
+        flex-basis: 88%;
     }
 
+    .project-carousel-track
+    .featured-project,
+    .project-carousel-track
+    .project-card,
+    .project-carousel-track
     .compact-project {
-        grid-column: auto;
+        grid-template-columns: 1fr;
 
-        display: block;
+        min-height: 0;
     }
+
+    .project-carousel-track
+    .featured-project-image,
+    .project-carousel-track
+    .project-image,
+    .project-carousel-track
+    .compact-project
+    .project-image {
+        min-height: 0;
+
+        aspect-ratio: 16 / 9;
+    }
+
+    .project-carousel-track
+    .featured-project-content,
+    .project-carousel-track
+    .project-card-content,
+    .project-carousel-track
+    .compact-project
+    .project-card-content {
+        padding: 30px;
+    }
+
+
+    /* -----------------------------------------
+       EXPERIENCE
+       ----------------------------------------- */
 
     .experience-item {
-        grid-template-columns: 120px 1fr;
+        grid-template-columns:
+            120px
+            1fr;
 
         gap: 23px;
     }
@@ -1743,7 +2542,11 @@ a:focus-visible {
     .work-section,
     .experience-section,
     .questions-section {
-        width: min(100% - 28px, var(--max-width));
+        width:
+            min(
+                100% - 28px,
+                var(--max-width)
+            );
     }
 
     .nav-shell {
@@ -1763,7 +2566,12 @@ a:focus-visible {
     }
 
     .hero-copy h1 {
-        font-size: clamp(3.4rem, 17vw, 5rem);
+        font-size:
+            clamp(
+                3.4rem,
+                17vw,
+                5rem
+            );
     }
 
     .hero-statement {
@@ -1776,6 +2584,7 @@ a:focus-visible {
 
     .hero-actions {
         flex-direction: column;
+
         align-items: stretch;
     }
 
@@ -1802,7 +2611,10 @@ a:focus-visible {
     }
 
     .strength-strip article {
-        grid-template-columns: auto 44px 1fr;
+        grid-template-columns:
+            auto
+            44px
+            1fr;
 
         gap: 11px;
     }
@@ -1816,31 +2628,94 @@ a:focus-visible {
         padding-bottom: 82px;
     }
 
-    .featured-project {
+
+    /* -----------------------------------------
+       CAROUSEL MOBILE
+       ----------------------------------------- */
+
+    .project-carousel-toolbar {
+        align-items: flex-end;
+
+        margin-bottom: 14px;
+    }
+
+    .project-carousel-status {
+        display: block;
+    }
+
+    .project-carousel-hint {
+        display: none;
+    }
+
+    .project-carousel-counter {
+        display: block;
+
+        font-size: 0.96rem;
+    }
+
+    .project-carousel-arrow {
+        width: 42px;
+        height: 42px;
+    }
+
+    .project-carousel-track {
+        gap: 14px;
+    }
+
+    .project-carousel-track
+    .project-slide {
+        flex-basis: 94%;
+    }
+
+    .project-carousel-track
+    .featured-project,
+    .project-carousel-track
+    .project-card,
+    .project-carousel-track
+    .compact-project {
         border-radius: 22px;
     }
 
-    .featured-project-image {
+    .project-carousel-track
+    .featured-project-image,
+    .project-carousel-track
+    .project-image,
+    .project-carousel-track
+    .compact-project
+    .project-image {
         aspect-ratio: 16 / 10;
     }
 
+    .project-carousel-track
     .featured-project-content,
+    .project-carousel-track
     .project-card-content,
-    .compact-project .project-card-content {
+    .project-carousel-track
+    .compact-project
+    .project-card-content {
         padding: 23px;
     }
 
-    .project-image,
-    .compact-project .project-image {
-        aspect-ratio: 16 / 10;
-        min-height: 0;
+    .project-carousel-track
+    .featured-project-content h3,
+    .project-carousel-track
+    .project-card-content h3 {
+        font-size:
+            clamp(
+                1.85rem,
+                9vw,
+                2.55rem
+            );
     }
 
-    .project-image img,
-    .compact-project .project-image img {
-        width: 100%;
-        height: 100%;
+    .project-carousel-dots {
+        gap: 6px;
     }
+
+
+    /* -----------------------------------------
+       STANDARD MOBILE SECTIONS
+       ----------------------------------------- */
 
     .github-project-link {
         text-align: left;
@@ -1863,6 +2738,10 @@ a:focus-visible {
         gap: 8px;
 
         padding: 24px 0;
+    }
+
+    .experience-item:hover {
+        padding-left: 0;
     }
 
     .experience-focus {
@@ -1891,6 +2770,10 @@ a:focus-visible {
         font-size: 1.08rem;
     }
 
+    .question-button:hover {
+        padding-left: 0;
+    }
+
     .question-answer {
         padding-right: 0;
     }
@@ -1909,6 +2792,7 @@ a:focus-visible {
 
     .footer-shell {
         flex-direction: column;
+
         align-items: flex-start;
     }
 
@@ -1932,5 +2816,16 @@ a:focus-visible {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+    }
+
+    .motion-ready
+    .hero-copy > *,
+    .motion-ready
+    .hero-photo,
+    .motion-ready
+    .reveal-target {
+        opacity: 1 !important;
+
+        transform: none !important;
     }
 }
