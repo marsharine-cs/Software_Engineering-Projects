@@ -1,31 +1,1443 @@
-<section class="beyond-resume" id="beyond-resume">
-  <div class="section-intro">
-    <p class="eyebrow">Beyond the Résumé</p>
-    <h2>A little more about me</h2>
-    <p>
-      Technology is a major part of my life, but so is creativity, peace,
-      and meaningful everyday moments.
-    </p>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
-  <div class="beyond-resume-card">
-    <img
-      src="assets/alpine_meadow_picnic_with_cat.png"
-      alt="Marsharine A. Simpson sitting on a picnic blanket in a floral summer dress and straw hat, with her cat Hope playing nearby in the grass, surrounded by flowers and a mountain view."
-    />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <div class="beyond-resume-copy">
-      <p>
-        Outside of teaching, building, and problem-solving, I value simple
-        experiences that keep me grounded and inspired. I enjoy beautiful
-        scenery, quiet outdoor moments, and time with Hope, my cat. These
-        moments reflect the same qualities I bring to my work: patience,
-        care, consistency, and a thoughtful approach to growth.
-      </p>
+    <meta
+        name="description"
+        content="Professional portfolio of Marsharine A. Simpson, S.T.E.M. Educator and Technology Professional specializing in web development, educational technology, IT, cybersecurity, and technical problem-solving."
+    >
 
-      <p class="image-caption">
-        Peaceful moments, fresh perspective, and a little time with Hope.
-      </p>
-    </div>
-  </div>
-</section>
+    <title>
+        Marsharine A. Simpson | S.T.E.M. Educator & Technology Professional
+    </title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="nav-shell">
+
+            <a
+                class="brand"
+                href="#top"
+                aria-label="Marsharine A. Simpson portfolio home"
+            >
+                <span class="brand-mark">
+                    MAS
+                </span>
+
+                <span class="brand-copy">
+                    <strong>
+                        Marsharine A. Simpson
+                    </strong>
+
+                    <small>
+                        S.T.E.M. Educator &amp; Technology Professional
+                    </small>
+                </span>
+            </a>
+
+
+            <button
+                class="menu-button"
+                id="menu-button"
+                type="button"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+                aria-label="Open navigation menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <nav
+                class="main-navigation"
+                id="main-navigation"
+                aria-label="Primary navigation"
+            >
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#questions">Q&amp;A</a>
+                <a href="#credentials">Credentials</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+
+            <a
+                class="github-link"
+                href="https://github.com/marsharine-cs"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+                <span aria-hidden="true">↗</span>
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main id="main-content">
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section
+            class="hero"
+            id="top"
+            aria-labelledby="hero-heading"
+        >
+
+            <div class="hero-copy">
+
+                <p class="eyebrow">
+                    S.T.E.M. EDUCATION · TECHNOLOGY · DEVELOPMENT
+                </p>
+
+
+                <h1 id="hero-heading">
+                    Marsharine A.
+                    <span>Simpson</span>
+                </h1>
+
+
+                <p class="hero-role">
+                    S.T.E.M. Educator
+                    <span aria-hidden="true">+</span>
+                    Technology Professional
+                </p>
+
+
+                <h2 class="hero-statement">
+                    I build technology.
+                    I teach it.
+                    I troubleshoot it.
+                </h2>
+
+
+                <p class="hero-introduction">
+                    I combine software development, educational technology,
+                    IT, cybersecurity, and technical communication to solve
+                    problems, empower learners, and create practical digital
+                    experiences.
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a
+                        class="primary-button"
+                        href="#work"
+                    >
+                        View Selected Work
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+
+                    <a
+                        class="secondary-button"
+                        href="https://www.linkedin.com/in/marsharine-a-simpson"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Connect on LinkedIn
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Professional hero portrait -->
+
+            <div class="hero-photo">
+
+                <img
+                    src="assets/marsharine-profile.jpg"
+                    alt="Professional portrait of Marsharine A. Simpson seated at a desk"
+                >
+
+                <div class="photo-accent" aria-hidden="true"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             BUILD / TEACH / TROUBLESHOOT
+        ====================================================== -->
+
+        <section
+            class="strength-strip"
+            aria-label="Core professional strengths"
+        >
+
+            <article>
+
+                <span class="strength-number">
+                    01
+                </span>
+
+                <div class="strength-icon" aria-hidden="true">
+                    &lt;/&gt;
+                </div>
+
+                <div>
+                    <h2>Build</h2>
+
+                    <p>
+                        Responsive interfaces and interactive JavaScript
+                        experiences that are practical, usable, and
+                        accessible.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article>
+
+                <span class="strength-number">
+                    02
+                </span>
+
+                <div class="strength-icon" aria-hidden="true">
+                    ◇
+                </div>
+
+                <div>
+                    <h2>Teach</h2>
+
+                    <p>
+                        Explain technical concepts through structured,
+                        learner-centered experiences that make complex
+                        ideas easier to understand.
+                    </p>
+                </div>
+
+            </article>
+
+
+            <article>
+
+                <span class="strength-number">
+                    03
+                </span>
+
+                <div class="strength-icon" aria-hidden="true">
+                    ⌁
+                </div>
+
+                <div>
+                    <h2>Troubleshoot</h2>
+
+                    <p>
+                        Approach technology problems systematically,
+                        isolate the issue, test solutions, and move from
+                        problem to working result.
+                    </p>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =====================================================
+             SELECTED WORK
+        ====================================================== -->
+
+        <section
+            class="work-section"
+            id="work"
+            aria-labelledby="work-heading"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        SELECTED WORK
+                    </p>
+
+                    <h2 id="work-heading">
+                        Projects built to
+                        <span>solve, teach, and interact.</span>
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Selected front-end and JavaScript projects rebuilt,
+                    tested, documented, and deployed as working web
+                    applications.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 PROJECT 01 — LUMA ONE
+            ================================================== -->
+
+            <article class="featured-project">
+
+                <a
+                    class="featured-project-image"
+                    href="https://luma-one-product-landing.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Open Luma One live demo"
+                >
+                    <img
+                        src="assets/luma-one-project.jpg"
+                        alt="Luma One interactive product landing page"
+                    >
+
+                    <span class="project-number">
+                        01
+                    </span>
+                </a>
+
+
+                <div class="featured-project-content">
+
+                    <p class="project-category">
+                        FRONT-END · JAVASCRIPT · E-COMMERCE UI
+                    </p>
+
+                    <h3>
+                        Luma One
+                    </h3>
+
+                    <p class="project-subtitle">
+                        Interactive Product Landing Page
+                    </p>
+
+                    <p>
+                        A fictional e-commerce experience featuring product
+                        finish customization, quantity controls, client-side
+                        cart state, responsive navigation, FAQ interactions,
+                        and an original CSS-generated product illustration.
+                    </p>
+
+
+                    <ul class="technology-tags">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Responsive UI</li>
+                        <li>Application State</li>
+                    </ul>
+
+
+                    <div class="project-links">
+
+                        <a
+                            href="https://luma-one-product-landing.vercel.app/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Live Demo
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                        <a
+                            href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Product_Landing-_Page"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View Source
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 SECONDARY PROJECTS
+            ================================================== -->
+
+            <div class="project-grid">
+
+
+                <!-- =================================================
+                     PROJECT 02 — BALANCE SHEET
+                ================================================== -->
+
+                <article class="project-card">
+
+                    <a
+                        class="project-image"
+                        href="https://interactive-balance-sheet.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Open Interactive Balance Sheet live demo"
+                    >
+                        <img
+                            src="assets/balance-sheet-project.jpg"
+                            alt="Interactive Balance Sheet application"
+                        >
+
+                        <span class="project-number">
+                            02
+                        </span>
+                    </a>
+
+
+                    <div class="project-card-content">
+
+                        <p class="project-category">
+                            JAVASCRIPT · FINANCIAL DASHBOARD
+                        </p>
+
+                        <h3>
+                            Interactive Balance Sheet
+                        </h3>
+
+                        <p>
+                            An editable financial dashboard with
+                            year-based state, automatic assets and
+                            liabilities calculations, net-worth analysis,
+                            debt-to-assets reporting, reset functionality,
+                            and print support.
+                        </p>
+
+
+                        <ul class="technology-tags">
+                            <li>JavaScript</li>
+                            <li>DOM</li>
+                            <li>State</li>
+                            <li>Financial Logic</li>
+                        </ul>
+
+
+                        <div class="project-links">
+
+                            <a
+                                href="https://interactive-balance-sheet.vercel.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Live Demo ↗
+                            </a>
+
+                            <a
+                                href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Balance_Sheet_Project"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Source ↗
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     PROJECT 03 — JAVASCRIPT QUIZ
+                ================================================== -->
+
+                <article class="project-card">
+
+                    <a
+                        class="project-image"
+                        href="https://javascript-knowledge-quiz.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Open JavaScript Knowledge Quiz live demo"
+                    >
+                        <img
+                            src="assets/javascript-quiz-project.jpg"
+                            alt="JavaScript Knowledge Quiz application"
+                        >
+
+                        <span class="project-number">
+                            03
+                        </span>
+                    </a>
+
+
+                    <div class="project-card-content">
+
+                        <p class="project-category">
+                            EDUCATIONAL TECHNOLOGY · JAVASCRIPT
+                        </p>
+
+                        <h3>
+                            JavaScript Knowledge Quiz
+                        </h3>
+
+                        <p>
+                            A ten-question instructional application with
+                            progress tracking, immediate feedback,
+                            explanations, final scoring, answer review,
+                            keyboard support, and retake functionality.
+                        </p>
+
+
+                        <ul class="technology-tags">
+                            <li>JavaScript</li>
+                            <li>EdTech</li>
+                            <li>Accessibility</li>
+                            <li>Dynamic UI</li>
+                        </ul>
+
+
+                        <div class="project-links">
+
+                            <a
+                                href="https://javascript-knowledge-quiz.vercel.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Live Demo ↗
+                            </a>
+
+                            <a
+                                href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Quiz"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Source ↗
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     PROJECT 04 — PALINDROME CHECKER
+                ================================================== -->
+
+                <article class="project-card compact-project">
+
+                    <a
+                        class="project-image"
+                        href="https://palindrome-checker-8xvfm2c62-marsharine-simpsons-projects.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Open Palindrome Checker live demo"
+                    >
+                        <img
+                            src="assets/palindrome-project.jpg"
+                            alt="Palindrome Checker application"
+                        >
+
+                        <span class="project-number">
+                            04
+                        </span>
+                    </a>
+
+
+                    <div class="project-card-content">
+
+                        <p class="project-category">
+                            JAVASCRIPT · TEXT PROCESSING
+                        </p>
+
+                        <h3>
+                            Palindrome Checker
+                        </h3>
+
+                        <p>
+                            An accessible text-processing application
+                            that evaluates phrases while ignoring case,
+                            punctuation, and spacing.
+                        </p>
+
+
+                        <ul class="technology-tags">
+                            <li>JavaScript</li>
+                            <li>Regex</li>
+                            <li>Unicode</li>
+                            <li>Accessibility</li>
+                        </ul>
+
+
+                        <div class="project-links">
+
+                            <a
+                                href="https://palindrome-checker-8xvfm2c62-marsharine-simpsons-projects.vercel.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Live Demo ↗
+                            </a>
+
+                            <a
+                                href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Palindrome_Checker"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Source ↗
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="github-project-link">
+
+                <a
+                    href="https://github.com/marsharine-cs/Software_Engineering-Projects"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Explore the complete project repository
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROFESSIONAL PROFILE
+        ====================================================== -->
+
+        <section
+            class="profile-section"
+            id="about"
+            aria-labelledby="about-heading"
+        >
+
+            <div class="profile-heading">
+
+                <p class="eyebrow">
+                    PROFESSIONAL PROFILE
+                </p>
+
+                <h2 id="about-heading">
+                    Technology experience
+                    <span>meets education.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="profile-content">
+
+                <p class="profile-lead">
+                    I work at the intersection of technology, education,
+                    technical support, and digital problem-solving.
+                </p>
+
+                <p>
+                    My background in information technology and security,
+                    S.T.E.M. education, technical support, and software
+                    projects shapes the way I approach technology:
+                    understand the problem, communicate clearly, build
+                    thoughtfully, test the result, and improve what can
+                    be improved.
+                </p>
+
+                <p>
+                    I am especially effective in environments where
+                    technology must not only work, but also make sense
+                    to the people using it.
+                </p>
+
+
+                <blockquote>
+                    Clear technology is not only about code.
+                    It is also about understanding people, problems,
+                    systems, and outcomes.
+                </blockquote>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             EXPERIENCE
+        ====================================================== -->
+
+        <section
+            class="experience-section"
+            id="experience"
+            aria-labelledby="experience-heading"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        SELECTED EXPERIENCE
+                    </p>
+
+                    <h2 id="experience-heading">
+                        Experience across
+                        <span>technology and learning.</span>
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    A professional background spanning education,
+                    technical support, SaaS environments, and
+                    technology-driven problem-solving.
+                </p>
+
+            </div>
+
+
+            <div class="experience-list">
+
+
+                <!-- EDUCATION -->
+
+                <article class="experience-item">
+
+                    <div class="experience-date">
+                        2025 — Present
+                    </div>
+
+                    <div class="experience-details">
+
+                        <h3>
+                            Educator
+                        </h3>
+
+                        <p class="experience-company">
+                            Edmentum
+                        </p>
+
+                        <p>
+                            Deliver targeted, curriculum-aligned remote
+                            instruction and learning support while using
+                            assessment data and student performance to
+                            guide instruction.
+                        </p>
+
+                    </div>
+
+                    <div class="experience-focus">
+                        Education · Digital Learning · Assessment
+                    </div>
+
+                </article>
+
+
+                <!-- SAAS SUPPORT -->
+
+                <article class="experience-item">
+
+                    <div class="experience-date">
+                        Technology Support
+                    </div>
+
+                    <div class="experience-details">
+
+                        <h3>
+                            SaaS &amp; Technical Support
+                        </h3>
+
+                        <p class="experience-company">
+                            HHAeXchange
+                        </p>
+
+                        <p>
+                            Supported users in a SaaS environment through
+                            technical troubleshooting, issue resolution,
+                            platform guidance, and customer-facing
+                            communication.
+                        </p>
+
+                    </div>
+
+                    <div class="experience-focus">
+                        SaaS · Troubleshooting · Customer Support
+                    </div>
+
+                </article>
+
+
+                <!-- EARLIER TECH EXPERIENCE -->
+
+                <article class="experience-item">
+
+                    <div class="experience-date">
+                        Earlier Experience
+                    </div>
+
+                    <div class="experience-details">
+
+                        <h3>
+                            Technical Support
+                        </h3>
+
+                        <p class="experience-company">
+                            Telecommunications &amp; Technology
+                        </p>
+
+                        <p>
+                            Built foundational experience diagnosing
+                            technical issues, supporting customers,
+                            explaining technology clearly, and moving
+                            problems toward resolution.
+                        </p>
+
+                    </div>
+
+                    <div class="experience-focus">
+                        IT Support · Systems · Communication
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             TECHNICAL TOOLKIT
+        ====================================================== -->
+
+        <section
+            class="skills-section"
+            id="skills"
+            aria-labelledby="skills-heading"
+        >
+
+            <div class="skills-heading">
+
+                <p class="eyebrow">
+                    TECHNICAL TOOLKIT
+                </p>
+
+                <h2 id="skills-heading">
+                    Technologies I use to
+                    <span>build, analyze, and support.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="primary-skills">
+
+                <span>JavaScript</span>
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>Python</span>
+                <span>Git</span>
+                <span>GitHub</span>
+
+            </div>
+
+
+            <div class="secondary-skills">
+
+                <span>VS Code</span>
+                <span>Vercel</span>
+                <span>DOM Manipulation</span>
+                <span>Responsive Design</span>
+                <span>Accessibility</span>
+                <span>Excel</span>
+                <span>Power BI</span>
+                <span>Tableau</span>
+                <span>Data Analytics</span>
+                <span>IT Support</span>
+                <span>Cybersecurity</span>
+                <span>Educational Technology</span>
+
+            </div>
+
+
+            <div class="currently-exploring">
+
+                <span>
+                    CURRENTLY EXPLORING
+                </span>
+
+                <p>
+                    React · TypeScript · AI-powered applications
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             BEYOND THE RÉSUMÉ — PROFESSIONAL Q&A
+        ====================================================== -->
+
+        <section
+            class="questions-section"
+            id="questions"
+            aria-labelledby="questions-heading"
+        >
+
+            <div class="questions-introduction">
+
+                <p class="eyebrow">
+                    BEYOND THE RÉSUMÉ
+                </p>
+
+                <h2 id="questions-heading">
+                    A little more about
+                    <span>how I work.</span>
+                </h2>
+
+                <p>
+                    A few questions that provide additional context
+                    about my professional approach, problem-solving,
+                    and use of technology.
+                </p>
+
+            </div>
+
+
+            <div class="questions-list">
+
+
+                <!-- QUESTION 01 -->
+
+                <article class="question-item">
+
+                    <button
+                        class="question-button"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span>
+                            Tell me about yourself.
+                        </span>
+
+                        <span
+                            class="question-icon"
+                            aria-hidden="true"
+                        >
+                            +
+                        </span>
+                    </button>
+
+
+                    <div class="question-answer">
+
+                        <p>
+                            I am a technology professional and S.T.E.M.
+                            educator with a background in information
+                            technology, security, technical support,
+                            digital learning, and software projects.
+                            What connects those areas for me is
+                            problem-solving: I enjoy understanding how
+                            something works, identifying what needs to
+                            improve, and communicating the solution in a
+                            way people can actually use.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- QUESTION 02 -->
+
+                <article class="question-item">
+
+                    <button
+                        class="question-button"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span>
+                            What do you bring to a technology team?
+                        </span>
+
+                        <span
+                            class="question-icon"
+                            aria-hidden="true"
+                        >
+                            +
+                        </span>
+                    </button>
+
+
+                    <div class="question-answer">
+
+                        <p>
+                            I bring a combination of technical
+                            problem-solving, communication, teaching, and
+                            user awareness. I can work through a technical
+                            issue while also thinking about the person who
+                            has to understand, support, or use the final
+                            solution. That combination is especially useful
+                            in collaborative, customer-facing, educational,
+                            and cross-functional technology environments.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- QUESTION 03 -->
+
+                <article class="question-item">
+
+                    <button
+                        class="question-button"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span>
+                            How do you approach a technical problem you
+                            have not seen before?
+                        </span>
+
+                        <span
+                            class="question-icon"
+                            aria-hidden="true"
+                        >
+                            +
+                        </span>
+                    </button>
+
+
+                    <div class="question-answer">
+
+                        <p>
+                            I start by defining the problem clearly and
+                            separating what I know from what I still need
+                            to determine. I reproduce or isolate the issue
+                            when possible, research deliberately, test one
+                            change at a time, validate the result, and
+                            document what worked. I am comfortable learning
+                            while solving rather than assuming I must
+                            already know every answer.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- QUESTION 04 -->
+
+                <article class="question-item">
+
+                    <button
+                        class="question-button"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span>
+                            How do you use AI in your work?
+                        </span>
+
+                        <span
+                            class="question-icon"
+                            aria-hidden="true"
+                        >
+                            +
+                        </span>
+                    </button>
+
+
+                    <div class="question-answer">
+
+                        <p>
+                            I use AI as an accelerator for research,
+                            brainstorming, development, debugging,
+                            documentation, and exploring alternative
+                            solutions. I still review the output, test the
+                            implementation, verify important information,
+                            and make the final decisions. I view AI as a
+                            powerful tool within a responsible human-led
+                            workflow—not as a substitute for understanding
+                            or accountability.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- QUESTION 05 -->
+
+                <article class="question-item">
+
+                    <button
+                        class="question-button"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span>
+                            How does your education background strengthen
+                            your technology work?
+                        </span>
+
+                        <span
+                            class="question-icon"
+                            aria-hidden="true"
+                        >
+                            +
+                        </span>
+                    </button>
+
+
+                    <div class="question-answer">
+
+                        <p>
+                            Teaching strengthens my ability to break
+                            complex ideas into understandable steps,
+                            recognize when a user or learner is stuck,
+                            communicate with different audiences, and
+                            evaluate whether an explanation actually
+                            worked. Those same skills transfer directly
+                            into technical support, documentation,
+                            interface design, training, and collaborative
+                            software work.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- QUESTION 06 -->
+
+                <article class="question-item">
+
+                    <button
+                        class="question-button"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        <span>
+                            What kind of opportunity are you looking for?
+                        </span>
+
+                        <span
+                            class="question-icon"
+                            aria-hidden="true"
+                        >
+                            +
+                        </span>
+                    </button>
+
+
+                    <div class="question-answer">
+
+                        <p>
+                            I am interested in technology opportunities
+                            where development, technical problem-solving,
+                            communication, and continuous learning are
+                            valued. I am particularly interested in work
+                            involving front-end development, educational
+                            technology, technical training, IT, or roles
+                            where technology must be translated into
+                            practical outcomes for real users.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             EDUCATION & CREDENTIALS
+        ====================================================== -->
+
+        <section
+            class="credentials-section"
+            id="credentials"
+            aria-labelledby="credentials-heading"
+        >
+
+            <div class="credentials-heading">
+
+                <p class="eyebrow">
+                    EDUCATION &amp; CREDENTIALS
+                </p>
+
+                <h2 id="credentials-heading">
+                    Technical knowledge
+                    <span>with an educator's foundation.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="credential-list">
+
+
+                <!-- DEGREE 01 -->
+
+                <article>
+
+                    <span class="credential-label">
+                        DEGREE
+                    </span>
+
+                    <h3>
+                        Bachelor of Science
+                    </h3>
+
+                    <p>
+                        Information Technology &amp; Security
+                    </p>
+
+                    <strong>
+                        University of Phoenix
+                    </strong>
+
+                </article>
+
+
+                <!-- DEGREE 02 -->
+
+                <article>
+
+                    <span class="credential-label">
+                        DEGREE
+                    </span>
+
+                    <h3>
+                        Associate of Arts
+                    </h3>
+
+                    <p>
+                        Elementary Education and Teaching
+                    </p>
+
+                </article>
+
+
+                <!-- NJ CREDENTIAL -->
+
+                <article>
+
+                    <span class="credential-label">
+                        NEW JERSEY
+                    </span>
+
+                    <h3>
+                        CTE Computer Science Technology
+                    </h3>
+
+                    <p>
+                        Certificate of Eligibility
+                    </p>
+
+                    <strong>
+                        Grades 9–12
+                    </strong>
+
+                </article>
+
+
+                <!-- FL CREDENTIAL -->
+
+                <article>
+
+                    <span class="credential-label">
+                        FLORIDA
+                    </span>
+
+                    <h3>
+                        Computer Science
+                    </h3>
+
+                    <p>
+                        Statement of Eligibility
+                    </p>
+
+                    <strong>
+                        K–12
+                    </strong>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section
+            class="contact-section"
+            id="contact"
+            aria-labelledby="contact-heading"
+        >
+
+            <div>
+
+                <p class="eyebrow">
+                    LET'S CONNECT
+                </p>
+
+                <h2 id="contact-heading">
+                    Looking for someone who can
+                    <span>build, teach, and communicate?</span>
+                </h2>
+
+                <p>
+                    Explore my work, connect with me professionally,
+                    or review the source code behind the projects in
+                    this portfolio.
+                </p>
+
+            </div>
+
+
+            <div class="contact-links">
+
+                <a
+                    href="https://www.linkedin.com/in/marsharine-a-simpson"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>
+                        Connect on
+                        <strong>LinkedIn</strong>
+                    </span>
+
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+
+                <a
+                    href="https://github.com/marsharine-cs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>
+                        Explore my
+                        <strong>GitHub</strong>
+                    </span>
+
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+
+                <a
+                    href="https://github.com/marsharine-cs/Software_Engineering-Projects"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>
+                        View the
+                        <strong>Project Repository</strong>
+                    </span>
+
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-shell">
+
+            <div>
+
+                <p class="footer-name">
+                    Marsharine A. Simpson
+                </p>
+
+                <p>
+                    S.T.E.M. Educator &amp; Technology Professional
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a
+                    href="https://www.linkedin.com/in/marsharine-a-simpson"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+
+                <a
+                    href="https://github.com/marsharine-cs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+
+                <a href="#top">
+                    Back to Top
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
