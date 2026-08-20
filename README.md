@@ -1,148 +1,328 @@
-# Software Engineering Projects
+# Marsharine A. Simpson — Software Engineering & EdTech Projects
 
-A collection of front-end development and JavaScript projects demonstrating responsive user interface design, interactive web applications, technical documentation, problem-solving, and software engineering fundamentals.
+## S.T.E.M. Educator & Technology Professional
 
-This repository serves as a central showcase for projects I have developed while strengthening my skills in **HTML, CSS, JavaScript, Git, GitHub, responsive design, and web application development**.
+I build technology, teach it, and troubleshoot it.
 
-Each project is maintained in its own branch so that the source files and development history can be explored independently.
+My work combines **software development, educational technology, information technology, cybersecurity, technical support, and instructional design** to create practical digital experiences that are understandable, interactive, and useful.
 
----
+This repository is a curated collection of selected projects demonstrating my work with:
 
-## 🚀 Projects
-
-| Project                              | Source Code                                                                                                         |
-| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
-| Projects Portfolio                   | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Projects-Portfolio)               |
-| Palindrome Checker                   | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Palindrome_Checker)               |
-| Ada Lovelace Tribute Page            | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Lovelace_Tribute_Web_Project)     |
-| Product Landing Page                 | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Product_Landing-_Page)            |
-| Balance Sheet Project                | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Balance_Sheet_Project)            |
-| JavaScript Quiz                      | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Quiz)                             |
-| Technical Documentation Webpages     | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Technical-Documentation-Webpages) |
-| AI Developer Technical Documentation | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/AI_Dev-Technical_Doc_Web_Project) |
-| Interactive Nutrition Label          | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Nutrition-Label)                  |
-| Interactive Cafe Menu                | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Interactive-Cafe-Menu)            |
-| Cafe Menu                            | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Cafe-Menu)                        |
-| Customer Survey                      | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Customer-Survey)                  |
-| Customer Satisfaction Form           | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/customer-satisfaction-form)       |
-| Gift App Project                     | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Gift-App-Project)                 |
-| Resume Web Project                   | [View Branch](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Resume)                           |
+- JavaScript
+- HTML5
+- CSS3
+- Front-End Development
+- Educational Technology
+- AI Literacy
+- Responsive Design
+- Accessibility
+- DOM Manipulation
+- Application State
+- Technical Documentation
+- Technical Problem-Solving
 
 ---
 
-## 🖥️ Technologies & Development Tools
+## 🌐 Professional Portfolio
 
-- **HTML5** — semantic page structure and accessible content
-- **CSS3** — styling, responsive layouts, and visual presentation
-- **JavaScript** — application logic, user interaction, and DOM manipulation
-- **Visual Studio Code** — code editing and project development
-- **Replit** — browser-based coding and development
-- **Git** — version control and development history
-- **GitHub** — source-code management and project organization
-- **Vercel** — deployment experience for web-based projects
----
+### [View My Portfolio](https://projectsportfolio-nine.vercel.app/)
 
-## 📂 Repository Organization
-
-The `main` branch serves as the central landing page for the repository.
-
-Individual projects are stored in separate branches. Depending on the project, files may include:
-
-```text
-├── index.html
-├── styles.css
-├── style.css
-├── script.js
-└── README.md
-```
-
-Because the projects were created at different stages of development, individual branches may contain slightly different file structures.
+My portfolio brings together selected development projects, professional experience, technical skills, education, credentials, and additional information about how I approach technology and problem-solving.
 
 ---
 
-## 🔧 Running a Project Locally
+# Featured Projects
 
-### 1. Clone the repository
+## 01 — AI Development Field Guide
 
-```bash
-git clone https://github.com/marsharine-cs/Software_Engineering-Projects.git
-```
+**Interactive Learning Application · AI Literacy · EdTech**
 
-### 2. Enter the repository
+An interactive learning and reference application that transforms AI technical documentation into a structured educational experience.
 
-```bash
-cd Software_Engineering-Projects
-```
+The project includes guided learning sections covering AI fundamentals, machine learning, generative AI, prompt engineering, Retrieval-Augmented Generation, model evaluation, responsible AI, and common AI terminology.
 
-### 3. View the available branches
+### Key Features
 
-```bash
-git branch -a
-```
+- Structured AI learning path
+- Documentation search
+- AI concept explorer
+- Searchable glossary
+- Reading progress
+- Light and dark themes
+- Theme persistence
+- Copyable examples
+- Responsive documentation navigation
+- Keyboard accessibility
+- Reduced-motion support
 
-### 4. Switch to the project you want to explore
+**Technologies:**  
+JavaScript · HTML5 · CSS3 · EdTech · Accessibility · Technical Writing
 
-For example:
+### Links
 
-```bash
-git checkout Palindrome_Checker
-```
+[Live Demo](https://ai-development-field-guide.vercel.app/)
 
-Replace `Palindrome_Checker` with the branch name of the project you want to view.
-
-### 5. Run the project
-
-For projects built with HTML, CSS, and JavaScript, open `index.html` in your preferred web browser.
-
----
-
-## 🎯 What This Repository Demonstrates
-
-This collection reflects practical experience with:
-
-* Front-end web development
-* Responsive user interface design
-* JavaScript programming and problem-solving
-* DOM manipulation and interactive functionality
-* Semantic HTML structure
-* CSS layouts and visual styling
-* Forms and user-input interfaces
-* Technical documentation
-* Git branching and version control
-* GitHub repository management
-* Web application deployment
-* Organizing and maintaining multiple development projects
+[View Source](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/AI_Dev-Technical_Doc_Web_Project)
 
 ---
 
-## 🌱 Continued Development
+## 02 — JavaScript Knowledge Quiz
 
-These projects represent different stages of my development journey. I continue to refine my skills, improve documentation, modernize earlier projects, and build new applications as my technical experience expands.
+**Educational Technology · JavaScript · Assessment**
+
+A ten-question interactive learning application designed to assess and reinforce foundational JavaScript knowledge.
+
+Students receive immediate feedback and explanations while progressing through the assessment.
+
+### Key Features
+
+- Ten-question assessment
+- Category labels
+- Progress tracking
+- Immediate feedback
+- Answer explanations
+- Previous and next navigation
+- Locked submitted answers
+- Final score
+- Answer review
+- Retake functionality
+- Keyboard support
+- Accessible interface
+
+**Technologies:**  
+JavaScript · DOM Manipulation · EdTech · Assessment Design · Accessibility
+
+### Links
+
+[Live Demo](https://javascript-knowledge-quiz.vercel.app/)
+
+[View Source](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Quiz)
 
 ---
 
-## 🤝 Contributing
+## 03 — Ada Lovelace: The Poetry of Computation
 
-Suggestions, improvements, and constructive feedback are welcome.
+**Interactive Digital History · EdTech · Web Development**
 
-If you would like to propose a change, feel free to open an issue or submit a pull request.
+An interactive educational experience exploring Ada Lovelace's contributions to the history of computing.
+
+The project combines historical storytelling, technology education, interactive notes, and responsive web development.
+
+### Key Features
+
+- Interactive historical timeline
+- Structured educational content
+- Notes Explorer
+- Explanations of computational concepts
+- Keyboard accessibility
+- Responsive layout
+- Learning-focused information architecture
+- Source and reference section
+
+**Technologies:**  
+HTML5 · CSS3 · JavaScript · EdTech · Digital Storytelling · Accessibility
+
+### Links
+
+[Live Demo](https://ada-lovelace-poetry-of-computation.vercel.app/)
+
+[View Source](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Lovelace_Tribute_Web_Project)
 
 ---
 
-## 📜 License
+## 04 — Luma One
 
-This repository is licensed under the **MIT License**.
+**Front-End Development · JavaScript · Product UI**
 
-See the [LICENSE](LICENSE) file for additional information.
+A fictional interactive e-commerce product experience built around the Luma One smart task lamp.
+
+The project demonstrates responsive front-end development and client-side application behavior.
+
+### Key Features
+
+- Product finish selection
+- Quantity controls
+- Client-side cart state
+- Mobile navigation
+- Interactive FAQ
+- Keyboard interaction
+- Responsive layouts
+- Accessible interface design
+
+**Technologies:**  
+HTML5 · CSS3 · JavaScript · Responsive Design · Application State
+
+### Links
+
+[Live Demo](https://luma-one-product-landing.vercel.app/)
+
+[View Source](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Product_Landing-_Page)
 
 ---
 
-## 📬 Contact
+## 05 — Interactive Balance Sheet
 
-**Marsharine A. Simpson**
+**JavaScript · Financial Dashboard · Application Logic**
 
-Connect with me on [LinkedIn](https://www.linkedin.com/in/marsharine-a-simpson).
+An editable financial dashboard that allows users to compare financial information across multiple years.
+
+The application dynamically calculates financial totals and provides immediate feedback as values change.
+
+### Key Features
+
+- Editable assets
+- Editable liabilities
+- Multiple financial years
+- Automatic totals
+- Net-worth calculation
+- Debt-to-assets reporting
+- Per-year application state
+- Reset functionality
+- Print support
+- Positive and negative financial feedback
+- Currency formatting
+- Responsive design
+
+**Technologies:**  
+JavaScript · DOM Manipulation · Application State · Financial Logic · Responsive Design
+
+### Links
+
+[Live Demo](https://interactive-balance-sheet.vercel.app/)
+
+[View Source](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Balance_Sheet_Project)
 
 ---
 
-Thank you for taking the time to explore my software engineering projects.
+## 06 — Palindrome Checker
+
+**JavaScript · Text Processing · Accessibility**
+
+An interactive JavaScript application that determines whether text is a palindrome while ignoring capitalization, punctuation, and spacing.
+
+### Key Features
+
+- Text normalization
+- Case-insensitive comparison
+- Punctuation handling
+- Unicode-aware processing
+- Input validation
+- Character counter
+- Clear control
+- Example phrases
+- Keyboard support
+- Accessible feedback
+
+**Technologies:**  
+JavaScript · Regular Expressions · Unicode · DOM Manipulation · Accessibility
+
+### Links
+
+[Live Demo](https://palindrome-checker-8xvfm2c62-marsharine-simpsons-projects.vercel.app/)
+
+[View Source](https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Palindrome_Checker)
+
+---
+
+# What These Projects Demonstrate
+
+## Build
+
+I create responsive interfaces and interactive JavaScript applications designed around usability, accessibility, and practical functionality.
+
+## Teach
+
+My education background influences how I organize information, explain technical concepts, design learning experiences, and think about the people using the technology I build.
+
+## Troubleshoot
+
+My technical support and IT background informs a systematic problem-solving process:
+
+**Define the problem → isolate the issue → research → test → validate → document → improve**
+
+---
+
+# Technical Toolkit
+
+### Development
+
+JavaScript · HTML5 · CSS3 · Python · Git · GitHub
+
+### Front-End & Web
+
+DOM Manipulation · Responsive Web Design · Accessibility · Application State · Vercel
+
+### Data & Analytics
+
+Excel · Power BI · Tableau · Data Analytics
+
+### Technology
+
+Information Technology · Cybersecurity · SaaS Support · Technical Support · Educational Technology
+
+### Currently Exploring
+
+React · TypeScript · AI-Powered Applications
+
+---
+
+# Education & Credentials
+
+### Bachelor of Science
+**Information Technology & Security**  
+University of Phoenix
+
+### Associate of Arts
+**Elementary Education and Teaching**
+
+### New Jersey
+**CTE Computer Science Technology — Certificate of Eligibility**  
+Grades 9–12
+
+### Florida
+**Computer Science — Statement of Eligibility**  
+K–12
+
+---
+
+# Professional Focus
+
+I am particularly interested in opportunities involving:
+
+- Computer Science Education
+- S.T.E.M. Education
+- Educational Technology
+- Technology Training
+- Tutoring and Digital Learning
+- Front-End Development
+- Technical Support
+- IT and Technology Operations
+- Technology-focused instructional roles
+
+---
+
+# Connect
+
+### Portfolio
+[projectsportfolio-nine.vercel.app](https://projectsportfolio-nine.vercel.app/)
+
+### LinkedIn
+[linkedin.com/in/marsharine-a-simpson](https://www.linkedin.com/in/marsharine-a-simpson)
+
+### GitHub
+[github.com/marsharine-cs](https://github.com/marsharine-cs)
+
+---
+
+## About This Repository
+
+This repository is intentionally curated to highlight projects most relevant to my current work in **technology, computer science education, educational technology, and software development**.
+
+Additional projects and experiments may be maintained privately while they are being developed or when they are not directly relevant to my current professional focus.
+
+---
+
+**Marsharine A. Simpson**  
+*S.T.E.M. Educator & Technology Professional*
+
+**Build. Teach. Troubleshoot.**
