@@ -1167,6 +1167,65 @@ dialog::backdrop {
     font-style: italic;
 }
 
+.walkthrough-steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: 0;
+    margin: 28px 0 0;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+    counter-reset: walkthrough;
+    list-style: none;
+}
+
+.walkthrough-steps li {
+    position: relative;
+    min-height: 188px;
+    padding: 64px 20px 20px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+    counter-increment: walkthrough;
+}
+
+.walkthrough-steps li::before {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: grid;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--paper);
+    background: var(--plum);
+    content: counter(walkthrough, decimal-leading-zero);
+    font-size: 0.68rem;
+    font-weight: 900;
+}
+
+.walkthrough-steps strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--plum-deep);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.walkthrough-steps span {
+    display: block;
+    color: var(--ink-soft);
+    font-size: 0.8rem;
+}
+
+.quality-note {
+    padding: 16px 18px;
+    margin-top: 28px;
+    border-left: 4px solid var(--gold);
+    color: var(--ink-soft);
+    background: var(--paper);
+    font-size: 0.82rem;
+}
+
 .guide-launcher {
     position: fixed;
     right: 22px;
@@ -1370,6 +1429,10 @@ dialog::backdrop {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .walkthrough-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .architecture-node:nth-child(2)::after {
         display: none;
     }
@@ -1521,7 +1584,8 @@ dialog::backdrop {
 
     .recruiter-evidence,
     .evidence-grid,
-    .architecture-diagram {
+    .architecture-diagram,
+    .walkthrough-steps {
         grid-template-columns: 1fr;
     }
 
