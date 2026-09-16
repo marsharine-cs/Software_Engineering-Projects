@@ -1,0 +1,17 @@
+{
+  "name": "Marsharine A. Simpson — Software Developer",
+  "short_name": "MAS Portfolio",
+  "description": "Software-development portfolio featuring full-stack applications, engineering case studies, testing, accessibility, and production problem-solving.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffaf2",
+  "theme_color": "#5e274f",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Student Progress Tracker engineering case study: React, TypeScript, Supabase, PostgreSQL, authentication, Row Level Security, automated testing, and production debugging.">
+    <meta name="theme-color" content="#5e274f">
+    <link rel="canonical" href="https://projectsportfolio-nine.vercel.app/case-studies/student-progress-tracker.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Student Progress Tracker Engineering Case Study">
+    <meta property="og:description" content="React, TypeScript, Supabase/PostgreSQL, authentication, RLS, CRUD, assessment history, testing, and production debugging.">
+    <meta property="og:url" content="https://projectsportfolio-nine.vercel.app/case-studies/student-progress-tracker.html">
+    <meta property="og:image" content="https://projectsportfolio-nine.vercel.app/assets/student-progress-tracker-project.webp">
+    <meta property="og:image:alt" content="Student Progress Tracker dashboard and engineering highlights">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Student Progress Tracker Case Study | Marsharine A. Simpson</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="../site.webmanifest">
     <link rel="stylesheet" href="../styles.css">
     <script src="../script.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Student Progress Tracker",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "url": "https://student-progress-tracker-sepia.vercel.app",
+        "codeRepository": "https://github.com/marsharine-cs/student-progress-tracker",
+        "author": {"@type": "Person", "name": "Marsharine A. Simpson", "url": "https://projectsportfolio-nine.vercel.app/"},
+        "description": "A React and TypeScript classroom application with Supabase/PostgreSQL, authentication, Row Level Security, CRUD workflows, assessment history, dashboard logic, and automated tests."
+    }
+    </script>
 </head>
 <body data-page="case-study">
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -30,7 +54,7 @@
         </section>
 
         <div class="case-cover shell">
-            <img src="../assets/student-progress-tracker-project.webp" alt="Student Progress Tracker full-stack assessment dashboard preview">
+            <img src="../assets/student-progress-tracker-project.webp" width="1672" height="941" decoding="async" alt="Student Progress Tracker full-stack assessment dashboard preview">
         </div>
 
         <div class="case-layout shell">
@@ -40,6 +64,8 @@
             </aside>
 
             <article class="case-article">
+                <section><p class="eyebrow">ENGINEERING PROOF</p><h2>The implementation signals at a glance.</h2><div class="evidence-grid"><article><strong>Secure account flow</strong><p>Supabase sessions, password recovery, protected access, and database Row Level Security.</p></article><article><strong>Relational data</strong><p>Students, skills, and dated assessments combine into the latest mastery view without losing history.</p></article><article><strong>Automated quality checks</strong><p>Vitest, React Testing Library, TypeScript checking, ESLint, builds, and manual production verification.</p></article><article><strong>Professional workflow</strong><p>GitHub Issues, feature branches, pull requests, incremental delivery, and documented bug fixes.</p></article></div></section>
+
                 <section><p class="eyebrow">THE PROBLEM</p><h2>Student information becomes fragmented.</h2><p>Teachers often combine rosters, skill lists, assessment records, and current mastery judgments across separate documents. That makes it difficult to answer a simple question quickly: what is each student’s latest demonstrated status for each skill?</p></section>
 
                 <section><p class="eyebrow">THE SOLUTION</p><h2>One workflow for records, history, and current status.</h2><p>I built an authenticated application where a teacher can manage students and skills, record dated assessments, review assessment history, and view each student’s latest mastery status in a single dashboard. Password recovery and protected application access support the complete account workflow.</p><ul><li>Create, edit, and remove student and skill records.</li><li>Record assessments without erasing earlier evidence.</li><li>Review dated assessment history.</li><li>Calculate and display the latest status for every student-and-skill pair.</li></ul></section>
@@ -47,6 +73,8 @@
                 <section><p class="eyebrow">MY ROLE</p><h2>Product definition through production verification.</h2><p>I designed and implemented the application, relational data flow, interface states, authentication behavior, tests, and deployment. I organized the work through GitHub Issues, feature branches, and pull requests so each feature could be developed and verified incrementally.</p></section>
 
                 <section><p class="eyebrow">ENGINEERING HIGHLIGHTS</p><h2>Evidence beyond the interface.</h2><h3>Full-stack data flow</h3><p>React and TypeScript components read and write student, skill, and assessment data through Supabase. The PostgreSQL model maintains relationships among those records while the dashboard combines them into a current classroom view.</p><h3>Authentication and authorization</h3><p>The application manages Supabase sessions, protected access, password recovery, and Row Level Security so authenticated users can work with only the data allowed by database policy.</p><h3>Testing and quality</h3><p>Vitest and React Testing Library cover key component behavior. TypeScript checks, ESLint, production builds, and manual verification support the release workflow.</p></section>
+
+                <section><p class="eyebrow">ARCHITECTURE</p><h2>From teacher action to protected relational data.</h2><div class="architecture-diagram" role="img" aria-label="Architecture flow from React and TypeScript interface through Supabase client and authentication with Row Level Security to PostgreSQL student, skill, and assessment records"><div class="architecture-node"><strong>React + TypeScript</strong><span>Dashboard, forms, and protected interface states</span></div><div class="architecture-node"><strong>Supabase client</strong><span>Queries, mutations, and session-aware requests</span></div><div class="architecture-node"><strong>Auth + RLS</strong><span>Identity, password recovery, and database policies</span></div><div class="architecture-node"><strong>PostgreSQL</strong><span>Students, skills, and dated assessment records</span></div></div><p class="diagram-note">The dashboard reads related records and derives the latest status for each student-and-skill pair while preserving the underlying assessment history.</p></section>
 
                 <section><p class="eyebrow">TECHNICAL DECISION</p><h2>Preserve history; calculate the present.</h2><div class="callout"><p>I chose to store dated assessment events rather than overwrite a single current-status field. The dashboard then selects the latest relevant record for each student-and-skill pair.</p></div><p>This design preserves the evidence behind the current status, supports progress review over time, and leaves room for future reporting without sacrificing a fast dashboard view.</p></section>
 

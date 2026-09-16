@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MAS portfolio mark">
+  <rect width="64" height="64" rx="18" fill="#5e274f"/>
+  <path d="M14 42V22h5l6 10 6-10h5v20h-5V30l-6 9-6-9v12z" fill="#fffaf2"/>
+  <path d="M39 42l8-20h4l8 20h-5l-1.5-4h-7L44 42zm8-8h4l-2-6z" fill="#d7a64a"/>
+</svg>

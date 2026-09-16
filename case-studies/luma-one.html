@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Luma One case study: an interactive JavaScript product experience with product configuration, quantity and cart state, responsive navigation, CSS artwork, and accessible feedback.">
+    <meta name="theme-color" content="#5e274f">
+    <link rel="canonical" href="https://projectsportfolio-nine.vercel.app/case-studies/luma-one.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Luma One Frontend Engineering Case Study">
+    <meta property="og:description" content="A state-driven JavaScript product experience with configuration, validated quantity controls, cart behavior, responsive navigation, and accessible feedback.">
+    <meta property="og:url" content="https://projectsportfolio-nine.vercel.app/case-studies/luma-one.html">
+    <meta property="og:image" content="https://projectsportfolio-nine.vercel.app/assets/luma-one-project.webp">
+    <meta property="og:image:alt" content="Luma One interactive product interface">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Luma One Case Study | Marsharine A. Simpson</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="../site.webmanifest">
     <link rel="stylesheet" href="../styles.css">
     <script src="../script.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Luma One",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://luma-one-product-landing.vercel.app/",
+        "codeRepository": "https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Product_Landing-_Page",
+        "author": {"@type": "Person", "name": "Marsharine A. Simpson", "url": "https://projectsportfolio-nine.vercel.app/"},
+        "description": "A responsive JavaScript product experience with centralized interface state, product configuration, validated quantity controls, demonstration cart behavior, accessible feedback, and original CSS artwork."
+    }
+    </script>
 </head>
 <body data-page="case-study">
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -27,12 +51,14 @@
             <div class="button-row"><a class="button button-primary" href="https://luma-one-product-landing.vercel.app/" target="_blank" rel="noopener noreferrer">Open Live Application ↗</a><a class="button button-secondary" href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/Product_Landing-_Page" target="_blank" rel="noopener noreferrer">View Source ↗</a></div>
         </section>
 
-        <div class="case-cover shell"><img src="../assets/luma-one-project.jpg" alt="Luma One fictional storefront showing a customizable product interface"></div>
+        <div class="case-cover shell"><img src="../assets/luma-one-project.webp" width="1672" height="941" decoding="async" alt="Luma One fictional storefront showing a customizable product interface"></div>
 
         <div class="case-layout shell">
             <aside class="case-sidebar" aria-label="Case study summary"><strong>At a glance</strong><ul><li>Interactive product configuration</li><li>Central JavaScript state</li><li>Quantity and demo cart behavior</li><li>Responsive navigation</li><li>CSS-created product artwork</li></ul></aside>
 
             <article class="case-article">
+                <section><p class="eyebrow">ENGINEERING PROOF</p><h2>The implementation signals at a glance.</h2><div class="evidence-grid"><article><strong>Central interface state</strong><p>Selected finish, quantity, and demonstration cart state update from one predictable source.</p></article><article><strong>Validated interactions</strong><p>Quantity boundaries prevent impossible values while confirmation feedback keeps outcomes clear.</p></article><article><strong>Accessible controls</strong><p>Navigation and FAQ controls expose expanded state and remain usable from a keyboard.</p></article><article><strong>Original visual system</strong><p>The fictional product and principal artwork are built in CSS instead of borrowed from a commercial brand.</p></article></div></section>
+
                 <section><p class="eyebrow">THE PROBLEM</p><h2>A beautiful product page can still feel static.</h2><p>Many landing-page exercises stop at visual styling. I wanted to build a product experience that responds to choices, keeps multiple interface elements synchronized, and gives the user clear feedback throughout the interaction.</p></section>
 
                 <section><p class="eyebrow">THE SOLUTION</p><h2>A configurable fictional storefront.</h2><p>Luma One lets users choose a product finish, set a quantity from one to ten, add the configured item to a demonstration cart, navigate on mobile, and expand frequently asked questions.</p><ul><li>Product-finish selection with visible selected state.</li><li>Validated quantity controls.</li><li>Cart count and confirmation feedback.</li><li>Mobile navigation and expandable FAQ behavior.</li><li>Responsive layout across viewport sizes.</li></ul></section>
@@ -40,6 +66,8 @@
                 <section><p class="eyebrow">MY ROLE</p><h2>Visual system, interaction model, and implementation.</h2><p>I created the fictional product and visual direction, structured the interface, implemented the application behavior, and refined the responsive and accessible states. The product illustration is built in CSS rather than borrowed from a real brand.</p></section>
 
                 <section><p class="eyebrow">ENGINEERING HIGHLIGHTS</p><h2>Small interactions managed as one experience.</h2><h3>Central interface state</h3><p>JavaScript tracks the selected finish, quantity, and demonstration cart state. Render functions update the related controls and feedback from that shared state so the interface does not drift out of sync.</p><h3>Input boundaries and feedback</h3><p>Quantity controls enforce the supported range and communicate the result of adding a configured item. This prevents impossible states while keeping the interaction direct.</p><h3>Accessible responsiveness</h3><p>Navigation and FAQ controls expose meaningful expanded states, remain usable by keyboard, and adapt to smaller screens without removing core functionality.</p></section>
+
+                <section><p class="eyebrow">ARCHITECTURE</p><h2>One state model keeps the storefront synchronized.</h2><div class="architecture-diagram" role="img" aria-label="Architecture flow from user controls through validated events and central JavaScript state to render functions and visible interface feedback"><div class="architecture-node"><strong>User controls</strong><span>Finish, quantity, cart, mobile menu, and FAQ actions</span></div><div class="architecture-node"><strong>Validated events</strong><span>Supported ranges and meaningful expanded states</span></div><div class="architecture-node"><strong>Central JS state</strong><span>Selected finish, quantity, and cart count</span></div><div class="architecture-node"><strong>Render + feedback</strong><span>Synchronized controls, product view, and confirmations</span></div></div><p class="diagram-note">The state-and-render pattern keeps separate controls accurate after repeated interaction and makes behavior easier to reason about.</p></section>
 
                 <section><p class="eyebrow">TECHNICAL DECISION</p><h2>Invent the product—and keep the work original.</h2><div class="callout"><p>I chose a fictional product and created the principal artwork with CSS. That let the project focus on interface craft, layout, and behavior without depending on an existing commercial brand or product image.</p></div><p>The constraint became part of the technical exercise: shape, lighting, finish variations, and responsive presentation all had to be controlled in code.</p></section>
 

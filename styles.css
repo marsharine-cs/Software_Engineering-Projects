@@ -306,6 +306,7 @@ h2 span {
     font-weight: 800;
     letter-spacing: 0.02em;
     text-decoration: none;
+    cursor: pointer;
     transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
 }
 
@@ -986,6 +987,355 @@ a.project-media:hover img {
     font-size: 1.3rem;
 }
 
+/* Recruiter summary, architecture, and portfolio guide */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+dialog {
+    color: var(--ink);
+}
+
+dialog::backdrop {
+    background: rgba(33, 16, 28, 0.72);
+    backdrop-filter: blur(6px);
+}
+
+.dialog-close {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    color: var(--plum-deep);
+    background: var(--cream);
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.recruiter-dialog {
+    width: min(calc(100% - 32px), 880px);
+    max-height: min(88vh, 820px);
+    padding: 0;
+    overflow: auto;
+    border: 0;
+    border-radius: var(--radius-lg);
+    background: var(--cream);
+    box-shadow: 0 28px 90px rgba(33, 16, 28, 0.35);
+}
+
+.recruiter-shell {
+    padding: clamp(28px, 5vw, 58px);
+}
+
+.recruiter-header,
+.guide-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.recruiter-header h2,
+.guide-header h2 {
+    margin-bottom: 8px;
+    font-size: clamp(2rem, 5vw, 3.6rem);
+}
+
+.recruiter-lead {
+    max-width: 700px;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+}
+
+.recruiter-evidence {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-block: 30px;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+}
+
+.recruiter-evidence article {
+    padding: 24px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+}
+
+.recruiter-evidence span {
+    color: #8b651e;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+}
+
+.recruiter-evidence h3 {
+    margin: 10px 0 8px;
+    font-size: 1.25rem;
+}
+
+.recruiter-evidence p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.86rem;
+}
+
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 28px;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+}
+
+.evidence-grid article {
+    padding: 24px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+}
+
+.evidence-grid strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--plum-deep);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.07rem;
+}
+
+.evidence-grid p {
+    margin: 0;
+    font-size: 0.84rem;
+}
+
+.architecture-diagram {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    margin: 28px 0 18px;
+    gap: 28px;
+}
+
+.architecture-node {
+    position: relative;
+    display: grid;
+    min-height: 124px;
+    align-content: center;
+    padding: 18px;
+    border: 1px solid #d9c9d2;
+    border-radius: 14px;
+    background: var(--paper);
+    text-align: center;
+}
+
+.architecture-node:not(:last-child)::after {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 7px);
+    width: 14px;
+    color: #8b651e;
+    content: "→";
+    font-size: 1.15rem;
+    font-weight: 900;
+    transform: translateY(-50%);
+}
+
+.architecture-node strong {
+    color: var(--plum-deep);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.architecture-node span {
+    margin-top: 5px;
+    color: var(--ink-soft);
+    font-size: 0.75rem;
+}
+
+.diagram-note {
+    font-size: 0.82rem;
+    font-style: italic;
+}
+
+.guide-launcher {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 90;
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 11px 17px;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    color: var(--paper);
+    background: var(--plum-deep);
+    box-shadow: 0 15px 36px rgba(33, 16, 28, 0.28);
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 850;
+    cursor: pointer;
+}
+
+.guide-launcher:hover {
+    background: var(--plum);
+    transform: translateY(-2px);
+}
+
+.guide-dialog {
+    width: min(calc(100% - 28px), 690px);
+    max-height: min(90vh, 780px);
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: var(--radius-lg);
+    background: var(--cream);
+    box-shadow: 0 28px 90px rgba(33, 16, 28, 0.4);
+}
+
+.guide-shell {
+    display: grid;
+    max-height: min(90vh, 780px);
+    grid-template-rows: auto auto minmax(170px, 1fr) auto auto auto;
+    padding: clamp(22px, 4vw, 34px);
+}
+
+.guide-header h2 {
+    font-size: clamp(1.65rem, 4vw, 2.45rem);
+}
+
+.guide-eyebrow {
+    margin-bottom: 7px;
+    color: var(--plum-light);
+    font-size: 0.66rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+}
+
+.guide-disclosure,
+.guide-status {
+    color: var(--ink-soft);
+    font-size: 0.76rem;
+}
+
+.guide-disclosure {
+    padding-bottom: 16px;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.guide-messages {
+    display: flex;
+    min-height: 180px;
+    padding: 20px 4px;
+    overflow-y: auto;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.guide-message {
+    width: fit-content;
+    max-width: 88%;
+    padding: 13px 15px;
+    border-radius: 15px;
+    font-size: 0.87rem;
+}
+
+.guide-message p {
+    margin: 0;
+}
+
+.guide-message-assistant {
+    align-self: flex-start;
+    border: 1px solid var(--line);
+    background: var(--paper);
+}
+
+.guide-message-user {
+    align-self: flex-end;
+    color: var(--paper);
+    background: var(--plum);
+}
+
+.guide-sources {
+    padding-top: 9px;
+    margin-top: 9px;
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 0.7rem;
+}
+
+.guide-sources a {
+    color: var(--plum);
+    font-weight: 800;
+    text-underline-offset: 3px;
+}
+
+.guide-prompts {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 12px;
+    gap: 7px;
+}
+
+.guide-prompts button {
+    padding: 7px 10px;
+    border: 1px solid #d9c9d2;
+    border-radius: 999px;
+    color: var(--plum);
+    background: #fbf6f8;
+    font: inherit;
+    font-size: 0.7rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.guide-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 9px;
+}
+
+.guide-form input {
+    min-width: 0;
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1px solid #cdbbc5;
+    border-radius: 999px;
+    color: var(--ink);
+    background: var(--paper);
+    font: inherit;
+    font-size: 0.86rem;
+}
+
+.guide-form input:focus,
+.dialog-close:focus-visible,
+.guide-prompts button:focus-visible,
+.guide-launcher:focus-visible {
+    outline: 3px solid rgba(215, 166, 74, 0.55);
+    outline-offset: 2px;
+}
+
+.guide-form button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+.guide-status {
+    margin: 9px 0 0;
+}
+
 @media (max-width: 980px) {
     .hero {
         grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
@@ -1014,6 +1364,14 @@ a.project-media:hover img {
 
     .compact-grid {
         grid-template-columns: 1fr;
+    }
+
+    .architecture-diagram {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .architecture-node:nth-child(2)::after {
+        display: none;
     }
 }
 
@@ -1161,6 +1519,22 @@ a.project-media:hover img {
         grid-template-columns: 1fr;
     }
 
+    .recruiter-evidence,
+    .evidence-grid,
+    .architecture-diagram {
+        grid-template-columns: 1fr;
+    }
+
+    .architecture-node:not(:last-child)::after {
+        top: calc(100% + 2px);
+        left: 50%;
+        transform: translateX(-50%) rotate(90deg);
+    }
+
+    .architecture-node:nth-child(2)::after {
+        display: block;
+    }
+
     .footer-grid {
         align-items: flex-start;
         flex-direction: column;
@@ -1185,6 +1559,27 @@ a.project-media:hover img {
     .project-card-body,
     .education-card > div {
         padding: 26px 22px;
+    }
+
+    .guide-launcher {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .guide-dialog {
+        width: calc(100% - 20px);
+    }
+
+    .guide-shell {
+        padding: 20px 16px;
+    }
+
+    .guide-form {
+        grid-template-columns: 1fr;
+    }
+
+    .guide-form .button {
+        width: 100%;
     }
 
 }

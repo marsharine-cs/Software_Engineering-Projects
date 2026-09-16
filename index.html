@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Software-development portfolio of Marsharine A. Simpson featuring React, TypeScript, JavaScript, Supabase, PostgreSQL, testing, accessibility, and deployed web applications.">
+    <meta name="theme-color" content="#5e274f">
+    <link rel="canonical" href="https://projectsportfolio-nine.vercel.app/">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Marsharine A. Simpson | Software Developer">
+    <meta property="og:description" content="React, TypeScript, JavaScript, full-stack applications, testing, accessibility, and documented engineering decisions.">
+    <meta property="og:url" content="https://projectsportfolio-nine.vercel.app/">
+    <meta property="og:image" content="https://projectsportfolio-nine.vercel.app/assets/marsharine-profile.jpg">
+    <meta property="og:image:alt" content="Professional portrait of software developer Marsharine A. Simpson">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Marsharine A. Simpson | Software Developer">
+    <meta name="twitter:description" content="Deployed applications and engineering case studies in React, TypeScript, JavaScript, Supabase, PostgreSQL, testing, and accessible UI.">
+    <meta name="twitter:image" content="https://projectsportfolio-nine.vercel.app/assets/marsharine-profile.jpg">
     <title>Marsharine A. Simpson | Software Developer</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="preload" as="image" href="assets/profile-portrait.webp" type="image/webp" fetchpriority="high">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "url": "https://projectsportfolio-nine.vercel.app/",
+        "name": "Marsharine A. Simpson — Software Developer Portfolio",
+        "mainEntity": {
+            "@type": "Person",
+            "name": "Marsharine A. Simpson",
+            "jobTitle": "Software Developer",
+            "url": "https://projectsportfolio-nine.vercel.app/",
+            "image": "https://projectsportfolio-nine.vercel.app/assets/marsharine-profile.jpg",
+            "sameAs": ["https://github.com/marsharine-cs"],
+            "alumniOf": {"@type": "CollegeOrUniversity", "name": "University of Phoenix"},
+            "knowsAbout": ["React", "TypeScript", "JavaScript", "Supabase", "PostgreSQL", "Software Testing", "Web Accessibility"]
+        }
+    }
+    </script>
 </head>
 <body data-page="home">
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -46,11 +79,12 @@
                 <div class="button-row">
                     <a class="button button-primary" href="#featured-projects">View Projects <span aria-hidden="true">↓</span></a>
                     <a class="button button-secondary" href="https://github.com/marsharine-cs" target="_blank" rel="noopener noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
+                    <button class="button button-secondary" type="button" data-open-recruiter>30-Second Recruiter View</button>
                 </div>
             </div>
 
             <figure class="hero-photo">
-                <img src="assets/Profile_pic_3.png" alt="Professional portrait of Marsharine A. Simpson at a desk with a notebook and laptop">
+                <img src="assets/profile-portrait.webp" width="1122" height="1402" fetchpriority="high" decoding="async" alt="Professional portrait of Marsharine A. Simpson at a desk with a notebook and laptop">
                 <figcaption>Technology · problem-solving · clear communication</figcaption>
             </figure>
         </section>
@@ -76,7 +110,7 @@
             <div class="featured-grid">
                 <article class="project-card project-card-featured">
                     <a class="project-media" href="case-studies/student-progress-tracker.html" aria-label="Read the Student Progress Tracker case study">
-                        <img src="assets/student-progress-tracker-project.webp" alt="Student Progress Tracker full-stack assessment dashboard preview">
+                        <img src="assets/student-progress-tracker-project.webp" width="1672" height="941" loading="lazy" decoding="async" alt="Student Progress Tracker full-stack assessment dashboard preview">
                     </a>
                     <div class="project-card-body">
                         <p class="project-kicker">01 · FULL-STACK APPLICATION</p>
@@ -95,7 +129,7 @@
 
                 <article class="project-card project-card-featured">
                     <a class="project-media" href="case-studies/ai-development-field-guide.html" aria-label="Read the AI Development Field Guide case study">
-                        <img src="assets/ai-field-guide-project.png" alt="AI Development Field Guide interface preview">
+                        <img src="assets/ai-field-guide-project.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="AI Development Field Guide interface preview">
                     </a>
                     <div class="project-card-body">
                         <p class="project-kicker">02 · INTERACTIVE DOCUMENTATION</p>
@@ -114,7 +148,7 @@
 
                 <article class="project-card project-card-featured">
                     <a class="project-media" href="case-studies/luma-one.html" aria-label="Read the Luma One case study">
-                        <img src="assets/luma-one-project.jpg" alt="Luma One interactive product experience preview">
+                        <img src="assets/luma-one-project.webp" width="1672" height="941" loading="lazy" decoding="async" alt="Luma One interactive product experience preview">
                     </a>
                     <div class="project-card-body">
                         <p class="project-kicker">03 · PRODUCT-FOCUSED FRONTEND</p>
@@ -180,6 +214,26 @@
             </div>
         </section>
     </main>
+
+    <dialog class="recruiter-dialog" id="recruiter-dialog" aria-labelledby="recruiter-title">
+        <div class="recruiter-shell">
+            <header class="recruiter-header">
+                <div><p class="eyebrow">30-SECOND RECRUITER VIEW</p><h2 id="recruiter-title">Software developer with proof behind the claim.</h2></div>
+                <button class="dialog-close" type="button" aria-label="Close recruiter summary" data-close-dialog>×</button>
+            </header>
+            <p class="recruiter-lead">I build and deploy user-focused web applications, test important behavior, troubleshoot production issues, and document the engineering decisions behind the work.</p>
+            <div class="recruiter-evidence">
+                <article><span>STRONGEST PROJECT</span><h3>Student Progress Tracker</h3><p>React + TypeScript + Supabase/PostgreSQL with authentication, RLS, CRUD, assessment history, dashboard logic, and automated tests.</p></article>
+                <article><span>ENGINEERING PRACTICE</span><h3>Team-ready workflow</h3><p>GitHub Issues, feature branches, pull requests, TypeScript checks, linting, testing, production builds, and deployment verification.</p></article>
+                <article><span>PROFESSIONAL EDGE</span><h3>Clear problem-solving</h3><p>IT, SaaS support, education, and AI-evaluation experience strengthen troubleshooting, communication, documentation, and user empathy.</p></article>
+            </div>
+            <div class="button-row">
+                <a class="button button-primary" href="case-studies/student-progress-tracker.html">Review Strongest Case Study</a>
+                <a class="button button-secondary" href="https://github.com/marsharine-cs" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a class="button button-secondary" href="https://drive.google.com/file/d/1wuTWMn3myy1M6p0Pn2306747dkVDMAsk/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
+            </div>
+        </div>
+    </dialog>
 
     <footer class="site-footer">
         <div class="shell footer-grid">

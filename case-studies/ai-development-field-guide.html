@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AI Development Field Guide case study: searchable technical documentation, JavaScript interaction design, accessibility, local state, responsive navigation, and progressive learning.">
+    <meta name="theme-color" content="#5e274f">
+    <link rel="canonical" href="https://projectsportfolio-nine.vercel.app/case-studies/ai-development-field-guide.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI Development Field Guide Case Study">
+    <meta property="og:description" content="Searchable technical documentation with JavaScript interaction design, keyboard support, persistent preferences, responsive navigation, and accessibility.">
+    <meta property="og:url" content="https://projectsportfolio-nine.vercel.app/case-studies/ai-development-field-guide.html">
+    <meta property="og:image" content="https://projectsportfolio-nine.vercel.app/assets/ai-field-guide-project.webp">
+    <meta property="og:image:alt" content="AI Development Field Guide interface">
+    <meta name="twitter:card" content="summary_large_image">
     <title>AI Development Field Guide Case Study | Marsharine A. Simpson</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="../site.webmanifest">
     <link rel="stylesheet" href="../styles.css">
     <script src="../script.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "AI Development Field Guide",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "url": "https://ai-development-field-guide.vercel.app/",
+        "codeRepository": "https://github.com/marsharine-cs/Software_Engineering-Projects/tree/AI_Dev-Technical_Doc_Web_Project",
+        "author": {"@type": "Person", "name": "Marsharine A. Simpson", "url": "https://projectsportfolio-nine.vercel.app/"},
+        "description": "A searchable and accessible JavaScript reference with keyboard interaction, persistent reading progress and theme preferences, responsive navigation, and progressive content disclosure."
+    }
+    </script>
 </head>
 <body data-page="case-study">
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -27,12 +51,14 @@
             <div class="button-row"><a class="button button-primary" href="https://ai-development-field-guide.vercel.app/" target="_blank" rel="noopener noreferrer">Open Live Application ↗</a><a class="button button-secondary" href="https://github.com/marsharine-cs/Software_Engineering-Projects/tree/AI_Dev-Technical_Doc_Web_Project" target="_blank" rel="noopener noreferrer">View Source ↗</a></div>
         </section>
 
-        <div class="case-cover shell"><img src="../assets/ai-field-guide-project.png" alt="AI Development Field Guide interface showing technical learning content and navigation"></div>
+        <div class="case-cover shell"><img src="../assets/ai-field-guide-project.webp" width="1448" height="1086" decoding="async" alt="AI Development Field Guide interface showing technical learning content and navigation"></div>
 
         <div class="case-layout shell">
             <aside class="case-sidebar" aria-label="Case study summary"><strong>At a glance</strong><ul><li>Interactive technical reference</li><li>Search and keyboard shortcuts</li><li>Progress and theme persistence</li><li>Responsive navigation</li><li>Accessibility-focused behavior</li></ul></aside>
 
             <article class="case-article">
+                <section><p class="eyebrow">ENGINEERING PROOF</p><h2>The implementation signals at a glance.</h2><div class="evidence-grid"><article><strong>Searchable content</strong><p>Multiple content signals support direct concept lookup instead of heading-only matching.</p></article><article><strong>Persistent preferences</strong><p>Local storage preserves reading progress and theme choice without requiring an account.</p></article><article><strong>Keyboard behavior</strong><p>Search shortcuts, predictable Escape behavior, meaningful labels, and reduced-motion support.</p></article><article><strong>Responsive information design</strong><p>Navigation, progressive disclosure, glossary access, and active location cues reduce content density.</p></article></div></section>
+
                 <section><p class="eyebrow">THE PROBLEM</p><h2>Dense technical content is difficult to enter and difficult to revisit.</h2><p>AI concepts are often presented either as long, linear documentation or as disconnected definitions. New learners need a clear path through the material, while returning users need a fast way to find one specific idea.</p></section>
 
                 <section><p class="eyebrow">THE SOLUTION</p><h2>One interface for learning and reference.</h2><p>I designed the Field Guide to support two valid modes: follow a guided sequence from foundations through evaluation and responsible use, or search and jump directly to the needed concept.</p><ul><li>Search across titles, keywords, and visible content.</li><li>Active navigation that reflects the reader’s location.</li><li>Expandable sections for layered explanations.</li><li>Copy controls for useful examples.</li><li>Glossary, reading progress, and persistent theme preference.</li><li>Responsive navigation for smaller screens.</li></ul></section>
@@ -40,6 +66,8 @@
                 <section><p class="eyebrow">MY ROLE</p><h2>Content architecture, interface design, and implementation.</h2><p>I planned the information hierarchy, wrote and organized the technical content, designed the responsive interface, and implemented the application behavior in JavaScript. The project brings educational judgment and frontend engineering into the same product.</p></section>
 
                 <section><p class="eyebrow">ENGINEERING HIGHLIGHTS</p><h2>Interaction patterns that make documentation usable.</h2><h3>Search behavior</h3><p>The search experience indexes multiple content signals rather than matching headings alone. A forward-slash keyboard shortcut moves focus into search, while Escape provides a predictable exit behavior.</p><h3>Persistent state</h3><p>Local storage preserves reading progress and theme preference so the interface respects the user’s choices across visits without requiring an account.</p><h3>Responsive and accessible controls</h3><p>The navigation adapts for smaller screens, controls have keyboard behavior and meaningful labels, and reduced-motion preferences are respected.</p></section>
+
+                <section><p class="eyebrow">ARCHITECTURE</p><h2>Content behaves like an application.</h2><div class="architecture-diagram" role="img" aria-label="Architecture flow from user navigation and search through JavaScript interaction logic and content index to local storage preferences and responsive interface updates"><div class="architecture-node"><strong>User intent</strong><span>Guided reading, search, glossary, and section jumps</span></div><div class="architecture-node"><strong>JavaScript controls</strong><span>Keyboard events, disclosure, active navigation, and copy actions</span></div><div class="architecture-node"><strong>Content index</strong><span>Titles, keywords, and visible concept content</span></div><div class="architecture-node"><strong>Local persistence</strong><span>Reading progress and saved theme preference</span></div></div><p class="diagram-note">A single content experience supports both sequential learning and quick reference without requiring an account or server-side data.</p></section>
 
                 <section><p class="eyebrow">TECHNICAL DECISION</p><h2>Support guided and nonlinear use.</h2><div class="callout"><p>I did not force every user through the content in the same order. The architecture combines a clear learning sequence with search, section navigation, glossary access, and visible progress.</p></div><p>That decision makes the same application useful to a beginner learning a concept for the first time and to a developer returning for a precise reminder.</p></section>
 

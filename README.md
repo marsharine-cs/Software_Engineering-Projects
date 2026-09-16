@@ -1,6 +1,6 @@
 # Marsharine A. Simpson — Software Developer Portfolio
 
-A responsive, multi-page portfolio presenting deployed software projects, engineering case studies, technical skills, and professional background.
+A responsive, multi-page portfolio presenting deployed software projects, engineering case studies, technical skills, and professional background. The experience is designed for fast recruiter scanning while preserving deeper technical evidence for engineering reviewers.
 
 ## Portfolio structure
 
@@ -8,6 +8,17 @@ A responsive, multi-page portfolio presenting deployed software projects, engine
 - `projects.html` — featured, additional, and technical-education work
 - `about.html` — developer background, working approach, and credentials
 - `case-studies/` — engineering stories for Student Progress Tracker, AI Development Field Guide, and Luma One
+- `api/portfolio-chat.js` — optional server-side OpenAI Responses API endpoint for the grounded Portfolio Guide
+- `sitemap.xml`, `robots.txt`, and structured metadata — search and social-sharing support
+
+## Recruiter-focused features
+
+- 30-second recruiter summary with direct links to the strongest case study, GitHub, and résumé
+- Grounded Portfolio Guide with cited answers and a no-key on-site fallback
+- Engineering-proof panels and accessible architecture diagrams
+- Consistent, fully visible project imagery with explicit dimensions and lazy loading
+- Open Graph, Twitter Card, canonical, JSON-LD, sitemap, manifest, and favicon metadata
+- Responsive and keyboard-accessible dialogs, navigation, and reduced-motion support
 
 ## Featured engineering work
 
@@ -24,6 +35,8 @@ python -m http.server 8000
 ```
 
 Then visit `http://localhost:8000`.
+
+The verified Portfolio Guide fallback works in any static server. To activate live generated answers on Vercel, add `OPENAI_API_KEY` as a server-side environment variable. You may optionally set `OPENAI_MODEL`; otherwise the endpoint uses `gpt-5-mini`. The API key is never sent to the browser.
 
 ## Links
 
