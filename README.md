@@ -144,7 +144,6 @@ I am a Computer Science and STEM educator with a B.S. in Information Technology 
 That mix shapes how I approach software: I care about whether an interface is understandable, whether a workflow holds up when a real user gets stuck, and whether technical explanations are accurate enough for someone to learn from them.
 
 - **Portfolio:** https://projectsportfolio-nine.vercel.app/
-- **LinkedIn:** https://www.linkedin.com/in/marsharine-a-simpson/
 - **GitHub:** https://github.com/marsharine-cs
 
 **Build thoughtfully. Teach clearly. Troubleshoot systematically.**
