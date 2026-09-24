@@ -14,7 +14,7 @@ Luma One is a product-focused JavaScript frontend with centralized interface sta
 
 Marsharine has a Bachelor of Science in Information Technology and Security and experience spanning technical support, SaaS, telecommunications technology, AI evaluation, computer science education, and curriculum development. That background supports systematic troubleshooting, clear communication, documentation, accessibility awareness, and user-centered development.
 
-Portfolio: https://projectsportfolio-nine.vercel.app/. GitHub: https://github.com/marsharine-cs. Resume: https://drive.google.com/file/d/1wuTWMn3myy1M6p0Pn2306747dkVDMAsk/view?usp=drivesdk.
+Portfolio: https://projectsportfolio-nine.vercel.app/. GitHub: https://github.com/marsharine-cs. Resume: https://projectsportfolio-nine.vercel.app/assets/Marsharine-Simpson-Software-Developer-Resume.pdf.
 `;
 
 function getClientId(req) {

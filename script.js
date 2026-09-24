@@ -85,14 +85,14 @@ const portfolioGuide = {
         answer: 'Marsharine combines software development with a B.S. in Information Technology and Security and experience in technical support, SaaS, telecommunications technology, AI evaluation, and computer science education. That background shows up in systematic troubleshooting, clear documentation, accessibility awareness, and user-centered design.',
         sources: [
             { label: 'Professional background', url: '/about.html' },
-            { label: 'Résumé', url: 'https://drive.google.com/file/d/1wuTWMn3myy1M6p0Pn2306747dkVDMAsk/view?usp=drivesdk' }
+            { label: 'Résumé', url: 'https://projectsportfolio-nine.vercel.app/assets/Marsharine-Simpson-Software-Developer-Resume.pdf' }
         ]
     },
     contact: {
         answer: 'The portfolio’s primary professional links are GitHub and the developer résumé. Each featured project also links directly to its live application and source code.',
         sources: [
             { label: 'GitHub profile', url: 'https://github.com/marsharine-cs' },
-            { label: 'Résumé', url: 'https://drive.google.com/file/d/1wuTWMn3myy1M6p0Pn2306747dkVDMAsk/view?usp=drivesdk' }
+            { label: 'Résumé', url: 'https://projectsportfolio-nine.vercel.app/assets/Marsharine-Simpson-Software-Developer-Resume.pdf' }
         ]
     }
 };
