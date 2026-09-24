@@ -48,6 +48,7 @@ body::before {
 img {
     display: block;
     max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -348,7 +349,9 @@ h2 span {
 
 .hero-photo {
     position: relative;
+    width: min(100%, 380px);
     margin: 0;
+    justify-self: end;
 }
 
 .hero-photo::before {
@@ -1497,12 +1500,14 @@ dialog::backdrop {
     }
 
     .hero-copy {
-        order: 1;
+        order: 0;
     }
 
     .hero-photo {
         width: min(82%, 390px);
         margin-inline: auto;
+        justify-self: center;
+        order: 1;
     }
 
     .hero-photo figcaption {
