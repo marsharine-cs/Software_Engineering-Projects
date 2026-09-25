@@ -55,6 +55,14 @@ initializeDialog(
 );
 
 const portfolioGuide = {
+    development: {
+        answer: 'Marsharine’s software-development experience is demonstrated through shipped projects. She designed and deployed the Student Progress Tracker with React, TypeScript, Supabase/PostgreSQL, authentication, tenant-aware Row Level Security, relational CRUD workflows, dashboard logic, 25 automated tests, GitHub Actions, and production debugging. Her frontend work also includes the AI Development Field Guide and Luma One. She is currently building the Secure Service Operations Platform as her next production-focused project.',
+        sources: [
+            { label: 'Selected software projects', url: '/projects.html' },
+            { label: 'Student Progress Tracker case study', url: '/case-studies/student-progress-tracker.html' },
+            { label: 'GitHub profile', url: 'https://github.com/marsharine-cs' }
+        ]
+    },
     strongest: {
         answer: 'The strongest full-stack evidence is the Student Progress Tracker: a deployed React and TypeScript application with Supabase/PostgreSQL, authentication, password recovery, Row Level Security, CRUD workflows, dated assessment history, dashboard logic, automated component tests, and documented production debugging.',
         sources: [{ label: 'Student Progress Tracker case study', url: '/case-studies/student-progress-tracker.html' }]
@@ -99,6 +107,7 @@ const portfolioGuide = {
 
 function chooseLocalGuideAnswer(message) {
     const text = message.toLowerCase();
+    if (/\bdeveloper\b|software\s+(development|developer|engineering)|development\s+experience|coding\s+experience|programming\s+experience/.test(text)) return portfolioGuide.development;
     if (/strong|best|flagship|full.?stack|student|supabase|database/.test(text)) return portfolioGuide.strongest;
     if (/test|quality|vitest|reliable/.test(text)) return portfolioGuide.testing;
     if (/secure|security|auth|row level|rls/.test(text)) return portfolioGuide.security;
@@ -131,14 +140,17 @@ function createGuideMarkup() {
                 <div class="guide-prompts" aria-label="Suggested questions">
                     <button type="button" data-guide-question="What is Marsharine's strongest project?">Strongest project</button>
                     <button type="button" data-guide-question="What testing and quality evidence is shown?">Testing evidence</button>
-                    <button type="button" data-guide-question="How does her background strengthen her development work?">Developer background</button>
+                    <button type="button" data-guide-question="What software development experience does Marsharine have?">Development experience</button>
                 </div>
                 <form class="guide-form" id="guide-form">
                     <label class="visually-hidden" for="guide-question">Ask a question about Marsharine’s portfolio</label>
                     <input id="guide-question" name="question" type="text" maxlength="500" autocomplete="off" placeholder="Ask about projects, skills, or experience…" required>
                     <button class="button button-primary button-small" type="submit">Ask</button>
                 </form>
-                <p class="guide-status" id="guide-status">Verified answers work even when the optional live model is unavailable.</p>
+                <div class="guide-footer">
+                    <p class="guide-status" id="guide-status">Verified answers work even when the optional live model is unavailable.</p>
+                    <button class="guide-close-action" type="button" data-close-dialog>Close chat</button>
+                </div>
             </div>
         </dialog>`;
 }
