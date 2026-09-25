@@ -16,14 +16,14 @@
             id: 'development-experience',
             question: 'What software development experience does Marsharine have?',
             patterns: [/^\s*(developer|software development|software developer|software engineering)\s*\??\s*$/i, /software\s+(development|developer|engineering)\s+experience/i, /developer\s+experience/i, /development\s+experience/i, /coding\s+experience/i, /programming\s+experience/i],
-            answer: 'Marsharine’s software-development experience is demonstrated through shipped projects. She designed and deployed the Student Progress Tracker with React, TypeScript, Supabase/PostgreSQL, authentication, tenant-aware Row Level Security, relational CRUD workflows, dashboard logic, 25 automated tests, GitHub Actions, and production debugging. Her frontend work also includes the AI Development Field Guide and Luma One. She is currently building the Secure Service Operations Platform as her next production-focused project.',
+            answer: 'Marsharine’s software-development experience is demonstrated through shipped projects. She designed and deployed the Student Progress Tracker with React, TypeScript, Supabase/PostgreSQL, authentication, tenant-aware Row Level Security, relational CRUD workflows, dashboard logic, 25 unit and component tests, Playwright browser smoke tests, GitHub Actions, and production debugging. Her frontend work also includes the AI Development Field Guide and Luma One. She is currently building the Secure Service Operations Platform as her next production-focused project.',
             sources: [PROJECTS, TRACKER_CASE_STUDY, GITHUB]
         },
         {
             id: 'strongest-project',
             question: 'What is Marsharine’s strongest project?',
             patterns: [/strongest/i, /best project/i, /flagship/i, /full.?stack project/i, /student progress tracker/i],
-            answer: 'The strongest full-stack evidence is the Student Progress Tracker. Marsharine took it from a teacher workflow problem to a deployed React and TypeScript application backed by Supabase/PostgreSQL. It includes authentication, password recovery, tenant-aware data constraints, Row Level Security, relational CRUD workflows, dated assessment history, dashboard logic, 25 automated tests, CI checks, and documented production debugging.',
+            answer: 'The strongest full-stack evidence is the Student Progress Tracker. Marsharine took it from a teacher workflow problem to a deployed React and TypeScript application backed by Supabase/PostgreSQL. It includes authentication, password recovery, tenant-aware data constraints, Row Level Security, relational CRUD workflows, dated assessment history, dashboard logic, 25 unit and component tests, Playwright browser smoke tests, CI checks, and documented production debugging.',
             sources: [TRACKER_CASE_STUDY, TRACKER_SOURCE]
         },
         {
@@ -37,7 +37,7 @@
             id: 'testing-quality',
             question: 'What testing and quality experience does she have?',
             patterns: [/\btest/i, /quality/i, /vitest/i, /reliable/i, /regression/i, /continuous integration/i, /\bci\b/i],
-            answer: 'The Student Progress Tracker has 25 Vitest and React Testing Library tests covering authentication, password recovery, forms, database-error states, assessment recording, dashboard logic, accessible status presentation, and tenant-boundary schema safeguards. GitHub Actions runs linting, the full test suite, and the production build so pull requests are checked before merge.',
+            answer: 'The Student Progress Tracker has 25 Vitest and React Testing Library tests covering authentication, password recovery, forms, database-error states, assessment recording, dashboard logic, accessible status presentation, and tenant-boundary schema safeguards. Playwright adds Chromium smoke tests for the public authentication experience. GitHub Actions runs linting, both test layers, and the production build before merge.',
             sources: [TRACKER_CASE_STUDY, TRACKER_SOURCE]
         },
         {
@@ -93,7 +93,7 @@
             id: 'why-interview',
             question: 'Why should we interview Marsharine?',
             patterns: [/why (should|would).*(interview|hire)/i, /reason to (interview|hire)/i, /good candidate/i, /stand out/i, /value.*bring/i],
-            answer: 'Marsharine merits an interview because the portfolio shows more than course exercises: a deployed full-stack application, relational data modeling, authentication and tenant safeguards, 25 automated tests, CI, accessible interface decisions, and documented production troubleshooting. She also brings mature communication and user-support experience. The interview should test how she reasons through unfamiliar engineering problems and how quickly she can contribute within an experienced team.',
+            answer: 'Marsharine merits an interview because the portfolio shows more than course exercises: a deployed full-stack application, relational data modeling, authentication and tenant safeguards, 25 unit and component tests, Playwright browser checks, CI, accessible interface decisions, and documented production troubleshooting. She also brings mature communication and user-support experience. The interview should test how she reasons through unfamiliar engineering problems and how quickly she can contribute within an experienced team.',
             sources: [PROJECTS, TRACKER_CASE_STUDY, RESUME]
         },
         {
@@ -107,7 +107,7 @@
             id: 'technical-stack',
             question: 'What is her technical stack?',
             patterns: [/tech(nical)? stack/i, /\bskills?\b/i, /technolog/i, /\btools?\b/i, /react/i, /typescript/i, /javascript/i],
-            answer: 'Her demonstrated stack includes React, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, Supabase, PostgreSQL, authentication, Row Level Security, relational CRUD, Vitest, React Testing Library, ESLint, GitHub Actions, Git, and Vercel. The current Secure Service Operations Platform adds planned work with NestJS and Docker as implementation progresses.',
+            answer: 'Her demonstrated stack includes React, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, Supabase, PostgreSQL, authentication, Row Level Security, relational CRUD, Vitest, React Testing Library, Playwright, ESLint, GitHub Actions, Git, and Vercel. The current Secure Service Operations Platform adds planned work with NestJS and Docker as implementation progresses.',
             sources: [PROJECTS, GITHUB, RESUME]
         },
         {
