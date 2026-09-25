@@ -1,27 +1,9 @@
 const WINDOW_MS = 60_000;
 const MAX_REQUESTS = 8;
 const requestWindows = new Map();
+const portfolioAnswers = require('../data/portfolio-answers.js');
 
-const portfolioFacts = `
-Marsharine A. Simpson is a software developer building user-focused web applications.
-Primary skills demonstrated in deployed work: React, TypeScript, JavaScript, HTML5, CSS3, Supabase, PostgreSQL, authentication, Row Level Security, CRUD, Vitest, React Testing Library, accessibility, Git, GitHub Issues, feature branches, pull requests, and Vercel deployment.
-
-Student Progress Tracker is the strongest full-stack project. It is a React and TypeScript application using Supabase/PostgreSQL. It includes authentication, password recovery, protected access, tenant-aware Row Level Security, CRUD for students and skills, dated assessment history, dashboard logic that determines the latest mastery status for every student-and-skill pair, 25 automated tests, GitHub Actions, and production debugging. Case study: /case-studies/student-progress-tracker.html. Source: https://github.com/marsharine-cs/student-progress-tracker. Live app: https://student-progress-tracker-sepia.vercel.app.
-
-AI Development Field Guide is an interactive JavaScript technical reference with content search, keyboard shortcuts, responsive navigation, expandable sections, glossary, reading progress, theme persistence through local storage, and accessibility-conscious behavior. Case study: /case-studies/ai-development-field-guide.html. Live app: https://ai-development-field-guide.vercel.app/.
-
-Luma One is a product-focused JavaScript frontend with centralized interface state, product-finish selection, validated quantity controls, demonstration cart behavior, mobile navigation, expandable FAQs, accessible feedback, responsive design, and original CSS-created product artwork. Case study: /case-studies/luma-one.html. Live app: https://luma-one-product-landing.vercel.app/.
-
-Marsharine has a Bachelor of Science in Information Technology and Security and experience spanning technical support, SaaS, telecommunications technology, AI evaluation, computer science education, and curriculum development. That background supports systematic troubleshooting, clear communication, documentation, accessibility awareness, and user-centered development.
-
-Portfolio: https://projectsportfolio-nine.vercel.app/. GitHub: https://github.com/marsharine-cs. Resume: https://projectsportfolio-nine.vercel.app/assets/Marsharine-Simpson-Software-Developer-Resume.pdf.
-`;
-
-const developmentExperienceAnswer = 'Marsharine’s software-development experience is demonstrated through shipped projects. She designed and deployed the Student Progress Tracker with React, TypeScript, Supabase/PostgreSQL, authentication, tenant-aware Row Level Security, relational CRUD workflows, dashboard logic, 25 automated tests, GitHub Actions, and production debugging. Her frontend work also includes the AI Development Field Guide and Luma One. She is currently building the Secure Service Operations Platform as her next production-focused project.';
-
-function asksAboutDevelopmentExperience(message) {
-    return /\bdeveloper\b|software\s+(development|developer|engineering)|development\s+experience|coding\s+experience|programming\s+experience/i.test(message);
-}
+const portfolioFacts = portfolioAnswers.promptFacts();
 
 function getClientId(req) {
     const forwarded = req.headers['x-forwarded-for'];
@@ -45,33 +27,6 @@ function extractOutputText(response) {
         .trim();
 }
 
-function selectSources(message) {
-    const text = message.toLowerCase();
-    if (asksAboutDevelopmentExperience(text)) {
-        return [
-            { label: 'Selected software projects', url: '/projects.html' },
-            { label: 'Student Progress Tracker case study', url: '/case-studies/student-progress-tracker.html' },
-            { label: 'GitHub profile', url: 'https://github.com/marsharine-cs' }
-        ];
-    }
-    if (/student|full.?stack|supabase|database|auth|test|security/.test(text)) {
-        return [{ label: 'Student Progress Tracker case study', url: '/case-studies/student-progress-tracker.html' }];
-    }
-    if (/field guide|documentation|search|ai literacy/.test(text)) {
-        return [{ label: 'AI Development Field Guide case study', url: '/case-studies/ai-development-field-guide.html' }];
-    }
-    if (/luma|frontend|product|javascript|state/.test(text)) {
-        return [{ label: 'Luma One case study', url: '/case-studies/luma-one.html' }];
-    }
-    if (/background|education|experience|communicat|troubleshoot/.test(text)) {
-        return [{ label: 'About Marsharine', url: '/about.html' }];
-    }
-    return [
-        { label: 'Selected projects', url: '/projects.html' },
-        { label: 'GitHub profile', url: 'https://github.com/marsharine-cs' }
-    ];
-}
-
 module.exports = async function handler(req, res) {
     res.setHeader('Cache-Control', 'no-store');
 
@@ -80,20 +35,21 @@ module.exports = async function handler(req, res) {
         return res.status(405).json({ error: 'Method not allowed.' });
     }
 
-    if (isRateLimited(getClientId(req))) {
-        return res.status(429).json({ error: 'Please wait a minute before asking another question.' });
-    }
-
     const message = typeof req.body?.message === 'string' ? req.body.message.trim() : '';
     if (!message || message.length > 500) {
         return res.status(400).json({ error: 'Ask a question between 1 and 500 characters.' });
     }
 
-    if (asksAboutDevelopmentExperience(message)) {
+    const verifiedAnswer = portfolioAnswers.findAnswer(message);
+    if (verifiedAnswer) {
         return res.status(200).json({
-            answer: developmentExperienceAnswer,
-            sources: selectSources(message)
+            answer: verifiedAnswer.answer,
+            sources: verifiedAnswer.sources
         });
+    }
+
+    if (isRateLimited(getClientId(req))) {
+        return res.status(429).json({ error: 'Please wait a minute before asking another question.' });
     }
 
     if (!process.env.OPENAI_API_KEY) {
@@ -125,7 +81,7 @@ module.exports = async function handler(req, res) {
         const answer = extractOutputText(data);
         if (!answer) return res.status(502).json({ error: 'The live guide returned no answer.' });
 
-        return res.status(200).json({ answer, sources: selectSources(message) });
+        return res.status(200).json({ answer, sources: portfolioAnswers.fallback.sources });
     } catch (error) {
         console.error('Portfolio guide request failed', error?.message || error);
         return res.status(502).json({ error: 'The live guide is temporarily unavailable.' });
