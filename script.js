@@ -54,71 +54,10 @@ initializeDialog(
     [...document.querySelectorAll('[data-open-recruiter]')]
 );
 
-const portfolioGuide = {
-    development: {
-        answer: 'Marsharine’s software-development experience is demonstrated through shipped projects. She designed and deployed the Student Progress Tracker with React, TypeScript, Supabase/PostgreSQL, authentication, tenant-aware Row Level Security, relational CRUD workflows, dashboard logic, 25 automated tests, GitHub Actions, and production debugging. Her frontend work also includes the AI Development Field Guide and Luma One. She is currently building the Secure Service Operations Platform as her next production-focused project.',
-        sources: [
-            { label: 'Selected software projects', url: '/projects.html' },
-            { label: 'Student Progress Tracker case study', url: '/case-studies/student-progress-tracker.html' },
-            { label: 'GitHub profile', url: 'https://github.com/marsharine-cs' }
-        ]
-    },
-    strongest: {
-        answer: 'The strongest full-stack evidence is the Student Progress Tracker: a deployed React and TypeScript application with Supabase/PostgreSQL, authentication, password recovery, Row Level Security, CRUD workflows, dated assessment history, dashboard logic, automated component tests, and documented production debugging.',
-        sources: [{ label: 'Student Progress Tracker case study', url: '/case-studies/student-progress-tracker.html' }]
-    },
-    stack: {
-        answer: 'Marsharine’s deployed work demonstrates React, TypeScript, JavaScript, HTML5, CSS3, Supabase, PostgreSQL, authentication, Row Level Security, Vitest, React Testing Library, Git workflows, accessibility, and Vercel deployment.',
-        sources: [{ label: 'All selected projects', url: '/projects.html' }]
-    },
-    testing: {
-        answer: 'The Student Progress Tracker includes Vitest and React Testing Library coverage for key component behavior, supported by TypeScript checking, ESLint, production builds, manual verification, and a GitHub issue/branch/pull-request workflow.',
-        sources: [
-            { label: 'Testing evidence', url: '/case-studies/student-progress-tracker.html' },
-            { label: 'Source repository', url: 'https://github.com/marsharine-cs/student-progress-tracker' }
-        ]
-    },
-    security: {
-        answer: 'The Student Progress Tracker demonstrates authentication, password recovery, protected application access, Supabase sessions, and database Row Level Security. The case study also explains how relational assessment history is preserved rather than overwritten.',
-        sources: [{ label: 'Security and data decisions', url: '/case-studies/student-progress-tracker.html' }]
-    },
-    frontend: {
-        answer: 'For frontend evidence, review Luma One for centralized JavaScript state, validated controls, responsive behavior, accessible feedback, and original CSS artwork; and the AI Development Field Guide for search, keyboard interaction, local persistence, and responsive navigation.',
-        sources: [
-            { label: 'Luma One case study', url: '/case-studies/luma-one.html' },
-            { label: 'AI Field Guide case study', url: '/case-studies/ai-development-field-guide.html' }
-        ]
-    },
-    background: {
-        answer: 'Marsharine combines software development with a B.S. in Information Technology and Security and experience in technical support, SaaS, telecommunications technology, AI evaluation, and computer science education. That background shows up in systematic troubleshooting, clear documentation, accessibility awareness, and user-centered design.',
-        sources: [
-            { label: 'Professional background', url: '/about.html' },
-            { label: 'Résumé', url: 'https://projectsportfolio-nine.vercel.app/assets/Marsharine-Simpson-Software-Developer-Resume.pdf' }
-        ]
-    },
-    contact: {
-        answer: 'The portfolio’s primary professional links are GitHub and the developer résumé. Each featured project also links directly to its live application and source code.',
-        sources: [
-            { label: 'GitHub profile', url: 'https://github.com/marsharine-cs' },
-            { label: 'Résumé', url: 'https://projectsportfolio-nine.vercel.app/assets/Marsharine-Simpson-Software-Developer-Resume.pdf' }
-        ]
-    }
-};
-
 function chooseLocalGuideAnswer(message) {
-    const text = message.toLowerCase();
-    if (/\bdeveloper\b|software\s+(development|developer|engineering)|development\s+experience|coding\s+experience|programming\s+experience/.test(text)) return portfolioGuide.development;
-    if (/strong|best|flagship|full.?stack|student|supabase|database/.test(text)) return portfolioGuide.strongest;
-    if (/test|quality|vitest|reliable/.test(text)) return portfolioGuide.testing;
-    if (/secure|security|auth|row level|rls/.test(text)) return portfolioGuide.security;
-    if (/front.?end|javascript|luma|field guide|accessible|responsive/.test(text)) return portfolioGuide.frontend;
-    if (/background|education|experience|teach|support|communicat|troubleshoot/.test(text)) return portfolioGuide.background;
-    if (/resume|résumé|contact|github|hire|reach/.test(text)) return portfolioGuide.contact;
-    if (/stack|skill|technolog|tool|react|typescript/.test(text)) return portfolioGuide.stack;
-
-    return {
-        answer: 'I can help you review Marsharine’s strongest project, technical stack, testing and security evidence, frontend work, or professional background. Choose a suggested question below, or ask about one of those areas.',
-        sources: [{ label: 'Browse selected projects', url: '/projects.html' }]
+    return window.PortfolioAnswers?.findAnswer(message) || window.PortfolioAnswers?.fallback || {
+        answer: 'Browse the selected projects and GitHub repositories for verified engineering evidence.',
+        sources: [{ label: 'Selected software projects', url: '/projects.html' }]
     };
 }
 
