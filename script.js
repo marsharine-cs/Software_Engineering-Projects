@@ -54,6 +54,11 @@ initializeDialog(
     [...document.querySelectorAll('[data-open-recruiter]')]
 );
 
+initializeDialog(
+    document.querySelector('#curriculum-recruiter-dialog'),
+    [...document.querySelectorAll('[data-open-curriculum-recruiter]')]
+);
+
 function chooseLocalGuideAnswer(message, context) {
     return window.PortfolioAnswers?.findAnswer(message, context) || window.PortfolioAnswers?.fallback || {
         answer: 'Browse the selected projects and GitHub repositories for verified engineering evidence.',

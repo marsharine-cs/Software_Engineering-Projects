@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Software-development portfolio of Marsharine A. Simpson featuring React, TypeScript, JavaScript, Supabase, PostgreSQL, testing, accessibility, and deployed web applications.">
+    <meta name="description" content="Portfolio of Marsharine A. Simpson, software developer and computer science curriculum designer: React and TypeScript applications, a grades 9–12 Python curriculum, EdTech, testing, and accessibility.">
     <meta name="theme-color" content="#5e274f">
     <link rel="canonical" href="https://projectsportfolio-nine.vercel.app/">
     <meta property="og:type" content="profile">
-    <meta property="og:title" content="Marsharine A. Simpson | Software Developer">
-    <meta property="og:description" content="React, TypeScript, JavaScript, full-stack applications, testing, accessibility, and documented engineering decisions.">
+    <meta property="og:title" content="Marsharine A. Simpson | Software Developer &amp; CS Curriculum Designer">
+    <meta property="og:description" content="Full-stack React and TypeScript applications, a grades 9–12 Python curriculum, and EdTech built at the intersection of software and instruction.">
     <meta property="og:url" content="https://projectsportfolio-nine.vercel.app/">
     <meta property="og:image" content="https://projectsportfolio-nine.vercel.app/assets/marsharine-profile.jpg">
-    <meta property="og:image:alt" content="Professional portrait of software developer Marsharine A. Simpson">
+    <meta property="og:image:alt" content="Professional portrait of Marsharine A. Simpson, software developer and computer science curriculum designer">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Marsharine A. Simpson | Software Developer">
-    <meta name="twitter:description" content="Deployed applications and engineering case studies in React, TypeScript, JavaScript, Supabase, PostgreSQL, testing, and accessible UI.">
+    <meta name="twitter:title" content="Marsharine A. Simpson | Software Developer &amp; CS Curriculum Designer">
+    <meta name="twitter:description" content="Deployed React and TypeScript applications, a grades 9–12 Python curriculum, and EdTech case studies.">
     <meta name="twitter:image" content="https://projectsportfolio-nine.vercel.app/assets/marsharine-profile.jpg">
-    <title>Marsharine A. Simpson | Software Developer</title>
+    <title>Marsharine A. Simpson | Software Developer &amp; CS Curriculum Designer</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="manifest" href="site.webmanifest">
     <link rel="preload" as="image" href="assets/profile-portrait.webp" type="image/webp" fetchpriority="high">
@@ -28,16 +28,16 @@
         "@context": "https://schema.org",
         "@type": "ProfilePage",
         "url": "https://projectsportfolio-nine.vercel.app/",
-        "name": "Marsharine A. Simpson — Software Developer Portfolio",
+        "name": "Marsharine A. Simpson — Software Developer & CS Curriculum Designer Portfolio",
         "mainEntity": {
             "@type": "Person",
             "name": "Marsharine A. Simpson",
-            "jobTitle": "Software Developer",
+            "jobTitle": ["Software Developer", "Computer Science Curriculum Designer"],
             "url": "https://projectsportfolio-nine.vercel.app/",
             "image": "https://projectsportfolio-nine.vercel.app/assets/marsharine-profile.jpg",
             "sameAs": ["https://github.com/marsharine-cs"],
             "alumniOf": {"@type": "CollegeOrUniversity", "name": "University of Phoenix"},
-            "knowsAbout": ["React", "TypeScript", "JavaScript", "Supabase", "PostgreSQL", "Software Testing", "Web Accessibility"]
+            "knowsAbout": ["React", "TypeScript", "JavaScript", "Python", "Supabase", "PostgreSQL", "Software Testing", "Web Accessibility", "Curriculum Development", "Instructional Design", "Computer Science Education", "Educational Technology"]
         }
     }
     </script>
@@ -51,7 +51,7 @@
                 <span class="brand-mark" aria-hidden="true">MAS</span>
                 <span class="brand-copy">
                     <strong>Marsharine A. Simpson</strong>
-                    <small>Software Developer</small>
+                    <small>Developer · CS Curriculum Designer</small>
                 </span>
             </a>
 
@@ -72,15 +72,19 @@
     <main id="main-content">
         <section class="hero shell" aria-labelledby="hero-heading">
             <div class="hero-copy">
-                <p class="eyebrow">SOFTWARE DEVELOPER</p>
+                <p class="eyebrow">SOFTWARE DEVELOPER · CS CURRICULUM DESIGNER</p>
                 <h1 id="hero-heading">Marsharine A. <span>Simpson</span></h1>
-                <p class="hero-stack">React · TypeScript · JavaScript · Full-Stack Web Applications</p>
-                <p class="hero-introduction">I build practical, user-focused web applications and bring a background in technology, education, and technical problem-solving to the way I design, test, troubleshoot, and communicate software.</p>
+                <p class="hero-stack">React · TypeScript · Python · Instructional Design</p>
+                <p class="hero-introduction">I build user-focused web applications and design computer science curriculum, so I understand both how technology works and how people learn it. That combination shapes how I design, test, troubleshoot, and teach.</p>
                 <p class="signature-line">I build technology. I teach it. I make it easier to use.</p>
                 <div class="button-row">
                     <a class="button button-primary" href="#featured-projects">View Projects <span aria-hidden="true">↓</span></a>
                     <a class="button button-secondary" href="https://github.com/marsharine-cs" target="_blank" rel="noopener noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
-                    <button class="button button-secondary" type="button" data-open-recruiter>30-Second Recruiter View</button>
+                </div>
+                <div class="recruiter-paths" aria-label="30-second recruiter views">
+                    <span>30-second recruiter view:</span>
+                    <button class="button button-secondary button-small" type="button" data-open-recruiter>Hiring a developer</button>
+                    <button class="button button-secondary button-small" type="button" data-open-curriculum-recruiter>Hiring for curriculum / instruction</button>
                 </div>
             </div>
 
@@ -257,9 +261,29 @@
         </div>
     </dialog>
 
+    <dialog class="recruiter-dialog" id="curriculum-recruiter-dialog" aria-labelledby="curriculum-recruiter-title">
+        <div class="recruiter-shell">
+            <header class="recruiter-header">
+                <div><p class="eyebrow">30-SECOND RECRUITER VIEW · CURRICULUM + INSTRUCTION</p><h2 id="curriculum-recruiter-title">Curriculum designer who can verify every line of code.</h2></div>
+                <button class="dialog-close" type="button" aria-label="Close curriculum recruiter summary" data-close-dialog>×</button>
+            </header>
+            <p class="recruiter-lead">I design computer science curriculum end to end—scope and sequence, objectives, scaffolded lessons, assessments, and teacher materials—and I bring classroom teaching and software-development experience to every course.</p>
+            <div class="recruiter-evidence">
+                <article><span>STRONGEST WORK SAMPLE</span><h3>Python Foundations</h3><p>A grades 9–12 course of 7 units and 36 lessons, designed with reference to CSTA K–12 and AP® CSP, with every code example verified on Python 3.12.</p></article>
+                <article><span>INSTRUCTIONAL EXPERIENCE</span><h3>Elementary through high school</h3><p>Small-group and individualized virtual instruction at Edmentum, fifth-grade math and science at Charter Schools USA, and CS teaching credentials in New Jersey and Florida.</p></article>
+                <article><span>EDTECH EDGE</span><h3>Builds the tools, too</h3><p>Designed and deployed the Student Progress Tracker, a teacher dashboard for assessment history and current mastery by skill.</p></article>
+            </div>
+            <div class="button-row">
+                <a class="button button-primary" href="case-studies/python-foundations-curriculum.html">Review Curriculum Case Study</a>
+                <a class="button button-secondary" href="https://github.com/marsharine-cs/computer-science-secondary-curriculum/blob/main/intro-to-python-9-12/sample-lesson-1.3.md" target="_blank" rel="noopener noreferrer">Sample Lesson ↗</a>
+                <a class="button button-secondary" href="assets/Marsharine-Simpson-Curriculum-Designer-Resume.pdf" target="_blank" rel="noopener noreferrer">Curriculum Résumé ↗</a>
+            </div>
+        </div>
+    </dialog>
+
     <footer class="site-footer">
         <div class="shell footer-grid">
-            <div><strong>Marsharine A. Simpson</strong><span>Software Developer</span></div>
+            <div><strong>Marsharine A. Simpson</strong><span>Software Developer · CS Curriculum Designer</span></div>
             <p>© <span data-current-year>2026</span> Marsharine A. Simpson</p>
         </div>
     </footer>
