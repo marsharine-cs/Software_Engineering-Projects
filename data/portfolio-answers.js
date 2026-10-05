@@ -263,7 +263,7 @@
     const SOFTWARE_SIGNALS = [/software/i, /develop(er|ment)/i, /engineer/i, /\breact\b/i, /typescript/i, /javascript/i, /full.?stack/i, /front.?end/i, /back.?end/i, /coding/i];
 
     const RESUME_REQUEST = /r[eé]sum[eé]|\bcv\b|curriculum vitae/i;
-    const CURRICULUM_RESUME_SIGNAL = /curricul|instructional|teach|educat|\bcs\b|computer science|stem|edtech|trainer|training/i;
+    const CURRICULUM_RESUME_SIGNAL = /curricul|instructional|teach|educat|\bcs\b|computer science|\bstem\b|edtech|trainer|training/i;
     const SOFTWARE_RESUME_SIGNAL = /software|developer|engineer|technical|tech|coding|programming|web/i;
 
     function hasCurriculumSignal(text) {
@@ -298,7 +298,7 @@
         if (wantsCurriculum || (!wantsSoftware && lastIntent === INTENT_CURRICULUM)) {
             return withCurriculumResume(curriculumAnswers[0]);
         }
-        if (wantsSoftware) {
+        if (wantsSoftware || lastIntent === INTENT_SOFTWARE) {
             return {
                 id: 'developer-resume', intent: INTENT_SOFTWARE,
                 answer: 'Here is Marsharine’s developer résumé. It covers her React, TypeScript, Supabase/PostgreSQL, testing, and deployment work, along with her technical-support and AI-evaluation experience.',
