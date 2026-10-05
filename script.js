@@ -54,8 +54,8 @@ initializeDialog(
     [...document.querySelectorAll('[data-open-recruiter]')]
 );
 
-function chooseLocalGuideAnswer(message) {
-    return window.PortfolioAnswers?.findAnswer(message) || window.PortfolioAnswers?.fallback || {
+function chooseLocalGuideAnswer(message, context) {
+    return window.PortfolioAnswers?.findAnswer(message, context) || window.PortfolioAnswers?.fallback || {
         answer: 'Browse the selected projects and GitHub repositories for verified engineering evidence.',
         sources: [{ label: 'Selected software projects', url: '/projects.html' }]
     };
@@ -74,12 +74,13 @@ function createGuideMarkup() {
                 </header>
                 <p class="guide-disclosure">Answers use verified portfolio evidence and link to the source. This guide does not speak as Marsharine.</p>
                 <div class="guide-messages" id="guide-messages" aria-live="polite" aria-label="Portfolio guide conversation">
-                    <div class="guide-message guide-message-assistant">What would you like to evaluate? Try the strongest project, technical stack, testing, security, frontend work, or professional background.</div>
+                    <div class="guide-message guide-message-assistant">What would you like to evaluate? Try the strongest project, technical stack, testing, security, curriculum design, teaching experience, or professional background.</div>
                 </div>
                 <div class="guide-prompts" aria-label="Suggested questions">
                     <button type="button" data-guide-question="What is Marsharine's strongest project?">Strongest project</button>
                     <button type="button" data-guide-question="What testing and quality evidence is shown?">Testing evidence</button>
                     <button type="button" data-guide-question="What software development experience does Marsharine have?">Development experience</button>
+                    <button type="button" data-guide-question="What curriculum has Marsharine developed?">Curriculum design</button>
                 </div>
                 <form class="guide-form" id="guide-form">
                     <label class="visually-hidden" for="guide-question">Ask a question about Marsharine’s portfolio</label>
@@ -103,14 +104,99 @@ function sourceMarkup(sources) {
     return `<div class="guide-sources"><strong>Evidence:</strong> ${links.join(' · ')}</div>`;
 }
 
-function addGuideMessage(container, kind, content, sources = []) {
+function isSafeUrl(url) {
+    return /^https:\/\//.test(url) || /^\/(?!\/)/.test(url);
+}
+
+function appendInlineText(parent, text) {
+    const linkPattern = /\[([^\]]+)\]\(([^)\s]+)\)|(https:\/\/[^\s)]+)/g;
+    let lastIndex = 0;
+    let match;
+    while ((match = linkPattern.exec(text)) !== null) {
+        if (match.index > lastIndex) parent.append(document.createTextNode(text.slice(lastIndex, match.index)));
+        const label = match[1] || match[3];
+        const url = (match[2] || match[3]).replace(/[.,;:]+$/, '');
+        if (isSafeUrl(url)) {
+            const anchor = document.createElement('a');
+            anchor.href = url;
+            anchor.textContent = label;
+            if (/^https:/.test(url)) {
+                anchor.target = '_blank';
+                anchor.rel = 'noopener noreferrer';
+            }
+            parent.append(anchor);
+        } else {
+            parent.append(document.createTextNode(match[0]));
+        }
+        lastIndex = match.index + match[0].length;
+    }
+    if (lastIndex < text.length) parent.append(document.createTextNode(text.slice(lastIndex)));
+}
+
+function renderAnswerText(container, content) {
+    const blocks = String(content || '').split(/\n\s*\n/).map((block) => block.trim()).filter(Boolean);
+    blocks.forEach((block) => {
+        const lines = block.split('\n').map((line) => line.trim()).filter(Boolean);
+        let list = null;
+        let paragraph = null;
+        lines.forEach((line) => {
+            const bulletMatch = line.match(/^(?:[-•*]|\d+[.)])\s+(.*)$/);
+            if (bulletMatch) {
+                if (!list) {
+                    list = document.createElement('ul');
+                    container.append(list);
+                }
+                paragraph = null;
+                const item = document.createElement('li');
+                appendInlineText(item, bulletMatch[1]);
+                list.append(item);
+            } else {
+                list = null;
+                if (!paragraph) {
+                    paragraph = document.createElement('p');
+                    container.append(paragraph);
+                } else {
+                    paragraph.append(document.createTextNode(' '));
+                }
+                appendInlineText(paragraph, line);
+            }
+        });
+    });
+}
+
+function actionMarkup(actions) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'guide-actions';
+    actions.filter((action) => action && isSafeUrl(action.url)).forEach((action) => {
+        const anchor = document.createElement('a');
+        anchor.className = 'guide-action';
+        anchor.href = action.url;
+        anchor.target = '_blank';
+        anchor.rel = 'noopener noreferrer';
+        anchor.textContent = `${action.label} ↗`;
+        wrapper.append(anchor);
+    });
+    return wrapper.children.length ? wrapper : null;
+}
+
+function addGuideMessage(container, kind, content, sources = [], actions = []) {
     const message = document.createElement('div');
     message.className = `guide-message guide-message-${kind}`;
-    const text = document.createElement('p');
-    text.textContent = content;
-    message.append(text);
 
-    if (sources.length) {
+    if (kind === 'user') {
+        const text = document.createElement('p');
+        text.textContent = content;
+        message.append(text);
+    } else {
+        renderAnswerText(message, content);
+    }
+
+    if (actions?.length) {
+        const actionRow = actionMarkup(actions);
+        if (actionRow) message.append(actionRow);
+    }
+
+    if (sources?.length) {
         const wrapper = document.createElement('div');
         wrapper.innerHTML = sourceMarkup(sources);
         message.append(...wrapper.children);
@@ -120,23 +206,28 @@ function addGuideMessage(container, kind, content, sources = []) {
     container.scrollTop = container.scrollHeight;
 }
 
+const guideConversation = { lastIntent: undefined };
+
 async function askPortfolioGuide(question, messages, status) {
     status.textContent = 'Checking verified portfolio evidence…';
+    const context = { lastIntent: guideConversation.lastIntent };
 
     try {
         const response = await fetch('/api/portfolio-chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: question })
+            body: JSON.stringify({ message: question, context })
         });
 
         if (!response.ok) throw new Error('Live guide unavailable');
         const result = await response.json();
-        addGuideMessage(messages, 'assistant', result.answer, result.sources);
+        addGuideMessage(messages, 'assistant', result.answer, result.sources, result.actions);
+        if (result.intent && result.intent !== 'general') guideConversation.lastIntent = result.intent;
         status.textContent = 'Answer generated from the verified portfolio evidence set.';
     } catch {
-        const fallback = chooseLocalGuideAnswer(question);
-        addGuideMessage(messages, 'assistant', fallback.answer, fallback.sources);
+        const fallback = chooseLocalGuideAnswer(question, context);
+        addGuideMessage(messages, 'assistant', fallback.answer, fallback.sources, fallback.actions);
+        if (fallback.intent && fallback.intent !== 'general') guideConversation.lastIntent = fallback.intent;
         status.textContent = 'Answer selected from the verified on-site evidence set.';
     }
 }

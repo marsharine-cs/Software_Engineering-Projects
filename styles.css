@@ -1697,3 +1697,136 @@ dialog::backdrop {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* Curriculum case study */
+.curriculum-units {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.curriculum-units li {
+    min-height: 0;
+    padding: 20px 20px 20px 66px;
+}
+
+.curriculum-units li::before {
+    top: 18px;
+}
+
+.curriculum-units li:last-child {
+    grid-column: 1 / -1;
+}
+
+.architecture-diagram-six {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.architecture-diagram-six .architecture-node:nth-child(3)::after {
+    display: none;
+}
+
+.artifact-list {
+    display: grid;
+    padding: 0;
+    margin: 24px 0 0;
+    gap: 12px;
+    list-style: none;
+}
+
+.artifact-list li {
+    display: grid;
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: var(--paper);
+    gap: 4px;
+}
+
+.artifact-list a {
+    color: var(--plum);
+    font-weight: 850;
+    text-underline-offset: 4px;
+}
+
+.artifact-list span {
+    color: var(--ink-soft);
+    font-size: 0.84rem;
+}
+
+.resume-note {
+    margin-top: 18px;
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+}
+
+.resume-note a {
+    color: var(--plum);
+    font-weight: 850;
+    text-underline-offset: 4px;
+}
+
+/* Portfolio guide: rich answers and actions */
+.guide-message p + p,
+.guide-message ul + p,
+.guide-message p + ul {
+    margin-top: 8px;
+}
+
+.guide-message ul {
+    padding-left: 18px;
+    margin: 0;
+}
+
+.guide-message li + li {
+    margin-top: 3px;
+}
+
+.guide-message a {
+    color: var(--plum);
+    font-weight: 800;
+    text-underline-offset: 3px;
+}
+
+.guide-message-user a {
+    color: inherit;
+}
+
+.guide-actions {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 11px;
+    gap: 8px;
+}
+
+.guide-message .guide-action {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 7px 13px;
+    border-radius: 999px;
+    color: var(--paper);
+    background: var(--plum);
+    font-size: 0.74rem;
+    font-weight: 850;
+    text-decoration: none;
+}
+
+.guide-message .guide-action:hover {
+    color: var(--paper);
+    background: var(--plum-deep);
+}
+
+.guide-message .guide-action:focus-visible {
+    outline: 3px solid rgba(215, 166, 74, 0.55);
+    outline-offset: 2px;
+}
+
+@media (max-width: 760px) {
+    .curriculum-units,
+    .architecture-diagram-six {
+        grid-template-columns: 1fr;
+    }
+
+    .architecture-diagram-six .architecture-node:nth-child(3)::after {
+        display: block;
+    }
+}
