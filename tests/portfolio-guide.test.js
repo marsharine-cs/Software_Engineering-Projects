@@ -68,7 +68,7 @@ test('developer résumé request returns the developer résumé only', () => {
 
 test('generic résumé request follows the conversation context', () => {
     assert.deepEqual(guide.findAnswer('Can I see her résumé?', { lastIntent: 'curriculum_design' }).actions.map((a) => a.url), [CURRICULUM_RESUME]);
-    assert.deepEqual(guide.findAnswer('Can I see her résumé?', { lastIntent: 'software_development' }).actions.map((a) => a.url), [DEVELOPER_RESUME, CURRICULUM_RESUME]);
+    assert.deepEqual(guide.findAnswer('Can I see her résumé?', { lastIntent: 'software_development' }).actions.map((a) => a.url), [DEVELOPER_RESUME]);
 });
 
 // Spec §14 — software questions must not push the Curriculum Designer résumé.
@@ -164,4 +164,51 @@ test('API passes conversation context to résumé routing', async () => {
     const res = mockResponse();
     await handler({ method: 'POST', body: { message: 'Can I see her résumé?', context: { lastIntent: 'curriculum_design' } }, headers: {}, socket: {} }, res);
     assert.deepEqual(res.body.actions.map((a) => a.url), [CURRICULUM_RESUME]);
+});
+
+// Regression coverage for contextual resume routing and whole-word STEM matching.
+for (const question of [
+    'Show her systems engineer resume.',
+    'Show her system design resume.',
+    'Show her distributed systems developer resume.'
+]) {
+    test(`systems terminology must not match STEM: ${question}`, () => {
+        const result = guide.findAnswer(question, { lastIntent: 'software_development' });
+        assert.equal(result.intent, 'software_development');
+        assert.deepEqual(result.actions.map((action) => action.url), [DEVELOPER_RESUME]);
+    });
+}
+
+for (const question of ['Show her STEM resume.', 'Show her stem resume.']) {
+    test(`whole-word STEM still selects curriculum: ${question}`, () => {
+        const result = guide.findAnswer(question, { lastIntent: 'software_development' });
+        assert.equal(result.intent, 'curriculum_design');
+        assert.deepEqual(result.actions.map((action) => action.url), [CURRICULUM_RESUME]);
+    });
+}
+
+test('explicit resume choice overrides prior conversation intent', () => {
+    const curriculum = guide.findAnswer('Show her curriculum resume.', { lastIntent: 'software_development' });
+    const developer = guide.findAnswer('Show her developer resume.', { lastIntent: 'curriculum_design' });
+    assert.deepEqual(curriculum.actions.map((action) => action.url), [CURRICULUM_RESUME]);
+    assert.deepEqual(developer.actions.map((action) => action.url), [DEVELOPER_RESUME]);
+});
+
+test('generic resume request without context keeps the role choice', () => {
+    const result = guide.findAnswer('Can I see her resume?');
+    assert.equal(result.intent, 'general');
+    assert.deepEqual(result.actions.map((action) => action.url), [DEVELOPER_RESUME, CURRICULUM_RESUME]);
+});
+
+test('curriculum vitae is a generic resume request in a software conversation', () => {
+    const result = guide.findAnswer('Can I see her curriculum vitae?', { lastIntent: 'software_development' });
+    assert.deepEqual(result.actions.map((action) => action.url), [DEVELOPER_RESUME]);
+});
+
+test('API preserves software context for a generic resume follow-up', async () => {
+    const res = mockResponse();
+    await handler({ method: 'POST', body: { message: 'Can I see her resume?', context: { lastIntent: 'software_development' } }, headers: {}, socket: {} }, res);
+    assert.equal(res.statusCode, 200);
+    assert.equal(res.body.intent, 'software_development');
+    assert.deepEqual(res.body.actions.map((action) => action.url), [DEVELOPER_RESUME]);
 });
