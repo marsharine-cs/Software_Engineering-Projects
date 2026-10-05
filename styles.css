@@ -1830,3 +1830,18 @@ dialog::backdrop {
         display: block;
     }
 }
+
+/* Hero: audience-specific recruiter paths */
+.recruiter-paths {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 18px;
+    gap: 10px 12px;
+}
+
+.recruiter-paths > span {
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
