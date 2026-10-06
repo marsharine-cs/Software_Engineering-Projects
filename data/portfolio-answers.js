@@ -31,14 +31,14 @@
             id: 'software-projects',
             question: 'What software projects has Marsharine built?',
             patterns: [/software projects?/i, /(apps?|applications?|projects?)\s+(has|did)\s+(she|marsharine)\s+(built|build|made|make|shipped|ship|created|create)/i, /what (has|did) (she|marsharine) (built|build|shipped|ship|made)/i, /(engineering|development|coding|portfolio) projects/i],
-            answer: 'Marsharine’s software projects include:\n\n- Student Progress Tracker — a deployed React, TypeScript, and Supabase/PostgreSQL application with authentication, Row Level Security, relational CRUD workflows, dashboard logic, 27 unit and component tests, Playwright browser checks, and CI.\n- AI Development Field Guide — a searchable, accessible JavaScript technical reference with keyboard interaction, persistent preferences, reading progress, and responsive navigation.\n- Luma One — an interactive storefront with product customization, cart state, and accessible feedback.\n- Supporting projects: a JavaScript Knowledge Quiz, an Interactive Balance Sheet, an Ada Lovelace digital-history experience, and a Palindrome Checker.\n\nShe is currently building the Secure Service Operations Platform with TypeScript, NestJS, PostgreSQL, and Docker.',
+            answer: 'Marsharine’s software projects include:\n\n- Student Progress Tracker — a deployed React, TypeScript, and Supabase/PostgreSQL application with authentication, Row Level Security, relational CRUD workflows, dashboard logic, 27 unit and component tests, Playwright browser checks, and CI.\n- AI Development Field Guide — a searchable, accessible JavaScript technical reference with keyboard interaction, persistent preferences, reading progress, and responsive navigation.\n- Luma One — an interactive storefront with product customization, cart state, and accessible feedback.\n- Supporting projects: a JavaScript Knowledge Quiz, an Interactive Balance Sheet, an Ada Lovelace digital-history experience, and a Palindrome Checker.\n\nHer next project, the Secure Service Operations Platform (TypeScript, NestJS, PostgreSQL, Docker), is in the planning phase.',
             sources: [PROJECTS, TRACKER_CASE_STUDY, GITHUB]
         },
         {
             id: 'development-experience',
             question: 'What software development experience does Marsharine have?',
             patterns: [/^\s*(developer|software development|software developer|software engineering)\s*\??\s*$/i, /software\s+(development|developer|engineering)\s+experience/i, /developer\s+experience/i, /development\s+experience/i, /coding\s+experience/i, /programming\s+experience/i],
-            answer: 'Marsharine’s software-development experience is demonstrated through shipped projects. She designed and deployed the Student Progress Tracker with React, TypeScript, Supabase/PostgreSQL, authentication, tenant-aware Row Level Security, relational CRUD workflows, dashboard logic, 27 unit and component tests, Playwright browser smoke tests, GitHub Actions, and production debugging. Her frontend work also includes the AI Development Field Guide and Luma One. She is currently building the Secure Service Operations Platform as her next production-focused project.',
+            answer: 'Marsharine’s software-development experience is demonstrated through shipped projects. She designed and deployed the Student Progress Tracker with React, TypeScript, Supabase/PostgreSQL, authentication, tenant-aware Row Level Security, relational CRUD workflows, dashboard logic, 27 unit and component tests, Playwright browser smoke tests, GitHub Actions, and production debugging. Her frontend work also includes the AI Development Field Guide and Luma One. Her next project, the Secure Service Operations Platform, is in the planning phase.',
             sources: [PROJECTS, TRACKER_CASE_STUDY, GITHUB]
         },
         {
@@ -101,7 +101,7 @@
             id: 'current-work',
             question: 'What is she building now?',
             patterns: [/currently building/i, /building now/i, /current project/i, /working on now/i, /next project/i, /secure service/i],
-            answer: 'Marsharine is currently building the Secure Service Operations Platform, a production-focused TypeScript, NestJS, PostgreSQL, and Docker project. The repository currently contains the product requirements, service boundaries, threat model, architecture decisions, delivery standards, and issue-based roadmap. It is correctly presented as in development; completed features will be added to the portfolio only after they are implemented and verified.',
+            answer: 'Marsharine’s next project is the Secure Service Operations Platform, a planned multi-tenant TypeScript, NestJS, PostgreSQL, and Docker application. It is in the planning phase: the repository contains product requirements, service boundaries, a threat model, architecture decisions, delivery standards, and an issue-based roadmap, but application code has not started. Her strongest completed work is the Student Progress Tracker.',
             sources: [PLATFORM_SOURCE, GITHUB]
         },
         {
