@@ -1831,6 +1831,9 @@ dialog::backdrop {
     }
 }
 
+/* Allow résumé anchor to clear the sticky navigation. */
+#resumes { scroll-margin-top: 96px; }
+
 /* Hero: audience-specific recruiter paths */
 .recruiter-paths {
     display: flex;
